@@ -1,17 +1,29 @@
 {
   "name": "outsourcify-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Outsourcify — bilingual (KA/EN) corporate website with flat-file PHP CMS and chat-style consultation booking",
+  "description": "Outsourcify — bilingual (KA/EN) corporate website on Express with a flat-file CMS and chat-style consultation booking",
   "license": "UNLICENSED",
+  "main": "server.js",
   "scripts": {
-    "dev": "php -S localhost:8000 router.php",
-    "start": "php -S 0.0.0.0:${PORT:-8000} router.php",
-    "lint": "find . -name '*.php' -not -path './node_modules/*' -exec php -l {} \\; | grep -v 'No syntax errors' || true",
-    "seed": "php tools/seed-content.php",
-    "seo": "php tools/seo-report.php > SEO.md"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "echo \"No build step needed\"",
+    "check": "node tools/check.js",
+    "seo": "node tools/seo-report.js > SEO.md",
+    "reset-content": "node tools/reset-content.js"
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.8.0",
+    "express": "^4.21.2",
+    "image-size": "^1.2.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^6.10.1"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.34.3"
   }
 }

@@ -1,14 +1,6 @@
-# პაროლის ჰეში და კლიენტების პერსონალური მონაცემები — არასოდეს git-ში
-content/auth.php
-content/leads.json
-content/bookings.json
-content/login-attempts.json
-content/.*.lock
-content/*.tmp
-
-# CMS-ით ატვირთული ფოტოები
-assets/img/uploads/*
-!assets/img/uploads/.htaccess
-
-.DS_Store
 node_modules/
+# CMS-ის რეალური მონაცემები: კონტენტის ცვლილებები, ატვირთვები, ჯავშნები, პაროლი, სესიის გასაღები
+data/
+*.tmp
+.env
+.DS_Store

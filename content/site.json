@@ -1,244 +1,244 @@
 {
-    "settings": {
-        "company": "Outsourcify",
-        "domain": "https://outsourcify.ge",
-        "phone": "+995 591 171 888",
-        "email": "info@outsourcify.ge",
-        "notify_email": "",
-        "address": {
-            "ka": "",
-            "en": ""
-        },
-        "city": "Tbilisi",
-        "hours": {
-            "ka": "",
-            "en": ""
-        },
-        "map_embed": "",
-        "facebook": "",
-        "linkedin": "",
-        "instagram": "",
-        "footer_text": {
-            "ka": "ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია და ბიზნეს-პროცესების აუთსორსინგი — ინდივიდუალური მიდგომით, ყველა ზომის ბიზნესისთვის.",
-            "en": "Accounting, tax consulting and business process outsourcing — with a tailored approach for businesses of every size."
-        },
-        "ga_id": "",
-        "gsc_verification": "",
-        "noindex_all": false
+  "settings": {
+    "company": "Outsourcify",
+    "domain": "https://outsourcify.ge",
+    "phone": "+995 591 171 888",
+    "email": "info@outsourcify.ge",
+    "notify_email": "",
+    "address": {
+      "ka": "",
+      "en": ""
     },
-    "seo": {
-        "org_description": {
-            "ka": "Outsourcify — ბუღალტრული და ბიზნეს-პროცესების აუთსორსინგის კომპანია საქართველოში: ბუღალტრული აღრიცხვა, საგადასახადო კონსულტაცია, დეკლარაციები, აღრიცხვის აღდგენა და BPO.",
-            "en": "Outsourcify is an accounting and business process outsourcing company in Georgia: bookkeeping, tax consulting, tax returns, accounting records correction and BPO."
-        }
+    "city": "Tbilisi",
+    "hours": {
+      "ka": "",
+      "en": ""
     },
-    "menus": {
-        "header": [
-            {
-                "label": {
-                    "ka": "სერვისები",
-                    "en": "Services"
-                },
-                "link": "page:services",
-                "mega": true
-            },
-            {
-                "label": {
-                    "ka": "ჩვენ შესახებ",
-                    "en": "About"
-                },
-                "link": "page:about",
-                "mega": false
-            },
-            {
-                "label": {
-                    "ka": "როგორ ვმუშაობთ",
-                    "en": "How it works"
-                },
-                "link": "page:how",
-                "mega": false
-            },
-            {
-                "label": {
-                    "ka": "ვისთან ვმუშაობთ",
-                    "en": "Who we serve"
-                },
-                "link": "page:industries",
-                "mega": false
-            },
-            {
-                "label": {
-                    "ka": "FAQ",
-                    "en": "FAQ"
-                },
-                "link": "page:faq",
-                "mega": false
-            },
-            {
-                "label": {
-                    "ka": "კონტაქტი",
-                    "en": "Contact"
-                },
-                "link": "page:contact",
-                "mega": false
-            }
-        ],
-        "footer_company_title": {
-            "ka": "კომპანია",
-            "en": "Company"
-        },
-        "footer_company": [
-            {
-                "label": {
-                    "ka": "ჩვენ შესახებ",
-                    "en": "About us"
-                },
-                "link": "page:about"
-            },
-            {
-                "label": {
-                    "ka": "რატომ Outsourcify",
-                    "en": "Why Outsourcify"
-                },
-                "link": "page:why"
-            },
-            {
-                "label": {
-                    "ka": "როგორ ვმუშაობთ",
-                    "en": "How it works"
-                },
-                "link": "page:how"
-            },
-            {
-                "label": {
-                    "ka": "ვისთან ვმუშაობთ",
-                    "en": "Who we serve"
-                },
-                "link": "page:industries"
-            },
-            {
-                "label": {
-                    "ka": "ხშირად დასმული კითხვები",
-                    "en": "FAQ"
-                },
-                "link": "page:faq"
-            },
-            {
-                "label": {
-                    "ka": "კონტაქტი",
-                    "en": "Contact"
-                },
-                "link": "page:contact"
-            }
-        ],
-        "footer_legal_title": {
-            "ka": "ინფორმაცია",
-            "en": "Information"
-        },
-        "footer_legal": [
-            {
-                "label": {
-                    "ka": "კონსულტაციის დაჯავშნა",
-                    "en": "Book a consultation"
-                },
-                "link": "page:book"
-            },
-            {
-                "label": {
-                    "ka": "კონფიდენციალურობის პოლიტიკა",
-                    "en": "Privacy Policy"
-                },
-                "link": "page:privacy"
-            },
-            {
-                "label": {
-                    "ka": "წესები და პირობები",
-                    "en": "Terms & Conditions"
-                },
-                "link": "page:terms"
-            }
-        ]
+    "map_embed": "",
+    "facebook": "",
+    "linkedin": "",
+    "instagram": "",
+    "footer_text": {
+      "ka": "ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია და ბიზნეს-პროცესების აუთსორსინგი — ინდივიდუალური მიდგომით, ყველა ზომის ბიზნესისთვის.",
+      "en": "Accounting, tax consulting and business process outsourcing — with a tailored approach for businesses of every size."
     },
-    "process": [
-        {
-            "title": {
-                "ka": "გაცნობითი კონსულტაცია",
-                "en": "Intro consultation"
-            },
-            "text": {
-                "ka": "ვეცნობით თქვენს ბიზნესს, აღრიცხვის ამჟამინდელ მდგომარეობასა და იმას, რაში გჭირდებათ დახმარება.",
-                "en": "We get to know your business, the current state of your accounting and where you need support."
-            }
+    "ga_id": "",
+    "gsc_verification": "",
+    "noindex_all": false
+  },
+  "seo": {
+    "org_description": {
+      "ka": "Outsourcify — ბუღალტრული და ბიზნეს-პროცესების აუთსორსინგის კომპანია საქართველოში: ბუღალტრული აღრიცხვა, საგადასახადო კონსულტაცია, დეკლარაციები, აღრიცხვის აღდგენა და BPO.",
+      "en": "Outsourcify is an accounting and business process outsourcing company in Georgia: bookkeeping, tax consulting, tax returns, accounting records correction and BPO."
+    }
+  },
+  "menus": {
+    "header": [
+      {
+        "label": {
+          "ka": "სერვისები",
+          "en": "Services"
         },
-        {
-            "title": {
-                "ka": "ანალიზი და შეთავაზება",
-                "en": "Review & proposal"
-            },
-            "text": {
-                "ka": "ვაფასებთ დოკუმენტაციასა და პროცესებს და გთავაზობთ თქვენზე მორგებულ მომსახურების ფორმატს.",
-                "en": "We review your documents and processes and propose a service format tailored to you."
-            }
+        "link": "page:services",
+        "mega": true
+      },
+      {
+        "label": {
+          "ka": "ჩვენ შესახებ",
+          "en": "About"
         },
-        {
-            "title": {
-                "ka": "ჩართვა",
-                "en": "Onboarding"
-            },
-            "text": {
-                "ka": "ვთანხმდებით პასუხისმგებლობებზე, ვადებსა და დოკუმენტების მიწოდების წესზე, ვაწყობთ აღრიცხვას პროგრამაში.",
-                "en": "We agree on responsibilities, deadlines and how documents are shared, and set up your accounting in our software."
-            }
+        "link": "page:about",
+        "mega": false
+      },
+      {
+        "label": {
+          "ka": "როგორ ვმუშაობთ",
+          "en": "How it works"
         },
-        {
-            "title": {
-                "ka": "მუდმივი მხარდაჭერა",
-                "en": "Ongoing support"
-            },
-            "text": {
-                "ka": "ვაწარმოებთ აღრიცხვას, ვამზადებთ ანგარიშებსა და დეკლარაციებს — თქვენ ყოველთვის იცით, ვის მიმართოთ.",
-                "en": "We keep your books, prepare reports and tax returns — and you always know who to turn to."
-            }
-        }
+        "link": "page:how",
+        "mega": false
+      },
+      {
+        "label": {
+          "ka": "ვისთან ვმუშაობთ",
+          "en": "Who we serve"
+        },
+        "link": "page:industries",
+        "mega": false
+      },
+      {
+        "label": {
+          "ka": "FAQ",
+          "en": "FAQ"
+        },
+        "link": "page:faq",
+        "mega": false
+      },
+      {
+        "label": {
+          "ka": "კონტაქტი",
+          "en": "Contact"
+        },
+        "link": "page:contact",
+        "mega": false
+      }
     ],
-    "cta": {
-        "eyebrow": {
-            "ka": "დავიწყოთ",
-            "en": "Let’s get started"
-        },
-        "title": {
-            "ka": "გადმოგვეცით ბუღალტერია — <em>თქვენ კი ბიზნესს მიხედეთ</em>",
-            "en": "Hand over your accounting — <em>and focus on your business</em>"
-        },
-        "text": {
-            "ka": "დაჯავშნეთ კონსულტაცია: გავეცნობით თქვენს საჭიროებებს და შემოგთავაზებთ თქვენს ბიზნესზე მორგებულ გადაწყვეტას.",
-            "en": "Book a consultation: we’ll learn about your needs and suggest a solution tailored to your business."
-        },
-        "cta1_label": {
-            "ka": "კონსულტაციის დაჯავშნა",
-            "en": "Book a consultation"
-        },
-        "cta1_link": "page:book",
-        "cta2_label": {
-            "ka": "მოგვწერეთ",
-            "en": "Contact us"
-        },
-        "cta2_link": "page:contact"
+    "footer_company_title": {
+      "ka": "კომპანია",
+      "en": "Company"
     },
-    "booking": {
-        "days": [
-            1,
-            2,
-            3,
-            4,
-            5
-        ],
-        "start": "10:00",
-        "end": "18:00",
-        "slot": 30,
-        "notice": 3,
-        "ahead": 21,
-        "blocked": []
+    "footer_company": [
+      {
+        "label": {
+          "ka": "ჩვენ შესახებ",
+          "en": "About us"
+        },
+        "link": "page:about"
+      },
+      {
+        "label": {
+          "ka": "რატომ Outsourcify",
+          "en": "Why Outsourcify"
+        },
+        "link": "page:why"
+      },
+      {
+        "label": {
+          "ka": "როგორ ვმუშაობთ",
+          "en": "How it works"
+        },
+        "link": "page:how"
+      },
+      {
+        "label": {
+          "ka": "ვისთან ვმუშაობთ",
+          "en": "Who we serve"
+        },
+        "link": "page:industries"
+      },
+      {
+        "label": {
+          "ka": "ხშირად დასმული კითხვები",
+          "en": "FAQ"
+        },
+        "link": "page:faq"
+      },
+      {
+        "label": {
+          "ka": "კონტაქტი",
+          "en": "Contact"
+        },
+        "link": "page:contact"
+      }
+    ],
+    "footer_legal_title": {
+      "ka": "ინფორმაცია",
+      "en": "Information"
     },
-    "ui": []
+    "footer_legal": [
+      {
+        "label": {
+          "ka": "კონსულტაციის დაჯავშნა",
+          "en": "Book a consultation"
+        },
+        "link": "page:book"
+      },
+      {
+        "label": {
+          "ka": "კონფიდენციალურობის პოლიტიკა",
+          "en": "Privacy Policy"
+        },
+        "link": "page:privacy"
+      },
+      {
+        "label": {
+          "ka": "წესები და პირობები",
+          "en": "Terms & Conditions"
+        },
+        "link": "page:terms"
+      }
+    ]
+  },
+  "process": [
+    {
+      "title": {
+        "ka": "გაცნობითი კონსულტაცია",
+        "en": "Intro consultation"
+      },
+      "text": {
+        "ka": "ვეცნობით თქვენს ბიზნესს, აღრიცხვის ამჟამინდელ მდგომარეობასა და იმას, რაში გჭირდებათ დახმარება.",
+        "en": "We get to know your business, the current state of your accounting and where you need support."
+      }
+    },
+    {
+      "title": {
+        "ka": "ანალიზი და შეთავაზება",
+        "en": "Review & proposal"
+      },
+      "text": {
+        "ka": "ვაფასებთ დოკუმენტაციასა და პროცესებს და გთავაზობთ თქვენზე მორგებულ მომსახურების ფორმატს.",
+        "en": "We review your documents and processes and propose a service format tailored to you."
+      }
+    },
+    {
+      "title": {
+        "ka": "ჩართვა",
+        "en": "Onboarding"
+      },
+      "text": {
+        "ka": "ვთანხმდებით პასუხისმგებლობებზე, ვადებსა და დოკუმენტების მიწოდების წესზე, ვაწყობთ აღრიცხვას პროგრამაში.",
+        "en": "We agree on responsibilities, deadlines and how documents are shared, and set up your accounting in our software."
+      }
+    },
+    {
+      "title": {
+        "ka": "მუდმივი მხარდაჭერა",
+        "en": "Ongoing support"
+      },
+      "text": {
+        "ka": "ვაწარმოებთ აღრიცხვას, ვამზადებთ ანგარიშებსა და დეკლარაციებს — თქვენ ყოველთვის იცით, ვის მიმართოთ.",
+        "en": "We keep your books, prepare reports and tax returns — and you always know who to turn to."
+      }
+    }
+  ],
+  "cta": {
+    "eyebrow": {
+      "ka": "დავიწყოთ",
+      "en": "Let’s get started"
+    },
+    "title": {
+      "ka": "გადმოგვეცით ბუღალტერია — <em>თქვენ კი ბიზნესს მიხედეთ</em>",
+      "en": "Hand over your accounting — <em>and focus on your business</em>"
+    },
+    "text": {
+      "ka": "დაჯავშნეთ კონსულტაცია: გავეცნობით თქვენს საჭიროებებს და შემოგთავაზებთ თქვენს ბიზნესზე მორგებულ გადაწყვეტას.",
+      "en": "Book a consultation: we’ll learn about your needs and suggest a solution tailored to your business."
+    },
+    "cta1_label": {
+      "ka": "კონსულტაციის დაჯავშნა",
+      "en": "Book a consultation"
+    },
+    "cta1_link": "page:book",
+    "cta2_label": {
+      "ka": "მოგვწერეთ",
+      "en": "Contact us"
+    },
+    "cta2_link": "page:contact"
+  },
+  "booking": {
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "10:00",
+    "end": "18:00",
+    "slot": 30,
+    "notice": 3,
+    "ahead": 21,
+    "blocked": []
+  },
+  "ui": {}
 }

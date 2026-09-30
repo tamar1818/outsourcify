@@ -1,6 +1,0 @@
-# ატვირთულ დირექტორიაში სკრიპტები არ სრულდება
-<FilesMatch "\.(php\d?|phtml|phar|pl|py|cgi|sh)$">
-  Require all denied
-</FilesMatch>
-Options -ExecCGI -Indexes
-RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8
