@@ -23,6 +23,7 @@ const serviceById = (id) => services(true).find((s) => s.id === id) || null;
 
 const faqs = (cat = "") => (read("faqs", { items: [] }).items || []).filter((f) => !f.hidden && (!cat || f.category === cat));
 const testimonials = () => (read("testimonials", { items: [] }).items || []).filter((x) => !x.hidden && String(L(x.quote || "")).trim() !== "");
+const clients = () => (read("clients", { items: [] }).items || []).filter((x) => !x.hidden && x.logo);
 const industries = () => (read("industries", { items: [] }).items || []).filter((x) => !x.hidden);
 
 /* ------------------------------------------------------------ მისამართები */
@@ -102,6 +103,6 @@ function alternates(r) {
 }
 
 module.exports = {
-  site, setting, pages, pageById, services, serviceById, faqs, testimonials, industries,
+  site, setting, pages, pageById, services, serviceById, faqs, testimonials, clients, industries,
   langPrefix, urlPage, servicesBase, urlService, linkUrl, isExternal, route, alternates,
 };

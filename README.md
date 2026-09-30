@@ -116,13 +116,14 @@ reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, a
 
 | Section | What the client can do |
 |---|---|
-| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (drag or ↑↓), duplicate, hide, delete, **add new blocks** (17 types, including the services tab showcase, scrolling ticker and CTA with photo). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
+| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (drag or ↑↓), duplicate, hide, delete, **add new blocks** (18 types, including the client logo strip, including the services tab showcase, scrolling ticker and CTA with photo). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
 | **Services** | Add, edit, reorder, hide and delete services. Each has its own page (intro, rich description, "what's included", audience, benefits, service FAQ, SEO). Services appear automatically in the mega menu, homepage, footer, booking chat and sitemap. |
 | **FAQ** | Questions by category (general / services / process / booking). FAQ schema is generated automatically. |
 | **Testimonials** | Real client testimonials. **The section stays hidden until the first one is added**, so nothing invented is ever published. |
+| **Clients** | Client logos for the scrolling logo strip under the homepage banner. **Ships with 8 placeholder logos ("LOGO 01"…) — replace them with real client logos (with the clients' permission) before launch.** |
 | **Who we serve** | Client types / industries cards. |
 | **Menu & footer** | Header navigation (with a services mega-menu toggle) and both footer link columns. |
-| **Photos** | Upload (resized to 2000px and converted to WebP via `sharp`, with an SEO-friendly file name), browse, delete. Any image field can pick from the library or upload in place. |
+| **Photos** | **Import from an Unsplash/Pexels link** (paste the photo page link; the server downloads it and stores it locally as WebP), upload (resized to 2000px and converted to WebP via `sharp`, with an SEO-friendly file name), browse, delete. Any image field can pick from the library or upload in place. |
 | **Submissions** | Bookings and contact messages: details, status (new / contacted / done / cancelled — cancelling frees the slot), delete, **CSV export**. |
 | **Settings** | Contacts, address, hours, socials, footer text, notification email · SEO (domain, GA4, Search Console, organization description, noindex switch) · booking schedule (days, hours, slot length, notice, blocked dates) · shared process steps and CTA · **every UI text** in both languages. |
 | **Backup** | Download all content, bookings and messages as one JSON file, and restore it. |

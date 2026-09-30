@@ -79,6 +79,15 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* FAQ: ერთის გახსნისას დანარჩენები იკეცება (ძველ ბრაუზერებშიც, სადაც <details name> არ მუშაობს) */
+  $$("[data-accordion]").forEach(function (list) {
+    list.addEventListener("toggle", function (ev) {
+      var d = ev.target;
+      if (!d.open || d.parentNode !== list) return;
+      $$("details[open]", list).forEach(function (o) { if (o !== d) o.open = false; });
+    }, true);
+  });
+
   /* სერვისების ჩანართები: დაჭერა + ისრები / Home / End (WAI-ARIA tabs) */
   $$("[data-tabs]").forEach(function (box) {
     var tabs = $$('[role="tab"]', box);

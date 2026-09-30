@@ -21,10 +21,10 @@ const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: media.MAX + 1024, files: 1 } });
 const { f } = S;
 
-const BACKUP_FILES = ["site", "pages", "services", "faqs", "testimonials", "industries", "leads", "bookings"];
+const BACKUP_FILES = ["site", "pages", "services", "faqs", "testimonials", "clients", "industries", "leads", "bookings"];
 const RESERVED = ["en", "ka", "admin", "api", "assets", "uploads", "sitemap-xml", "robots-txt"];
 const STATUS = ["new", "contacted", "done", "cancelled"];
-const COLLECTIONS = { faqs: "faq", testimonials: "testimonial", industries: "industry" };
+const COLLECTIONS = { faqs: "faq", testimonials: "testimonial", clients: "client", industries: "industry" };
 const rand = () => Math.random().toString(36).slice(2, 7);
 
 router.use(express.json({ limit: "10mb" }));
@@ -353,6 +353,10 @@ router.get("/media", (req, res) => res.json(media.list()));
 router.post("/media", upload.single("file"), async (req, res) => {
   const r = await media.upload(req.file);
   res.status(r.ok ? 200 : 422).json(r);
+});
+router.post("/media/import", async (req, res) => {
+  const r = await media.importUrl((req.body || {}).url, (req.body || {}).name);
+  return r.ok ? res.json(r) : bad(res, r.error);
 });
 router.delete("/media/:name", (req, res) => (media.remove(req.params.name) ? res.json({ ok: true }) : bad(res, "წაშლა ვერ მოხერხდა")));
 

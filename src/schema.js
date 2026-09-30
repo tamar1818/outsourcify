@@ -95,6 +95,9 @@ function blockDefs() {
     showcase: { label: "სერვისების ჩანართები", desc: "ინტერაქტიული ჩანართები — სერვისები ავტომატურად, სურათითა და დეტალებით", fields: {
       ...fHead(), ...fCta("", "ღილაკი"),
     } },
+    logos: { label: "კლიენტების ლოგოები", desc: "მოძრავი ზოლი ლოგოებით — „კლიენტები“ განყოფილებიდან", fields: {
+      title: f("text", "სათაური (მაგ. ჩვენ გვენდობიან)", { i18n: true }),
+    } },
     marquee: { label: "მოძრავი ზოლი", desc: "ჰორიზონტალურად მოძრავი წარწერები (ცარიელზე — სერვისების სახელები)", fields: {
       items: f("list", "წარწერები (თითო ხაზზე ერთი)", { i18n: true }),
     } },
@@ -149,6 +152,12 @@ function recordDefs() {
       role: f("text", "პოზიცია, კომპანია", { i18n: true }),
       quote: f("textarea", "შეფასება", { i18n: true }),
       photo: f("image", "ფოტო / ლოგო"),
+      hidden: f("check", "დამალვა"),
+    },
+    client: {
+      name: f("text", "კომპანიის სახელი (ლოგოს alt ტექსტი)"),
+      logo: f("image", "ლოგო (SVG ან გამჭვირვალე PNG/WebP)"),
+      url: f("text", "ვებსაიტი (არასავალდებულო, https://…)"),
       hidden: f("check", "დამალვა"),
     },
     industry: { icon: f("icon", "ხატულა"), title: f("text", "სათაური", { i18n: true }), text: f("textarea", "ტექსტი", { i18n: true }), hidden: f("check", "დამალვა") },

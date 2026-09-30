@@ -52,6 +52,14 @@ module.exports = {
         "ka": "მოგვწერეთ",
         "en": "Email us"
     },
+    "made_by": {
+        "ka": "ვებსაიტი დამზადებულია:",
+        "en": "Website by"
+    },
+    "clients": {
+        "ka": "ჩვენი კლიენტები",
+        "en": "Our clients"
+    },
     "contacts": {
         "ka": "კონტაქტი",
         "en": "Contact"

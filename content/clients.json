@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "name": "ლოგოს ნიმუში 1",
+      "logo": "/assets/img/clients/placeholder-1.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 2",
+      "logo": "/assets/img/clients/placeholder-2.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 3",
+      "logo": "/assets/img/clients/placeholder-3.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 4",
+      "logo": "/assets/img/clients/placeholder-4.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 5",
+      "logo": "/assets/img/clients/placeholder-5.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 6",
+      "logo": "/assets/img/clients/placeholder-6.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 7",
+      "logo": "/assets/img/clients/placeholder-7.svg",
+      "url": "",
+      "hidden": false
+    },
+    {
+      "name": "ლოგოს ნიმუში 8",
+      "logo": "/assets/img/clients/placeholder-8.svg",
+      "url": "",
+      "hidden": false
+    }
+  ]
+}

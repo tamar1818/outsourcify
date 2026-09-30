@@ -46,6 +46,52 @@ async function upload(file) {
   return { ok: true, file: UPLOADS_URL + "/" + out };
 }
 
+/* ------------------------------------------------ იმპორტი ბმულიდან (Unsplash / Pexels) */
+const IMPORT_HOSTS = /^(images\.unsplash\.com|unsplash\.com|plus\.unsplash\.com|images\.pexels\.com)$/i;
+
+/** Unsplash-ის გვერდის ბმული (unsplash.com/photos/name-ID) → ჩამოტვირთვის ბმული */
+function normalizeImportUrl(raw) {
+  let u;
+  try { u = new URL(String(raw || "").trim()); } catch { return null; }
+  if (u.protocol !== "https:" || !IMPORT_HOSTS.test(u.hostname)) return null;
+  if (/^unsplash\.com$/i.test(u.hostname)) {
+    const m = u.pathname.match(/^\/(?:[a-z]{2}(?:-[A-Z]{2})?\/)?photos\/(?:[\w-]*-)?([\w]{11})(?:\/|$)/);
+    if (!m) return null;
+    return { url: "https://unsplash.com/photos/" + m[1] + "/download?force=true", name: u.pathname.split("/")[2] || m[1] };
+  }
+  if (/images\.unsplash\.com/i.test(u.hostname)) {
+    u.searchParams.set("w", "2000"); u.searchParams.set("q", "80"); u.searchParams.set("fm", "jpg");
+    u.searchParams.delete("fit"); u.searchParams.delete("h"); u.searchParams.delete("crop");
+  }
+  return { url: u.toString(), name: path.basename(u.pathname) || "photo" };
+}
+
+/** ფოტოს ჩამოტვირთვა მხოლოდ დაშვებული ჰოსტებიდან (გადამისამართებაც მოწმდება) და upload()-ით შენახვა */
+async function importUrl(raw, alt) {
+  const n = normalizeImportUrl(raw);
+  if (!n) return { ok: false, error: "ჩასვით Unsplash-ის ან Pexels-ის ფოტოს ბმული (https://unsplash.com/photos/… ან https://images.unsplash.com/…)" };
+  let url = n.url;
+  for (let hop = 0; hop < 5; hop++) {
+    let r;
+    try {
+      r = await fetch(url, { redirect: "manual", headers: { "User-Agent": "Outsourcify-CMS/1.0" }, signal: AbortSignal.timeout(20000) });
+    } catch { return { ok: false, error: "ფოტო ვერ ჩამოიტვირთა (კავშირის შეცდომა)" }; }
+    if (r.status >= 300 && r.status < 400 && r.headers.get("location")) {
+      const next = new URL(r.headers.get("location"), url);
+      if (next.protocol !== "https:" || !IMPORT_HOSTS.test(next.hostname)) return { ok: false, error: "ბმული დაუშვებელ მისამართზე გადამისამართდა" };
+      url = next.toString();
+      continue;
+    }
+    if (!r.ok) return { ok: false, error: "ფოტო ვერ მოიძებნა (" + r.status + ")" };
+    const len = parseInt(r.headers.get("content-length") || "0", 10);
+    if (len > MAX) return { ok: false, error: "ფაილი 8 MB-ზე დიდია" };
+    const buffer = Buffer.from(await r.arrayBuffer());
+    const name = slug(String(alt || "").trim()) || n.name;
+    return upload({ buffer, originalname: name });
+  }
+  return { ok: false, error: "ძალიან ბევრი გადამისამართება" };
+}
+
 /** ატვირთული + ბრენდის ფოტოები (ორიგინალები, ზომის ვარიანტების გარეშე) */
 function list() {
   const out = [];
@@ -67,4 +113,4 @@ function remove(name) {
   try { fs.unlinkSync(path.join(UPLOADS_DIR, name)); return true; } catch { return false; }
 }
 
-module.exports = { upload, list, remove, MAX, hasSharp: !!sharp };
+module.exports = { upload, importUrl, normalizeImportUrl, list, remove, MAX, hasSharp: !!sharp };

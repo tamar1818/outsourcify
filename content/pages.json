@@ -83,12 +83,12 @@
           }
         },
         {
-          "type": "marquee",
-          "hidden": false,
-          "items": {
-            "ka": [],
-            "en": []
-          }
+          "type": "logos",
+          "title": {
+            "ka": "კომპანიები, რომლებიც გვენდობიან",
+            "en": "Companies that trust us"
+          },
+          "hidden": false
         },
         {
           "type": "showcase",

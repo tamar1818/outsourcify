@@ -189,11 +189,44 @@ function ImageField({ value, onChange }) {
   );
 }
 
+/** ფოტოს იმპორტი Unsplash / Pexels ბმულიდან — სერვერი ჩამოტვირთავს, შეამცირებს და ბიბლიოთეკაში შეინახავს */
+export function ImportUrl({ onDone }) {
+  const toast = useToast();
+  const [url, setUrl] = useState("");
+  const [name, setName] = useState("");
+  const [busy, setBusy] = useState(false);
+  const go = async (e) => {
+    e.preventDefault();
+    if (!url.trim() || busy) return;
+    setBusy(true);
+    try {
+      const r = await api.post("/media/import", { url: url.trim(), name: name.trim() });
+      toast("ფოტო დაემატა ბიბლიოთეკაში");
+      setUrl(""); setName("");
+      onDone && onDone(r.file);
+    } catch (err) { toast(err.message, "err"); }
+    setBusy(false);
+  };
+  return (
+    <form className="imp" onSubmit={go}>
+      <div className="imp__head"><Icon name="globe" size={18} /><b>იმპორტი Unsplash-იდან</b>
+        <a className="link small" href="https://unsplash.com/s/photos/accounting-office" target="_blank" rel="noopener noreferrer">unsplash.com ↗</a></div>
+      <div className="imp__row">
+        <input className="input" type="url" placeholder="https://unsplash.com/photos/…" value={url} onChange={(e) => setUrl(e.target.value)} aria-label="ფოტოს ბმული" />
+        <input className="input" type="text" placeholder="ფაილის სახელი SEO-სთვის (არასავალდებულო)" value={name} onChange={(e) => setName(e.target.value)} aria-label="ფაილის სახელი" />
+        <Button type="submit" disabled={busy || !url.trim()} icon="arrow-up-right">{busy ? "იტვირთება…" : "იმპორტი"}</Button>
+      </div>
+      <p className="muted small">გახსენით ფოტო Unsplash-ზე და ჩასვით მისი ბმული. ფოტო ჩვენს სერვერზე შეინახება (WebP), ასე საიტი უფრო სწრაფია.</p>
+    </form>
+  );
+}
+
 export function MediaPicker({ open, onClose, onPick }) {
   const [items, setItems] = useState(null);
   useEffect(() => { if (open) api.get("/media").then(setItems).catch(() => setItems([])); }, [open]);
   return (
     <Modal open={open} onClose={onClose} title="ფოტოს არჩევა" wide>
+      <ImportUrl onDone={(u) => u && onPick(u)} />
       {!items ? <p className="muted">იტვირთება…</p> : !items.length ? <p className="muted">ფოტოები არ არის — ატვირთეთ „ფოტოები“ განყოფილებაში.</p> : (
         <div className="picker">
           {items.map((m) => <button type="button" key={m.url} onClick={() => onPick(m.url)} title={m.name}><img src={m.url} alt="" loading="lazy" /><span>{m.name}</span></button>)}

@@ -291,13 +291,14 @@ R.testimonials = (b) => {
 };
 
 function faqList(items) {
-  let h = '<div class="faq__list">';
+  const group = secId("faq-list");
+  let h = '<div class="faq__list" data-accordion>';
   items.forEach((x, i) => {
     const q = Ls(x.q);
     const a = Ls(x.a);
     if (!q) return;
     state.faq.push({ q, a });
-    h += '<details class="faq__item" data-reveal' + (i === 0 ? " open" : "") + '><summary><h3 class="faq__q">' + e(q) + "</h3>"
+    h += '<details class="faq__item" name="' + e(group) + '" data-reveal' + (i === 0 ? " open" : "") + '><summary><h3 class="faq__q">' + e(q) + "</h3>"
       + '<span class="faq__toggle" aria-hidden="true">' + icon("plus") + "</span></summary>"
       + '<div class="faq__a"><div>' + richHtml(a) + "</div></div></details>";
   });
@@ -309,13 +310,13 @@ R.faq = (b, ctx) => {
   const limit = parseInt(b.limit, 10) || 0;
   if (limit > 0) items = items.slice(0, limit);
   if (!items.length) return "";
-  let h = '<section class="section faq-sec" id="' + e(secId("faq")) + '"><div class="container faq"><div class="faq__aside">' + secHead(b)
-    + '<div class="faq__help" data-reveal><span class="faq__help-ico">' + icon("message") + "</span>"
+  let h = '<section class="section faq-sec" id="' + e(secId("faq")) + '"><div class="container">' + secHead(b, "sec-head--split")
+    + '<div class="faq">' + faqList(items) + '<aside class="faq__aside"><div class="faq__help" data-reveal><span class="faq__help-ico">' + icon("message") + "</span>"
     + "<p><b>" + e(t("sidebar_title")) + "</b>" + e(t("sidebar_text")) + "</p>"
     + btn(t("book_cta"), "page:book", "primary") + "</div>";
   const c = ctaBtn(b, "", "ghost");
   if (c) h += '<div class="sec-actions sec-actions--left">' + c + "</div>";
-  return h + "</div>" + faqList(items) + "</div></section>";
+  return h + "</aside></div></div></section>";
 };
 
 /** სერვისების ინტერაქტიული ჩანართები: მარცხნივ სია, მარჯვნივ დეტალები სურათით */
@@ -350,6 +351,23 @@ R.marquee = (b) => {
   if (!items.length) return "";
   const row = items.map((x) => '<li><span class="mq__dot" aria-hidden="true"></span>' + e(x) + "</li>").join("");
   return '<section class="mq" aria-label="' + e(items.join(" · ")) + '"><div class="mq__track"><ul role="list">' + row + '</ul><ul role="list" aria-hidden="true">' + row + "</ul></div></section>";
+};
+
+/** კლიენტების ლოგოები — უსასრულო მოძრავი ზოლი (კოლექცია „კლიენტები“) */
+R.logos = (b) => {
+  const list = C.clients();
+  if (!list.length) return "";
+  const one = list.map((c) => {
+    const img = '<img src="' + e(imgUrl(String(c.logo))) + '" alt="' + e(String(c.name || "")) + '" loading="lazy" decoding="async" height="40">';
+    const url = String(c.url || "");
+    return "<li>" + (/^https?:\/\/\S+$/i.test(url) ? '<a href="' + e(url) + '" target="_blank" rel="noopener nofollow">' + img + "</a>" : img) + "</li>";
+  }).join("");
+  // ზოლი ეკრანზე ფართო რომ იყოს — მცირე რაოდენობისას ვიმეორებთ
+  const row = one.repeat(Math.max(1, Math.ceil(10 / list.length)));
+  const title = Ls(b.title);
+  return '<section class="logos" aria-label="' + e(title || t("clients")) + '"><div class="container">'
+    + (title ? '<p class="logos__title">' + inlineHtml(title) + "</p>" : "") + "</div>"
+    + '<div class="logos__mask"><div class="logos__track"><ul role="list">' + row + '</ul><ul role="list" aria-hidden="true">' + row.replace(/ alt="[^"]*"/g, ' alt=""').replace(/<a /g, '<a tabindex="-1" ') + "</ul></div></div></section>";
 };
 
 R.stats = (b) => {

@@ -20,7 +20,7 @@ import Account from "./pages/Account.jsx";
 const NAV = [
   ["კონტენტი", [
     ["/", "მთავარი", "bars"], ["/pages", "გვერდები", "layers"], ["/services", "სერვისები", "briefcase"],
-    ["/faqs", "FAQ", "message"], ["/testimonials", "შეფასებები", "quote"], ["/industries", "ვისთან ვმუშაობთ", "building"],
+    ["/faqs", "FAQ", "message"], ["/testimonials", "შეფასებები", "quote"], ["/clients", "კლიენტები", "handshake"], ["/industries", "ვისთან ვმუშაობთ", "building"],
   ]],
   ["საიტი", [["/menus", "მენიუ და ფუტერი", "menu"], ["/media", "ფოტოები", "folder"], ["/settings", "პარამეტრები", "settings"]]],
   ["კლიენტები", [["/inbox", "განაცხადები", "mail"]]],
@@ -92,6 +92,7 @@ function Shell({ user, onLogout }) {
           <Route path="/services/:id" element={<ServiceEditor />} />
           <Route path="/faqs" element={<Collection name="faqs" />} />
           <Route path="/testimonials" element={<Collection name="testimonials" />} />
+          <Route path="/clients" element={<Collection name="clients" />} />
           <Route path="/industries" element={<Collection name="industries" />} />
           <Route path="/menus" element={<Menus />} />
           <Route path="/settings" element={<Settings />} />

@@ -97,7 +97,9 @@ function siteFooter(alts) {
   const addr = Ls(s.address);
   if (addr) h += '<p class="ftr__addr">' + icon("pin") + e(addr) + "</p>";
   h += "</div></div>";
-  h += '<div class="ftr__bottom"><p>© ' + new Date().getFullYear() + " " + e(String(s.company || "Outsourcify")) + ". " + e(t("rights")) + "</p>" + langSwitch(alts, "lang lang--dark") + "</div>"
+  h += '<div class="ftr__bottom"><p>© ' + new Date().getFullYear() + " " + e(String(s.company || "Outsourcify")) + ". " + e(t("rights")) + "</p>"
+    + '<p class="ftr__credit">' + e(t("made_by")) + ' <a href="https://webico.io/" target="_blank" rel="noopener">webico.io</a></p>'
+    + langSwitch(alts, "lang lang--dark") + "</div>"
     + "</div></footer>";
 
   // მობილურზე მიმაგრებული ზოლი

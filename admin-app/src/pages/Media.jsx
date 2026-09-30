@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { api } from "../api.js";
 import { useMeta, useToast } from "../context.jsx";
 import { Empty, Icon, Loading, PageHead } from "../components/ui.jsx";
+import { ImportUrl } from "../components/Fields.jsx";
 
 export default function Media() {
   const meta = useMeta();
@@ -37,6 +38,7 @@ export default function Media() {
         <b>{busy ? "იტვირთება…" : "ჩააგდეთ ფოტოები აქ ან დააჭირეთ ასარჩევად"}</b>
         <span className="muted small">ფაილის სახელი SEO-სთვის ორიგინალიდან აიღება — დაარქვით აღწერითი სახელი (მაგ. accountant-office-tbilisi.jpg)</span>
       </button>
+      <ImportUrl onDone={load} />
       <input ref={input} type="file" accept="image/*" multiple hidden onChange={(e) => { upload(e.target.files); e.target.value = ""; }} />
       {!items ? <Loading /> : !items.length ? <Empty title="ფოტოები არ არის" /> : (
         <div className="media-grid">
