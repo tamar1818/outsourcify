@@ -51,6 +51,13 @@ module.exports = {
     "facebook": "<path d=\"M15 3.5h-2.5A3.5 3.5 0 0 0 9 7v3H6.5v3.5H9v7.5h3.5v-7.5H15l.5-3.5h-3V7.5a1 1 0 0 1 1-1H15z\"/>",
     "linkedin": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7.5 10.5v6M7.5 7.5h.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5\"/>",
     "instagram": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M17.5 6.5h.01\"/>",
+    "heart": "<path d=\"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z\"/><path d=\"M9 11h6M12 8v6\"/>",
+    "home": "<path d=\"M3.5 10.5 12 4l8.5 6.5\"/><path d=\"M5.5 9v10.5h13V9\"/><path d=\"M10 19.5v-5h4v5\"/>",
+    "hammer": "<path d=\"M4 20l9-9\"/><path d=\"m11.5 6.5 3-3 6 6-3 3z\"/><path d=\"m13 5 1.5 1.5\"/>",
+    "cpu": "<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"2\"/><rect x=\"9.5\" y=\"9.5\" width=\"5\" height=\"5\" rx=\"1\"/><path d=\"M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3\"/>",
+    "factory": "<path d=\"M3 20.5V11l5 3V11l5 3V11l5 3V4h3v16.5z\"/><path d=\"M7 17.5h2M12 17.5h2M17 17.5h1\"/>",
+    "utensils": "<path d=\"M6 3v7a2 2 0 0 0 4 0V3M8 10v11\"/><path d=\"M17 21V3c-2 1.5-3 4-3 7v3h3\"/>",
+    "award": "<circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"m9 13.8-1.5 7.2 4.5-2.5 4.5 2.5-1.5-7.2\"/><path d=\"m10 9 1.5 1.5L14.5 7.5\"/>",
     "youtube": "<rect x=\"2.5\" y=\"5\" width=\"19\" height=\"14\" rx=\"4\"/><path d=\"m10 9 5 3-5 3z\"/>",
     "tiktok": "<path d=\"M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.3 2.6 2 4.3 4.5 4.5\"/>"
 };

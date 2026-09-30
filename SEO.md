@@ -6,8 +6,8 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული მომსახურება და აუთსორსინგი | Outsourcify (51) | Accounting & Business Outsourcing in Georgia | Outsourcify (58) |
-| **Meta Description** | Outsourcify — ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, დეკლარაციები და BPO ყველა ზომის ბიზნესისთვის. დაჯავშნეთ კონსულტაცია ონლაინ. (139) | Outsourcify provides accounting, tax consulting, tax return filing and BPO for businesses of every size in Georgia. Book a consultation online. (143) |
+| **SEO Title** | Outsourcify — თქვენი სანდო ბუღალტრული პარტნიორი | ბუღალტრული მომსახურება (72) | Outsourcify — Your Trusted Accounting Partner in Georgia (56) |
+| **Meta Description** | პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის: ბუღალტრული მომსახურება, საგადასახადო დაგეგმვა, ხელფასის მართვა, გამჭვირვალე ფასები. (161) | Personalised financial solutions for individuals and businesses in Georgia: bookkeeping, tax planning, payroll and transparent pricing. (135) |
 | **URL** | `https://outsourcify.ge/` | `https://outsourcify.ge/en/` |
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
 | **Supporting keywords** | ბუღალტრული აუთსორსინგი, საგადასახადო კონსულტაცია, BPO | accounting outsourcing, tax consulting Georgia, BPO Georgia |
@@ -32,7 +32,17 @@
 | **Main keyword** | ბუღალტრული სერვისები | accounting services |
 | **Supporting keywords** | საგადასახადო მომსახურება, აუთსორსინგის სერვისები | tax services Georgia, outsourcing services |
 
-## 4. როგორ ვმუშაობთ / How it works
+## 4. მომსახურების ფასები / Pricing
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify (65) | Accounting Service Pricing — Small Business & LLC | Outsourcify (63) |
+| **Meta Description** | გამჭვირვალე ფასები: ერთჯერადი მომსახურებები, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურება ბრუნვისა და საქმიანობის მიხედვით, Reportal-ზე ატვირთვა. (149) | Transparent pricing for one-off services and accounting for small businesses and LLCs, by turnover and activity type, plus Reportal filing. (139) |
+| **URL** | `https://outsourcify.ge/fasebi` | `https://outsourcify.ge/en/pricing` |
+| **Main keyword** | ბუღალტრული მომსახურების ფასი | accounting services price Georgia |
+| **Supporting keywords** | ბუღალტრის მომსახურების ფასი | LLC accounting cost Tbilisi |
+
+## 5. როგორ ვმუშაობთ / How it works
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -42,7 +52,7 @@
 | **Main keyword** | ბუღალტერიის აუთსორსინგი როგორ მუშაობს | how accounting outsourcing works |
 | **Supporting keywords** | ბუღალტრის შეცვლა | switching accountants |
 
-## 5. რატომ Outsourcify / Why Outsourcify
+## 6. რატომ Outsourcify / Why Outsourcify
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -52,7 +62,7 @@
 | **Main keyword** | ბუღალტერიის აუთსორსინგის უპირატესობები | benefits of accounting outsourcing |
 | **Supporting keywords** | შიდა ბუღალტერი თუ აუთსორსინგი | in-house vs outsourced accountant |
 
-## 6. ვისთან ვმუშაობთ / Who we serve
+## 7. ვისთან ვმუშაობთ / Who we serve
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -62,7 +72,7 @@
 | **Main keyword** | ბუღალტერია მცირე ბიზნესისთვის | accounting for small business Georgia |
 | **Supporting keywords** | ბუღალტერია სტარტაპისთვის, ინდმეწარმის ბუღალტერია | startup accounting, accounting for foreign companies in Georgia |
 
-## 7. ხშირად დასმული კითხვები / FAQ
+## 8. ხშირად დასმული კითხვები / FAQ
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -72,7 +82,7 @@
 | **Main keyword** | ბუღალტრული მომსახურება კითხვები | accounting outsourcing FAQ |
 | **Supporting keywords** | ბუღალტერიის აუთსორსინგი ფასი | accounting services cost Georgia |
 
-## 8. კონტაქტი / Contact
+## 9. კონტაქტი / Contact
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -82,7 +92,7 @@
 | **Main keyword** | Outsourcify კონტაქტი | Outsourcify contact |
 | **Supporting keywords** | ბუღალტერი თბილისში | accountant Tbilisi |
 
-## 9. კონსულტაციის დაჯავშნა / Book a consultation
+## 10. კონსულტაციის დაჯავშნა / Book a consultation
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -92,7 +102,7 @@
 | **Main keyword** | ბუღალტრული კონსულტაცია | book accounting consultation |
 | **Supporting keywords** | კონსულტაციის დაჯავშნა, ბუღალტერთან შეხვედრა | accountant consultation Georgia |
 
-## 10. კონფიდენციალურობის პოლიტიკა / Privacy Policy
+## 11. კონფიდენციალურობის პოლიტიკა / Privacy Policy
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -102,7 +112,7 @@
 | **Main keyword** | — | — |
 | **Supporting keywords** | — | — |
 
-## 11. წესები და პირობები / Terms & Conditions
+## 12. წესები და პირობები / Terms & Conditions
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -112,7 +122,7 @@
 | **Main keyword** | — | — |
 | **Supporting keywords** | — | — |
 
-## 12. ბუღალტრული მომსახურება / Accounting & Bookkeeping
+## 13. ბუღალტრული მომსახურება / Accounting & Bookkeeping
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -122,17 +132,17 @@
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
 | **Supporting keywords** | ბუღალტერიის აუთსორსინგი, ბუღალტრული აღრიცხვა, აუთსორს ბუღალტერი | outsourced bookkeeping, bookkeeping Tbilisi, outsourced accountant |
 
-## 13. საგადასახადო კონსულტაცია / Tax Consulting
+## 14. საგადასახადო კონსულტაცია / Tax Consulting
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის | Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
+| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის — Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
 | **Meta Description** | ექსპერტული საგადასახადო კონსულტაცია: ვალდებულებები, საგადასახადო რეჟიმი და გარიგებების შეფასება. მიიღეთ გასაგები რჩევა Outsourcify-ისგან. (137) | Expert tax consulting in Georgia: obligations, tax regimes and transaction reviews. Get clear, practical advice from the Outsourcify team. (138) |
 | **URL** | `https://outsourcify.ge/servisebi/sagadasakhado-konsultatsia` | `https://outsourcify.ge/en/services/tax-consulting` |
 | **Main keyword** | საგადასახადო კონსულტაცია | tax consulting Georgia |
 | **Supporting keywords** | საგადასახადო კონსულტანტი, გადასახადები ბიზნესისთვის, საგადასახადო რჩევა | tax advisor Tbilisi, business tax advice, Georgian tax |
 
-## 14. დეკლარაციების მომზადება და წარდგენა / Tax Return Preparation & Filing
+## 15. დეკლარაციების მომზადება და წარდგენა / Tax Return Preparation & Filing
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -142,7 +152,7 @@
 | **Main keyword** | დეკლარაციის მომზადება | tax return preparation Georgia |
 | **Supporting keywords** | საგადასახადო დეკლარაცია, დეკლარაციის წარდგენა, ინდმეწარმის დეკლარაცია | tax filing, tax declaration Georgia, individual entrepreneur tax return |
 
-## 15. ისტორიული აღრიცხვის აღდგენა და გასწორება / Accounting Records Correction
+## 16. ისტორიული აღრიცხვის აღდგენა და გასწორება / Accounting Records Correction
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -152,7 +162,7 @@
 | **Main keyword** | ბუღალტრული აღრიცხვის აღდგენა | accounting records correction |
 | **Supporting keywords** | აღრიცხვის გასწორება, ისტორიული აღრიცხვა, ბუღალტერიის მოწესრიგება | bookkeeping clean-up, catch-up bookkeeping, historical accounting |
 
-## 16. ბიზნეს-პროცესების აუთსორსინგი (BPO) / Business Process Outsourcing (BPO)
+## 17. ბიზნეს-პროცესების აუთსორსინგი (BPO) / Business Process Outsourcing (BPO)
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -162,7 +172,7 @@
 | **Main keyword** | ბიზნეს-პროცესების აუთსორსინგი | business process outsourcing Georgia |
 | **Supporting keywords** | BPO საქართველოში, აუთსორსინგი, აუთსტაფინგი | BPO Tbilisi, outsourcing company Georgia, staff outsourcing |
 
-## 17. ფინანსური კონსულტაცია / Financial Consulting
+## 18. ფინანსური კონსულტაცია / Financial Consulting
 
 | | ქართული (მთავარი) | English |
 |---|---|---|

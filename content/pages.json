@@ -14,12 +14,12 @@
       },
       "seo": {
         "title": {
-          "ka": "ბუღალტრული მომსახურება და აუთსორსინგი | Outsourcify",
-          "en": "Accounting & Business Outsourcing in Georgia | Outsourcify"
+          "ka": "Outsourcify — თქვენი სანდო ბუღალტრული პარტნიორი | ბუღალტრული მომსახურება",
+          "en": "Outsourcify — Your Trusted Accounting Partner in Georgia"
         },
         "description": {
-          "ka": "Outsourcify — ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, დეკლარაციები და BPO ყველა ზომის ბიზნესისთვის. დაჯავშნეთ კონსულტაცია ონლაინ.",
-          "en": "Outsourcify provides accounting, tax consulting, tax return filing and BPO for businesses of every size in Georgia. Book a consultation online."
+          "ka": "პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის: ბუღალტრული მომსახურება, საგადასახადო დაგეგმვა, ხელფასის მართვა, გამჭვირვალე ფასები.",
+          "en": "Personalised financial solutions for individuals and businesses in Georgia: bookkeeping, tax planning, payroll and transparent pricing."
         },
         "keywords": {
           "ka": "ბუღალტრული მომსახურება; ბუღალტრული აუთსორსინგი, საგადასახადო კონსულტაცია, BPO",
@@ -35,34 +35,31 @@
             "en": "Accounting & business process outsourcing"
           },
           "title": {
-            "ka": "ბუღალტერია წესრიგში — <em>თქვენ კი ბიზნესს მიხედეთ</em>",
-            "en": "Your accounting in order — <em>so you can focus on growth</em>"
+            "ka": "თქვენი სანდო <em>ბუღალტრული პარტნიორი</em>",
+            "en": "Your trusted <em>accounting partner</em>"
           },
           "text": {
-            "ka": "Outsourcify ბიზნესებს სთავაზობს ბუღალტრულ მომსახურებას, საგადასახადო კონსულტაციასა და ბიზნეს-პროცესების აუთსორსინგს. სერტიფიცირებული ბუღალტრები, ეფექტური პროგრამული უზრუნველყოფა და თქვენზე მორგებული გადაწყვეტები.",
-            "en": "Outsourcify provides accounting, tax consulting and business process outsourcing for companies in Georgia. Certified accountants, effective software and solutions tailored to your business."
+            "ka": "პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის. ექსპერტული რჩევები, რომელზეც შეგიძლიათ დაეყრდნოთ.",
+            "en": "Personalised financial solutions for individuals and businesses. Expert advice you can rely on."
           },
           "cta1_label": {
-            "ka": "კონსულტაციის დაჯავშნა",
+            "ka": "დაჯავშნეთ კონსულტაცია",
             "en": "Book a consultation"
           },
           "cta1_link": "page:book",
           "cta2_label": {
-            "ka": "სერვისების ნახვა",
-            "en": "Explore services"
+            "ka": "ჩვენი სერვისები",
+            "en": "Our services"
           },
           "cta2_link": "page:services",
+          "cta3_label": {
+            "ka": "მომსახურების ფასები",
+            "en": "Service pricing"
+          },
+          "cta3_link": "page:pricing",
           "points": {
-            "ka": [
-              "სერტიფიცირებული ბუღალტრები",
-              "ეფექტური პროგრამები",
-              "ინდივიდუალური მიდგომა"
-            ],
-            "en": [
-              "Certified accountants",
-              "Effective software",
-              "A tailored approach"
-            ]
+            "ka": [],
+            "en": []
           },
           "image": "/assets/img/photos/accountant-reviewing-tax-documents.webp",
           "image_alt": {
@@ -84,149 +81,71 @@
         },
         {
           "type": "logos",
+          "hidden": false,
           "title": {
             "ka": "კომპანიები, რომლებიც გვენდობიან",
             "en": "Companies that trust us"
-          },
-          "hidden": false
-        },
-        {
-          "type": "showcase",
-          "hidden": false,
-          "eyebrow": {
-            "ka": "სერვისები",
-            "en": "Services"
-          },
-          "title": {
-            "ka": "ყველაფერი, რაც თქვენს <em>ფინანსებს</em> სჭირდება",
-            "en": "Everything your <em>finances</em> need"
-          },
-          "text": {
-            "ka": "ყოველდღიური აღრიცხვიდან საგადასახადო საკითხებამდე — ერთი პარტნიორი, რომელიც თქვენი ბიზნესის სპეციფიკას იცნობს.",
-            "en": "From day-to-day bookkeeping to tax matters — one partner who understands how your business works."
-          },
-          "cta_label": {
-            "ka": "ყველა სერვისი",
-            "en": "All services"
-          },
-          "cta_link": "page:services"
+          }
         },
         {
           "type": "cards",
           "hidden": false,
+          "variant": "grid",
           "eyebrow": {
-            "ka": "როგორ ვთანამშრომლობთ",
-            "en": "How we work with you"
+            "ka": "რატომ ჩვენ",
+            "en": "Why us"
           },
           "title": {
-            "ka": "თანამშრომლობის <em>სამი მოდელი</em>",
-            "en": "Three ways <em>to work together</em>"
+            "ka": "რატომ აირჩიოთ <em>Outsourcify.ge ბუღალტერია?</em>",
+            "en": "Why choose <em>Outsourcify.ge accounting?</em>"
           },
           "text": {
-            "ka": "აირჩიეთ ფორმატი, რომელიც თქვენს ბიზნესს ყველაზე მეტად შეეფერება.",
-            "en": "Choose the format that suits your business best."
+            "ka": "ჩვენ ვაერთიანებთ ექსპერტიზას პერსონალიზებულ მომსახურებასთან განსაკუთრებული შედეგების მისაღებად.",
+            "en": "We combine expertise with personalised service to deliver exceptional results."
           },
-          "variant": "numbered",
           "items": [
             {
-              "icon": "building",
+              "icon": "percent",
               "title": {
-                "ka": "აუთსორსინგი",
-                "en": "Outsourcing"
+                "ka": "ექსპერტული საგადასახადო დაგეგმვა",
+                "en": "Expert tax planning"
               },
               "text": {
-                "ka": "ჩვენი თანამშრომლები ჩვენსავე ოფისში. ბუღალტერიას სრულად ჩვენი გუნდი აწარმოებს — შიდა განყოფილება არ გჭირდებათ.",
-                "en": "Our team, working from our office. We run your accounting end to end — no in-house department needed."
+                "ka": "გაზარდეთ თქვენი გამოქვითვები და მინიმუმამდე დაიყვანეთ საგადასახადო ვალდებულება სტრატეგიული დაგეგმვით.",
+                "en": "Maximise your deductions and minimise your tax liability through strategic planning."
+              }
+            },
+            {
+              "icon": "chart",
+              "title": {
+                "ka": "ფინანსური ზრდა",
+                "en": "Financial growth"
+              },
+              "text": {
+                "ka": "მონაცემებზე დაფუძნებული შეხედულებები, რომლებიც დაგეხმარებათ თქვენი ბიზნესის განვითარებაში.",
+                "en": "Data-driven insights that help your business grow."
               }
             },
             {
               "icon": "users",
               "title": {
-                "ka": "აუთსტაფინგი",
-                "en": "Outstaffing"
+                "ka": "პერსონალიზებული მომსახურება",
+                "en": "Personalised service"
               },
               "text": {
-                "ka": "ჩვენი თანამშრომლები მუშაობენ თქვენს ოფისში — თქვენს გუნდთან ერთად, ორგანიზაციულ საკითხებზე კი ჩვენ ვზრუნავთ.",
-                "en": "Our specialists work in your office alongside your team, while we take care of the organisational side."
-              }
-            },
-            {
-              "icon": "layers",
-              "title": {
-                "ka": "ბიზნეს-პროცესების აუთსორსინგი (BPO)",
-                "en": "Business process outsourcing (BPO)"
-              },
-              "text": {
-                "ka": "თქვენი თანამშრომლები — ჩვენ ვმართავთ და ვაწესრიგებთ ბიზნეს-პროცესებს, რომლებსაც თქვენი გუნდი ასრულებს.",
-                "en": "Your employees — we organise and manage the business processes your team carries out."
-              }
-            }
-          ],
-          "cta_label": {
-            "ka": "",
-            "en": ""
-          },
-          "cta_link": ""
-        },
-        {
-          "type": "cards",
-          "hidden": false,
-          "eyebrow": {
-            "ka": "",
-            "en": ""
-          },
-          "title": {
-            "ka": "",
-            "en": ""
-          },
-          "text": {
-            "ka": "",
-            "en": ""
-          },
-          "variant": "strip",
-          "items": [
-            {
-              "icon": "users",
-              "title": {
-                "ka": "სერტიფიცირებული ბუღალტრები",
-                "en": "Certified accountants"
-              },
-              "text": {
-                "ka": "გამოცდილი გუნდი, რომელიც თქვენს ბიზნესს იცნობს.",
-                "en": "An experienced team that knows your business."
-              }
-            },
-            {
-              "icon": "settings",
-              "title": {
-                "ka": "ეფექტური პროგრამები",
-                "en": "Effective software"
-              },
-              "text": {
-                "ka": "აღრიცხვა თანამედროვე ბუღალტრულ პროგრამაში.",
-                "en": "Your books kept in modern accounting software."
-              }
-            },
-            {
-              "icon": "target",
-              "title": {
-                "ka": "მორგებული გადაწყვეტები",
-                "en": "Tailored solutions"
-              },
-              "text": {
-                "ka": "მომსახურება თქვენი ბიზნესის ზომისა და სპეციფიკის მიხედვით.",
-                "en": "Services shaped around your size and industry."
+                "ka": "ერთგული გუნდი, რომელიც ფოკუსირებულია თქვენს უნიკალურ ფინანსურ საჭიროებებზე.",
+                "en": "A dedicated team focused on your unique financial needs."
               }
             },
             {
               "icon": "shield",
               "title": {
-                "ka": "შესაბამისობა",
-                "en": "Compliance"
+                "ka": "სანდო და უსაფრთხო",
+                "en": "Trusted & secure"
               },
               "text": {
-                "ka": "ვადები და კანონმდებლობის მოთხოვნები კონტროლის ქვეშ.",
-                "en": "Deadlines and regulatory requirements under control."
+                "ka": "თქვენი ფინანსური მონაცემები დაცულია უმაღლესი უსაფრთხოების სტანდარტებით.",
+                "en": "Your financial data is protected to the highest security standards."
               }
             }
           ],
@@ -240,155 +159,875 @@
           "type": "split",
           "hidden": false,
           "eyebrow": {
-            "ka": "რატომ Outsourcify",
-            "en": "Why Outsourcify"
+            "ka": "სერვისები",
+            "en": "Services"
           },
           "title": {
-            "ka": "პარტნიორი, რომელსაც <em>ციფრებს ანდობთ</em>",
-            "en": "A partner you can <em>trust with your numbers</em>"
+            "ka": "ყოვლისმომცველი <em>ბუღალტრული სერვისები</em>",
+            "en": "Comprehensive <em>accounting services</em>"
           },
           "text": {
-            "ka": "ჩვენთვის ბუღალტერია არ არის მხოლოდ დოკუმენტები და ვადები. ეს არის სიცხადე, რომელიც ბიზნესს სწორი გადაწყვეტილებების მიღებაში ეხმარება.",
-            "en": "For us, accounting isn’t just paperwork and deadlines. It’s the clarity that helps a business make the right decisions."
+            "ka": "საგადასახადო დაგეგმვიდან ფინანსურ კონსულტაციამდე, ჩვენ გთავაზობთ თქვენს საჭიროებებზე მორგებულ სერვისების სრულ პაკეტს.",
+            "en": "From tax planning to financial consulting, we offer a full range of services tailored to your needs."
           },
           "points": {
             "ka": [
-              "სერტიფიცირებული ბუღალტრების გუნდი",
-              "კარგად ორგანიზებული აღრიცხვა და დოკუმენტაცია",
-              "ეფექტური ბუღალტრული პროგრამები",
-              "გადაწყვეტები, მორგებული თქვენს საჭიროებებზე"
+              "საგადასახადო მომზადება და დაგეგმვა",
+              "ბუღალტრული მომსახურება",
+              "ხელფასის მართვა",
+              "ფინანსური ანგარიშების მომზადება",
+              "ბიზნეს კონსულტაცია",
+              "აუდიტორული მხარდაჭერა"
             ],
             "en": [
-              "A team of certified accountants",
-              "Well-organised books and documentation",
-              "Effective accounting software",
-              "Solutions tailored to your needs"
+              "Tax preparation & planning",
+              "Bookkeeping",
+              "Payroll management",
+              "Financial statements",
+              "Business consulting",
+              "Audit support"
             ]
           },
-          "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+          "image": "/assets/img/photos/accountant-working-calculator-laptop.webp",
           "image_alt": {
-            "ka": "Outsourcify-ის გუნდი მუშაობს ოფისში",
-            "en": "Team collaborating in an office"
+            "ka": "თანამედროვე ბუღალტრული ოფისი",
+            "en": "A modern accounting office"
           },
-          "reverse": true,
+          "reverse": false,
           "badge_title": {
-            "ka": "სერტიფიცირებული გუნდი",
-            "en": "Certified team"
+            "ka": "",
+            "en": ""
           },
           "badge_text": {
-            "ka": "ბუღალტრები, რომლებიც თქვენს ბიზნესს იცნობენ",
-            "en": "Accountants who know your business"
+            "ka": "",
+            "en": ""
           },
           "cta_label": {
-            "ka": "გაიგეთ მეტი",
-            "en": "Learn more"
+            "ka": "ყველა სერვისის ნახვა",
+            "en": "View all services"
           },
-          "cta_link": "page:why"
+          "cta_link": "page:services"
         },
         {
-          "type": "steps",
+          "type": "showcase",
           "hidden": false,
           "eyebrow": {
-            "ka": "როგორ ვმუშაობთ",
-            "en": "How it works"
+            "ka": "ჩვენი სერვისები",
+            "en": "Our services"
           },
           "title": {
-            "ka": "ოთხი ნაბიჯი <em>მოწესრიგებულ ფინანსებამდე</em>",
-            "en": "Four steps to <em>finances in order</em>"
+            "ka": "ჩვენი <em>სერვისები</em>",
+            "en": "Our <em>services</em>"
           },
           "text": {
-            "ka": "მარტივი და გამჭვირვალე პროცესი — პირველი კონსულტაციიდან მუდმივ მხარდაჭერამდე.",
-            "en": "A simple, transparent process — from the first consultation to ongoing support."
+            "ka": "ყოვლისმომცველი ბუღალტრული და ფინანსური სერვისები, რომლებიც შექმნილია თქვენი უნიკალური საჭიროებებისთვის.",
+            "en": "Comprehensive accounting and financial services designed around your unique needs."
           },
-          "use_global": true,
-          "items": [],
           "cta_label": {
-            "ka": "პროცესი დეტალურად",
-            "en": "See the full process"
+            "ka": "ყველა სერვისის ნახვა",
+            "en": "View all services"
           },
-          "cta_link": "page:how"
-        },
-        {
-          "type": "cards",
-          "hidden": false,
-          "eyebrow": {
-            "ka": "აუთსორსინგის უპირატესობები",
-            "en": "Benefits of outsourcing"
-          },
-          "title": {
-            "ka": "რატომ ირჩევენ კომპანიები <em>ბუღალტერიის აუთსორსინგს</em>",
-            "en": "Why companies choose to <em>outsource accounting</em>"
-          },
-          "text": {
-            "ka": "აუთსორსინგი არ ნიშნავს კონტროლის დაკარგვას — პირიქით, იღებთ მეტ სიცხადეს ნაკლები დროისა და რესურსის ხარჯვით.",
-            "en": "Outsourcing doesn’t mean losing control — it means more clarity for less time and effort."
-          },
-          "variant": "bento",
+          "cta_link": "page:services",
           "items": [
             {
-              "icon": "pie",
+              "icon": "percent",
               "title": {
-                "ka": "ხარჯების ოპტიმიზაცია",
-                "en": "Cost efficiency"
+                "ka": "საგადასახადო მომზადება და დაგეგმვა",
+                "en": "Tax preparation & planning"
               },
               "text": {
-                "ka": "არ გჭირდებათ სრულ განაკვეთზე თანამშრომლის ხელფასი, სამუშაო ადგილი და ცალკე პროგრამა.",
-                "en": "No full-time salary, workstation or separate software licence to cover."
-              }
+                "ka": "ყოვლისმომცველი საგადასახადო სერვისები ფიზიკური და იურიდიული პირებისთვის. ჩვენ ვზრდით გამოქვითვებს, ვამცირებთ ვალდებულებებს და უზრუნველვყოფთ სრულ შესაბამისობას.",
+                "en": "Comprehensive tax services for individuals and businesses. We maximise deductions, reduce liabilities and ensure full compliance."
+              },
+              "points": {
+                "ka": [
+                  "ინდივიდუალური საგადასახადო დეკლარაციები",
+                  "ბიზნეს საგადასახადო დეკლარაციები",
+                  "სტრატეგიული საგადასახადო დაგეგმვა",
+                  "შემოსავლების სამსახურთან წარმომადგენლობა"
+                ],
+                "en": [
+                  "Individual tax returns",
+                  "Business tax returns",
+                  "Strategic tax planning",
+                  "Representation before the Revenue Service"
+                ]
+              },
+              "image": "/assets/img/photos/calculator-balance-sheet-figures.webp",
+              "image_alt": {
+                "ka": "საგადასახადო მომზადება და დაგეგმვა",
+                "en": "Tax preparation & planning"
+              },
+              "link": "service:tax-consulting"
+            },
+            {
+              "icon": "calculator",
+              "title": {
+                "ka": "ბუღალტრული მომსახურება",
+                "en": "Bookkeeping"
+              },
+              "text": {
+                "ka": "ზუსტი, დროული ბუღალტერია, რათა თქვენი ფინანსური ჩანაწერები ორგანიზებული და განახლებული იყოს მთელი წლის განმავლობაში.",
+                "en": "Accurate, timely bookkeeping that keeps your financial records organised and up to date all year round."
+              },
+              "points": {
+                "ka": [
+                  "ყოველთვიური ფინანსური ანგარიშები",
+                  "ანგარიშების შეთანხმება",
+                  "ზოგადი წიგნის შენახვა",
+                  "ღრუბლოვანი გადაწყვეტილებები"
+                ],
+                "en": [
+                  "Monthly financial reports",
+                  "Account reconciliation",
+                  "General ledger maintenance",
+                  "Cloud-based solutions"
+                ]
+              },
+              "image": "/assets/img/photos/accountant-reviewing-tax-documents.webp",
+              "image_alt": {
+                "ka": "ბუღალტრული მომსახურება",
+                "en": "Bookkeeping"
+              },
+              "link": "service:accounting"
             },
             {
               "icon": "users",
               "title": {
-                "ka": "მთელი გუნდის ცოდნა",
-                "en": "A whole team’s expertise"
+                "ka": "ხელფასის მართვა",
+                "en": "Payroll management"
               },
               "text": {
-                "ka": "ერთი ადამიანის ნაცვლად — სერტიფიცირებული ბუღალტრების გამოცდილება.",
-                "en": "The experience of certified accountants instead of a single person."
-              }
+                "ka": "სრული ხელფასის დამუშავების სერვისები, რომლებიც უზრუნველყოფენ თქვენი თანამშრომლების ზუსტად და დროულად გადახდას.",
+                "en": "Full payroll processing that makes sure your employees are paid accurately and on time."
+              },
+              "points": {
+                "ka": [
+                  "ხელფასის დამუშავება",
+                  "საგადასახადო შევსება და გადახდები",
+                  "პირდაპირი ჩარიცხვის დაყენება",
+                  "წლის ბოლოს ანგარიშგება"
+                ],
+                "en": [
+                  "Payroll processing",
+                  "Tax filings and payments",
+                  "Direct deposit setup",
+                  "Year-end reporting"
+                ]
+              },
+              "image": "/assets/img/photos/bookkeeper-calculating-invoices.webp",
+              "image_alt": {
+                "ka": "ხელფასის მართვა",
+                "en": "Payroll management"
+              },
+              "link": ""
             },
             {
-              "icon": "clock",
+              "icon": "chart",
               "title": {
-                "ka": "დრო მთავარისთვის",
-                "en": "Time for what matters"
+                "ka": "ბიზნეს კონსულტაცია",
+                "en": "Business consulting"
               },
               "text": {
-                "ka": "ფინანსურ რუტინას ჩვენ ვმართავთ, თქვენ კი ბიზნესის განვითარებაზე ფიქრობთ.",
-                "en": "We handle the financial routine while you focus on growing the business."
-              }
+                "ka": "სტრატეგიული რჩევები, რომლებიც დაგეხმარებათ თქვენი ბიზნესის განვითარებაში, მომგებიანობის გაზრდაში და გრძელვადიანი წარმატების მიღწევაში.",
+                "en": "Strategic advice to help you grow your business, increase profitability and achieve long-term success."
+              },
+              "points": {
+                "ka": [
+                  "ფინანსური პროგნოზირება",
+                  "ბიზნეს დაგეგმვა",
+                  "შესრულების ანალიზი",
+                  "ზრდის სტრატეგიები"
+                ],
+                "en": [
+                  "Financial forecasting",
+                  "Business planning",
+                  "Performance analysis",
+                  "Growth strategies"
+                ]
+              },
+              "image": "/assets/img/photos/financial-report-chart-analysis.webp",
+              "image_alt": {
+                "ka": "ბიზნეს კონსულტაცია",
+                "en": "Business consulting"
+              },
+              "link": "service:financial-consulting"
             },
             {
-              "icon": "history",
+              "icon": "file-check",
               "title": {
-                "ka": "უწყვეტობა",
-                "en": "Continuity"
+                "ka": "ფინანსური ანგარიშების მომზადება",
+                "en": "Financial statements"
               },
               "text": {
-                "ka": "აღრიცხვა არ ჩერდება შვებულების, ავადმყოფობის ან თანამშრომლის წასვლის გამო.",
-                "en": "Your accounting doesn’t stop for holidays, sick leave or staff turnover."
-              }
+                "ka": "პროფესიონალური ფინანსური ანგარიშების მომზადება, რომელიც უზრუნველყოფს მკაფიო წარმოდგენას თქვენს ფინანსურ პოზიციაზე.",
+                "en": "Professionally prepared financial statements that give you a clear picture of your financial position."
+              },
+              "points": {
+                "ka": [
+                  "ბალანსი",
+                  "შემოსავლის ანგარიშგება",
+                  "ფულადი სახსრების ნაკადის ანგარიშგება",
+                  "მორგებული ანგარიშები"
+                ],
+                "en": [
+                  "Balance sheet",
+                  "Income statement",
+                  "Cash flow statement",
+                  "Custom reports"
+                ]
+              },
+              "image": "/assets/img/photos/accountant-working-calculator-laptop.webp",
+              "image_alt": {
+                "ka": "ფინანსური ანგარიშების მომზადება",
+                "en": "Financial statements"
+              },
+              "link": ""
             },
             {
-              "icon": "layers",
+              "icon": "building",
               "title": {
-                "ka": "მოქნილობა",
-                "en": "Flexibility"
+                "ka": "ორგანიზაციის ფორმირება",
+                "en": "Company formation"
               },
               "text": {
-                "ka": "მომსახურება ფართოვდება ან იცვლება თქვენი ბიზნესის ზრდასთან ერთად.",
-                "en": "Services expand or adjust as your business grows."
-              }
+                "ka": "ექსპერტული მითითებები თქვენი საჭიროებისთვის შესაბამისი ბიზნეს სტრუქტურის არჩევისა და დაფუძნებისთვის.",
+                "en": "Expert guidance on choosing and setting up the right business structure for your needs."
+              },
+              "points": {
+                "ka": [
+                  "შპს ფორმირება",
+                  "კორპორაციის ფორმირება",
+                  "პარტნიორობის შეთანხმებები",
+                  "შესაბამისობის მხარდაჭერა"
+                ],
+                "en": [
+                  "LLC formation",
+                  "Corporation formation",
+                  "Partnership agreements",
+                  "Compliance support"
+                ]
+              },
+              "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+              "image_alt": {
+                "ka": "ორგანიზაციის ფორმირება",
+                "en": "Company formation"
+              },
+              "link": ""
+            },
+            {
+              "icon": "settings",
+              "title": {
+                "ka": "ბუღალტრული სერვისები",
+                "en": "Accounting setup & support"
+              },
+              "text": {
+                "ka": "ბუღალტერიის გამართვა, ტრენინგი და მუდმივი მხარდაჭერა, რათა გამარტივდეს თქვენი ბუღალტრული პროცესები.",
+                "en": "Accounting setup, training and ongoing support to simplify your accounting processes."
+              },
+              "points": {
+                "ka": [
+                  "ბუღალტერიის გამართვა",
+                  "ტრენინგი და მხარდაჭერა",
+                  "მხარდაჭერის სერვისები",
+                  "ინტეგრაციის გამართვა"
+                ],
+                "en": [
+                  "Accounting setup",
+                  "Training and support",
+                  "Support services",
+                  "Integration setup"
+                ]
+              },
+              "image": "/assets/img/photos/accountant-working-calculator-laptop.webp",
+              "image_alt": {
+                "ka": "ბუღალტრული სერვისები",
+                "en": "Accounting setup & support"
+              },
+              "link": ""
             },
             {
               "icon": "shield",
               "title": {
-                "ka": "ნაკლები რისკი",
-                "en": "Lower risk"
+                "ka": "აუდიტორული მხარდაჭერა",
+                "en": "Audit support"
               },
               "text": {
-                "ka": "ვადებისა და მოთხოვნების კონტროლი ამცირებს შეცდომებისა და ჯარიმების ალბათობას.",
-                "en": "Tracking deadlines and requirements reduces the chance of errors and penalties."
+                "ka": "პროფესიონალური დახმარება და წარმომადგენლობა აუდიტების დროს, რათა უზრუნველყოთ გლუვი პროცესი.",
+                "en": "Professional assistance and representation during audits to keep the process smooth."
+              },
+              "points": {
+                "ka": [
+                  "აუდიტის მომზადება",
+                  "დოკუმენტაციის გადახედვა",
+                  "მიმოწერა შემოსავლების სამსახურთან",
+                  "კომუნიკაციაში დახმარება"
+                ],
+                "en": [
+                  "Audit preparation",
+                  "Documentation review",
+                  "Correspondence with the Revenue Service",
+                  "Communication support"
+                ]
+              },
+              "image": "/assets/img/photos/calculator-balance-sheet-figures.webp",
+              "image_alt": {
+                "ka": "აუდიტორული მხარდაჭერა",
+                "en": "Audit support"
+              },
+              "link": ""
+            }
+          ]
+        },
+        {
+          "type": "pricing",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "ფასები",
+            "en": "Pricing"
+          },
+          "title": {
+            "ka": "მომსახურების <em>ფასები</em>",
+            "en": "Service <em>pricing</em>"
+          },
+          "text": {
+            "ka": "გამჭვირვალე ფასები ერთჯერადი, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურებისთვის",
+            "en": "Transparent pricing for one-off services and accounting for small businesses and LLCs"
+          },
+          "groups": [
+            {
+              "title": {
+                "ka": "ერთჯერადი მომსახურებები",
+                "en": "One-off services"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "",
+                    "en": ""
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "ქონების დეკლარაციის შევსება (მხოლოდ ფიზიკური პირებისთვის)",
+                        "en": "Property declaration (individuals only)"
+                      },
+                      "price": "50"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერის დეკლარაციის შევსება",
+                        "en": "Courier declaration"
+                      },
+                      "price": "40"
+                    },
+                    {
+                      "label": {
+                        "ka": "განცხადების ატვირთვა",
+                        "en": "Uploading an application"
+                      },
+                      "price": "10"
+                    },
+                    {
+                      "label": {
+                        "ka": "საჩივრის ატვირთვა",
+                        "en": "Uploading a complaint"
+                      },
+                      "price": "50"
+                    },
+                    {
+                      "label": {
+                        "ka": "მცირე მეწარმის რეგისტრაცია",
+                        "en": "Small business status registration"
+                      },
+                      "price": "40"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერების დეკლარაციების გასწორება — 6 თვის პერიოდი",
+                        "en": "Correcting courier declarations — 6-month period"
+                      },
+                      "price": "100"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერების დეკლარაციების გასწორება — 1 წლის პერიოდი",
+                        "en": "Correcting courier declarations — 1-year period"
+                      },
+                      "price": "200"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "მცირე მეწარმის ბუღალტრული მომსახურება",
+                "en": "Accounting for small businesses"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "ვაჭრობა",
+                    "en": "Trade"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "250"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "800"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000-დან 500 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover GEL 100,000–500,000"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მომსახურება",
+                    "en": "Services"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "400"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "შპს-ის ბუღალტრული მომსახურება",
+                "en": "Accounting for LLCs"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "ვაჭრობა",
+                    "en": "Trade"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "300"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "600"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "1 200"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "2 000"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მომსახურება",
+                    "en": "Services"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "250"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარიდან ზემოთ ბრუნვის შემთხვევაში",
+                        "en": "Turnover above GEL 100,000"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "წარმოება",
+                    "en": "Manufacturing"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "800"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "1 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "2 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარიდან ზემოთ ბრუნვის შემთხვევაში",
+                        "en": "Turnover above GEL 100,000"
+                      },
+                      "price": "2 000"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მცირე სამშენებლო-სარემონტო საქმიანობა",
+                    "en": "Small construction & renovation"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "2 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "3 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 200"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000-დან 500 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover GEL 100,000–500,000"
+                      },
+                      "price": "2 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "სამშენებლო-დეველოპერული საქმიანობა",
+                    "en": "Construction & development"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 3 000 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 3,000,000"
+                      },
+                      "price": "3 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 3 000 000-დან 10 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 3,000,000–10,000,000"
+                      },
+                      "price": "5 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "3 000"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "დამატებითი მომსახურების ფასები",
+                "en": "Additional services"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "",
+                    "en": ""
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "Reportal-ზე ფინანსური ანგარიშგების ატვირთვა — IV კატეგორიის საწარმოებისთვის",
+                        "en": "Uploading financial statements to Reportal — category IV entities"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "Reportal-ზე ფინანსური ანგარიშგების ატვირთვა — III კატეგორიის საწარმოებისთვის",
+                        "en": "Uploading financial statements to Reportal — category III entities"
+                      },
+                      "price": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_label": {
+            "ka": "რას მოიცავს მომსახურება",
+            "en": "What the service includes"
+          },
+          "cta_link": "page:pricing"
+        },
+        {
+          "type": "cards",
+          "hidden": false,
+          "variant": "grid",
+          "eyebrow": {
+            "ka": "ინდუსტრიები",
+            "en": "Industries"
+          },
+          "title": {
+            "ka": "ინდუსტრიები, <em>რომლებსაც ვემსახურებით</em>",
+            "en": "Industries <em>we serve</em>"
+          },
+          "text": {
+            "ka": "ჩვენ გვაქვს ფართო გამოცდილება სხვადასხვა ინდუსტრიის კლიენტებთან მუშაობაში",
+            "en": "We have broad experience working with clients across many industries"
+          },
+          "items": [
+            {
+              "icon": "briefcase",
+              "title": {
+                "ka": "პროფესიონალური სერვისები",
+                "en": "Professional services"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "heart",
+              "title": {
+                "ka": "ჯანდაცვა",
+                "en": "Healthcare"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "home",
+              "title": {
+                "ka": "უძრავი ქონება",
+                "en": "Real estate"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "hammer",
+              "title": {
+                "ka": "მშენებლობა",
+                "en": "Construction"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "store",
+              "title": {
+                "ka": "საცალო ვაჭრობა",
+                "en": "Retail"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "cpu",
+              "title": {
+                "ka": "ტექნოლოგიები",
+                "en": "Technology"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "factory",
+              "title": {
+                "ka": "წარმოება",
+                "en": "Manufacturing"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "utensils",
+              "title": {
+                "ka": "რესტორნები და სასტუმროები",
+                "en": "Restaurants & hotels"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
               }
             }
           ],
@@ -399,40 +1038,236 @@
           "cta_link": ""
         },
         {
-          "type": "industries",
+          "type": "split",
           "hidden": false,
           "eyebrow": {
-            "ka": "ვისთან ვმუშაობთ",
-            "en": "Who we serve"
+            "ka": "ჩვენ შესახებ",
+            "en": "About us"
           },
           "title": {
-            "ka": "ყველა ზომის <em>ბიზნესისთვის</em>",
-            "en": "For businesses <em>of every size</em>"
+            "ka": "ჩვენი <em>ისტორია</em>",
+            "en": "Our <em>story</em>"
           },
           "text": {
-            "ka": "სტარტაპიდან მსხვილ კომპანიამდე — მომსახურებას თითოეული კლიენტის საჭიროებაზე ვარგებთ.",
-            "en": "From startups to larger companies — we tailor our service to every client."
+            "ka": "Outsourcify.ge ბუღალტერია დაარსდა 2010 წელს, მარტივი მისიით: უზრუნველყოს ბუღალტრული სერვისები, რომლებიც აერთიანებს ტექნიკურ ექსპერტიზას კლიენტზე მორგებულ პროცესებთან.\n\nბოლო ათწლეულის განმავლობაში, ჩვენ გავზარდეთ პატარა პრაქტიკიდან ასობით ბიზნესისა და ფიზიკური პირისთვის სანდო პარტნიორამდე. ზრდის მიუხედავად, შევინარჩუნეთ ჩვენი ერთგულება პერსონალიზებული მომსახურებისა და ყოველ კლიენტთან გრძელვადიანი ურთიერთობების აშენების მიმართ.\n\nჩვენი გუნდი აერთიანებს ათწლეულის გამოცდილებას საგადასახადო დაგეგმვაში, ფინანსურ კონსულტაციასა და ბიზნეს კონსულტაციის სერვისებში. ჩვენ ვამაყობთ იმით, რომ ვრჩებით თანამედროვე უახლესი რეგულაციებითა და ტექნოლოგიებით, არასოდეს კარგავთ იმის ხედვას, რაც ყველაზე მნიშვნელოვანია - თქვენი წარმატება.",
+            "en": "Outsourcify.ge was founded in 2010 with a simple mission: to provide accounting services that combine technical expertise with processes tailored to each client.\n\nOver the past decade we have grown from a small practice into a trusted partner for hundreds of businesses and individuals. Throughout that growth we have stayed committed to personalised service and to building long-term relationships with every client.\n\nOur team brings together a decade of experience in tax planning, financial consulting and business advisory services. We take pride in keeping up with the latest regulations and technology — without ever losing sight of what matters most: your success."
+          },
+          "points": {
+            "ka": [],
+            "en": []
+          },
+          "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+          "image_alt": {
+            "ka": "პროფესიონალ გუნდთან შეხვედრა",
+            "en": "Meeting with our professional team"
+          },
+          "reverse": true,
+          "badge_title": {
+            "ka": "",
+            "en": ""
+          },
+          "badge_text": {
+            "ka": "",
+            "en": ""
           },
           "cta_label": {
-            "ka": "დეტალურად",
-            "en": "Learn more"
+            "ka": "",
+            "en": ""
           },
-          "cta_link": "page:industries"
+          "cta_link": ""
         },
         {
-          "type": "testimonials",
+          "type": "stats",
           "hidden": false,
           "eyebrow": {
-            "ka": "შეფასებები",
-            "en": "Testimonials"
+            "ka": "",
+            "en": ""
           },
           "title": {
-            "ka": "რას ამბობენ ჩვენი კლიენტები",
-            "en": "What our clients say"
+            "ka": "",
+            "en": ""
           },
           "text": {
             "ka": "",
             "en": ""
+          },
+          "items": [
+            {
+              "value": "10+",
+              "label": {
+                "ka": "წლიანი გამოცდილება",
+                "en": "years of experience"
+              }
+            },
+            {
+              "value": "500+",
+              "label": {
+                "ka": "კმაყოფილი კლიენტი",
+                "en": "satisfied clients"
+              }
+            },
+            {
+              "value": "98%",
+              "label": {
+                "ka": "კლიენტების შენარჩუნება",
+                "en": "client retention"
+              }
+            },
+            {
+              "value": "$10m+",
+              "label": {
+                "ka": "მართული აქტივები",
+                "en": "assets managed"
+              }
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "hidden": false,
+          "variant": "grid",
+          "eyebrow": {
+            "ka": "ღირებულებები",
+            "en": "Values"
+          },
+          "title": {
+            "ka": "ჩვენი ძირითადი <em>ღირებულებები</em>",
+            "en": "Our core <em>values</em>"
+          },
+          "text": {
+            "ka": "პრინციპები, რომლებითაც ვხელმძღვანელობთ ყველაფერში, რასაც ვაკეთებთ",
+            "en": "The principles that guide everything we do"
+          },
+          "items": [
+            {
+              "icon": "target",
+              "title": {
+                "ka": "სიზუსტე",
+                "en": "Accuracy"
+              },
+              "text": {
+                "ka": "ჩვენ ვაწვდით ზუსტ, დეტალებზე ორიენტირებულ ფინანსურ სერვისებს, რასაც შეგიძლიათ დაეყრდნოთ.",
+                "en": "We deliver precise, detail-oriented financial services you can rely on."
+              }
+            },
+            {
+              "icon": "star",
+              "title": {
+                "ka": "ხარისხი",
+                "en": "Quality"
+              },
+              "text": {
+                "ka": "ჩვენი ხარისხის მიმართ ერთგულება უზრუნველყოფს განსაკუთრებულ შედეგებს ყოველ ჯერზე.",
+                "en": "Our commitment to quality delivers exceptional results every time."
+              }
+            },
+            {
+              "icon": "handshake",
+              "title": {
+                "ka": "კეთილსინდისიერება",
+                "en": "Integrity"
+              },
+              "text": {
+                "ka": "ჩვენ ვაშენებთ გრძელვადიან ურთიერთობებს ნდობისა და გამჭვირვალობის საფუძველზე.",
+                "en": "We build long-term relationships on trust and transparency."
+              }
+            },
+            {
+              "icon": "lightbulb",
+              "title": {
+                "ka": "ინოვაცია",
+                "en": "Innovation"
+              },
+              "text": {
+                "ka": "ჩვენ წინ ვართ თანამედროვე გადაწყვეტილებებითა და პროაქტიული სტრატეგიებით.",
+                "en": "We stay ahead with modern solutions and proactive strategies."
+              }
+            }
+          ],
+          "cta_label": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_link": ""
+        },
+        {
+          "type": "cards",
+          "hidden": false,
+          "variant": "strip",
+          "eyebrow": {
+            "ka": "სერტიფიკატები",
+            "en": "Certifications"
+          },
+          "title": {
+            "ka": "პროფესიონალური <em>სერტიფიკატები</em>",
+            "en": "Professional <em>certifications</em>"
+          },
+          "text": {
+            "ka": "ჩვენი გუნდი ფლობს უმაღლეს პროფესიონალურ სტანდარტებს და სერტიფიკატებს",
+            "en": "Our team holds the highest professional standards and certifications"
+          },
+          "items": [
+            {
+              "icon": "award",
+              "title": {
+                "ka": "სერტიფიცირებული ბუღალტერები",
+                "en": "Certified accountants"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "award",
+              "title": {
+                "ka": "ACCA პროფესიონალები",
+                "en": "ACCA professionals"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "award",
+              "title": {
+                "ka": "Saras-ზე რეგისტრირებული პროფესიონალები",
+                "en": "Professionals registered with SARAS"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            },
+            {
+              "icon": "award",
+              "title": {
+                "ka": "ACCA წევრები",
+                "en": "ACCA members"
+              },
+              "text": {
+                "ka": "",
+                "en": ""
+              }
+            }
+          ],
+          "cta_label": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_link": ""
+        },
+        {
+          "type": "statement",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "ჩვენი მისია",
+            "en": "Our mission"
+          },
+          "text": {
+            "ka": "გავაძლიეროთ ჩვენი კლიენტები ზუსტი ფინანსური შეხედულებებით, სტრატეგიული რჩევებით და პერსონალიზებული გადაწყვეტილებებით, რომლებიც უზრუნველყოფენ მდგრად ზრდას და ფინანსურ სიმშვიდეს.",
+            "en": "To empower our clients with accurate financial insights, strategic advice and personalised solutions that drive sustainable growth and financial peace of mind."
           }
         },
         {
@@ -459,30 +1294,51 @@
           "cta_link": "page:faq"
         },
         {
+          "type": "contact",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "კონტაქტი",
+            "en": "Contact"
+          },
+          "title": {
+            "ka": "დაგვიკავშირდით",
+            "en": "Get in touch"
+          },
+          "text": {
+            "ka": "დაუკავშირდით ჩვენს გუნდს. ჩვენ აქ ვართ დასახმარებლად თქვენი ყველა ბუღალტრული და ფინანსური საჭიროების მიხედვით.",
+            "en": "Reach out to our team. We’re here to help with all your accounting and financial needs."
+          },
+          "form_title": {
+            "ka": "გამოგვიგზავნეთ შეტყობინება",
+            "en": "Send us a message"
+          },
+          "show_map": true
+        },
+        {
           "type": "cta",
           "hidden": false,
           "eyebrow": {
             "ka": "დავიწყოთ",
-            "en": "Let’s get started"
+            "en": "Let’s start"
           },
           "title": {
-            "ka": "გადმოგვეცით ბუღალტერია — <em>თქვენ კი ბიზნესს მიხედეთ</em>",
-            "en": "Hand over your accounting — <em>and focus on your business</em>"
+            "ka": "მზად ხართ <em>დასაწყებად?</em>",
+            "en": "Ready to <em>get started?</em>"
           },
           "text": {
-            "ka": "დაჯავშნეთ უფასო კონსულტაცია: გავეცნობით თქვენს საჭიროებებს და შემოგთავაზებთ თქვენს ბიზნესზე მორგებულ გადაწყვეტას.",
-            "en": "Book a free consultation: we'll learn about your needs and suggest a solution tailored to your business."
+            "ka": "მოდით განვიხილოთ, როგორ შეგვიძლია დაგეხმაროთ თქვენი ფინანსური მიზნების მიღწევაში.",
+            "en": "Let’s talk about how we can help you reach your financial goals."
           },
           "cta1_label": {
-            "ka": "კონსულტაციის დაჯავშნა",
+            "ka": "დაგვიკავშირდით დღესვე",
+            "en": "Contact us today"
+          },
+          "cta1_link": "page:contact",
+          "cta2_label": {
+            "ka": "დაჯავშნეთ კონსულტაცია",
             "en": "Book a consultation"
           },
-          "cta1_link": "page:book",
-          "cta2_label": {
-            "ka": "მოგვწერეთ",
-            "en": "Contact us"
-          },
-          "cta2_link": "page:contact",
+          "cta2_link": "page:book",
           "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
           "image_alt": {
             "ka": "Outsourcify-ის გუნდი მუშაობს ოფისში",
@@ -1038,6 +1894,558 @@
       "og_image": "",
       "hidden": false,
       "noindex": false
+    },
+    {
+      "id": "pricing",
+      "template": "page",
+      "system": false,
+      "slug": {
+        "ka": "fasebi",
+        "en": "pricing"
+      },
+      "title": {
+        "ka": "მომსახურების ფასები",
+        "en": "Pricing"
+      },
+      "seo": {
+        "title": {
+          "ka": "ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify",
+          "en": "Accounting Service Pricing — Small Business & LLC | Outsourcify"
+        },
+        "description": {
+          "ka": "გამჭვირვალე ფასები: ერთჯერადი მომსახურებები, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურება ბრუნვისა და საქმიანობის მიხედვით, Reportal-ზე ატვირთვა.",
+          "en": "Transparent pricing for one-off services and accounting for small businesses and LLCs, by turnover and activity type, plus Reportal filing."
+        },
+        "keywords": {
+          "ka": "ბუღალტრული მომსახურების ფასი; ბუღალტრის მომსახურების ფასი; შპს ბუღალტერია ფასი",
+          "en": "accounting services price Georgia; LLC accounting cost Tbilisi"
+        }
+      },
+      "og_image": "",
+      "hidden": false,
+      "noindex": false,
+      "blocks": [
+        {
+          "type": "page_hero",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "ფასები",
+            "en": "Pricing"
+          },
+          "title": {
+            "ka": "მომსახურების <em>ფასები</em>",
+            "en": "Service <em>pricing</em>"
+          },
+          "text": {
+            "ka": "გამჭვირვალე ფასები ერთჯერადი, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურებისთვის",
+            "en": "Transparent pricing for one-off services and accounting for small businesses and LLCs"
+          },
+          "cta_label": {
+            "ka": "დაჯავშნეთ კონსულტაცია",
+            "en": "Book a consultation"
+          },
+          "cta_link": "page:book",
+          "image": "",
+          "image_alt": {
+            "ka": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "pricing",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "",
+            "en": ""
+          },
+          "title": {
+            "ka": "",
+            "en": ""
+          },
+          "text": {
+            "ka": "",
+            "en": ""
+          },
+          "groups": [
+            {
+              "title": {
+                "ka": "ერთჯერადი მომსახურებები",
+                "en": "One-off services"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "",
+                    "en": ""
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "ქონების დეკლარაციის შევსება (მხოლოდ ფიზიკური პირებისთვის)",
+                        "en": "Property declaration (individuals only)"
+                      },
+                      "price": "50"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერის დეკლარაციის შევსება",
+                        "en": "Courier declaration"
+                      },
+                      "price": "40"
+                    },
+                    {
+                      "label": {
+                        "ka": "განცხადების ატვირთვა",
+                        "en": "Uploading an application"
+                      },
+                      "price": "10"
+                    },
+                    {
+                      "label": {
+                        "ka": "საჩივრის ატვირთვა",
+                        "en": "Uploading a complaint"
+                      },
+                      "price": "50"
+                    },
+                    {
+                      "label": {
+                        "ka": "მცირე მეწარმის რეგისტრაცია",
+                        "en": "Small business status registration"
+                      },
+                      "price": "40"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერების დეკლარაციების გასწორება — 6 თვის პერიოდი",
+                        "en": "Correcting courier declarations — 6-month period"
+                      },
+                      "price": "100"
+                    },
+                    {
+                      "label": {
+                        "ka": "კურიერების დეკლარაციების გასწორება — 1 წლის პერიოდი",
+                        "en": "Correcting courier declarations — 1-year period"
+                      },
+                      "price": "200"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "მცირე მეწარმის ბუღალტრული მომსახურება",
+                "en": "Accounting for small businesses"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "ვაჭრობა",
+                    "en": "Trade"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "250"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "800"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000-დან 500 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover GEL 100,000–500,000"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მომსახურება",
+                    "en": "Services"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "400"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "შპს-ის ბუღალტრული მომსახურება",
+                "en": "Accounting for LLCs"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "ვაჭრობა",
+                    "en": "Trade"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "300"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "600"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "1 200"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "2 000"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მომსახურება",
+                    "en": "Services"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "250"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარიდან ზემოთ ბრუნვის შემთხვევაში",
+                        "en": "Turnover above GEL 100,000"
+                      },
+                      "price": "1 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "წარმოება",
+                    "en": "Manufacturing"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "800"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "1 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "2 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 500"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარიდან ზემოთ ბრუნვის შემთხვევაში",
+                        "en": "Turnover above GEL 100,000"
+                      },
+                      "price": "2 000"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "მცირე სამშენებლო-სარემონტო საქმიანობა",
+                    "en": "Small construction & renovation"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 100,000"
+                      },
+                      "price": "1 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 100 000-დან 500 000 ლარამდე",
+                        "en": "Annual turnover GEL 100,000–500,000"
+                      },
+                      "price": "2 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 500 000-დან 1 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 500,000–1,000,000"
+                      },
+                      "price": "3 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover up to GEL 100,000"
+                      },
+                      "price": "1 200"
+                    },
+                    {
+                      "label": {
+                        "ka": "100 000-დან 500 000 ლარამდე ბრუნვის შემთხვევაში",
+                        "en": "Turnover GEL 100,000–500,000"
+                      },
+                      "price": "2 500"
+                    }
+                  ]
+                },
+                {
+                  "title": {
+                    "ka": "სამშენებლო-დეველოპერული საქმიანობა",
+                    "en": "Construction & development"
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 3 000 000 ლარამდე",
+                        "en": "Annual turnover up to GEL 3,000,000"
+                      },
+                      "price": "3 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წლიური ბრუნვა 3 000 000-დან 10 000 000 ლარამდე",
+                        "en": "Annual turnover GEL 3,000,000–10,000,000"
+                      },
+                      "price": "5 000"
+                    },
+                    {
+                      "label": {
+                        "ka": "წარსული პერიოდების გასწორება — 1 წელი",
+                        "en": "Correcting past periods — 1 year"
+                      },
+                      "price": ""
+                    },
+                    {
+                      "label": {
+                        "ka": "ფასი",
+                        "en": "Price"
+                      },
+                      "price": "3 000"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": {
+                "ka": "დამატებითი მომსახურების ფასები",
+                "en": "Additional services"
+              },
+              "sections": [
+                {
+                  "title": {
+                    "ka": "",
+                    "en": ""
+                  },
+                  "rows": [
+                    {
+                      "label": {
+                        "ka": "Reportal-ზე ფინანსური ანგარიშგების ატვირთვა — IV კატეგორიის საწარმოებისთვის",
+                        "en": "Uploading financial statements to Reportal — category IV entities"
+                      },
+                      "price": "500"
+                    },
+                    {
+                      "label": {
+                        "ka": "Reportal-ზე ფინანსური ანგარიშგების ატვირთვა — III კატეგორიის საწარმოებისთვის",
+                        "en": "Uploading financial statements to Reportal — category III entities"
+                      },
+                      "price": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_label": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_link": ""
+        },
+        {
+          "type": "richtext",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "რას მოიცავს",
+            "en": "What’s included"
+          },
+          "title": {
+            "ka": "რას მოიცავს ბუღალტრული მომსახურება",
+            "en": "What the accounting service includes"
+          },
+          "body": {
+            "ka": "<p>მითითებული ბუღალტრული მომსახურების საფასური მოიცავს:</p><ul>\n<li><strong>ბუღალტრული დოკუმენტაციის დამუშავებასა და აღრიცხვას</strong> — კლიენტის მიერ მოწოდებული პირველადი ბუღალტრული დოკუმენტაციის დამუშავებას, შესაბამისი მონაცემების ბუღალტრულ პროგრამაში შეყვანასა და აღრიცხვას.</li>\n<li><strong>ფინანსური ანგარიშგების მომზადებას</strong> — ბალანსი (ფინანსური მდგომარეობის ანგარიშგება), მოგება-ზარალის ანგარიშგება და ფულადი სახსრების მოძრაობის ანგარიშგება.</li>\n<li><strong>ყოველთვიური ბრუნვითი და ნაშთების უწყისების მომზადებას</strong> — საანგარიშო თვის მონაცემების საფუძველზე ბრუნვითი და ნაშთების უწყისების მომზადებას.</li>\n<li><strong>საგადასახადო დეკლარაციების მომზადებასა და წარდგენას</strong> — მოქმედი კანონმდებლობით გათვალისწინებული შესაბამისი საგადასახადო დეკლარაციების მომზადებასა და დადგენილ ვადებში შემოსავლების სამსახურში წარდგენას.</li>\n<li><strong>საპენსიო ანგარიშგების წარმოებასა და მოწესრიგებას</strong> — თანამშრომელთა საპენსიო შენატანებთან დაკავშირებული მონაცემების დამუშავებას, შესაბამის სისტემაში ასახვასა და საპენსიო ანგარიშგების წარმოებას.</li>\n<li><strong>ნარჩენების მართვასთან დაკავშირებული მონაცემების წარდგენას</strong> — კლიენტის მიერ მოწოდებული ინფორმაციის საფუძველზე შესაბამის სისტემაში ნარჩენების მართვასთან დაკავშირებული მონაცემების ატვირთვასა და ანგარიშგების წარმოებას.</li>\n<li><strong>Reportal-ის სისტემაში ფინანსური ანგარიშგების ატვირთვას</strong> — კანონმდებლობით გათვალისწინებულ შემთხვევებში შესაბამისი ფინანსური ანგარიშგების მოწესრიგებასა და Reportal-ის სისტემაში წარდგენას.</li>\n</ul>",
+            "en": "<p>The listed accounting service fees include:</p><ul>\n<li><strong>Processing and recording accounting documents</strong> — processing the primary accounting documents provided by the client, and entering and recording the data in accounting software.</li>\n<li><strong>Preparing financial statements</strong> — the balance sheet (statement of financial position), the profit and loss statement and the cash flow statement.</li>\n<li><strong>Monthly trial balances</strong> — preparing turnover and balance statements based on the reporting month’s data.</li>\n<li><strong>Preparing and filing tax returns</strong> — preparing the tax returns required by current legislation and filing them with the Revenue Service on time.</li>\n<li><strong>Pension reporting</strong> — processing data on employees’ pension contributions, recording it in the relevant system and keeping pension reporting in order.</li>\n<li><strong>Waste management reporting</strong> — uploading waste management data to the relevant system and reporting on it, based on information provided by the client.</li>\n<li><strong>Uploading financial statements to Reportal</strong> — preparing the relevant financial statements and submitting them to Reportal where the law requires it.</li>\n</ul>"
+          },
+          "toc": false
+        },
+        {
+          "type": "cta",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "დავიწყოთ",
+            "en": "Let’s start"
+          },
+          "title": {
+            "ka": "მზად ხართ <em>დასაწყებად?</em>",
+            "en": "Ready to <em>get started?</em>"
+          },
+          "text": {
+            "ka": "მოდით განვიხილოთ, როგორ შეგვიძლია დაგეხმაროთ თქვენი ფინანსური მიზნების მიღწევაში.",
+            "en": "Let’s talk about how we can help you reach your financial goals."
+          },
+          "cta1_label": {
+            "ka": "დაგვიკავშირდით დღესვე",
+            "en": "Contact us today"
+          },
+          "cta1_link": "page:contact",
+          "cta2_label": {
+            "ka": "დაჯავშნეთ კონსულტაცია",
+            "en": "Book a consultation"
+          },
+          "cta2_link": "page:book",
+          "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+          "image_alt": {
+            "ka": "Outsourcify-ის გუნდი მუშაობს ოფისში",
+            "en": "The Outsourcify team working in the office"
+          }
+        }
+      ]
     },
     {
       "id": "how",

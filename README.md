@@ -116,7 +116,7 @@ reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, a
 
 | Section | What the client can do |
 |---|---|
-| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (drag or ↑↓), duplicate, hide, delete, **add new blocks** (18 types, including the client logo strip, including the services tab showcase, scrolling ticker and CTA with photo). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
+| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (drag or ↑↓), duplicate, hide, delete, **add new blocks** (20 types, including pricing tables, a mission statement, the client logo strip, including the services tab showcase, scrolling ticker and CTA with photo). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
 | **Services** | Add, edit, reorder, hide and delete services. Each has its own page (intro, rich description, "what's included", audience, benefits, service FAQ, SEO). Services appear automatically in the mega menu, homepage, footer, booking chat and sitemap. |
 | **FAQ** | Questions by category (general / services / process / booking). FAQ schema is generated automatically. |
 | **Testimonials** | Real client testimonials. **The section stays hidden until the first one is added**, so nothing invented is ever published. |

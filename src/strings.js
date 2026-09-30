@@ -56,6 +56,18 @@ module.exports = {
         "ka": "ვებსაიტი დამზადებულია:",
         "en": "Website by"
     },
+    "phone_main": {
+        "ka": "მთავარი ტელეფონი",
+        "en": "Main line"
+    },
+    "phone_mobile": {
+        "ka": "მობილური",
+        "en": "Mobile"
+    },
+    "currency": {
+        "ka": "ლარი",
+        "en": "GEL"
+    },
     "clients": {
         "ka": "ჩვენი კლიენტები",
         "en": "Our clients"

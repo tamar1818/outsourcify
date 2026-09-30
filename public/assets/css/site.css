@@ -897,3 +897,43 @@ body.is-booking .chat--float { display: none; }
 @media (max-width: 760px) {
   .section--dark, .cta, .ftr, .mega__promo, .phero, .section--soft { background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px; }
 }
+
+/* ------------------------------------------------------------------ ღილაკი-ბმული */
+.btn--link { padding: 0 8px; background: none; color: var(--navy); }
+.btn--link span { text-decoration: underline; text-decoration-color: var(--sky-2); text-underline-offset: 5px; text-decoration-thickness: 2px; transition: text-decoration-color .2s; }
+.btn--link:hover span { text-decoration-color: var(--navy); }
+
+/* ბარათები: 4 და 8 სვეტიანი ბადე (ინდუსტრიები) */
+.cards--grid.cards--n8 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cards--grid.cards--n8 .card { flex-direction: row; align-items: center; gap: 14px; padding: 18px 20px; }
+.cards--grid.cards--n8 .card__ico { width: 44px; height: 44px; flex: none; }
+.cards--strip.cards--n4 .card__title { font-size: .98rem; }
+
+/* ------------------------------------------------------------------ ფასები */
+.pr .sc__tabs { margin-bottom: 18px; }
+.pr__panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 14px; animation: scIn .45s var(--ease); }
+.pr__panel[hidden] { display: none; }
+.pr__panel--n1 { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
+.pr__card { padding: 24px 26px; border-radius: var(--r-lg); background: var(--surface); }
+.pr__title { margin-bottom: 10px; font-size: 1.05rem; color: var(--navy); }
+.pr__rows { list-style: none; }
+.pr__row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px dashed var(--line-2); font-size: .93rem; color: var(--ink-2); }
+.pr__row:last-child { border-bottom: 0; }
+.pr__price { flex: none; font-weight: 700; font-size: 1.02rem; color: var(--ink); white-space: nowrap; }
+.pr__price small { font-size: .78em; font-weight: 500; color: var(--muted); }
+.pr__sub { margin-top: 12px; padding: 8px 12px; border-radius: 10px; background: #fff; font-size: .82rem; font-weight: 700; color: var(--navy); }
+.pr__note { margin-top: 16px; color: var(--muted); font-size: .9rem; }
+
+/* ------------------------------------------------------------------ მისია */
+.statement { text-align: center; }
+.statement__text { font-size: clamp(1.3rem, 1rem + 1.1vw, 2rem); font-weight: 700; line-height: 1.45; letter-spacing: -.015em; color: var(--ink); text-wrap: balance; }
+html[lang="ka"] .statement__text { font-size: clamp(1.15rem, .95rem + .8vw, 1.6rem); letter-spacing: 0; line-height: 1.6; }
+.statement .eyebrow { justify-content: center; }
+
+@media (max-width: 1024px) { .cards--grid.cards--n8 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .cards--grid.cards--n8 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .cards--grid.cards--n8 .card { flex-direction: column; align-items: flex-start; padding: 16px; }
+  .pr__card { padding: 18px; }
+  .pr .sc__tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 4px; scrollbar-width: none; }
+}

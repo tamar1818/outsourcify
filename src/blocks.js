@@ -50,7 +50,7 @@ function secHead(b, cls = "", tag = "h2") {
   let h = '<div class="sec-head ' + e(cls) + '" data-reveal>';
   if (eyebrow) h += '<p class="eyebrow">' + e(eyebrow) + "</p>";
   if (title) h += `<${tag} class="sec-title">` + inlineHtml(title) + `</${tag}>`;
-  if (text) h += '<p class="sec-text">' + inlineHtml(text) + "</p>";
+  if (text) h += text.split(/\r?\n\s*\r?\n/).map((p) => '<p class="sec-text">' + inlineHtml(p.trim()) + "</p>").join("");
   return h + "</div>";
 }
 
@@ -116,7 +116,7 @@ R.hero = (b) => {
   h += '<h1 class="hero__title" id="hero-title" data-reveal>' + inlineHtml(Ls(b.title)) + "</h1>";
   const tx = Ls(b.text);
   if (tx) h += '<p class="hero__lead" data-reveal>' + inlineHtml(tx) + "</p>";
-  h += '<div class="hero__actions" data-reveal>' + ctaBtn(b, "1", "primary") + ctaBtn(b, "2", "ghost") + "</div>";
+  h += '<div class="hero__actions" data-reveal>' + ctaBtn(b, "1", "primary") + ctaBtn(b, "2", "ghost") + ctaBtn(b, "3", "link") + "</div>";
   h += "<div data-reveal>" + checkList(La(b.points), "hero__points") + "</div>";
   h += '</div><div class="hero__visual" aria-hidden="' + (img ? "false" : "true") + '">' + logoMark("hero__ring");
   if (img) h += '<div class="hero__photo">' + picture(img, Ls(b.image_alt), "(max-width: 900px) 92vw, 46vw", "", true) + "</div>";
@@ -319,9 +319,13 @@ R.faq = (b, ctx) => {
   return h + "</aside></div></div></section>";
 };
 
-/** სერვისების ინტერაქტიული ჩანართები: მარცხნივ სია, მარჯვნივ დეტალები სურათით */
+/** ინტერაქტიული ჩანართები: ზემოთ ჩანართები, ქვემოთ ბარათი (ტექსტი + სურათი).
+ *  საკუთარი ჩანართები (b.items) თუ არ არის — სერვისები ავტომატურად */
 R.showcase = (b) => {
-  const list = C.services();
+  const custom = (Array.isArray(b.items) ? b.items : []).filter((x) => Ls(x.title));
+  const list = custom.length
+    ? custom.map((x) => ({ title: Ls(x.title), text: Ls(x.text), points: La(x.points).slice(0, 6), icon: x.icon, image: x.image, alt: Ls(x.image_alt), link: String(x.link || "") }))
+    : C.services().map((s) => ({ title: Ls(s.title), text: Ls(s.short), points: (s.includes || []).slice(0, 4).map((x) => Ls(x.title)), icon: s.icon, image: s.image, alt: Ls(s.image_alt), link: "service:" + s.id }));
   if (!list.length) return "";
   const id = secId("showcase");
   let tabs = "";
@@ -329,28 +333,58 @@ R.showcase = (b) => {
   list.forEach((s, i) => {
     const on = i === 0;
     tabs += '<button type="button" role="tab" class="sc__tab" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
-      + '<span class="sc__num">' + nn(i) + '</span><span class="sc__label">' + e(Ls(s.title)) + '</span>' + icon("arrow-right", "sc__arrow") + "</button>";
-    const inc = (s.includes || []).slice(0, 4);
+      + '<span class="sc__num">' + nn(i) + '</span><span class="sc__label">' + e(s.title) + "</span></button>";
     panels += '<div class="sc__panel" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
-      + (s.image ? '<div class="sc__media">' + picture(String(s.image), Ls(s.image_alt), "(max-width: 900px) 92vw, 50vw") + '<span class="sc__badge">' + icon(String(s.icon || "briefcase")) + "</span></div>" : "")
-      + '<div class="sc__body"><h3 class="sc__title">' + e(Ls(s.title)) + '</h3><p class="sc__text">' + e(Ls(s.short)) + "</p>"
-      + (inc.length ? '<ul class="sc__list">' + inc.map((x) => "<li>" + icon("check", "sc__check") + "<span>" + e(Ls(x.title)) + "</span></li>").join("") + "</ul>" : "")
-      + btn(t("learn_more"), "service:" + s.id, "primary") + "</div></div>";
+      + (s.image ? '<div class="sc__media">' + picture(String(s.image), s.alt, "(max-width: 900px) 92vw, 50vw") + '<span class="sc__badge">' + icon(String(s.icon || "briefcase")) + "</span></div>" : "")
+      + '<div class="sc__body"><h3 class="sc__title">' + e(s.title) + "</h3>" + (s.text ? '<p class="sc__text">' + inlineHtml(s.text) + "</p>" : "")
+      + (s.points.length ? '<ul class="sc__list">' + s.points.map((x) => "<li>" + icon("check", "sc__check") + "<span>" + e(x) + "</span></li>").join("") + "</ul>" : "")
+      + (s.link ? btn(t("learn_more"), s.link, "primary") : "") + "</div></div>";
   });
-  let h = '<section class="section showcase-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
-    + '<div class="sc" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="horizontal">' + tabs + '</div><div class="sc__panels">' + panels + "</div></div>";
   const c = ctaBtn(b, "", "ghost");
-  if (c) h += '<div class="sec-actions" data-reveal>' + c + "</div>";
-  return h + "</div></section>";
+  return '<section class="section showcase-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
+    + '<div class="sc" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="horizontal">' + tabs + '</div><div class="sc__panels">' + panels + "</div></div>"
+    + (c ? '<div class="sec-actions" data-reveal>' + c + "</div>" : "") + "</div></section>";
 };
 
-/** ჰორიზონტალურად მოძრავი ზოლი (ცარიელზე — სერვისების სახელები) */
-R.marquee = (b) => {
-  let items = La(b.items).filter(Boolean);
-  if (!items.length) items = C.services().map((s) => Ls(s.title));
-  if (!items.length) return "";
-  const row = items.map((x) => '<li><span class="mq__dot" aria-hidden="true"></span>' + e(x) + "</li>").join("");
-  return '<section class="mq" aria-label="' + e(items.join(" · ")) + '"><div class="mq__track"><ul role="list">' + row + '</ul><ul role="list" aria-hidden="true">' + row + "</ul></div></section>";
+/** ფასები: ჯგუფები ჩანართებად, თითოეულში ქვეჯგუფების ბარათები სტრიქონებით */
+R.pricing = (b) => {
+  const groups = (Array.isArray(b.groups) ? b.groups : []).filter((g) => Ls(g.title) && (g.sections || []).length);
+  if (!groups.length) return "";
+  const id = secId("pricing");
+  const price = (v) => '<span class="pr__price">' + e(String(v)) + " <small>" + e(t("currency")) + "</small></span>";
+  let tabs = "";
+  let panels = "";
+  groups.forEach((g, i) => {
+    const on = i === 0;
+    tabs += '<button type="button" role="tab" class="sc__tab" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
+      + '<span class="sc__num">' + (i + 1) + '</span><span class="sc__label">' + e(Ls(g.title)) + "</span></button>";
+    const secs = g.sections.filter((x) => (x.rows || []).length);
+    panels += '<div class="pr__panel pr__panel--n' + Math.min(secs.length, 3) + '" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
+      + secs.map((x) => {
+        const st = Ls(x.title);
+        return '<div class="pr__card">' + (st ? '<h3 class="pr__title">' + e(st) + "</h3>" : "") + '<ul class="pr__rows" role="list">'
+          + x.rows.map((r) => {
+            const lb = Ls(r.label);
+            const pv = String(r.price || "").trim();
+            return pv ? '<li class="pr__row"><span>' + e(lb) + "</span>" + price(pv) + "</li>" : '<li class="pr__sub">' + e(lb) + "</li>";
+          }).join("") + "</ul></div>";
+      }).join("") + "</div>";
+  });
+  const note = Ls(b.note);
+  const c = ctaBtn(b, "", "primary");
+  return '<section class="section pricing-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
+    + '<div class="pr" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="horizontal">' + tabs + "</div>" + panels + "</div>"
+    + (note ? '<p class="pr__note">' + inlineHtml(note) + "</p>" : "")
+    + (c ? '<div class="sec-actions" data-reveal>' + c + "</div>" : "") + "</div></section>";
+};
+
+/** მისია / განცხადება — დიდი ტექსტი ცენტრში */
+R.statement = (b) => {
+  const text = Ls(b.text).trim();
+  if (!text) return "";
+  const ey = Ls(b.eyebrow).trim();
+  return '<section class="section statement-sec"><div class="container container--mid"><div class="statement" data-reveal>'
+    + (ey ? '<p class="eyebrow">' + e(ey) + "</p>" : "") + '<p class="statement__text">' + inlineHtml(text) + "</p></div></div></section>";
 };
 
 /** კლიენტების ლოგოები — უსასრულო მოძრავი ზოლი (კოლექცია „კლიენტები“) */
@@ -406,7 +440,9 @@ function contactMini() {
   const phone = C.setting("phone");
   const email = C.setting("email");
   let h = '<ul class="cmini" role="list">';
-  if (phone) h += '<li><a href="tel:' + e(phoneHref(phone)) + '">' + icon("phone") + "<span><small>" + e(t("call_us")) + "</small>" + e(phone) + "</span></a></li>";
+  const phone2 = C.setting("phone2");
+  if (phone2) h += '<li><a href="tel:' + e(phoneHref(phone2)) + '">' + icon("phone") + "<span><small>" + e(t("phone_main")) + "</small>" + e(phone2) + "</span></a></li>";
+  if (phone) h += '<li><a href="tel:' + e(phoneHref(phone)) + '">' + icon("phone") + "<span><small>" + e(phone2 ? t("phone_mobile") : t("call_us")) + "</small>" + e(phone) + "</span></a></li>";
   if (email) h += '<li><a href="mailto:' + e(email) + '">' + icon("mail") + "<span><small>" + e(t("write_us")) + "</small>" + e(email) + "</span></a></li>";
   return h + "</ul>";
 }
@@ -435,8 +471,10 @@ function contactForm(title = "") {
 R.contact = (b) => {
   const s = C.site().settings || {};
   const cards = [];
-  if (s.phone) cards.push(["phone", t("call_us"), String(s.phone), "tel:" + phoneHref(s.phone)]);
+  if (s.phone2) cards.push(["phone", t("phone_main"), String(s.phone2), "tel:" + phoneHref(s.phone2)]);
+  if (s.phone) cards.push(["phone", s.phone2 ? t("phone_mobile") : t("call_us"), String(s.phone), "tel:" + phoneHref(s.phone)]);
   if (s.email) cards.push(["mail", t("write_us"), String(s.email), "mailto:" + s.email]);
+  if (s.email2) cards.push(["mail", t("write_us"), String(s.email2), "mailto:" + s.email2]);
   const addr = Ls(s.address);
   if (addr) cards.push(["pin", t("visit_us"), addr, ""]);
   const hours = Ls(s.hours);
@@ -448,7 +486,7 @@ R.contact = (b) => {
   });
   h += "</ul>" + socialLinks() + '</div><div class="contact__form" data-reveal>' + contactForm(Ls(b.form_title)) + "</div></div>";
   const map = String(s.map_embed || "").trim();
-  if (b.show_map && /^https:\/\/(www\.)?google\.[a-z.]+\/maps\/embed\?/.test(map)) {
+  if (b.show_map && /^https:\/\/(www\.|maps\.)?google\.[a-z.]+\/maps(\/embed\?|\?[^"<>]*output=embed)/.test(map)) {
     h += '<div class="container"><div class="map" data-reveal><iframe src="' + e(map) + '" title="' + e(t("visit_us")) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div>';
   }
   return h + "</section>";
