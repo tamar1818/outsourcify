@@ -9,7 +9,7 @@ core.ensureData();
 const C = require("../src/content");
 const B = require("../src/blocks");
 const { renderDocument } = require("../src/layout");
-require("../src/admin/router");
+require("../src/admin/api");
 require("../src/routes/api");
 
 let n = 0;

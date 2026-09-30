@@ -8,6 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
+    "dev:admin": "vite --config admin-app/vite.config.js",
+    "build:admin": "vite build --config admin-app/vite.config.js",
     "build": "echo \"No build step needed\"",
     "check": "node tools/check.js",
     "seo": "node tools/seo-report.js > SEO.md",
@@ -25,5 +27,12 @@
   },
   "optionalDependencies": {
     "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6",
+    "vite": "^5.4.21"
   }
 }

@@ -11,6 +11,7 @@
  */
 process.env.TZ = process.env.TZ || "Asia/Tbilisi"; // ჯავშნები თბილისის დროით
 
+const path = require("path");
 const express = require("express");
 const compression = require("compression");
 const core = require("./src/core");
@@ -58,7 +59,12 @@ app.use(core.UPLOADS_URL, express.static(core.UPLOADS_DIR, {
 
 app.use(auth.sessionMiddleware);
 app.use("/api", require("./src/routes/api"));
-app.use("/admin", require("./src/admin/router"));
+app.use("/admin/api", require("./src/admin/api"));
+/* React ადმინ-პანელი (SPA): /admin და ყველა ქვე-მისამართი → public/admin/index.html */
+app.get(["/admin", "/admin/*"], (req, res) => {
+  res.set({ "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow", "X-Frame-Options": "DENY" });
+  res.sendFile(path.join(core.PUBLIC, "admin", "index.html"));
+});
 app.use("/", require("./src/routes/site"));
 
 app.use((err, req, res, next) => {
