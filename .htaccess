@@ -24,6 +24,7 @@ RewriteRule ^ / [R=301,L]
 
 # --- 3. დახურული დირექტორიები --------------------------------------------
 RewriteRule ^(content|inc|tools)(/|$) - [F,L]
+RewriteRule ^(composer\.json|package\.json|router\.php)$ - [F,L]
 
 # --- 4. front controller ----------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f

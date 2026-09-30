@@ -10,7 +10,11 @@ no npm dependencies. It runs on any shared hosting (Hostinger, cPanel) and uses 
 
 ```
 php -S localhost:8000 router.php   # local preview → http://localhost:8000
+npm run dev                        # same thing (package.json only wraps PHP — nothing to npm install)
 ```
+
+`package.json` and `composer.json` have no dependencies: they declare the requirements (PHP 8.1+,
+mbstring, fileinfo, optional GD) and common scripts (`dev`, `start`, `lint`, `seed`, `seo`) for tooling and hosts that expect them.
 
 ---
 

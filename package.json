@@ -1,0 +1,17 @@
+{
+  "name": "outsourcify-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Outsourcify — bilingual (KA/EN) corporate website with flat-file PHP CMS and chat-style consultation booking",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "php -S localhost:8000 router.php",
+    "start": "php -S 0.0.0.0:${PORT:-8000} router.php",
+    "lint": "find . -name '*.php' -not -path './node_modules/*' -exec php -l {} \\; | grep -v 'No syntax errors' || true",
+    "seed": "php tools/seed-content.php",
+    "seo": "php tools/seo-report.php > SEO.md"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
