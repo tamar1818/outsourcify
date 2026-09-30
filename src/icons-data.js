@@ -50,5 +50,7 @@ module.exports = {
     "minus": "<path d=\"M5 12h14\"/>",
     "facebook": "<path d=\"M15 3.5h-2.5A3.5 3.5 0 0 0 9 7v3H6.5v3.5H9v7.5h3.5v-7.5H15l.5-3.5h-3V7.5a1 1 0 0 1 1-1H15z\"/>",
     "linkedin": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7.5 10.5v6M7.5 7.5h.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5\"/>",
-    "instagram": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M17.5 6.5h.01\"/>"
+    "instagram": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M17.5 6.5h.01\"/>",
+    "youtube": "<rect x=\"2.5\" y=\"5\" width=\"19\" height=\"14\" rx=\"4\"/><path d=\"m10 9 5 3-5 3z\"/>",
+    "tiktok": "<path d=\"M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.3 2.6 2 4.3 4.5 4.5\"/>"
 };

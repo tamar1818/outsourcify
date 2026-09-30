@@ -84,7 +84,7 @@ function siteFooter(alts) {
   const menus = C.site().menus || {};
   let h = '<footer class="ftr"><div class="container"><div class="ftr__top">'
     + '<div class="ftr__brand"><a href="' + e(C.urlPage("home")) + '" class="ftr__logo" aria-label="Outsourcify">' + logoLockup() + "</a>"
-    + "<p>" + e(Ls(s.footer_text)) + "</p>" + B.socialLinks("socials socials--dark") + "</div>";
+    + "<p>" + e(Ls(s.footer_text)) + "</p>" + (B.socialLinks("socials socials--dark") ? '<p class="ftr__follow">' + e(t("follow")) + "</p>" + B.socialLinks("socials socials--dark") : "") + "</div>";
   h += '<div class="ftr__col"><h2 class="ftr__h">' + e(t("services")) + '</h2><ul role="list">'
     + C.services().map((sv) => '<li><a href="' + e(C.urlService(sv)) + '">' + e(Ls(sv.title)) + "</a></li>").join("") + "</ul></div>";
   for (const [menu, titleKey] of [["footer_company", "footer_company_title"], ["footer_legal", "footer_legal_title"]]) {
@@ -98,8 +98,8 @@ function siteFooter(alts) {
   if (addr) h += '<p class="ftr__addr">' + icon("pin") + e(addr) + "</p>";
   h += "</div></div>";
   h += '<div class="ftr__bottom"><p>© ' + new Date().getFullYear() + " " + e(String(s.company || "Outsourcify")) + ". " + e(t("rights")) + "</p>"
-    + '<p class="ftr__credit">' + e(t("made_by")) + ' <a href="https://webico.io/" target="_blank" rel="noopener">webico.io</a></p>'
-    + langSwitch(alts, "lang lang--dark") + "</div>"
+    + langSwitch(alts, "lang lang--dark")
+    + '<p class="ftr__credit">' + e(t("made_by")) + ' <a href="https://webico.io/" target="_blank" rel="noopener">webico.io</a></p>' + "</div>"
     + "</div></footer>";
 
   // მობილურზე მიმაგრებული ზოლი

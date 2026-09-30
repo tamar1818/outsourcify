@@ -89,6 +89,8 @@ function settingsDefs() {
     facebook: f("text", "Facebook"),
     linkedin: f("text", "LinkedIn"),
     instagram: f("text", "Instagram"),
+    youtube: f("text", "YouTube"),
+    tiktok: f("text", "TikTok"),
     footer_text: f("textarea", "ფუტერის ტექსტი", { i18n: true }),
     ga_id: f("text", "Google Analytics 4 ID", { hint: "მაგ. G-XXXXXXX — ცარიელზე ანალიტიკა გამორთულია" }),
     gsc_verification: f("text", "Google Search Console ვერიფიკაციის კოდი"),

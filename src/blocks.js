@@ -456,7 +456,7 @@ R.contact = (b) => {
 
 function socialLinks(cls = "socials") {
   const s = C.site().settings || {};
-  const h = [["facebook", "Facebook"], ["linkedin", "LinkedIn"], ["instagram", "Instagram"]]
+  const h = [["facebook", "Facebook"], ["linkedin", "LinkedIn"], ["instagram", "Instagram"], ["youtube", "YouTube"], ["tiktok", "TikTok"]]
     .filter(([k]) => /^https:\/\//.test(String(s[k] || "").trim()))
     .map(([k, name]) => '<li><a href="' + e(String(s[k]).trim()) + '" target="_blank" rel="noopener" aria-label="' + name + '">' + icon(k) + "</a></li>").join("");
   return h ? '<ul class="' + e(cls) + '" role="list">' + h + "</ul>" : "";
