@@ -63,6 +63,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; line-height: 1.15; letter-spacing:
 html[lang="ka"] :is(h1, h2, h3, h4) { letter-spacing: 0; }
 /* ქართული მთავარი სათაურები — მთავრული (ყველა ასო ერთ სიმაღლეზე). TBCX-ის "case" ფუნქცია მხედრულს მთავრულად აჩვენებს (ტექსტი HTML-ში მხედრულად რჩება — SEO და ეკრანის წამკითხველებისთვის) */
 html[lang="ka"] :is(.hero__title, .sec-title, .phero__title, .cta__title, .nf__title, .mega__promo-title) { font-feature-settings: "case" 1; letter-spacing: .01em; line-height: 1.15; }
+/* ყველა სათაური (h1–h4) მთავრულით; მთავრული უფრო განიერია — მცირე სათაურები ოდნავ მცირდება */
+html[lang="ka"] :is(h1, h2, h3, h4, .mega__item b, .split__badge b, .faq__help b) { font-feature-settings: "case" 1; letter-spacing: .01em; line-height: 1.25; }
+/* ღილაკები მთავრულით */
+html[lang="ka"] :is(.btn, .sc__label, .mbar .btn) { font-feature-settings: "case" 1; letter-spacing: .02em; font-size: .88rem; }
+html[lang="ka"] :is(.card__title, .svc__title, .step__title, .ind__title, .faq__q, .sc__title, .svc-row__title, .svc-aside__title, .form__title, .ftr__h) { font-size: .93em; }
 p { margin: 0; }
 ul, ol { margin: 0; padding: 0; }
 ul[role="list"], ol[role="list"] { list-style: none; }
