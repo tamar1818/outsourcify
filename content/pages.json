@@ -115,6 +115,63 @@
           "type": "cards",
           "hidden": false,
           "eyebrow": {
+            "ka": "როგორ ვთანამშრომლობთ",
+            "en": "How we work with you"
+          },
+          "title": {
+            "ka": "თანამშრომლობის <em>სამი მოდელი</em>",
+            "en": "Three ways <em>to work together</em>"
+          },
+          "text": {
+            "ka": "აირჩიეთ ფორმატი, რომელიც თქვენს ბიზნესს ყველაზე მეტად შეეფერება.",
+            "en": "Choose the format that suits your business best."
+          },
+          "variant": "numbered",
+          "items": [
+            {
+              "icon": "building",
+              "title": {
+                "ka": "აუთსორსინგი",
+                "en": "Outsourcing"
+              },
+              "text": {
+                "ka": "ჩვენი თანამშრომლები ჩვენსავე ოფისში. ბუღალტერიას სრულად ჩვენი გუნდი აწარმოებს — შიდა განყოფილება არ გჭირდებათ.",
+                "en": "Our team, working from our office. We run your accounting end to end — no in-house department needed."
+              }
+            },
+            {
+              "icon": "users",
+              "title": {
+                "ka": "აუთსტაფინგი",
+                "en": "Outstaffing"
+              },
+              "text": {
+                "ka": "ჩვენი თანამშრომლები მუშაობენ თქვენს ოფისში — თქვენს გუნდთან ერთად, ორგანიზაციულ საკითხებზე კი ჩვენ ვზრუნავთ.",
+                "en": "Our specialists work in your office alongside your team, while we take care of the organisational side."
+              }
+            },
+            {
+              "icon": "layers",
+              "title": {
+                "ka": "ბიზნეს-პროცესების აუთსორსინგი (BPO)",
+                "en": "Business process outsourcing (BPO)"
+              },
+              "text": {
+                "ka": "თქვენი თანამშრომლები — ჩვენ ვმართავთ და ვაწესრიგებთ ბიზნეს-პროცესებს, რომლებსაც თქვენი გუნდი ასრულებს.",
+                "en": "Your employees — we organise and manage the business processes your team carries out."
+              }
+            }
+          ],
+          "cta_label": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_link": ""
+        },
+        {
+          "type": "cards",
+          "hidden": false,
+          "eyebrow": {
             "ka": "",
             "en": ""
           },
@@ -413,8 +470,8 @@
             "en": "Hand over your accounting — <em>and focus on your business</em>"
           },
           "text": {
-            "ka": "დაჯავშნეთ კონსულტაცია: გავეცნობით თქვენს საჭიროებებს და შემოგთავაზებთ თქვენს ბიზნესზე მორგებულ გადაწყვეტას.",
-            "en": "Book a consultation: we’ll learn about your needs and suggest a solution tailored to your business."
+            "ka": "დაჯავშნეთ უფასო კონსულტაცია: გავეცნობით თქვენს საჭიროებებს და შემოგთავაზებთ თქვენს ბიზნესზე მორგებულ გადაწყვეტას.",
+            "en": "Book a free consultation: we'll learn about your needs and suggest a solution tailored to your business."
           },
           "cta1_label": {
             "ka": "კონსულტაციის დაჯავშნა",
