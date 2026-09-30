@@ -223,7 +223,12 @@
       "ka": "მოგვწერეთ",
       "en": "Contact us"
     },
-    "cta2_link": "page:contact"
+    "cta2_link": "page:contact",
+    "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+    "image_alt": {
+      "ka": "Outsourcify-ის გუნდი მუშაობს ოფისში",
+      "en": "The Outsourcify team working in the office"
+    }
   },
   "booking": {
     "days": [

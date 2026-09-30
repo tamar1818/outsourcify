@@ -4,12 +4,24 @@ Bilingual (Georgian primary, English secondary) website for **Outsourcify** — 
 tax consulting and business process outsourcing. It has a chat-style consultation booking,
 SEO built in from the start, and a flat-file CMS so the client can edit everything without touching code.
 
-**Stack:** Node.js 18+ with the **Express** framework, server-side rendered HTML, plain CSS and vanilla JS.
-No database and no front-end build step. Content is stored as JSON.
+**Stack:** Node.js 18+ with **Express** for the public site (server-rendered HTML, plain CSS, vanilla JS; fast
+and SEO-friendly) and a **React 18 admin panel** (Vite + React Router) at `/admin`. No database; content is stored as JSON.
+
+**Design:** flat and modern. It uses the TBCX typeface throughout, large bold headlines, light-grey card surfaces
+and solid pill buttons (no gradients). Hover states include lift, fill and an arrow nudge. There is an interactive
+services tab showcase, a scrolling services ticker, rounded photo blocks and dark feature sections.
+Everything respects `prefers-reduced-motion`.
 
 ```bash
 npm install
 npm start        # → http://localhost:3000   (npm run dev — restarts on file changes)
+```
+
+The admin panel is already built into `public/admin/`, so the host doesn't need a build step. To change it:
+
+```bash
+npm run dev:admin     # React admin with hot reload → http://localhost:5173/admin (proxies the API to :3000)
+npm run build:admin   # rebuild public/admin/ — commit the result
 ```
 
 ---
@@ -76,8 +88,9 @@ src/
   booking.js · mail.js · auth.js · media.js · icons.js · logo.js
   routes/site.js     pages, services, sitemap.xml, robots.txt, 404
   routes/api.js      /api/slots · /api/book · /api/lead
-  admin/             CMS (/admin): router.js + ui.js
-public/              static files: assets/css, assets/js, fonts (TBCX), images, admin/admin.{css,js}
+  admin/api.js       JSON API for the React admin (/admin/api/*)
+admin-app/           React admin source (Vite): src/pages/*, src/components/Fields.jsx (schema-driven forms)
+public/              static files: assets/css, assets/js, fonts (TBCX), images, admin/ (built React admin)
 content/             default content (JSON) — copied into DATA_DIR on first start
 tools/               check.js (render test) · seo-report.js (→ SEO.md) · reset-content.js
 ```
@@ -88,17 +101,22 @@ Only `public/` and `DATA_DIR/uploads` are served to the web. Source code, `conte
 |---|---|
 | `npm start` | runs the server |
 | `npm run dev` | runs with auto-restart |
+| `npm run dev:admin` | React admin dev server with hot reload |
+| `npm run build:admin` | builds the React admin into `public/admin/` |
 | `npm run check` | renders every page in both languages (quick smoke test) |
 | `npm run seo` | regenerates `SEO.md` from the current content |
 | `npm run reset-content` | copies missing default content into `DATA_DIR` (`-- --force` overwrites content, never bookings, leads or the password) |
 
 ---
 
-## CMS — `/admin`
+## CMS — `/admin` (React)
+
+A single-page React app: sidebar navigation, live page preview next to the block editor, drag-and-drop
+reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, and a warning for unsaved changes.
 
 | Section | What the client can do |
 |---|---|
-| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (↑↓), duplicate, hide, delete, **add new blocks** (14 types). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
+| **Pages** | Edit every page as a list of reusable blocks: change text in KA/EN side by side, reorder (drag or ↑↓), duplicate, hide, delete, **add new blocks** (17 types, including the services tab showcase, scrolling ticker and CTA with photo). Per-page SEO title/description with live character counters, slug, OG image, noindex. **Create new pages.** |
 | **Services** | Add, edit, reorder, hide and delete services. Each has its own page (intro, rich description, "what's included", audience, benefits, service FAQ, SEO). Services appear automatically in the mega menu, homepage, footer, booking chat and sitemap. |
 | **FAQ** | Questions by category (general / services / process / booking). FAQ schema is generated automatically. |
 | **Testimonials** | Real client testimonials. **The section stays hidden until the first one is added**, so nothing invented is ever published. |
@@ -110,7 +128,7 @@ Only `public/` and `DATA_DIR/uploads` are served to the web. Source code, `conte
 | **Backup** | Download all content, bookings and messages as one JSON file, and restore it. |
 | **Dashboard** | New submissions, upcoming consultations and an **SEO health check** of title/description lengths. |
 
-Security: scrypt password hashing, signed HttpOnly session cookie, CSRF tokens on every form, 15-minute lockout after
+Security: scrypt password hashing, signed HttpOnly session cookie, a CSRF token on every change, 15-minute lockout after
 6 failed logins, uploads checked by content (not extension) with SVG scripts blocked, all output escaped,
 and rate limits plus a honeypot on public forms.
 

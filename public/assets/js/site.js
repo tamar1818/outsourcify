@@ -79,16 +79,36 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* კურსორის „პროჟექტორი“ ბარათებზე */
-  if (window.matchMedia("(hover: hover)").matches) {
-    $$(".svc__link, .cards--bento .card").forEach(function (el) {
-      el.addEventListener("pointermove", function (e) {
-        var r = el.getBoundingClientRect();
-        el.style.setProperty("--mx", (e.clientX - r.left) + "px");
-        el.style.setProperty("--my", (e.clientY - r.top) + "px");
+  /* სერვისების ჩანართები: დაჭერა + ისრები / Home / End (WAI-ARIA tabs) */
+  $$("[data-tabs]").forEach(function (box) {
+    var tabs = $$('[role="tab"]', box);
+    var select = function (tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+      if (tab.scrollIntoView && tab.parentNode.scrollWidth > tab.parentNode.clientWidth) {
+        tab.parentNode.scrollTo({ left: tab.offsetLeft - 16, behavior: reduce ? "auto" : "smooth" });
+      }
+    };
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab, false); });
+      tab.addEventListener("keydown", function (ev) {
+        var k = ev.key, n = null;
+        if (k === "ArrowDown" || k === "ArrowRight") n = (i + 1) % tabs.length;
+        else if (k === "ArrowUp" || k === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
+        else if (k === "Home") n = 0;
+        else if (k === "End") n = tabs.length - 1;
+        if (n === null) return;
+        ev.preventDefault();
+        select(tabs[n], true);
       });
     });
-  }
+  });
 
   /* ნაბიჯების ხაზი ივსება სკროლთან ერთად */
   var stepsEls = $$("[data-steps]");

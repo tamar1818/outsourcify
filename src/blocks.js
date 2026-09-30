@@ -188,7 +188,7 @@ function serviceCard(s, i) {
     + '<span class="svc__num">' + nn(i) + "</span>"
     + '<h3 class="svc__title">' + e(Ls(s.title)) + "</h3>"
     + '<p class="svc__text">' + e(Ls(s.short)) + "</p>"
-    + '<span class="svc__more">' + e(t("learn_more")) + icon("arrow-right") + "</span></a></li>";
+    + '<span class="svc__more"><span>' + e(t("learn_more")) + '</span><span class="svc__go">' + icon("arrow-up-right") + "</span></span></a></li>";
 }
 
 R.services = (b, ctx) => {
@@ -318,6 +318,40 @@ R.faq = (b, ctx) => {
   return h + "</div>" + faqList(items) + "</div></section>";
 };
 
+/** სერვისების ინტერაქტიული ჩანართები: მარცხნივ სია, მარჯვნივ დეტალები სურათით */
+R.showcase = (b) => {
+  const list = C.services();
+  if (!list.length) return "";
+  const id = secId("showcase");
+  let tabs = "";
+  let panels = "";
+  list.forEach((s, i) => {
+    const on = i === 0;
+    tabs += '<button type="button" role="tab" class="sc__tab" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
+      + '<span class="sc__num">' + nn(i) + '</span><span class="sc__label">' + e(Ls(s.title)) + '</span>' + icon("arrow-right", "sc__arrow") + "</button>";
+    const inc = (s.includes || []).slice(0, 4);
+    panels += '<div class="sc__panel" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
+      + (s.image ? '<div class="sc__media">' + picture(String(s.image), Ls(s.image_alt), "(max-width: 900px) 92vw, 50vw") + '<span class="sc__badge">' + icon(String(s.icon || "briefcase")) + "</span></div>" : "")
+      + '<div class="sc__body"><h3 class="sc__title">' + e(Ls(s.title)) + '</h3><p class="sc__text">' + e(Ls(s.short)) + "</p>"
+      + (inc.length ? '<ul class="sc__list">' + inc.map((x) => "<li>" + icon("check", "sc__check") + "<span>" + e(Ls(x.title)) + "</span></li>").join("") + "</ul>" : "")
+      + btn(t("learn_more"), "service:" + s.id, "primary") + "</div></div>";
+  });
+  let h = '<section class="section showcase-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
+    + '<div class="sc" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="vertical">' + tabs + '</div><div class="sc__panels">' + panels + "</div></div>";
+  const c = ctaBtn(b, "", "ghost");
+  if (c) h += '<div class="sec-actions" data-reveal>' + c + "</div>";
+  return h + "</div></section>";
+};
+
+/** ჰორიზონტალურად მოძრავი ზოლი (ცარიელზე — სერვისების სახელები) */
+R.marquee = (b) => {
+  let items = La(b.items).filter(Boolean);
+  if (!items.length) items = C.services().map((s) => Ls(s.title));
+  if (!items.length) return "";
+  const row = items.map((x) => '<li><span class="mq__dot" aria-hidden="true"></span>' + e(x) + "</li>").join("");
+  return '<section class="mq" aria-label="' + e(items.join(" · ")) + '"><div class="mq__track"><ul role="list">' + row + '</ul><ul role="list" aria-hidden="true">' + row + "</ul></div></section>";
+};
+
 R.stats = (b) => {
   const items = Array.isArray(b.items) ? b.items : [];
   if (!items.length) return "";
@@ -412,8 +446,11 @@ function socialLinks(cls = "socials") {
 
 R.cta = (b) => {
   const phone = C.setting("phone");
-  let h = '<section class="section cta-sec"><div class="container"><div class="cta" data-reveal>'
-    + '<div class="cta__deco" aria-hidden="true">' + logoMark("cta__ring") + '</div><div class="cta__copy">';
+  const img = String(b.image || "");
+  let h = '<section class="section cta-sec"><div class="container"><div class="cta' + (img ? " cta--img" : "") + '" data-reveal>'
+    + '<div class="cta__deco" aria-hidden="true">' + logoMark("cta__ring") + '</div>'
+    + (img ? '<div class="cta__media">' + picture(img, Ls(b.image_alt), "(max-width: 900px) 92vw, 40vw") + "</div>" : "")
+    + '<div class="cta__copy">';
   const ey = Ls(b.eyebrow);
   if (ey) h += '<p class="eyebrow eyebrow--light">' + e(ey) + "</p>";
   h += '<h2 class="cta__title">' + inlineHtml(Ls(b.title)) + "</h2>";

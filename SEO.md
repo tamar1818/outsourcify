@@ -126,7 +126,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის | Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
+| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის — Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
 | **Meta Description** | ექსპერტული საგადასახადო კონსულტაცია: ვალდებულებები, საგადასახადო რეჟიმი და გარიგებების შეფასება. მიიღეთ გასაგები რჩევა Outsourcify-ისგან. (137) | Expert tax consulting in Georgia: obligations, tax regimes and transaction reviews. Get clear, practical advice from the Outsourcify team. (138) |
 | **URL** | `https://outsourcify.ge/servisebi/sagadasakhado-konsultatsia` | `https://outsourcify.ge/en/services/tax-consulting` |
 | **Main keyword** | საგადასახადო კონსულტაცია | tax consulting Georgia |

@@ -52,6 +52,10 @@ module.exports = {
         "ka": "მოგვწერეთ",
         "en": "Email us"
     },
+    "contacts": {
+        "ka": "კონტაქტი",
+        "en": "Contact"
+    },
     "visit_us": {
         "ka": "მისამართი",
         "en": "Address"

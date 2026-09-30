@@ -93,7 +93,7 @@ function siteFooter(alts) {
     h += '<div class="ftr__col"><h2 class="ftr__h">' + e(Ls(menus[titleKey])) + '</h2><ul role="list">'
       + items.map((m) => '<li><a href="' + e(C.linkUrl(String(m.link || ""))) + '">' + e(Ls(m.label)) + "</a></li>").join("") + "</ul></div>";
   }
-  h += '<div class="ftr__col ftr__contact"><h2 class="ftr__h">' + e(t("write_us")) + "</h2>" + B.contactMini();
+  h += '<div class="ftr__col ftr__contact"><h2 class="ftr__h">' + e(t("contacts")) + "</h2>" + B.contactMini();
   const addr = Ls(s.address);
   if (addr) h += '<p class="ftr__addr">' + icon("pin") + e(addr) + "</p>";
   h += "</div></div>";
