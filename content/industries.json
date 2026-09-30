@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "icon": "rocket",
+            "title": {
+                "ka": "სტარტაპები და ახალი კომპანიები",
+                "en": "Startups & new companies"
+            },
+            "text": {
+                "ka": "აღრიცხვას თავიდანვე სწორად ვაწყობთ, რომ ზრდასთან ერთად პრობლემები არ დაგროვდეს.",
+                "en": "We set up your accounting correctly from the start, so problems don’t pile up as you grow."
+            },
+            "hidden": false
+        },
+        {
+            "icon": "store",
+            "title": {
+                "ka": "მცირე და საშუალო ბიზნესი",
+                "en": "Small & medium businesses"
+            },
+            "text": {
+                "ka": "სრული ბუღალტრული ფუნქცია — შიდა განყოფილების შექმნის გარეშე.",
+                "en": "A complete accounting function — without building an in-house department."
+            },
+            "hidden": false
+        },
+        {
+            "icon": "building",
+            "title": {
+                "ka": "მსხვილი კომპანიები",
+                "en": "Larger companies"
+            },
+            "text": {
+                "ka": "ცალკეული პროცესების აუთსორსინგი და სპეციალისტი თქვენს ოფისში BPO მოდელით.",
+                "en": "Outsourcing of specific processes and on-site specialists through our BPO model."
+            },
+            "hidden": false
+        },
+        {
+            "icon": "globe",
+            "title": {
+                "ka": "უცხოური კომპანიები და ინვესტორები",
+                "en": "International companies & investors"
+            },
+            "text": {
+                "ka": "დახმარება ადგილობრივი ბუღალტრული და საგადასახადო მოთხოვნების გაგებასა და დაცვაში.",
+                "en": "Help understanding and meeting local accounting and tax requirements."
+            },
+            "hidden": false
+        },
+        {
+            "icon": "user",
+            "title": {
+                "ka": "ინდმეწარმეები",
+                "en": "Individual entrepreneurs"
+            },
+            "text": {
+                "ka": "დეკლარაციები, ვალდებულებები და კონსულტაცია — მარტივად და გასაგებად.",
+                "en": "Tax returns, obligations and advice — simple and clear."
+            },
+            "hidden": false
+        },
+        {
+            "icon": "handshake",
+            "title": {
+                "ka": "კომპანიები, რომლებიც ბუღალტერს ცვლიან",
+                "en": "Companies switching accountants"
+            },
+            "text": {
+                "ka": "აღრიცხვის გადმობარება, შემოწმება და უწყვეტი გაგრძელება.",
+                "en": "Smooth handover, review and uninterrupted continuation of your accounting."
+            },
+            "hidden": false
+        }
+    ]
+}

@@ -1,0 +1,1002 @@
+{
+    "services": [
+        {
+            "id": "accounting",
+            "title": {
+                "ka": "ბუღალტრული მომსახურება",
+                "en": "Accounting & Bookkeeping"
+            },
+            "slug": {
+                "ka": "bughaltruli-momsakhureba",
+                "en": "accounting-services"
+            },
+            "hidden": false,
+            "icon": "calculator",
+            "image": "/assets/img/photos/accountant-reviewing-tax-documents.webp",
+            "image_alt": {
+                "ka": "ბუღალტერი ამოწმებს ფინანსურ დოკუმენტებს კალკულატორით",
+                "en": "Accountant reviewing financial documents with a calculator"
+            },
+            "short": {
+                "ka": "ბუღალტრული აღრიცხვის სრული წარმოება სერტიფიცირებული ბუღალტრების გუნდით — თქვენს ბიზნესზე მორგებული ფორმატით.",
+                "en": "Complete bookkeeping handled by a team of certified accountants — in a format tailored to your business."
+            },
+            "intro": {
+                "ka": "აღრიცხვა, რომელიც ყოველთვის წესრიგშია. ვაწარმოებთ თქვენი კომპანიის ბუღალტერიას ეფექტური პროგრამული უზრუნველყოფით და ვზრუნავთ, რომ ფინანსური ინფორმაცია იყოს ზუსტი, დროული და კანონმდებლობასთან შესაბამისი.",
+                "en": "Accounting that is always in order. We keep your company’s books using effective accounting software and make sure your financial information is accurate, timely and compliant."
+            },
+            "body": {
+                "ka": "<p>ბევრი მეწარმისთვის ბუღალტერია ყოველდღიური საზრუნავია: დოკუმენტები გროვდება, ვადები ახლოვდება, ხოლო შიდა ბუღალტრის აყვანა და შენარჩუნება მნიშვნელოვან ხარჯს მოითხოვს.</p><p>Outsourcify ამ პროცესს საკუთარ თავზე იღებს. ჩვენი სერტიფიცირებული ბუღალტრები აწარმოებენ თქვენს აღრიცხვას, აწესრიგებენ დოკუმენტაციას და ამზადებენ იმ ინფორმაციას, რომელიც სწორი გადაწყვეტილებების მისაღებად გჭირდებათ.</p><p>მომსახურების ფორმატს ერთად ვირჩევთ — ბიზნესის ზომის, საქმიანობის სპეციფიკისა და თქვენი საჭიროებების მიხედვით.</p>",
+                "en": "<p>For many business owners, accounting is a daily worry: paperwork piles up, deadlines approach, and hiring and keeping an in-house accountant is a significant cost.</p><p>Outsourcify takes this off your plate. Our certified accountants keep your books, organise your documentation and prepare the information you need to make the right decisions.</p><p>We choose the service format together — based on the size of your business, the nature of your activity and what you need.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "receipt",
+                    "title": {
+                        "ka": "პირველადი დოკუმენტების დამუშავება",
+                        "en": "Processing primary documents"
+                    },
+                    "text": {
+                        "ka": "ინვოისები, ზედნადებები, ხელშეკრულებები და სხვა დოკუმენტები აღრიცხვაში სწორად და დროულად აისახება.",
+                        "en": "Invoices, waybills, contracts and other documents are recorded correctly and on time."
+                    }
+                },
+                {
+                    "icon": "chart",
+                    "title": {
+                        "ka": "ბუღალტრული აღრიცხვის წარმოება",
+                        "en": "Bookkeeping"
+                    },
+                    "text": {
+                        "ka": "ოპერაციების აღრიცხვა ბუღალტრულ პროგრამაში, ანგარიშების შეჯერება და კონტროლი.",
+                        "en": "Recording transactions in accounting software, reconciling accounts and keeping everything under control."
+                    }
+                },
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "საგადასახადო ვალდებულებების კონტროლი",
+                        "en": "Tax obligations under control"
+                    },
+                    "text": {
+                        "ka": "ვადების დაცვა და დეკლარაციების დროული მომზადება — სიურპრიზების გარეშე.",
+                        "en": "Deadlines tracked and returns prepared on time — no surprises."
+                    }
+                },
+                {
+                    "icon": "bars",
+                    "title": {
+                        "ka": "ფინანსური ანგარიშგება",
+                        "en": "Financial reporting"
+                    },
+                    "text": {
+                        "ka": "პერიოდული ანგარიშები, რომლებიც ბიზნესის რეალურ მდგომარეობას აჩვენებს.",
+                        "en": "Regular reports that show the real state of your business."
+                    }
+                },
+                {
+                    "icon": "folder",
+                    "title": {
+                        "ka": "მოწესრიგებული დოკუმენტაცია",
+                        "en": "Organised records"
+                    },
+                    "text": {
+                        "ka": "სისტემური არქივი, რომელშიც ნებისმიერი დოკუმენტი მარტივად მოიძებნება.",
+                        "en": "A structured archive where any document is easy to find."
+                    }
+                },
+                {
+                    "icon": "message",
+                    "title": {
+                        "ka": "კონსულტაცია ყოველდღიურ საკითხებზე",
+                        "en": "Day-to-day advice"
+                    },
+                    "text": {
+                        "ka": "გყავთ ბუღალტერი, რომელსაც ნებისმიერ ფინანსურ კითხვაზე შეგიძლიათ მიმართოთ.",
+                        "en": "You have an accountant you can turn to with any financial question."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "ახალი კომპანიები, რომლებსაც აღრიცხვის თავიდანვე სწორად აწყობა სურთ",
+                    "მცირე და საშუალო ბიზნესი, რომელსაც შიდა ბუღალტერი არ ჰყავს",
+                    "კომპანიები, რომლებიც ბუღალტრული ფუნქციის აუთსორსინგს გეგმავენ",
+                    "ინდმეწარმეები, რომლებსაც ვალდებულებების მართვაში დახმარება სჭირდებათ"
+                ],
+                "en": [
+                    "New companies that want to set up accounting correctly from day one",
+                    "Small and medium businesses without an in-house accountant",
+                    "Companies planning to outsource their accounting function",
+                    "Individual entrepreneurs who need help managing their obligations"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "სიზუსტე და შესაბამისობა",
+                        "en": "Accuracy & compliance"
+                    },
+                    "text": {
+                        "ka": "აღრიცხვა, რომელიც კანონმდებლობის მოთხოვნებს შეესაბამება.",
+                        "en": "Books that meet regulatory requirements."
+                    }
+                },
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "დაზოგილი დრო",
+                        "en": "Time back"
+                    },
+                    "text": {
+                        "ka": "თქვენ ბიზნესზე ფოკუსირდებით, ჩვენ — ციფრებზე.",
+                        "en": "You focus on the business, we focus on the numbers."
+                    }
+                },
+                {
+                    "icon": "users",
+                    "title": {
+                        "ka": "გუნდი ერთი ბუღალტრის ნაცვლად",
+                        "en": "A team, not one person"
+                    },
+                    "text": {
+                        "ka": "სერტიფიცირებული ბუღალტრების ცოდნა და გამოცდილება.",
+                        "en": "The knowledge and experience of certified accountants."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რა დოკუმენტები დაგჭირდებათ თანამშრომლობის დასაწყებად?",
+                        "en": "What documents do you need to get started?"
+                    },
+                    "a": {
+                        "ka": "ზუსტი ჩამონათვალი თქვენი საქმიანობის სპეციფიკაზეა დამოკიდებული. პირველ კონსულტაციაზე ერთად განვსაზღვრავთ, რა დოკუმენტებია საჭირო და რა ფორმით მოგვაწვდით მათ.",
+                        "en": "The exact list depends on your type of business. In the first consultation we agree together which documents are needed and how you will share them."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "შეგიძლიათ არსებული ბუღალტრის ნაცვლად იმუშაოთ?",
+                        "en": "Can you take over from our current accountant?"
+                    },
+                    "a": {
+                        "ka": "დიახ. ვიღებთ აღრიცხვას არსებული ბუღალტრისგან ან პროგრამიდან, ვამოწმებთ მის მდგომარეობას და ვაგრძელებთ წარმოებას. თუ წარსულ აღრიცხვაში უზუსტობებია, შეგვიძლია მათი გასწორებაც.",
+                        "en": "Yes. We take over the books from your current accountant or software, check their condition and continue from there. If past records contain errors, we can correct them too."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რა ღირს ბუღალტრული მომსახურება?",
+                        "en": "How much does accounting cost?"
+                    },
+                    "a": {
+                        "ka": "ფასი დამოკიდებულია ოპერაციების მოცულობაზე, საქმიანობის ტიპსა და საჭირო მომსახურებაზე. ზუსტ შეთავაზებას კონსულტაციის შემდეგ მოგიმზადებთ.",
+                        "en": "Pricing depends on transaction volume, the type of business and the services you need. We prepare an exact proposal after the consultation."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ბუღალტრული მომსახურება ბიზნესისთვის | Outsourcify",
+                "en": "Accounting & Bookkeeping Services in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ბუღალტრული აღრიცხვის სრული წარმოება სერტიფიცირებული ბუღალტრებით: მოწესრიგებული დოკუმენტაცია, ანგარიშგება და კონსულტაცია. დაჯავშნეთ შეხვედრა.",
+                "en": "Outsourced bookkeeping by certified accountants in Georgia: organised records, financial reporting and day-to-day advice tailored to your business."
+            },
+            "keywords": {
+                "ka": "ბუღალტრული მომსახურება; ბუღალტერიის აუთსორსინგი, ბუღალტრული აღრიცხვა, აუთსორს ბუღალტერი",
+                "en": "accounting services Georgia; outsourced bookkeeping, bookkeeping Tbilisi, outsourced accountant"
+            }
+        },
+        {
+            "id": "tax-consulting",
+            "title": {
+                "ka": "საგადასახადო კონსულტაცია",
+                "en": "Tax Consulting"
+            },
+            "slug": {
+                "ka": "sagadasakhado-konsultatsia",
+                "en": "tax-consulting"
+            },
+            "hidden": false,
+            "icon": "percent",
+            "image": "/assets/img/photos/calculator-balance-sheet-figures.webp",
+            "image_alt": {
+                "ka": "კალკულატორი და ბალანსის ციფრები საგადასახადო ანალიზისთვის",
+                "en": "Calculator and balance sheet figures for tax analysis"
+            },
+            "short": {
+                "ka": "ექსპერტული რჩევა საგადასახადო საკითხებზე — რომ გადაწყვეტილებები ინფორმირებულად მიიღოთ და რისკები შეამციროთ.",
+                "en": "Expert advice on tax matters — so you make informed decisions and reduce risk."
+            },
+            "intro": {
+                "ka": "საგადასახადო კანონმდებლობა ხშირად იცვლება, ერთმა შეცდომამ კი შეიძლება ბიზნესს დამატებითი ხარჯი მოუტანოს. გეხმარებით, გაერკვეთ თქვენს ვალდებულებებში და ყოველი ნაბიჯი წინასწარ დაგეგმოთ.",
+                "en": "Tax rules change often, and a single mistake can mean unexpected costs. We help you understand your obligations and plan every step ahead."
+            },
+            "body": {
+                "ka": "<p>საგადასახადო კითხვები ჩნდება ბიზნესის ყველა ეტაპზე — კომპანიის დაფუძნებისას, ახალი საქმიანობის დაწყებისას, მსხვილი გარიგების წინ თუ ყოველდღიურ ოპერაციებში.</p><p>ჩვენი სპეციალისტები განიხილავენ თქვენს კონკრეტულ სიტუაციას და გაძლევენ გასაგებ, პრაქტიკულ რჩევას: რა ვალდებულებები გაქვთ, რა ვარიანტები არსებობს და რა გავლენას მოახდენს თითოეული გადაწყვეტილება.</p>",
+                "en": "<p>Tax questions come up at every stage of a business — when you set up a company, start a new activity, prepare for a major deal or simply run day-to-day operations.</p><p>Our specialists look at your specific situation and give clear, practical advice: what your obligations are, what options exist and how each decision will affect you.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "search",
+                    "title": {
+                        "ka": "ვალდებულებების ანალიზი",
+                        "en": "Obligations review"
+                    },
+                    "text": {
+                        "ka": "ვარკვევთ, რა გადასახადები და ვადები ეხება თქვენს ბიზნესს.",
+                        "en": "We clarify which taxes and deadlines apply to your business."
+                    }
+                },
+                {
+                    "icon": "scale",
+                    "title": {
+                        "ka": "რეჟიმისა და სტატუსის შერჩევა",
+                        "en": "Choosing the right regime"
+                    },
+                    "text": {
+                        "ka": "რჩევა საგადასახადო რეჟიმისა და სტატუსის შესახებ თქვენი საქმიანობის მიხედვით.",
+                        "en": "Advice on tax regime and status based on your activity."
+                    }
+                },
+                {
+                    "icon": "briefcase",
+                    "title": {
+                        "ka": "გარიგებების შეფასება",
+                        "en": "Transaction review"
+                    },
+                    "text": {
+                        "ka": "დაგეგმილი გარიგებებისა და ოპერაციების საგადასახადო შედეგების ანალიზი.",
+                        "en": "Analysis of the tax implications of planned deals and operations."
+                    }
+                },
+                {
+                    "icon": "message",
+                    "title": {
+                        "ka": "პასუხები მიმდინარე კითხვებზე",
+                        "en": "Answers to ongoing questions"
+                    },
+                    "text": {
+                        "ka": "გასაგები განმარტებები ყოველდღიურ საგადასახადო საკითხებზე.",
+                        "en": "Clear explanations for everyday tax questions."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებიც ახალ საქმიანობას ან გარიგებას გეგმავენ",
+                    "მეწარმეები, რომლებიც საქართველოში ბიზნესს იწყებენ",
+                    "ბიზნესები, რომლებსაც საგადასახადო სპეციალისტი არ ჰყავთ",
+                    "ინდმეწარმეები, რომლებსაც ვალდებულებების გარკვევა სჭირდებათ"
+                ],
+                "en": [
+                    "Companies planning a new activity or transaction",
+                    "Entrepreneurs starting a business in Georgia",
+                    "Businesses without an in-house tax specialist",
+                    "Individual entrepreneurs who need clarity on their obligations"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "lightbulb",
+                    "title": {
+                        "ka": "ინფორმირებული გადაწყვეტილებები",
+                        "en": "Informed decisions"
+                    },
+                    "text": {
+                        "ka": "იცით, რა შედეგი მოჰყვება თითოეულ ნაბიჯს.",
+                        "en": "You know the consequences of each step in advance."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "ნაკლები რისკი",
+                        "en": "Lower risk"
+                    },
+                    "text": {
+                        "ka": "შეცდომებს ვერიდებით მანამ, სანამ ისინი მოხდება.",
+                        "en": "We help you avoid mistakes before they happen."
+                    }
+                },
+                {
+                    "icon": "message",
+                    "title": {
+                        "ka": "გასაგები ენა",
+                        "en": "Plain language"
+                    },
+                    "text": {
+                        "ka": "რთულ საკითხებს მარტივად გიხსნით.",
+                        "en": "We explain complex matters simply."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "შესაძლებელია ერთჯერადი კონსულტაცია?",
+                        "en": "Can I get a one-off consultation?"
+                    },
+                    "a": {
+                        "ka": "დაგვიკავშირდით და ერთად განვსაზღვრავთ თქვენთვის შესაფერის ფორმატს — ერთჯერადი საკითხისთვის თუ მუდმივი მხარდაჭერისთვის.",
+                        "en": "Get in touch and we will agree on the right format for you — whether it is a single question or ongoing support."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რა ინფორმაცია უნდა მოვამზადო კონსულტაციისთვის?",
+                        "en": "What should I prepare for the consultation?"
+                    },
+                    "a": {
+                        "ka": "მოკლე აღწერა თქვენი საქმიანობისა და კითხვისა საკმარისია დასაწყებად. თუ საჭირო იქნება დოკუმენტები, წინასწარ გეტყვით.",
+                        "en": "A short description of your business and your question is enough to start. If documents are needed, we will let you know in advance."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "საგადასახადო კონსულტაცია ბიზნესისთვის | Outsourcify",
+                "en": "Tax Consulting for Businesses in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ექსპერტული საგადასახადო კონსულტაცია: ვალდებულებები, საგადასახადო რეჟიმი და გარიგებების შეფასება. მიიღეთ გასაგები რჩევა Outsourcify-ისგან.",
+                "en": "Expert tax consulting in Georgia: obligations, tax regimes and transaction reviews. Get clear, practical advice from the Outsourcify team."
+            },
+            "keywords": {
+                "ka": "საგადასახადო კონსულტაცია; საგადასახადო კონსულტანტი, გადასახადები ბიზნესისთვის, საგადასახადო რჩევა",
+                "en": "tax consulting Georgia; tax advisor Tbilisi, business tax advice, Georgian tax"
+            }
+        },
+        {
+            "id": "tax-returns",
+            "title": {
+                "ka": "დეკლარაციების მომზადება და წარდგენა",
+                "en": "Tax Return Preparation & Filing"
+            },
+            "slug": {
+                "ka": "deklaratsiebis-momzadeba",
+                "en": "tax-return-preparation"
+            },
+            "hidden": false,
+            "icon": "file-check",
+            "image": "/assets/img/photos/bookkeeper-calculating-invoices.webp",
+            "image_alt": {
+                "ka": "ბუღალტერი ამზადებს საგადასახადო დეკლარაციას",
+                "en": "Bookkeeper preparing a tax return"
+            },
+            "short": {
+                "ka": "საგადასახადო დეკლარაციების ზუსტი მომზადება და დროული წარდგენა — ვადების სრული კონტროლით.",
+                "en": "Accurate preparation and timely filing of tax returns — with every deadline under control."
+            },
+            "intro": {
+                "ka": "დეკლარაცია არ არის უბრალოდ ფორმა — ეს ბიზნესის ფინანსური მდგომარეობის ოფიციალური ასახვაა. ვამზადებთ და ვაბარებთ დეკლარაციებს ზუსტ მონაცემებზე დაყრდნობით და ვადების დაცვით.",
+                "en": "A tax return is more than a form — it is the official record of your business’s financial position. We prepare and file returns based on accurate data and on schedule."
+            },
+            "body": {
+                "ka": "<p>დაგვიანებული ან არასწორად შევსებული დეკლარაცია ბიზნესისთვის ზედმეტ ხარჯსა და სტრესს ნიშნავს. ჩვენ ვადებს წინასწარ ვგეგმავთ, მონაცემებს ვამოწმებთ და დეკლარაციებს დროულად ვამზადებთ.</p><p>სერვისი შეგიძლიათ გამოიყენოთ როგორც ბუღალტრული მომსახურების ნაწილი, ისე ცალკე — თუ აღრიცხვას თავად აწარმოებთ, მაგრამ დეკლარაციებისთვის სპეციალისტი გჭირდებათ.</p>",
+                "en": "<p>A late or incorrectly completed return means extra cost and stress. We plan deadlines in advance, check the data and prepare returns on time.</p><p>You can use this service as part of our accounting package or on its own — if you keep your own books but want a specialist to handle your returns.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "calendar",
+                    "title": {
+                        "ka": "ვადების კალენდარი",
+                        "en": "Deadline calendar"
+                    },
+                    "text": {
+                        "ka": "თქვენს ბიზნესზე მორგებული ვადების გეგმა — წინასწარი შეხსენებით.",
+                        "en": "A filing schedule tailored to your business, with advance reminders."
+                    }
+                },
+                {
+                    "icon": "search",
+                    "title": {
+                        "ka": "მონაცემების შემოწმება",
+                        "en": "Data review"
+                    },
+                    "text": {
+                        "ka": "ვამოწმებთ, რომ დეკლარაციაში შესატანი ინფორმაცია სრული და ზუსტია.",
+                        "en": "We check that the information going into each return is complete and accurate."
+                    }
+                },
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "დეკლარაციის მომზადება",
+                        "en": "Return preparation"
+                    },
+                    "text": {
+                        "ka": "დეკლარაციების შევსება მოქმედი მოთხოვნების შესაბამისად.",
+                        "en": "Returns completed in line with current requirements."
+                    }
+                },
+                {
+                    "icon": "send",
+                    "title": {
+                        "ka": "წარდგენა",
+                        "en": "Filing"
+                    },
+                    "text": {
+                        "ka": "დეკლარაციების დროული წარდგენა და დადასტურების შენახვა.",
+                        "en": "Timely submission and a record of every confirmation."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებსაც რეგულარული დეკლარირება სჭირდებათ",
+                    "ინდმეწარმეები",
+                    "ბიზნესები, რომლებიც აღრიცხვას თავად აწარმოებენ",
+                    "კომპანიები, რომლებსაც დეკლარაციები გადაცილებული აქვთ"
+                ],
+                "en": [
+                    "Companies with regular filing obligations",
+                    "Individual entrepreneurs",
+                    "Businesses that keep their own books",
+                    "Companies with overdue returns"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "ვადები კონტროლის ქვეშ",
+                        "en": "Deadlines under control"
+                    },
+                    "text": {
+                        "ka": "ყველა ვადა წინასწარაა დაგეგმილი.",
+                        "en": "Every deadline is planned in advance."
+                    }
+                },
+                {
+                    "icon": "check-circle",
+                    "title": {
+                        "ka": "სიზუსტე",
+                        "en": "Accuracy"
+                    },
+                    "text": {
+                        "ka": "მონაცემები მოწმდება წარდგენამდე.",
+                        "en": "Data is checked before filing."
+                    }
+                },
+                {
+                    "icon": "zap",
+                    "title": {
+                        "ka": "ნაკლები სტრესი",
+                        "en": "Less stress"
+                    },
+                    "text": {
+                        "ka": "დეკლარირების პერიოდი აღარ არის პრობლემა.",
+                        "en": "Filing season is no longer a headache."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "შემიძლია მხოლოდ დეკლარაციების მომზადება შევუკვეთო?",
+                        "en": "Can I order tax return preparation only?"
+                    },
+                    "a": {
+                        "ka": "დიახ, სერვისი ცალკეც არის ხელმისაწვდომი. კონსულტაციაზე განვიხილავთ, რა დეკლარაციები გჭირდებათ და რა მონაცემები დაგჭირდებათ.",
+                        "en": "Yes, the service is available on its own. In the consultation we review which returns you need and what data is required."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რა ხდება, თუ დეკლარაცია უკვე გადაცილებულია?",
+                        "en": "What if a return is already overdue?"
+                    },
+                    "a": {
+                        "ka": "დაგვიკავშირდით რაც შეიძლება მალე — შევაფასებთ სიტუაციას და დაგეხმარებით ვალდებულებების მოწესრიგებაში.",
+                        "en": "Contact us as soon as possible — we will assess the situation and help you bring your obligations up to date."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "დეკლარაციების მომზადება და წარდგენა | Outsourcify",
+                "en": "Tax Return Preparation & Filing in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "საგადასახადო დეკლარაციების ზუსტი მომზადება და დროული წარდგენა კომპანიებისა და ინდმეწარმეებისთვის. ვადების კონტროლი და მონაცემების შემოწმება.",
+                "en": "Accurate preparation and timely filing of tax returns for companies and individual entrepreneurs in Georgia, with deadline tracking and data checks."
+            },
+            "keywords": {
+                "ka": "დეკლარაციის მომზადება; საგადასახადო დეკლარაცია, დეკლარაციის წარდგენა, ინდმეწარმის დეკლარაცია",
+                "en": "tax return preparation Georgia; tax filing, tax declaration Georgia, individual entrepreneur tax return"
+            }
+        },
+        {
+            "id": "records-correction",
+            "title": {
+                "ka": "ისტორიული აღრიცხვის აღდგენა და გასწორება",
+                "en": "Accounting Records Correction"
+            },
+            "slug": {
+                "ka": "aghritskhvis-aghdgena",
+                "en": "accounting-records-correction"
+            },
+            "hidden": false,
+            "icon": "history",
+            "image": "/assets/img/photos/financial-report-chart-analysis.webp",
+            "image_alt": {
+                "ka": "ფინანსური ანგარიშის ანალიზი გრაფიკითა და კალმით",
+                "en": "Financial report analysis with a chart and a pen"
+            },
+            "short": {
+                "ka": "წარსული პერიოდების აღრიცხვის შემოწმება, აღდგენა და გასწორება — რომ ფინანსური სურათი ისევ ზუსტი იყოს.",
+                "en": "Reviewing, restoring and correcting past accounting records — so your financial picture is accurate again."
+            },
+            "intro": {
+                "ka": "არეული ან დაკარგული აღრიცხვა ხშირად მაშინ ჩნდება, როცა ბუღალტერი იცვლება ან ბიზნესი სწრაფად იზრდება. ვპოულობთ უზუსტობებს, ვაღდგენთ დანაკლისს და აღრიცხვას წესრიგში მოგვყავს.",
+                "en": "Messy or missing records often appear when accountants change or a business grows fast. We find the errors, fill the gaps and bring your books back in order."
+            },
+            "body": {
+                "ka": "<p>ისტორიული აღრიცხვის შეცდომები დროთა განმავლობაში გროვდება და რთულს ხდის როგორც ყოველდღიურ მართვას, ისე ანგარიშგებას, ბანკთან ურთიერთობას ან ინვესტორთან მოლაპარაკებას.</p><p>ჩვენ ვიწყებთ არსებული აღრიცხვის დეტალური შემოწმებით, ვადგენთ პრობლემების ჩამონათვალს და ვთანხმდებით გასწორების გეგმაზე. შედეგად იღებთ მოწესრიგებულ აღრიცხვას, რომელზეც შემდგომი მუშაობა შეიძლება.</p>",
+                "en": "<p>Errors in historical records build up over time and make everything harder — daily management, reporting, dealing with banks or talking to investors.</p><p>We start with a detailed review of your existing records, list the issues and agree on a correction plan. The result is clean, reliable books you can build on.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "search",
+                    "title": {
+                        "ka": "არსებული აღრიცხვის შემოწმება",
+                        "en": "Review of existing records"
+                    },
+                    "text": {
+                        "ka": "ვაფასებთ, რამდენად სრული და ზუსტია წარსული პერიოდების აღრიცხვა.",
+                        "en": "We assess how complete and accurate past records are."
+                    }
+                },
+                {
+                    "icon": "target",
+                    "title": {
+                        "ka": "შეცდომების იდენტიფიცირება",
+                        "en": "Identifying errors"
+                    },
+                    "text": {
+                        "ka": "ვადგენთ უზუსტობების, გამოტოვებებისა და შეუსაბამობების ჩამონათვალს.",
+                        "en": "We list the inaccuracies, omissions and mismatches."
+                    }
+                },
+                {
+                    "icon": "history",
+                    "title": {
+                        "ka": "აღრიცხვის აღდგენა",
+                        "en": "Restoring records"
+                    },
+                    "text": {
+                        "ka": "ვაღდგენთ დაკარგულ ან არასრულ აღრიცხვას დოკუმენტებზე დაყრდნობით.",
+                        "en": "We rebuild missing or incomplete records from source documents."
+                    }
+                },
+                {
+                    "icon": "check-circle",
+                    "title": {
+                        "ka": "გასწორება და შეჯერება",
+                        "en": "Correction & reconciliation"
+                    },
+                    "text": {
+                        "ka": "ვასწორებთ ჩანაწერებს და ვაჯერებთ ნაშთებს.",
+                        "en": "We correct entries and reconcile balances."
+                    }
+                },
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "დასკვნა და რეკომენდაციები",
+                        "en": "Findings & recommendations"
+                    },
+                    "text": {
+                        "ka": "გაძლევთ მკაფიო ანგარიშს — რა შეიცვალა და რა უნდა გავითვალისწინოთ მომავალში.",
+                        "en": "A clear report on what changed and what to watch out for."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებმაც ბუღალტერი შეიცვალეს",
+                    "ბიზნესები, რომელთა აღრიცხვაც დიდი ხნის განმავლობაში არ წარმოებულა სათანადოდ",
+                    "კომპანიები, რომლებიც ბანკთან, ინვესტორთან ან პარტნიორთან შეხვედრისთვის ემზადებიან",
+                    "ბიზნესები, რომლებმაც ანგარიშებში შეუსაბამობა შენიშნეს"
+                ],
+                "en": [
+                    "Companies that have changed accountants",
+                    "Businesses whose books have not been properly kept for some time",
+                    "Companies preparing for a bank, investor or partner review",
+                    "Businesses that have noticed discrepancies in their accounts"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "check-circle",
+                    "title": {
+                        "ka": "ზუსტი ფინანსური სურათი",
+                        "en": "An accurate financial picture"
+                    },
+                    "text": {
+                        "ka": "გადაწყვეტილებებს რეალურ ციფრებზე იღებთ.",
+                        "en": "You make decisions based on real numbers."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "ნაკლები რისკი",
+                        "en": "Lower risk"
+                    },
+                    "text": {
+                        "ka": "პრობლემები ვლინდება და სწორდება დროულად.",
+                        "en": "Issues are found and fixed in time."
+                    }
+                },
+                {
+                    "icon": "rocket",
+                    "title": {
+                        "ka": "სუფთა საწყისი",
+                        "en": "A clean start"
+                    },
+                    "text": {
+                        "ka": "მოწესრიგებული აღრიცხვა შემდგომი მუშაობისთვის.",
+                        "en": "Well-organised books to build on."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რამდენ ხანს გრძელდება აღრიცხვის აღდგენა?",
+                        "en": "How long does correcting records take?"
+                    },
+                    "a": {
+                        "ka": "ვადა დამოკიდებულია პერიოდის სიგრძეზე, ოპერაციების მოცულობასა და დოკუმენტების ხელმისაწვდომობაზე. შემოწმების შემდეგ გეტყვით სავარაუდო ვადას.",
+                        "en": "It depends on the length of the period, transaction volume and how available the documents are. After the review we give you an estimated timeline."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რა ხდება, თუ დოკუმენტების ნაწილი დაკარგულია?",
+                        "en": "What if some documents are missing?"
+                    },
+                    "a": {
+                        "ka": "ერთად განვსაზღვრავთ, როგორ შეიძლება დაკარგული ინფორმაციის აღდგენა ან დადასტურება, და ამას გასწორების გეგმაში ვითვალისწინებთ.",
+                        "en": "We work out together how the missing information can be restored or confirmed and build that into the correction plan."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ბუღალტრული აღრიცხვის აღდგენა და გასწორება | Outsourcify",
+                "en": "Accounting Records Correction & Clean-up | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "წარსული პერიოდების ბუღალტრული აღრიცხვის შემოწმება, აღდგენა და გასწორება. ვპოულობთ შეცდომებს, ვავსებთ დანაკლისს და აღრიცხვას წესრიგში მოგვყავს.",
+                "en": "Review, restoration and correction of historical accounting records in Georgia. We find the errors, fill the gaps and bring your books back in order."
+            },
+            "keywords": {
+                "ka": "ბუღალტრული აღრიცხვის აღდგენა; აღრიცხვის გასწორება, ისტორიული აღრიცხვა, ბუღალტერიის მოწესრიგება",
+                "en": "accounting records correction; bookkeeping clean-up, catch-up bookkeeping, historical accounting"
+            }
+        },
+        {
+            "id": "bpo",
+            "title": {
+                "ka": "ბიზნეს-პროცესების აუთსორსინგი (BPO)",
+                "en": "Business Process Outsourcing (BPO)"
+            },
+            "slug": {
+                "ka": "biznes-protsesebis-autsorsingi",
+                "en": "business-process-outsourcing"
+            },
+            "hidden": false,
+            "icon": "users",
+            "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+            "image_alt": {
+                "ka": "გუნდი მუშაობს ლეპტოპებით ოფისში",
+                "en": "Team working on laptops in an office"
+            },
+            "short": {
+                "ka": "კვალიფიციური თანამშრომელი, რომელიც თქვენს ოფისში მუშაობს — დაქირავებისა და ადმინისტრირების საზრუნავის გარეშე.",
+                "en": "A qualified specialist working in your own office — without the hassle of hiring and administration."
+            },
+            "intro": {
+                "ka": "ზოგჯერ ბიზნესს სპეციალისტი ადგილზე სჭირდება. BPO მოდელით გთავაზობთ თანამშრომელს, რომელიც თქვენს ოფისში, თქვენს გუნდთან ერთად მუშაობს, ხოლო ორგანიზაციულ საკითხებზე Outsourcify ზრუნავს.",
+                "en": "Sometimes a business needs a specialist on site. With our BPO model you get a team member who works in your office alongside your people, while Outsourcify takes care of the organisational side."
+            },
+            "body": {
+                "ka": "<p>BPO გიხსნით ცალკეული ბიზნეს-პროცესის — მაგალითად, ბუღალტრული ფუნქციის — სრულ ადმინისტრირებას. თანამშრომელი ჩართულია თქვენს ყოველდღიურ საქმიანობაში, თქვენ კი არ გიწევთ შერჩევაზე, ადმინისტრირებასა და ჩანაცვლებაზე ფიქრი.</p><p>მოდელი განსაკუთრებით მოსახერხებელია კომპანიებისთვის, რომლებსაც სპეციალისტის ადგილზე ყოფნა სჭირდებათ, მაგრამ დამატებითი HR-ტვირთის აღება არ სურთ.</p>",
+                "en": "<p>BPO takes the full administration of a business process — such as your accounting function — off your hands. The specialist is part of your day-to-day operations, while you don’t have to worry about recruitment, administration or cover.</p><p>This model is especially convenient for companies that need someone on site but don’t want the extra HR workload.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "target",
+                    "title": {
+                        "ka": "საჭიროებების ანალიზი",
+                        "en": "Needs analysis"
+                    },
+                    "text": {
+                        "ka": "ვაზუსტებთ როლს, მოვალეობებსა და სამუშაო რეჟიმს.",
+                        "en": "We define the role, responsibilities and working schedule."
+                    }
+                },
+                {
+                    "icon": "user",
+                    "title": {
+                        "ka": "სპეციალისტის შერჩევა",
+                        "en": "Specialist selection"
+                    },
+                    "text": {
+                        "ka": "ვარჩევთ თანამშრომელს, რომელიც თქვენს მოთხოვნებს შეესაბამება.",
+                        "en": "We select a specialist who matches your requirements."
+                    }
+                },
+                {
+                    "icon": "building",
+                    "title": {
+                        "ka": "მუშაობა თქვენს ოფისში",
+                        "en": "Working in your office"
+                    },
+                    "text": {
+                        "ka": "თანამშრომელი თქვენს გუნდსა და პროცესებშია ჩართული.",
+                        "en": "The specialist is integrated into your team and processes."
+                    }
+                },
+                {
+                    "icon": "settings",
+                    "title": {
+                        "ka": "ადმინისტრირება",
+                        "en": "Administration"
+                    },
+                    "text": {
+                        "ka": "ორგანიზაციულ და ადმინისტრაციულ საკითხებს Outsourcify მართავს.",
+                        "en": "Outsourcify manages the organisational and administrative side."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "ხარისხის კონტროლი",
+                        "en": "Quality control"
+                    },
+                    "text": {
+                        "ka": "მუდმივი კომუნიკაცია და მხარდაჭერა ჩვენი გუნდისგან.",
+                        "en": "Ongoing communication and support from our team."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებსაც სპეციალისტი ადგილზე სჭირდებათ",
+                    "ბიზნესები, რომლებსაც დაქირავებისა და ადმინისტრირების ტვირთის შემცირება სურთ",
+                    "მზარდი კომპანიები, რომლებსაც მოქნილი რესურსი სჭირდებათ",
+                    "ორგანიზაციები, რომლებიც ცალკეულ ფუნქციას აუთსორსინგზე გადაიტანენ"
+                ],
+                "en": [
+                    "Companies that need a specialist on site",
+                    "Businesses that want to reduce the hiring and admin burden",
+                    "Growing companies that need flexible resources",
+                    "Organisations moving a specific function to an outsourcing model"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "დაზოგილი დრო",
+                        "en": "Time saved"
+                    },
+                    "text": {
+                        "ka": "შერჩევასა და ადმინისტრირებაზე ჩვენ ვზრუნავთ.",
+                        "en": "We handle selection and administration."
+                    }
+                },
+                {
+                    "icon": "layers",
+                    "title": {
+                        "ka": "მოქნილობა",
+                        "en": "Flexibility"
+                    },
+                    "text": {
+                        "ka": "რესურსი იცვლება ბიზნესის საჭიროებებთან ერთად.",
+                        "en": "Resources adapt as your needs change."
+                    }
+                },
+                {
+                    "icon": "handshake",
+                    "title": {
+                        "ka": "სანდო პარტნიორი",
+                        "en": "A reliable partner"
+                    },
+                    "text": {
+                        "ka": "ერთი კონტაქტი ყველა ორგანიზაციულ საკითხზე.",
+                        "en": "One point of contact for all organisational matters."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რით განსხვავდება BPO ჩვეულებრივი ბუღალტრული მომსახურებისგან?",
+                        "en": "How is BPO different from regular accounting services?"
+                    },
+                    "a": {
+                        "ka": "ბუღალტრული მომსახურებისას აღრიცხვას ჩვენი გუნდი დისტანციურად აწარმოებს. BPO-ს დროს სპეციალისტი თქვენს ოფისში მუშაობს და თქვენს ყოველდღიურ პროცესებშია ჩართული.",
+                        "en": "With accounting services, our team keeps your books remotely. With BPO, a specialist works in your office and is part of your daily processes."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რომელი პროცესების აუთსორსინგია შესაძლებელი?",
+                        "en": "Which processes can be outsourced?"
+                    },
+                    "a": {
+                        "ka": "მოგვიყევით თქვენს საჭიროებაზე კონსულტაციაზე — ერთად შევაფასებთ, რომელი ფუნქციის გადაცემაა მიზანშეწონილი და როგორ ავაწყოთ თანამშრომლობა.",
+                        "en": "Tell us about your needs in the consultation — together we will assess which function makes sense to outsource and how to set it up."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ბიზნეს-პროცესების აუთსორსინგი (BPO) საქართველოში",
+                "en": "Business Process Outsourcing (BPO) in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "BPO მომსახურება: კვალიფიციური თანამშრომელი თქვენს ოფისში, შერჩევისა და ადმინისტრირების საზრუნავის გარეშე. გაიგეთ, როგორ მუშაობს ეს მოდელი.",
+                "en": "BPO services in Georgia: a qualified specialist working in your office, without the hassle of recruitment and administration. See how it works."
+            },
+            "keywords": {
+                "ka": "ბიზნეს-პროცესების აუთსორსინგი; BPO საქართველოში, აუთსორსინგი, აუთსტაფინგი",
+                "en": "business process outsourcing Georgia; BPO Tbilisi, outsourcing company Georgia, staff outsourcing"
+            }
+        },
+        {
+            "id": "financial-consulting",
+            "title": {
+                "ka": "ფინანსური კონსულტაცია",
+                "en": "Financial Consulting"
+            },
+            "slug": {
+                "ka": "finansuri-konsultatsia",
+                "en": "financial-consulting"
+            },
+            "hidden": false,
+            "icon": "pie",
+            "image": "/assets/img/photos/accountant-working-calculator-laptop.webp",
+            "image_alt": {
+                "ka": "ფინანსური კონსულტანტი მუშაობს კალკულატორითა და ლეპტოპით",
+                "en": "Financial consultant working with a calculator and laptop"
+            },
+            "short": {
+                "ka": "ფინანსური ანალიზი და რჩევა, რომელიც ხარჯების კონტროლსა და მომგებიანობის ზრდაში გეხმარებათ.",
+                "en": "Financial analysis and advice that help you control costs and grow profitability."
+            },
+            "intro": {
+                "ka": "ციფრები მხოლოდ ანგარიშგებისთვის არ არსებობს — ისინი ბიზნესის მართვის ინსტრუმენტია. გეხმარებით, ფინანსური ინფორმაცია გადაწყვეტილებებად აქციოთ.",
+                "en": "Numbers are not just for reporting — they are a management tool. We help you turn financial information into decisions."
+            },
+            "body": {
+                "ka": "<p>ბევრ კომპანიას აქვს ბუღალტრული აღრიცხვა, მაგრამ არ იყენებს მას ბიზნესის მართვისთვის. ფინანსური კონსულტაციით ვაანალიზებთ თქვენს შემოსავლებს, ხარჯებსა და ფულად ნაკადებს და გაძლევთ კონკრეტულ რეკომენდაციებს.</p><p>ჩვენი მიზანია, ფინანსები ეფექტურად მართოთ, დაიცვათ რეგულაციები და გაზარდოთ მომგებიანობა.</p>",
+                "en": "<p>Many companies keep books but don’t use them to run the business. Through financial consulting we analyse your revenue, costs and cash flow and give you concrete recommendations.</p><p>Our aim is to help you manage your finances efficiently, stay compliant and increase profitability.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "chart",
+                    "title": {
+                        "ka": "ფინანსური ანალიზი",
+                        "en": "Financial analysis"
+                    },
+                    "text": {
+                        "ka": "შემოსავლების, ხარჯებისა და მომგებიანობის ანალიზი.",
+                        "en": "Analysis of revenue, costs and profitability."
+                    }
+                },
+                {
+                    "icon": "bars",
+                    "title": {
+                        "ka": "მმართველობითი ანგარიშგება",
+                        "en": "Management reporting"
+                    },
+                    "text": {
+                        "ka": "ანგარიშები, რომლებიც ბიზნესის მართვისთვის გამოგადგებათ.",
+                        "en": "Reports designed to help you run the business."
+                    }
+                },
+                {
+                    "icon": "calendar",
+                    "title": {
+                        "ka": "ბიუჯეტირება და დაგეგმვა",
+                        "en": "Budgeting & planning"
+                    },
+                    "text": {
+                        "ka": "ფინანსური გეგმა და მისი შესრულების კონტროლი.",
+                        "en": "A financial plan and tracking against it."
+                    }
+                },
+                {
+                    "icon": "pie",
+                    "title": {
+                        "ka": "ხარჯების ოპტიმიზაცია",
+                        "en": "Cost review"
+                    },
+                    "text": {
+                        "ka": "ვპოულობთ ხარჯებს, რომელთა შემცირებაც შესაძლებელია.",
+                        "en": "We identify costs that can be reduced."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებსაც ზრდის დაგეგმვა სურთ",
+                    "მეწარმეები, რომლებსაც ფინანსური სურათის უკეთ გაგება სჭირდებათ",
+                    "ბიზნესები, რომლებიც ინვესტიციას ან სესხს განიხილავენ",
+                    "კომპანიები, რომელთა ხარჯებიც შემოსავლებზე სწრაფად იზრდება"
+                ],
+                "en": [
+                    "Companies planning growth",
+                    "Owners who want a clearer view of their finances",
+                    "Businesses considering investment or a loan",
+                    "Companies whose costs are growing faster than revenue"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "target",
+                    "title": {
+                        "ka": "მკაფიო ფინანსური სურათი",
+                        "en": "A clear financial picture"
+                    },
+                    "text": {
+                        "ka": "იცით, სად შოულობთ და სად კარგავთ.",
+                        "en": "You know where you earn and where you lose."
+                    }
+                },
+                {
+                    "icon": "chart",
+                    "title": {
+                        "ka": "მომგებიანობის ზრდა",
+                        "en": "Higher profitability"
+                    },
+                    "text": {
+                        "ka": "რეკომენდაციები, რომლებიც შედეგზეა ორიენტირებული.",
+                        "en": "Recommendations focused on results."
+                    }
+                },
+                {
+                    "icon": "lightbulb",
+                    "title": {
+                        "ka": "უკეთესი გადაწყვეტილებები",
+                        "en": "Better decisions"
+                    },
+                    "text": {
+                        "ka": "გადაწყვეტილებები ციფრებზე დაყრდნობით.",
+                        "en": "Decisions backed by numbers."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რით განსხვავდება ფინანსური კონსულტაცია ბუღალტრული მომსახურებისგან?",
+                        "en": "How is financial consulting different from accounting?"
+                    },
+                    "a": {
+                        "ka": "ბუღალტერია აღრიცხავს იმას, რაც მოხდა. ფინანსური კონსულტაცია ამ ინფორმაციას აანალიზებს და გეხმარებათ, დაგეგმოთ ის, რაც უნდა მოხდეს.",
+                        "en": "Accounting records what happened. Financial consulting analyses that information and helps you plan what should happen next."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ფინანსური კონსულტაცია კომპანიებისთვის | Outsourcify",
+                "en": "Financial Consulting for Businesses | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ფინანსური ანალიზი, მმართველობითი ანგარიშგება და ბიუჯეტირება. Outsourcify გეხმარებათ ხარჯების კონტროლში, მომგებიანობის ზრდასა და სწორ გადაწყვეტილებებში.",
+                "en": "Financial analysis, management reporting and budgeting. Outsourcify helps businesses in Georgia control costs and increase profitability."
+            },
+            "keywords": {
+                "ka": "ფინანსური კონსულტაცია; ფინანსური ანალიზი, ბიუჯეტირება, მმართველობითი ანგარიშგება",
+                "en": "financial consulting Georgia; financial analysis, budgeting, management reporting"
+            }
+        }
+    ]
+}

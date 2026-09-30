@@ -1,0 +1,136 @@
+{
+    "items": [
+        {
+            "category": "general",
+            "q": {
+                "ka": "რას საქმიანობს Outsourcify?",
+                "en": "What does Outsourcify do?"
+            },
+            "a": {
+                "ka": "Outsourcify ბუღალტრული და ბიზნეს-პროცესების აუთსორსინგის კომპანიაა. გთავაზობთ ბუღალტრულ მომსახურებას, საგადასახადო კონსულტაციას, დეკლარაციების მომზადებასა და წარდგენას, ისტორიული აღრიცხვის აღდგენას, ფინანსურ კონსულტაციასა და BPO-ს — თანამშრომელს, რომელიც თქვენს ოფისში მუშაობს.",
+                "en": "Outsourcify is an accounting and business process outsourcing company. We offer accounting and bookkeeping, tax consulting, tax return preparation and filing, correction of historical records, financial consulting and BPO — a specialist who works in your own office."
+            },
+            "hidden": false
+        },
+        {
+            "category": "general",
+            "q": {
+                "ka": "რა ზომის ბიზნესებთან მუშაობთ?",
+                "en": "What size of businesses do you work with?"
+            },
+            "a": {
+                "ka": "ყველა ზომის ბიზნესთან — ახალი კომპანიებიდან და ინდმეწარმეებიდან დაწყებული, მსხვილი კომპანიებით დამთავრებული. მომსახურების ფორმატს თითოეული კლიენტის საჭიროებაზე ვარგებთ.",
+                "en": "Businesses of every size — from new companies and individual entrepreneurs to larger organisations. We tailor the service format to each client’s needs."
+            },
+            "hidden": false
+        },
+        {
+            "category": "general",
+            "q": {
+                "ka": "რატომ ჯობია ბუღალტერიის აუთსორსინგი შიდა ბუღალტრის აყვანას?",
+                "en": "Why outsource accounting instead of hiring in-house?"
+            },
+            "a": {
+                "ka": "აუთსორსინგით იღებთ სერტიფიცირებული ბუღალტრების გუნდის ცოდნას, არ გიწევთ დაქირავებაზე, სწავლებასა და ჩანაცვლებაზე ზრუნვა, ხოლო აღრიცხვა არ ჩერდება შვებულების ან თანამშრომლის წასვლის დროს.",
+                "en": "You get the knowledge of a team of certified accountants, you don’t have to deal with hiring, training or cover, and your accounting doesn’t stop when someone goes on holiday or leaves."
+            },
+            "hidden": false
+        },
+        {
+            "category": "services",
+            "q": {
+                "ka": "შემიძლია მხოლოდ ერთი სერვისით ვისარგებლო?",
+                "en": "Can I use just one service?"
+            },
+            "a": {
+                "ka": "მომსახურებას თქვენს საჭიროებებზე ვარგებთ — შესაძლებელია როგორც კომპლექსური თანამშრომლობა, ისე ცალკეული სერვისი, მაგალითად, დეკლარაციების მომზადება ან აღრიცხვის აღდგენა.",
+                "en": "We tailor our services to your needs — you can work with us across the board or choose a single service, such as tax return preparation or records correction."
+            },
+            "hidden": false
+        },
+        {
+            "category": "services",
+            "q": {
+                "ka": "რა მოხდება, თუ წინა წლების აღრიცხვა არეულია?",
+                "en": "What if our books from previous years are a mess?"
+            },
+            "a": {
+                "ka": "სწორედ ამისთვის გვაქვს ისტორიული აღრიცხვის აღდგენისა და გასწორების სერვისი: ვამოწმებთ წარსულ პერიოდებს, ვპოულობთ შეცდომებს და აღრიცხვას წესრიგში მოგვყავს.",
+                "en": "That is exactly what our records correction service is for: we review past periods, find the errors and bring your books back in order."
+            },
+            "hidden": false
+        },
+        {
+            "category": "services",
+            "q": {
+                "ka": "რა არის BPO და როდის არის ის საჭირო?",
+                "en": "What is BPO and when do I need it?"
+            },
+            "a": {
+                "ka": "BPO (ბიზნეს-პროცესების აუთსორსინგი) ნიშნავს, რომ კვალიფიციური თანამშრომელი თქვენს ოფისში მუშაობს, ხოლო მის ადმინისტრირებაზე Outsourcify ზრუნავს. ეს მოსახერხებელია, როცა სპეციალისტი ადგილზე გჭირდებათ.",
+                "en": "BPO (business process outsourcing) means a qualified specialist works in your office while Outsourcify handles the administration. It is ideal when you need someone on site."
+            },
+            "hidden": false
+        },
+        {
+            "category": "process",
+            "q": {
+                "ka": "როგორ ხდება დოკუმენტების გაცვლა?",
+                "en": "How do we exchange documents?"
+            },
+            "a": {
+                "ka": "დოკუმენტების მიწოდების ფორმატს ჩართვის ეტაპზე ერთად ვთანხმდებით — ისე, რომ თქვენთვის მოსახერხებელი იყოს.",
+                "en": "We agree on how documents will be shared during onboarding — in whatever way is most convenient for you."
+            },
+            "hidden": false
+        },
+        {
+            "category": "process",
+            "q": {
+                "ka": "როგორ არის დაცული ჩემი ფინანსური ინფორმაცია?",
+                "en": "How is my financial information protected?"
+            },
+            "a": {
+                "ka": "ფინანსური ინფორმაციის კონფიდენციალურობა ჩვენი მუშაობის საფუძველია. კონფიდენციალურობის პირობებს თანამშრომლობის დაწყებისას ერთად შევათანხმებთ.",
+                "en": "Confidentiality of financial information is fundamental to our work. We agree on confidentiality terms together when we start working with you."
+            },
+            "hidden": false
+        },
+        {
+            "category": "process",
+            "q": {
+                "ka": "რა ღირს თქვენი მომსახურება?",
+                "en": "How much do your services cost?"
+            },
+            "a": {
+                "ka": "ღირებულება დამოკიდებულია ოპერაციების მოცულობაზე, საქმიანობის ტიპსა და საჭირო სერვისებზე. ზუსტ შეთავაზებას კონსულტაციის შემდეგ მოგიმზადებთ.",
+                "en": "The price depends on transaction volume, type of business and the services you need. We prepare an exact proposal after the consultation."
+            },
+            "hidden": false
+        },
+        {
+            "category": "booking",
+            "q": {
+                "ka": "რა ხდება კონსულტაციაზე?",
+                "en": "What happens in the consultation?"
+            },
+            "a": {
+                "ka": "გავეცნობით თქვენს ბიზნესს, აღრიცხვის ამჟამინდელ მდგომარეობასა და საჭიროებებს, ვუპასუხებთ თქვენს კითხვებს და შემდეგ შემოგთავაზებთ შესაფერის მომსახურების ფორმატს.",
+                "en": "We get to know your business, the current state of your accounting and your needs, answer your questions and then propose a suitable service format."
+            },
+            "hidden": false
+        },
+        {
+            "category": "booking",
+            "q": {
+                "ka": "როგორ დავჯავშნო კონსულტაცია?",
+                "en": "How do I book a consultation?"
+            },
+            "a": {
+                "ka": "გამოიყენეთ ონლაინ დაჯავშნა: უპასუხეთ რამდენიმე მოკლე კითხვას და აირჩიეთ მოსახერხებელი დღე და საათი. ასევე შეგიძლიათ დაგვირეკოთ ან მოგვწეროთ ელფოსტაზე.",
+                "en": "Use our online booking: answer a few short questions and choose a convenient day and time. You can also call us or send an email."
+            },
+            "hidden": false
+        }
+    ]
+}
