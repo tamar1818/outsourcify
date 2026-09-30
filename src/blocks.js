@@ -338,7 +338,7 @@ R.showcase = (b) => {
       + btn(t("learn_more"), "service:" + s.id, "primary") + "</div></div>";
   });
   let h = '<section class="section showcase-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
-    + '<div class="sc" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="vertical">' + tabs + '</div><div class="sc__panels">' + panels + "</div></div>";
+    + '<div class="sc" data-tabs data-reveal><div class="sc__tabs" role="tablist" aria-orientation="horizontal">' + tabs + '</div><div class="sc__panels">' + panels + "</div></div>";
   const c = ctaBtn(b, "", "ghost");
   if (c) h += '<div class="sec-actions" data-reveal>' + c + "</div>";
   return h + "</div></section>";

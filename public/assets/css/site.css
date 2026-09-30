@@ -366,29 +366,29 @@ html[lang="ka"] .phero__title { font-size: clamp(1.7rem, 1.2rem + 1.5vw, 2.6rem)
 .svc-row:hover .svc-row__go { background: var(--navy); color: #fff; transform: rotate(45deg); }
 
 /* ------------------------------------------------------------- სერვისების ჩანართები */
-.sc { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
-.sc__tabs { display: grid; border-top: 1px solid var(--line); }
-.sc__tab { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 14px; width: 100%; padding: 16px 16px 16px 18px; border: 0; border-bottom: 1px solid var(--line);
-  background: none; text-align: left; transition: background-color .25s, color .25s; }
-.sc__tab::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; border-radius: 3px; background: var(--navy); transform: scaleY(0); transition: transform .3s var(--ease); }
-.sc__tab:hover { background: var(--surface); }
-.sc__tab[aria-selected="true"] { background: var(--surface); }
-.sc__tab[aria-selected="true"]::before { transform: scaleY(1); }
-.sc__num { font-size: .9rem; font-weight: 700; color: var(--muted); }
-.sc__label { font-size: clamp(.98rem, .92rem + .25vw, 1.1rem); font-weight: 700; letter-spacing: -.015em; line-height: 1.3; color: var(--ink-2); }
-.sc__tab[aria-selected="true"] .sc__label, .sc__tab[aria-selected="true"] .sc__num { color: var(--navy); }
-.sc__arrow { width: 20px; height: 20px; color: var(--navy); opacity: 0; transform: translateX(-8px); transition: opacity .25s, transform .3s var(--ease); }
-.sc__tab:hover .sc__arrow, .sc__tab[aria-selected="true"] .sc__arrow { opacity: 1; transform: none; }
-.sc__panel { border-radius: var(--r-xl); background: var(--surface); overflow: hidden; animation: scIn .45s var(--ease); }
+/* ზემოთ ჰორიზონტალური ჩანართები, ქვემოთ ერთი ბარათი: ტექსტი მარცხნივ, ფოტო მარჯვნივ */
+.sc__tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.sc__tab { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; text-align: left;
+  transition: background-color .25s, border-color .25s, color .25s; }
+.sc__tab:hover { border-color: var(--line-2); background: var(--surface); }
+.sc__num { display: grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--surface); font-size: .78rem; font-weight: 700; color: var(--muted); transition: background-color .25s, color .25s; }
+.sc__label { font-size: .92rem; font-weight: 700; line-height: 1.3; color: var(--ink-2); white-space: nowrap; }
+.sc__arrow { display: none; }
+.sc__tab[aria-selected="true"] { border-color: var(--navy); background: var(--navy); }
+.sc__tab[aria-selected="true"] .sc__label { color: #fff; }
+.sc__tab[aria-selected="true"] .sc__num { background: rgba(255, 255, 255, .16); color: #fff; }
+.sc__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 380px; border-radius: var(--r-xl); background: var(--surface); overflow: hidden; animation: scIn .45s var(--ease); }
 .sc__panel[hidden] { display: none; }
-@keyframes scIn { from { opacity: 0; transform: translateY(10px); } }
-.sc__media { position: relative; aspect-ratio: 16 / 8; overflow: hidden; }
-.sc__badge { position: absolute; left: 22px; bottom: 22px; z-index: 1; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; background: #fff; color: var(--navy); }
-.sc__body { padding: clamp(22px, 3vw, 32px); }
-.sc__title { font-size: clamp(1.25rem, 1.1rem + .5vw, 1.6rem); letter-spacing: -.025em; }
-.sc__text { margin-top: 8px; font-size: .96rem; color: var(--muted); max-width: 58ch; }
-.sc__list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin: 18px 0 24px; list-style: none; }
-.sc__list li { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; font-size: .92rem; color: var(--ink-2); }
+@keyframes scIn { from { opacity: 0; transform: translateY(8px); } }
+.sc__body { order: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(24px, 3.5vw, 48px); }
+.sc__media { order: 2; position: relative; min-height: 280px; margin: 10px; border-radius: calc(var(--r-xl) - 10px); overflow: hidden; }
+.sc__media img { position: absolute; inset: 0; transition: transform 1s var(--ease); }
+.sc__panel:hover .sc__media img { transform: scale(1.03); }
+.sc__badge { position: absolute; left: 16px; top: 16px; z-index: 1; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: #fff; color: var(--navy); }
+.sc__title { font-size: clamp(1.25rem, 1.1rem + .5vw, 1.6rem); letter-spacing: -.02em; }
+.sc__text { margin-top: 10px; color: var(--muted); font-size: .96rem; max-width: 52ch; }
+.sc__list { display: grid; gap: 10px; margin: 20px 0 26px; list-style: none; }
+.sc__list li { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; font-size: .93rem; color: var(--ink-2); }
 .sc__check { width: 22px; height: 22px; padding: 4px; margin-top: 1px; border-radius: 50%; background: var(--navy); color: #fff; stroke-width: 3; }
 
 /* ------------------------------------------------------------------ სურათი + ტექსტი */
@@ -763,14 +763,9 @@ body.is-booking .chat--float { display: none; }
   .cards--bento, .cards--bento.cards--n6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mega__in { grid-template-columns: 1fr; }
-  .sc { grid-template-columns: minmax(0, 1fr); }
-  .sc__tabs { display: flex; overflow-x: auto; gap: 8px; border: 0; padding-bottom: 4px; scrollbar-width: none; }
+  .sc__tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 4px; scrollbar-width: none; }
   .sc__tabs::-webkit-scrollbar { display: none; }
-  .sc__tab { flex: none; grid-template-columns: auto auto; width: auto; padding: 12px 18px; border: 0; border-radius: 999px; background: var(--surface); }
-  .sc__tab::before, .sc__arrow { display: none; }
-  .sc__tab[aria-selected="true"] { background: var(--navy); }
-  .sc__tab[aria-selected="true"] .sc__label, .sc__tab[aria-selected="true"] .sc__num { color: #fff; }
-  .sc__label { font-size: .98rem; white-space: nowrap; }
+  .sc__tab { flex: none; }
 }
 
 @media (max-width: 900px) {
@@ -813,7 +808,8 @@ body.is-booking .chat--float { display: none; }
   .svc-row:hover { padding-left: 12px; }
   .svc-row__num { display: none; }
   .svc-row__ico, .svc-row__go { width: 46px; height: 46px; }
-  .sc__list { grid-template-columns: 1fr; }
+  .sc__panel { grid-template-columns: minmax(0, 1fr); }
+  .sc__media { order: 0; min-height: 0; aspect-ratio: 16 / 9; margin: 8px 8px 0; }
   .hero__actions .btn, .phero__actions .btn { flex: 1 1 auto; }
   .hero__points { gap: 10px 18px; }
   .fc { max-width: 210px; padding: 11px 12px; font-size: .82rem; gap: 10px; border-radius: 16px; }
