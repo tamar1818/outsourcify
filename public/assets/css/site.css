@@ -1070,3 +1070,7 @@ html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
 .chat__launcher::before { border-color: var(--btn); }
 .hdr.is-scrolled .hdr__end > .btn--primary { background: var(--btn); color: #fff; }
 .hdr.is-scrolled .hdr__end > .btn--primary:hover { background: var(--btn-h); }
+/* mega-menu ჰედერის ცენტრში — ეკრანის კიდეს არასოდეს სცდება */
+.nav__item--mega { position: static; }
+.mega { left: 50%; transform: translate(-50%, 8px); top: calc(100% - 4px); }
+.nav__item--mega.is-open .mega { transform: translate(-50%, 0); }
