@@ -39,8 +39,7 @@ function langMenu(alts) {
     + "</ul></div>";
 }
 
-/* კომპანიის ბმულების ხატულები mega-menu-ში */
-const LINK_ICONS = { about: "users", pricing: "receipt", why: "star", how: "layers", industries: "building", faq: "message", contact: "mail", book: "calendar" };
+
 
 const menuItems = (key) => (C.site().menus || {})[key] || [];
 
@@ -52,22 +51,11 @@ function isCurrent(url) {
 }
 
 function megaMenu() {
-  const item = (url, ic, title, desc) => '<li><a class="mega__item" href="' + e(url) + '"><span class="mega__ico">' + icon(ic) + "</span>"
-    + "<span><b>" + e(title) + "</b>" + (desc ? "<small>" + e(desc) + "</small>" : "") + "</span></a></li>";
-  const menus = C.site().menus || {};
-  const company = (menus.footer_company || []).map((m) => {
-    const ref = String(m.link || "");
-    const id = (ref.match(/^page:([\w-]+)/) || [])[1] || "";
-    return item(C.linkUrl(ref), LINK_ICONS[id] || "arrow-right", Ls(m.label), Ls(m.desc));
-  }).join("");
-  return '<div class="mega" id="mega-services"><div class="mega__in">'
-    + '<div class="mega__col"><p class="mega__h">' + e(t("services")) + '</p><ul class="mega__list" role="list">'
-    + C.services().map((s) => item(C.urlService(s), String(s.icon || "briefcase"), Ls(s.title), Ls(s.short))).join("") + "</ul>"
-    + '<a class="mega__all" href="' + e(C.urlPage("services")) + '">' + e(t("all_services")) + icon("arrow-right") + "</a></div>"
-    + (company ? '<div class="mega__col"><p class="mega__h">' + e(Ls(menus.footer_company_title) || "") + '</p><ul class="mega__list" role="list">' + company + "</ul></div>" : "")
-    + '<div class="mega__feature"><p class="mega__feature-title">' + e(t("sidebar_title")) + "</p><p>" + e(t("sidebar_text")) + "</p>"
-    + '<div class="mega__photo"><img src="/assets/img/photos/team-collaborating-laptops-office-560.webp" alt="" loading="lazy" width="560" height="373"></div>'
-    + B.btn(t("book_cta"), "page:book", "outline", "arrow-right") + "</div>"
+  return '<div class="mega" id="mega-services"><div class="mega__in"><ul class="mega__list" role="list">'
+    + C.services().map((s) => '<li><a class="mega__item" href="' + e(C.urlService(s)) + '"><span class="mega__ico">' + icon(String(s.icon || "briefcase")) + "</span>"
+      + "<span><b>" + e(Ls(s.title)) + "</b><small>" + e(Ls(s.short)) + "</small></span></a></li>").join("")
+    + '</ul><div class="mega__foot"><a class="mega__all" href="' + e(C.urlPage("services")) + '">' + e(t("all_services")) + icon("arrow-right") + "</a>"
+    + '<a class="mega__all mega__all--muted" href="' + e(C.urlPage("pricing")) + '">' + e(t("pricing_link")) + icon("arrow-right") + "</a></div>"
     + "</div></div>";
 }
 

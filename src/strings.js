@@ -68,6 +68,10 @@ module.exports = {
         "ka": "ლარი",
         "en": "GEL"
     },
+    "pricing_link": {
+        "ka": "მომსახურების ფასები",
+        "en": "Service pricing"
+    },
     "clients": {
         "ka": "ჩვენი კლიენტები",
         "en": "Our clients"

@@ -1000,3 +1000,19 @@ html[lang="ka"] .mega__feature-title { font-feature-settings: "case" 1; letter-s
   .lsel__btn { height: 40px; padding: 0 10px; }
   .lsel__code { display: none; }
 }
+
+/* mega-menu v4 — კომპაქტური: მხოლოდ სერვისები, 2 სვეტი, ღილაკის ქვეშ */
+.nav__item--mega { position: relative; }
+.mega { left: -16px; width: min(720px, calc(100vw - 32px)); transform: translateY(8px); }
+.nav__item--mega.is-open .mega { transform: none; }
+.mega__in { display: block; padding: 10px; margin-top: 8px; border-radius: 18px; }
+.mega__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
+.mega__item { padding: 10px; gap: 12px; align-items: flex-start; }
+.mega__ico { width: 36px; height: 36px; border-radius: 10px; }
+.mega__ico .ico { width: 18px; height: 18px; }
+.mega__item b { font-size: .86rem; line-height: 1.35; }
+.mega__item small { -webkit-line-clamp: 1; font-size: .8rem; }
+.mega__foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; padding: 12px 12px 4px; border-top: 1px solid var(--line); }
+.mega__foot .mega__all { margin: 0; font-size: .86rem; }
+.mega__all--muted { color: var(--muted) !important; font-weight: 500 !important; }
+.mega__all--muted:hover { color: var(--navy) !important; }
