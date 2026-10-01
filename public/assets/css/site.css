@@ -1016,3 +1016,57 @@ html[lang="ka"] .mega__feature-title { font-feature-settings: "case" 1; letter-s
 .mega__foot .mega__all { margin: 0; font-size: .86rem; }
 .mega__all--muted { color: var(--muted) !important; font-weight: 500 !important; }
 .mega__all--muted:hover { color: var(--navy) !important; }
+
+/* mega-menu v5 — სერვისები (2 სვეტი) + ფოტო-ბარათი მარჯვნივ */
+.mega { width: min(980px, calc(100vw - 32px)); }
+.mega__in { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 10px; }
+.mega__feature { display: flex; flex-direction: column; gap: 6px; padding: 12px 12px 14px; border-radius: 14px; background: var(--surface); }
+.mega__photo { margin: 0 0 6px; aspect-ratio: 16 / 9; border-radius: 10px; }
+.mega__feature-title { font-size: .92rem; }
+.mega__feature > p:not(.mega__feature-title) { font-size: .82rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mega__feature .btn { --h: 40px; font-size: .84rem; margin-top: auto; }
+@media (max-width: 1240px) { .mega__in { grid-template-columns: minmax(0, 1fr); } .mega__feature { display: none; } .mega { width: min(720px, calc(100vw - 32px)); } }
+.mega__photo { aspect-ratio: 16 / 8; }
+.mega__feature > p:not(.mega__feature-title) { -webkit-line-clamp: 2; }
+.mega__feature .btn { white-space: normal; padding: 0 12px; text-align: center; }
+html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
+
+/* ======================================================================
+   ჰედერი v4 — მომრგვალებული მცურავი ზოლი; სქროლზე მუქდება,
+   ქვემოთ სქროლისას იმალება, ზემოთ სქროლისას ჩნდება
+   ====================================================================== */
+:root { --hdr: 86px; }
+.hdr { height: var(--hdr); padding-top: 10px; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 0;
+  transition: transform .4s var(--ease); }
+.hdr.is-hidden { transform: translateY(-110%); }
+.hdr__in { height: calc(var(--hdr) - 18px); isolation: isolate; }
+.hdr__in::before { content: ""; position: absolute; z-index: -1; inset: 0 calc(var(--gutter) - 14px); border-radius: 20px;
+  background: rgba(255, 255, 255, .88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid var(--line);
+  box-shadow: 0 6px 20px -12px rgba(11, 26, 44, .18); transition: background-color .35s, border-color .35s, box-shadow .35s; }
+.hdr.is-scrolled { border-bottom: 0; }
+.hdr.is-scrolled .hdr__in::before { background: rgba(7, 29, 54, .94); border-color: rgba(255, 255, 255, .08); box-shadow: 0 16px 32px -16px rgba(7, 29, 54, .55); }
+.hdr.is-scrolled { --logo-word: #fff; --logo-1: #fff; --logo-2: #9cc8ef; }
+.hdr .nav__link, .hdr .nav__caret { transition: color .25s; }
+.hdr.is-scrolled .nav__link, .hdr.is-scrolled .nav__caret { color: rgba(255, 255, 255, .78); }
+.hdr.is-scrolled .nav__link:hover, .hdr.is-scrolled .nav__link[aria-current="page"], .hdr.is-scrolled .nav__caret:hover,
+.hdr.is-scrolled .nav__item--mega.is-open > .nav__link { color: #fff; }
+.hdr.is-scrolled .lsel__btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+.hdr.is-scrolled .lsel__btn:hover, .hdr.is-scrolled .lsel.is-open .lsel__btn { background: rgba(255, 255, 255, .16); }
+.hdr.is-scrolled .lsel__caret { color: rgba(255, 255, 255, .7); }
+.hdr.is-scrolled .hdr__end > .btn--primary { background: #fff; color: var(--ink); }
+.hdr.is-scrolled .hdr__end > .btn--primary:hover { background: var(--sky); }
+.hdr.is-scrolled .burger { background: rgba(255, 255, 255, .1); }
+.hdr.is-scrolled .burger span { background: #fff; }
+.hdr__logo { padding-left: 4px; }
+@media (max-width: 760px) {
+  :root { --hdr: 74px; }
+  .hdr__in::before { inset: 0 calc(var(--gutter) - 8px); border-radius: 16px; }
+}
+
+/* ღილაკების ფერი — #3370e3 */
+:root { --btn: #3370e3; --btn-h: #2459c6; }
+.btn--primary, .chat__send, .chat__launcher { background: var(--btn); color: #fff; }
+.btn--primary:hover, .chat__send:hover, .chat__launcher:hover { background: var(--btn-h); }
+.chat__launcher::before { border-color: var(--btn); }
+.hdr.is-scrolled .hdr__end > .btn--primary { background: var(--btn); color: #fff; }
+.hdr.is-scrolled .hdr__end > .btn--primary:hover { background: var(--btn-h); }

@@ -24,8 +24,21 @@
 
   /* ------------------------------------------------------------ ჰედერი */
   var hdr = $("[data-header]");
-  var onScroll = function () { if (hdr) hdr.classList.toggle("is-scrolled", window.scrollY > 8); };
-  window.addEventListener("scroll", onScroll, { passive: true });
+  var lastY = window.scrollY;
+  var onScroll = function () {
+    if (!hdr) return;
+    var y = window.scrollY;
+    hdr.classList.toggle("is-scrolled", y > 24);
+    // ქვემოთ სქროლისას იმალება, ზემოთ სქროლისას ჩნდება (გახსნილი მენიუს დროს — არა)
+    var busy = document.body.classList.contains("menu-open") || $(".nav__item--mega.is-open") || $(".lsel.is-open");
+    if (Math.abs(y - lastY) > 6) {
+      hdr.classList.toggle("is-hidden", !busy && y > lastY && y > 160);
+      lastY = y;
+    }
+    if (y < 160) hdr.classList.remove("is-hidden");
+  };
+  window.addEventListener("scroll", function () { requestAnimationFrame(onScroll); }, { passive: true });
+  if (hdr) hdr.addEventListener("focusin", function () { hdr.classList.remove("is-hidden"); });
   onScroll();
 
   /* Mega menu: hover (დესკტოპი), დაჭერა, Esc, ფოკუსის გასვლა */

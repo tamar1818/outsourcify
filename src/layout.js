@@ -51,11 +51,15 @@ function isCurrent(url) {
 }
 
 function megaMenu() {
-  return '<div class="mega" id="mega-services"><div class="mega__in"><ul class="mega__list" role="list">'
+  return '<div class="mega" id="mega-services"><div class="mega__in"><div class="mega__col"><ul class="mega__list" role="list">'
     + C.services().map((s) => '<li><a class="mega__item" href="' + e(C.urlService(s)) + '"><span class="mega__ico">' + icon(String(s.icon || "briefcase")) + "</span>"
       + "<span><b>" + e(Ls(s.title)) + "</b><small>" + e(Ls(s.short)) + "</small></span></a></li>").join("")
     + '</ul><div class="mega__foot"><a class="mega__all" href="' + e(C.urlPage("services")) + '">' + e(t("all_services")) + icon("arrow-right") + "</a>"
     + '<a class="mega__all mega__all--muted" href="' + e(C.urlPage("pricing")) + '">' + e(t("pricing_link")) + icon("arrow-right") + "</a></div>"
+    + "</div>"
+    + '<div class="mega__feature"><div class="mega__photo"><img src="/assets/img/photos/team-collaborating-laptops-office-560.webp" alt="" loading="lazy" width="560" height="373"></div>'
+    + '<p class="mega__feature-title">' + e(t("sidebar_title")) + "</p><p>" + e(t("sidebar_text")) + "</p>"
+    + B.btn(t("book_cta"), "page:book", "outline", "arrow-right") + "</div>"
     + "</div></div>";
 }
 
