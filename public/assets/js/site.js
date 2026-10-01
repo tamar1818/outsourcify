@@ -47,6 +47,16 @@
     document.addEventListener("click", function (e) { if (!item.contains(e.target)) set(false); });
   });
 
+  /* ენის ჩამოსაშლელი */
+  $$("[data-lsel]").forEach(function (box) {
+    var btn = $(".lsel__btn", box);
+    var set = function (open) { box.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); };
+    btn.addEventListener("click", function () { set(!box.classList.contains("is-open")); });
+    box.addEventListener("keydown", function (e) { if (e.key === "Escape" && box.classList.contains("is-open")) { set(false); btn.focus(); } });
+    box.addEventListener("focusout", function (e) { if (!box.contains(e.relatedTarget)) set(false); });
+    document.addEventListener("click", function (e) { if (!box.contains(e.target)) set(false); });
+  });
+
   /* მობილური მენიუ */
   var burger = $(".burger");
   var drawer = $("#drawer");

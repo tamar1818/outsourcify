@@ -10,15 +10,37 @@ const { icon } = require("./icons");
 const { logoSprite, logoLockup, logoMark } = require("./logo");
 const B = require("./blocks");
 
-const LANG_NAMES = { ka: { short: "ქარ", name: "ქართული" }, en: { short: "EN", name: "English" } };
+const LANG_NAMES = { ka: { short: "KA", name: "ქართული" }, en: { short: "EN", name: "English" } };
+
+/* დროშები — SVG (emoji-დროშები Windows-ზე არ ჩანს) */
+const FLAGS = {
+  ka: '<svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><path d="M13 0h4v20h-4zM0 8h30v4H0z" fill="#e8112d"/>'
+    + '<path d="M6.5 3.2h1v1.6h1.6v1h-1.6v1.6h-1v-1.6H4.9v-1h1.6zM22.5 3.2h1v1.6h1.6v1h-1.6v1.6h-1v-1.6h-1.6v-1h1.6zM6.5 12.6h1v1.6h1.6v1h-1.6v1.6h-1v-1.6H4.9v-1h1.6zM22.5 12.6h1v1.6h1.6v1h-1.6v1.6h-1v-1.6h-1.6v-1h1.6z" fill="#e8112d"/></svg>',
+  en: '<svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/>'
+    + '<path d="M0 0l30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.4"/></svg>',
+};
 let currentPath = "/";
 
 function langSwitch(alts, cls = "lang") {
   return '<div class="' + e(cls) + '" role="group" aria-label="' + e(t("lang_switch")) + '">'
     + LANGS.map((l) => '<a href="' + e(alts[l] || "/") + '" hreflang="' + l + '" lang="' + l + '"'
-      + (l === core.lang() ? ' aria-current="true" class="is-on"' : "") + ' title="' + e(LANG_NAMES[l].name) + '">' + e(LANG_NAMES[l].short) + "</a>").join("")
+      + (l === core.lang() ? ' aria-current="true" class="is-on"' : "") + ' title="' + e(LANG_NAMES[l].name) + '">' + FLAGS[l] + "<span>" + e(LANG_NAMES[l].name) + "</span></a>").join("")
     + "</div>";
 }
+
+/** ჰედერის ენის ჩამოსაშლელი: დროშა + კოდი, სიაში დროშა + სრული სახელი */
+function langMenu(alts) {
+  const cur = core.lang();
+  return '<div class="lsel" data-lsel><button class="lsel__btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lsel-menu" aria-label="' + e(t("lang_switch")) + ": " + e(LANG_NAMES[cur].name) + '">'
+    + FLAGS[cur] + '<span class="lsel__code">' + e(LANG_NAMES[cur].short) + "</span>" + icon("chevron-down", "lsel__caret") + "</button>"
+    + '<ul class="lsel__menu" id="lsel-menu" role="list">'
+    + LANGS.map((l) => '<li><a href="' + e(alts[l] || "/") + '" hreflang="' + l + '" lang="' + l + '"' + (l === cur ? ' aria-current="true"' : "") + ">"
+      + FLAGS[l] + "<span>" + e(LANG_NAMES[l].name) + "</span>" + (l === cur ? icon("check", "lsel__ok") : "") + "</a></li>").join("")
+    + "</ul></div>";
+}
+
+/* კომპანიის ბმულების ხატულები mega-menu-ში */
+const LINK_ICONS = { about: "users", pricing: "receipt", why: "star", how: "layers", industries: "building", faq: "message", contact: "mail", book: "calendar" };
 
 const menuItems = (key) => (C.site().menus || {})[key] || [];
 
@@ -30,12 +52,22 @@ function isCurrent(url) {
 }
 
 function megaMenu() {
-  return '<div class="mega" id="mega-services"><div class="mega__in"><ul class="mega__list" role="list">'
-    + C.services().map((s) => '<li><a class="mega__item" href="' + e(C.urlService(s)) + '"><span class="mega__ico">' + icon(String(s.icon || "briefcase")) + "</span>"
-      + "<span><b>" + e(Ls(s.title)) + "</b><small>" + e(Ls(s.short)) + "</small></span></a></li>").join("")
-    + '</ul><div class="mega__promo">' + logoMark("mega__ring")
-    + '<p class="mega__promo-title">' + e(t("sidebar_title")) + "</p><p>" + e(t("sidebar_text")) + "</p>"
-    + B.btn(t("book_cta"), "page:book", "light") + '<a class="mega__all" href="' + e(C.urlPage("services")) + '">' + e(t("all_services")) + icon("arrow-right") + "</a></div>"
+  const item = (url, ic, title, desc) => '<li><a class="mega__item" href="' + e(url) + '"><span class="mega__ico">' + icon(ic) + "</span>"
+    + "<span><b>" + e(title) + "</b>" + (desc ? "<small>" + e(desc) + "</small>" : "") + "</span></a></li>";
+  const menus = C.site().menus || {};
+  const company = (menus.footer_company || []).map((m) => {
+    const ref = String(m.link || "");
+    const id = (ref.match(/^page:([\w-]+)/) || [])[1] || "";
+    return item(C.linkUrl(ref), LINK_ICONS[id] || "arrow-right", Ls(m.label), Ls(m.desc));
+  }).join("");
+  return '<div class="mega" id="mega-services"><div class="mega__in">'
+    + '<div class="mega__col"><p class="mega__h">' + e(t("services")) + '</p><ul class="mega__list" role="list">'
+    + C.services().map((s) => item(C.urlService(s), String(s.icon || "briefcase"), Ls(s.title), Ls(s.short))).join("") + "</ul>"
+    + '<a class="mega__all" href="' + e(C.urlPage("services")) + '">' + e(t("all_services")) + icon("arrow-right") + "</a></div>"
+    + (company ? '<div class="mega__col"><p class="mega__h">' + e(Ls(menus.footer_company_title) || "") + '</p><ul class="mega__list" role="list">' + company + "</ul></div>" : "")
+    + '<div class="mega__feature"><p class="mega__feature-title">' + e(t("sidebar_title")) + "</p><p>" + e(t("sidebar_text")) + "</p>"
+    + '<div class="mega__photo"><img src="/assets/img/photos/team-collaborating-laptops-office-560.webp" alt="" loading="lazy" width="560" height="373"></div>'
+    + B.btn(t("book_cta"), "page:book", "outline", "arrow-right") + "</div>"
     + "</div></div>";
 }
 
@@ -56,7 +88,7 @@ function siteHeader(alts) {
       h += '<li class="nav__item"><a class="nav__link" href="' + e(url) + '"' + cur + ">" + e(label) + "</a></li>";
     }
   }
-  h += '</ul></nav><div class="hdr__end">' + langSwitch(alts)
+  h += '</ul></nav><div class="hdr__end">' + langMenu(alts)
     + B.btn(t("book_short"), "page:book", "primary", "calendar", " data-open-chat")
     + '<button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="' + e(t("menu")) + '"><span></span><span></span><span></span></button>'
     + "</div></div></header>";

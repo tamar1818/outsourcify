@@ -97,49 +97,77 @@
           "ka": "ჩვენ შესახებ",
           "en": "About us"
         },
-        "link": "page:about"
+        "link": "page:about",
+        "desc": {
+          "ka": "ჩვენი ისტორია, მისია და ღირებულებები",
+          "en": "Our story, mission and values"
+        }
       },
       {
         "label": {
           "ka": "მომსახურების ფასები",
           "en": "Pricing"
         },
-        "link": "page:pricing"
+        "link": "page:pricing",
+        "desc": {
+          "ka": "გამჭვირვალე ფასები მცირე მეწარმისა და შპს-ისთვის",
+          "en": "Transparent prices for small businesses and LLCs"
+        }
       },
       {
         "label": {
           "ka": "რატომ Outsourcify",
           "en": "Why Outsourcify"
         },
-        "link": "page:why"
+        "link": "page:why",
+        "desc": {
+          "ka": "რით განვსხვავდებით და რას იღებთ",
+          "en": "What sets us apart"
+        }
       },
       {
         "label": {
           "ka": "როგორ ვმუშაობთ",
           "en": "How it works"
         },
-        "link": "page:how"
+        "link": "page:how",
+        "desc": {
+          "ka": "თანამშრომლობის ნაბიჯები — პირველი ზარიდან",
+          "en": "How we work together, step by step"
+        }
       },
       {
         "label": {
           "ka": "ვისთან ვმუშაობთ",
           "en": "Who we serve"
         },
-        "link": "page:industries"
+        "link": "page:industries",
+        "desc": {
+          "ka": "ბიზნესები და ინდუსტრიები, რომლებსაც ვემსახურებით",
+          "en": "Businesses and industries we serve"
+        }
       },
       {
         "label": {
           "ka": "ხშირად დასმული კითხვები",
           "en": "FAQ"
         },
-        "link": "page:faq"
+        "link": "page:faq",
+        "desc": {
+          "ka": "პასუხები ხშირად დასმულ კითხვებზე",
+          "en": "Answers to common questions"
+        }
       },
       {
         "label": {
           "ka": "კონტაქტი",
           "en": "Contact"
         },
-        "link": "page:contact"
+        "link": "page:contact",
+        "desc": {
+          "ka": "ტელეფონი, ელფოსტა და ოფისის მისამართი",
+          "en": "Phone, email and office address"
+        }
       }
     ],
     "footer_legal_title": {

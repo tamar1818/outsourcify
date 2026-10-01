@@ -189,7 +189,7 @@ function recordDefs() {
       hidden: f("check", "დამალვა"),
     },
     industry: { icon: f("icon", "ხატულა"), title: f("text", "სათაური", { i18n: true }), text: f("textarea", "ტექსტი", { i18n: true }), hidden: f("check", "დამალვა") },
-    menu: { label: f("text", "წარწერა", { i18n: true }), link: f("link", "ბმული"), mega: f("check", "სერვისების ჩამოსაშლელი მენიუ") },
+    menu: { label: f("text", "წარწერა", { i18n: true }), link: f("link", "ბმული"), desc: f("text", "მოკლე აღწერა (ჩანს ჩამოსაშლელ მენიუში)", { i18n: true }), mega: f("check", "სერვისების ჩამოსაშლელი მენიუ") },
     step: { title: f("text", "სათაური", { i18n: true }), text: f("textarea", "ტექსტი", { i18n: true }) },
   };
 }
