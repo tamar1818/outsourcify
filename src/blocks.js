@@ -42,7 +42,7 @@ function btn(label, ref, variant = "primary", iconName = "arrow-right", extra = 
 const ctaBtn = (b, n = "", variant = "primary") => btn(Ls(b[`cta${n}_label`]), String(b[`cta${n}_link`] || ""), variant);
 
 function secHead(b, cls = "", tag = "h2") {
-  const eyebrow = Ls(b.eyebrow).trim();
+  const eyebrow = ""; // ზედა წარწერები (eyebrow) საიტზე აღარ ჩანს
   const title = Ls(b.title).trim();
   const text = Ls(b.text).trim();
   if (!eyebrow && !title && !text) return "";
@@ -111,8 +111,6 @@ R.hero = (b) => {
   let h = '<section class="hero" aria-labelledby="hero-title">'
     + '<div class="hero__bg" aria-hidden="true"><span class="hero__glow hero__glow--1"></span><span class="hero__glow hero__glow--2"></span></div>'
     + '<div class="container hero__grid"><div class="hero__copy">';
-  const ey = Ls(b.eyebrow);
-  if (ey) h += '<p class="eyebrow eyebrow--live" data-reveal><span class="eyebrow__dot"></span>' + e(ey) + "</p>";
   h += '<h1 class="hero__title" id="hero-title" data-reveal>' + inlineHtml(Ls(b.title)) + "</h1>";
   const tx = Ls(b.text);
   if (tx) h += '<p class="hero__lead" data-reveal>' + inlineHtml(tx) + "</p>";
@@ -145,8 +143,6 @@ R.page_hero = (b, ctx) => {
   const img = String(b.image || "");
   let h = '<section class="phero' + (img ? " phero--img" : "") + '"><div class="phero__bg" aria-hidden="true"></div>'
     + '<div class="container phero__grid"><div class="phero__copy">' + breadcrumbsHtml(ctx.crumbs);
-  const ey = Ls(b.eyebrow);
-  if (ey) h += '<p class="eyebrow" data-reveal>' + e(ey) + "</p>";
   h += '<h1 class="phero__title" data-reveal>' + inlineHtml(Ls(b.title)) + "</h1>";
   const tx = Ls(b.text);
   if (tx) h += '<p class="phero__lead" data-reveal>' + inlineHtml(tx) + "</p>";
@@ -333,7 +329,7 @@ R.showcase = (b) => {
   list.forEach((s, i) => {
     const on = i === 0;
     tabs += '<button type="button" role="tab" class="sc__tab" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
-      + '<span class="sc__num">' + nn(i) + '</span><span class="sc__label">' + e(s.title) + "</span></button>";
+      + '<span class="sc__label">' + e(s.title) + "</span></button>";
     panels += '<div class="sc__panel" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
       + (s.image ? '<div class="sc__media">' + picture(String(s.image), s.alt, "(max-width: 900px) 92vw, 50vw") + '<span class="sc__badge">' + icon(String(s.icon || "briefcase")) + "</span></div>" : "")
       + '<div class="sc__body"><h3 class="sc__title">' + e(s.title) + "</h3>" + (s.text ? '<p class="sc__text">' + inlineHtml(s.text) + "</p>" : "")
@@ -357,7 +353,7 @@ R.pricing = (b) => {
   groups.forEach((g, i) => {
     const on = i === 0;
     tabs += '<button type="button" role="tab" class="sc__tab pr__tab pr-c' + (i % 4) + '" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
-      + '<span class="sc__num">' + (i + 1) + '</span><span class="sc__label">' + e(Ls(g.title)) + "</span></button>";
+      + '<span class="sc__label">' + e(Ls(g.title)) + "</span></button>";
     const secs = g.sections.filter((x) => (x.rows || []).length);
     panels += '<div class="pr__panel pr-c' + (i % 4) + " pr__panel--n" + Math.min(secs.length, 3) + '" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
       + secs.map((x) => {
@@ -382,7 +378,7 @@ R.pricing = (b) => {
 R.statement = (b) => {
   const text = Ls(b.text).trim();
   if (!text) return "";
-  const ey = Ls(b.eyebrow).trim();
+  const ey = "";
   const title = Ls(b.title).trim();
   const list = La(b.list).filter(Boolean);
   const stats = (Array.isArray(b.stats) ? b.stats : []).filter((x) => String(x.value || "").trim());
@@ -435,7 +431,7 @@ R.team = (b) => {
     const li = String(m.linkedin || "").trim();
     const links = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '<a class="tm__link" href="mailto:' + e(email) + '" aria-label="' + e(t("write_us")) + " — " + e(name) + '">' + icon("mail") + "</a>" : "")
       + (/^https:\/\/(www\.)?linkedin\.com\//i.test(li) ? '<a class="tm__link" href="' + e(li) + '" target="_blank" rel="noopener" aria-label="LinkedIn — ' + e(name) + '">' + icon("linkedin") + "</a>" : "");
-    return '<li class="tm" data-reveal style="--d:' + (i % 3) + '"><div class="tm__photo">' + img + '<span class="tm__num">' + nn(i) + "</span></div>"
+    return '<li class="tm" data-reveal style="--d:' + (i % 3) + '"><div class="tm__photo">' + img + "</div>"
       + '<div class="tm__body"><div><h3 class="tm__name">' + e(name) + "</h3>" + (role ? '<p class="tm__role">' + e(role) + "</p>" : "") + "</div>"
       + (links ? '<div class="tm__links">' + links + "</div>" : "") + "</div></li>";
   }).join("");
@@ -568,8 +564,6 @@ R.cta = (b) => {
     + '<div class="cta__deco" aria-hidden="true">' + logoMark("cta__ring") + '</div>'
     + (img ? '<div class="cta__media">' + picture(img, Ls(b.image_alt), "(max-width: 900px) 92vw, 40vw") + "</div>" : "")
     + '<div class="cta__copy">';
-  const ey = Ls(b.eyebrow);
-  if (ey) h += '<p class="eyebrow eyebrow--light">' + e(ey) + "</p>";
   h += '<h2 class="cta__title">' + inlineHtml(Ls(b.title)) + "</h2>";
   const tx = Ls(b.text);
   if (tx) h += '<p class="cta__text">' + inlineHtml(tx) + "</p>";

@@ -1184,3 +1184,5 @@ html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
 @media (max-width: 560px) { .st-grid, .st-grid--nolist { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
 .statement-sec .sec-title { font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3.2rem); }
 html[lang="ka"] .statement-sec .sec-title { font-size: clamp(1.5rem, 1.05rem + 1.7vw, 2.6rem); }
+/* ჩანართები ნომრების გარეშე */
+.sc__tab, .pr__tab { padding: 11px 20px; }
