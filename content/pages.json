@@ -1069,52 +1069,6 @@
           "cta_link": ""
         },
         {
-          "type": "stats",
-          "hidden": false,
-          "eyebrow": {
-            "ka": "",
-            "en": ""
-          },
-          "title": {
-            "ka": "",
-            "en": ""
-          },
-          "text": {
-            "ka": "",
-            "en": ""
-          },
-          "items": [
-            {
-              "value": "10+",
-              "label": {
-                "ka": "წლიანი გამოცდილება",
-                "en": "years of experience"
-              }
-            },
-            {
-              "value": "500+",
-              "label": {
-                "ka": "კმაყოფილი კლიენტი",
-                "en": "satisfied clients"
-              }
-            },
-            {
-              "value": "98%",
-              "label": {
-                "ka": "კლიენტების შენარჩუნება",
-                "en": "client retention"
-              }
-            },
-            {
-              "value": "$10m+",
-              "label": {
-                "ka": "მართული აქტივები",
-                "en": "assets managed"
-              }
-            }
-          ]
-        },
-        {
           "type": "team",
           "hidden": false,
           "eyebrow": {
@@ -1281,7 +1235,70 @@
           "text": {
             "ka": "გავაძლიეროთ ჩვენი კლიენტები ზუსტი ფინანსური შეხედულებებით, სტრატეგიული რჩევებით და პერსონალიზებული გადაწყვეტილებებით, რომლებიც უზრუნველყოფენ მდგრად ზრდას და ფინანსურ სიმშვიდეს.",
             "en": "To empower our clients with accurate financial insights, strategic advice and personalised solutions that drive sustainable growth and financial peace of mind."
-          }
+          },
+          "title": {
+            "ka": "სიცხადე, რომელსაც <em>ციფრებში ხედავთ</em>",
+            "en": "Clarity you can <em>see in numbers</em>"
+          },
+          "list_title": {
+            "ka": "რას მოიცავს ყოველთვიური მომსახურება",
+            "en": "What the monthly service includes"
+          },
+          "list": {
+            "ka": [
+              "ბუღალტრული დოკუმენტაციის დამუშავება და აღრიცხვა",
+              "ფინანსური ანგარიშგების მომზადება",
+              "ბრუნვითი და ნაშთების უწყისები",
+              "საგადასახადო დეკლარაციები — დროულად",
+              "საპენსიო ანგარიშგება"
+            ],
+            "en": [
+              "Processing and recording accounting documents",
+              "Preparing financial statements",
+              "Monthly trial balances",
+              "Tax returns — filed on time",
+              "Pension reporting"
+            ]
+          },
+          "list_link": "page:pricing",
+          "list_link_label": {
+            "ka": "ფასები და დეტალები",
+            "en": "Pricing and details"
+          },
+          "stats": [
+            {
+              "value": "98%",
+              "label": {
+                "ka": "კლიენტების შენარჩუნება",
+                "en": "client retention"
+              },
+              "icon": ""
+            },
+            {
+              "value": "10+",
+              "label": {
+                "ka": "წლიანი გამოცდილება",
+                "en": "years of experience"
+              },
+              "icon": "clock"
+            },
+            {
+              "value": "500+",
+              "label": {
+                "ka": "კმაყოფილი კლიენტი",
+                "en": "satisfied clients"
+              },
+              "icon": "users"
+            },
+            {
+              "value": "$10m+",
+              "label": {
+                "ka": "მართული აქტივები",
+                "en": "assets managed"
+              },
+              "icon": "chart"
+            }
+          ]
         },
         {
           "type": "faq",

@@ -1106,3 +1106,81 @@ html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
 .team__ctrl .icon-btn { flex: none; }
 .tm__body { min-height: 44px; }
 @media (max-width: 760px) { .team__ctrl .icon-btn { display: none; } }
+
+/* ------------------------------------------------------------------ ფასები v2 — პასტელური ფერები */
+.pr-c0 { --pc: #e9bff7; --pc-bg: #faf1fe; --pc-ink: #5b2470; }
+.pr-c1 { --pc: #a6ebef; --pc-bg: #ebfbfc; --pc-ink: #0c5a60; }
+.pr-c2 { --pc: #fcd3a2; --pc-bg: #fff5e8; --pc-ink: #7a4410; }
+.pr-c3 { --pc: #bfe9cd; --pc-bg: #eefaf2; --pc-ink: #1f5e36; }
+
+/* ჩანართები */
+.pr__tab { transition: background-color .25s, border-color .25s, transform .25s var(--ease); }
+.pr__tab:hover { background: var(--pc-bg); border-color: var(--pc); transform: translateY(-2px); }
+.pr__tab .sc__num { background: var(--pc-bg); color: var(--pc-ink); }
+.pr__tab[aria-selected="true"] { background: var(--pc); border-color: var(--pc); }
+.pr__tab[aria-selected="true"] .sc__label { color: var(--pc-ink); }
+.pr__tab[aria-selected="true"] .sc__num { background: #fff; color: var(--pc-ink); }
+
+/* პანელი: ფერადი ფონი, შიგნით თეთრი ბარათები */
+.pr__panel { padding: 14px; border-radius: var(--r-xl); background: var(--pc-bg); gap: 12px; }
+.pr__panel--n1 { max-width: none; }
+.pr__card { position: relative; padding: 22px 22px 16px; border-radius: 20px; background: #fff; border: 1px solid transparent;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .25s; }
+.pr__card:hover { transform: translateY(-4px); border-color: var(--pc); box-shadow: 0 18px 36px -22px rgba(11, 26, 44, .3); }
+.pr__title { display: inline-flex; align-items: center; margin-bottom: 8px; padding: 6px 14px; border-radius: 999px; background: var(--pc); color: var(--pc-ink); font-size: .9rem; }
+
+/* სტრიქონები */
+.pr__row { margin: 0 -10px; padding: 11px 10px; border-bottom: 1px dashed var(--line); border-radius: 12px; transition: background-color .2s; }
+.pr__row:hover { background: var(--pc-bg); border-bottom-color: transparent; }
+.pr__price { padding: 4px 10px; border-radius: 999px; transition: background-color .2s, color .2s; }
+.pr__row:hover .pr__price { background: var(--pc); color: var(--pc-ink); }
+.pr__row:hover .pr__price small { color: var(--pc-ink); }
+.pr__sub { margin: 12px 0 2px; padding: 7px 12px; background: var(--pc-bg); color: var(--pc-ink); }
+
+/* ერთი ქვეჯგუფი — სტრიქონები ორ სვეტად, მთელ სიგანეზე */
+.pr__panel--n1 .pr__rows { columns: 2; column-gap: 40px; }
+.pr__panel--n1 .pr__row { break-inside: avoid; }
+@media (max-width: 900px) { .pr__panel--n1 .pr__rows { columns: 1; } }
+@media (max-width: 760px) {
+  .pr__panel { padding: 8px; border-radius: 22px; }
+  .pr__card { padding: 16px 16px 10px; }
+  .pr__card:hover { transform: none; }
+}
+
+/* ------------------------------------------------------------------ მისია v2 — მუქი bento */
+.statement-sec { text-align: left; }
+.statement { max-width: 900px; margin: 0 auto clamp(32px, 4vw, 52px); text-align: center; }
+.st__pill { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; padding: 6px 14px 6px 10px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .05); color: #fff; font-size: .82rem; font-weight: 700; }
+.st__pill span { width: 8px; height: 8px; border-radius: 50%; background: var(--btn); box-shadow: 0 0 0 3px rgba(51, 112, 227, .3); }
+.statement-sec .sec-title { color: #fff; }
+.statement-sec .statement__text { color: #fff; }
+.statement__text--sub { margin-top: 16px; font-size: clamp(1rem, .95rem + .3vw, 1.15rem) !important; font-weight: 400 !important; line-height: 1.65 !important; color: rgba(255, 255, 255, .72) !important; text-wrap: pretty; }
+.st-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(180px, auto); gap: 14px; }
+.st-grid--nolist { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.st-card { position: relative; display: flex; flex-direction: column; padding: 24px; border-radius: 24px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .09);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: border-color .3s, background-color .3s, transform .35s var(--ease); }
+.st-card:hover { border-color: rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .07); transform: translateY(-4px); }
+.st-card--list { grid-row: span 2; gap: 16px; }
+.st-card__title { color: #fff; font-size: 1.1rem; }
+.st-list { list-style: none; display: grid; gap: 4px; padding: 6px; border-radius: 18px; background: #fff; }
+.st-list li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; color: var(--ink); font-size: .93rem; font-weight: 500; transition: background-color .2s; }
+.st-list li + li { border-top: 1px solid var(--line); }
+.st-list li:hover { background: var(--surface); border-top-color: transparent; }
+.st-list__n { flex: none; font-size: .75rem; font-weight: 700; color: var(--muted); }
+.st-list__ok { width: 22px; height: 22px; margin-left: auto; padding: 4px; flex: none; border-radius: 50%; background: var(--sky); color: var(--btn); stroke-width: 3; }
+.st-card--list .btn { align-self: flex-start; margin-top: auto; --h: 44px; font-size: .88rem; }
+.st-card--stat { justify-content: space-between; gap: 18px; }
+.st-card__ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--btn); color: #fff; }
+.st-card__num { font-size: clamp(2.2rem, 1.6rem + 1.6vw, 3.2rem); font-weight: 700; line-height: 1; letter-spacing: -.04em; color: #fff; margin-top: auto; }
+.st-card__label { color: rgba(255, 255, 255, .7); font-size: .95rem; font-weight: 500; }
+.st-ring { position: relative; width: 120px; height: 120px; }
+.st-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.st-ring circle { fill: none; stroke-width: 9; }
+.st-ring__bg { stroke: rgba(255, 255, 255, .1); }
+.st-ring__fg { stroke: #7fb2ff; stroke-linecap: round; transition: stroke-dashoffset 1.6s var(--ease); }
+.js .st-card:not(.is-in) .st-ring__fg { stroke-dashoffset: 326.7 !important; }
+.st-ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.7rem; font-weight: 700; color: #fff; letter-spacing: -.03em; }
+@media (max-width: 1024px) { .st-grid, .st-grid--nolist { grid-template-columns: repeat(2, minmax(0, 1fr)); } .st-card--list { grid-column: 1 / -1; grid-row: auto; } }
+@media (max-width: 560px) { .st-grid, .st-grid--nolist { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
+.statement-sec .sec-title { font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3.2rem); }
+html[lang="ka"] .statement-sec .sec-title { font-size: clamp(1.5rem, 1.05rem + 1.7vw, 2.6rem); }

@@ -356,10 +356,10 @@ R.pricing = (b) => {
   let panels = "";
   groups.forEach((g, i) => {
     const on = i === 0;
-    tabs += '<button type="button" role="tab" class="sc__tab" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
+    tabs += '<button type="button" role="tab" class="sc__tab pr__tab pr-c' + (i % 4) + '" id="' + id + "-t" + i + '" aria-controls="' + id + "-p" + i + '" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '">'
       + '<span class="sc__num">' + (i + 1) + '</span><span class="sc__label">' + e(Ls(g.title)) + "</span></button>";
     const secs = g.sections.filter((x) => (x.rows || []).length);
-    panels += '<div class="pr__panel pr__panel--n' + Math.min(secs.length, 3) + '" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
+    panels += '<div class="pr__panel pr-c' + (i % 4) + " pr__panel--n" + Math.min(secs.length, 3) + '" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
       + secs.map((x) => {
         const st = Ls(x.title);
         return '<div class="pr__card">' + (st ? '<h3 class="pr__title">' + e(st) + "</h3>" : "") + '<ul class="pr__rows" role="list">'
@@ -378,13 +378,45 @@ R.pricing = (b) => {
     + (c ? '<div class="sec-actions" data-reveal>' + c + "</div>" : "") + "</div></section>";
 };
 
-/** მისია / განცხადება — დიდი ტექსტი ცენტრში */
+/** მისია / განცხადება — მუქი სექცია ბადით; ცენტრში ტექსტი, ქვემოთ bento-ბარათები (სია + ციფრები) */
 R.statement = (b) => {
   const text = Ls(b.text).trim();
   if (!text) return "";
   const ey = Ls(b.eyebrow).trim();
-  return '<section class="section statement-sec"><div class="container container--mid"><div class="statement" data-reveal>'
-    + (ey ? '<p class="eyebrow">' + e(ey) + "</p>" : "") + '<p class="statement__text">' + inlineHtml(text) + "</p></div></div></section>";
+  const title = Ls(b.title).trim();
+  const list = La(b.list).filter(Boolean);
+  const stats = (Array.isArray(b.stats) ? b.stats : []).filter((x) => String(x.value || "").trim());
+  let h = '<section class="section section--dark statement-sec"><div class="container">'
+    + '<div class="statement" data-reveal>' + (ey ? '<p class="st__pill"><span></span>' + e(ey) + "</p>" : "")
+    + (title ? '<h2 class="sec-title">' + inlineHtml(title) + "</h2>" : "")
+    + '<p class="statement__text' + (title ? " statement__text--sub" : "") + '">' + inlineHtml(text) + "</p></div>";
+  if (list.length || stats.length) {
+    h += '<div class="st-grid' + (list.length ? "" : " st-grid--nolist") + '">';
+    if (list.length) {
+      const lt = Ls(b.list_title);
+      const lnk = String(b.list_link || "");
+      h += '<div class="st-card st-card--list" data-reveal>' + (lt ? '<h3 class="st-card__title">' + e(lt) + "</h3>" : "")
+        + '<ul class="st-list" role="list">' + list.map((x, i) => '<li><span class="st-list__n">' + nn(i) + "</span><span>" + e(x) + "</span>" + icon("check", "st-list__ok") + "</li>").join("") + "</ul>"
+        + (lnk ? btn(Ls(b.list_link_label) || t("learn_more"), lnk, "light") : "") + "</div>";
+    }
+    stats.forEach((x, i) => {
+      const v = String(x.value).trim();
+      const pct = i === 0 ? parseFloat((v.match(/^(\d+(?:\.\d+)?)\s*%$/) || [])[1]) : NaN;
+      const lab = Ls(x.label);
+      h += '<div class="st-card st-card--stat" data-reveal style="--d:' + (i + 1) + '">';
+      if (!isNaN(pct)) {
+        const C2 = 2 * Math.PI * 52;
+        h += '<div class="st-ring" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="st-ring__bg"/>'
+          + '<circle cx="60" cy="60" r="52" class="st-ring__fg" stroke-dasharray="' + C2.toFixed(1) + '" stroke-dashoffset="' + (C2 * (1 - Math.min(pct, 100) / 100)).toFixed(1) + '"/></svg>'
+          + "<b>" + e(v) + "</b></div>";
+      } else {
+        h += (x.icon ? '<span class="st-card__ico">' + icon(String(x.icon)) + "</span>" : "") + '<b class="st-card__num">' + e(v) + "</b>";
+      }
+      h += '<p class="st-card__label">' + e(lab) + "</p></div>";
+    });
+    h += "</div>";
+  }
+  return h + "</div></section>";
 };
 
 /** გუნდი — ჰორიზონტალური სლაიდერი (scroll-snap) ისრებითა და ღილაკით */
