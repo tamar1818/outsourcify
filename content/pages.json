@@ -80,14 +80,6 @@
           }
         },
         {
-          "type": "logos",
-          "hidden": false,
-          "title": {
-            "ka": "კომპანიები, რომლებიც გვენდობიან",
-            "en": "Companies that trust us"
-          }
-        },
-        {
           "type": "cards",
           "hidden": false,
           "variant": "grid",
