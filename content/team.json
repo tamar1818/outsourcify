@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": {
+        "ka": "გვანცა მუგასაშვილი",
+        "en": "Gvantsa Mugasashvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/gvantsa-mugasashvili.webp",
+      "email": "gvantsa.mugasashvili@outsourcify.ge",
+      "linkedin": "",
+      "hidden": false
+    },
+    {
+      "name": {
+        "ka": "ნატალია ჯაფარიძე",
+        "en": "Natalia Japaridze"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/natalia-japaridze.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
+    },
+    {
+      "name": {
+        "ka": "მარიამ ინანაშვილი",
+        "en": "Mariam Inanashvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/mariam-inanashvili.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
+    }
+  ]
+}

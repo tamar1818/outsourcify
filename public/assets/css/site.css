@@ -1074,3 +1074,35 @@ html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
 .nav__item--mega { position: static; }
 .mega { left: 50%; transform: translate(-50%, 8px); top: calc(100% - 4px); }
 .nav__item--mega.is-open .mega { transform: translate(-50%, 0); }
+
+/* ------------------------------------------------------------------ გუნდი (სლაიდერი) */
+.team__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 40px; flex-wrap: wrap; margin-bottom: clamp(24px, 3vw, 40px); }
+.team__head .sec-head { margin-bottom: 0; }
+.team__ctrl { display: flex; align-items: center; gap: 10px; }
+.team__ctrl .btn { margin-right: 8px; }
+.team__track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 2.6); gap: 16px; list-style: none;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.team__track::-webkit-scrollbar { display: none; }
+.team__track:focus-visible { outline-offset: 6px; }
+.tm { scroll-snap-align: start; display: flex; flex-direction: column; gap: 14px; }
+.tm__photo { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border-radius: var(--r-xl); background: var(--surface); }
+.tm__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.tm:hover .tm__photo img { transform: scale(1.04); }
+.tm__initial { display: grid; place-items: center; width: 100%; height: 100%; font-size: 4rem; font-weight: 700; color: var(--sky-2); }
+.tm__num { position: absolute; left: 16px; top: 16px; padding: 6px 10px; border-radius: 999px; background: rgba(255, 255, 255, .9); font-size: .78rem; font-weight: 700; color: var(--ink); }
+.tm__body { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 6px; }
+.tm__name { font-size: 1.12rem; letter-spacing: -.01em; }
+.tm__role { margin-top: 2px; color: var(--muted); font-size: .9rem; }
+.tm__links { display: flex; gap: 8px; }
+.tm__link { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--surface); color: var(--ink); transition: background-color .2s, color .2s; }
+.tm__link .ico { width: 18px; height: 18px; }
+.tm__link:hover { background: var(--btn); color: #fff; }
+@media (max-width: 1024px) { .team__track { grid-auto-columns: calc((100% - 16px) / 1.7); } }
+@media (max-width: 760px) {
+  .team__track { grid-auto-columns: 82%; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .team__ctrl { width: 100%; }
+  .team__ctrl .btn { flex: 1; margin-right: 0; }
+}
+.team__ctrl .icon-btn { flex: none; }
+.tm__body { min-height: 44px; }
+@media (max-width: 760px) { .team__ctrl .icon-btn { display: none; } }

@@ -387,6 +387,35 @@ R.statement = (b) => {
     + (ey ? '<p class="eyebrow">' + e(ey) + "</p>" : "") + '<p class="statement__text">' + inlineHtml(text) + "</p></div></div></section>";
 };
 
+/** გუნდი — ჰორიზონტალური სლაიდერი (scroll-snap) ისრებითა და ღილაკით */
+R.team = (b) => {
+  const list = C.team();
+  if (!list.length) return "";
+  const id = secId("team");
+  const cards = list.map((m, i) => {
+    const name = Ls(m.name);
+    const role = Ls(m.role);
+    const src = imgUrl(String(m.photo || ""));
+    const small = /^\/assets\/img\/team\/[\w-]+\.webp$/.test(src) ? src.replace(/\.webp$/, "-500.webp") : "";
+    const img = src ? '<img src="' + e(src) + '"' + (small ? ' srcset="' + e(small) + " 500w, " + e(src) + ' 900w" sizes="(max-width: 760px) 80vw, 34vw"' : "")
+      + ' alt="' + e(name) + '" width="900" height="900" loading="lazy" decoding="async">' : '<span class="tm__initial" aria-hidden="true">' + e(name.charAt(0)) + "</span>";
+    const email = String(m.email || "").trim();
+    const li = String(m.linkedin || "").trim();
+    const links = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '<a class="tm__link" href="mailto:' + e(email) + '" aria-label="' + e(t("write_us")) + " — " + e(name) + '">' + icon("mail") + "</a>" : "")
+      + (/^https:\/\/(www\.)?linkedin\.com\//i.test(li) ? '<a class="tm__link" href="' + e(li) + '" target="_blank" rel="noopener" aria-label="LinkedIn — ' + e(name) + '">' + icon("linkedin") + "</a>" : "");
+    return '<li class="tm" data-reveal style="--d:' + (i % 3) + '"><div class="tm__photo">' + img + '<span class="tm__num">' + nn(i) + "</span></div>"
+      + '<div class="tm__body"><div><h3 class="tm__name">' + e(name) + "</h3>" + (role ? '<p class="tm__role">' + e(role) + "</p>" : "") + "</div>"
+      + (links ? '<div class="tm__links">' + links + "</div>" : "") + "</div></li>";
+  }).join("");
+  const c = ctaBtn(b, "", "primary");
+  return '<section class="section team-sec" id="' + e(id) + '"><div class="container"><div class="team" data-carousel>'
+    + '<div class="team__head">' + secHead(b) + '<div class="team__ctrl" data-reveal>' + c
+    + '<button type="button" class="icon-btn" data-carousel-prev aria-label="' + e(t("prev")) + '">' + icon("chevron-left") + "</button>"
+    + '<button type="button" class="icon-btn" data-carousel-next aria-label="' + e(t("next")) + '">' + icon("chevron-right") + "</button></div></div>"
+    + '<ul class="team__track" data-carousel-track role="list" tabindex="0" aria-label="' + e(Ls(b.title).replace(/<[^>]+>/g, "") || "Team") + '">' + cards + "</ul>"
+    + "</div></div></section>";
+};
+
 /** კლიენტების ლოგოები — უსასრულო მოძრავი ზოლი (კოლექცია „კლიენტები“) */
 R.logos = (b) => {
   const list = C.clients();

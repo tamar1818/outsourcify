@@ -123,6 +123,9 @@ function blockDefs() {
       eyebrow: f("text", "ზედა წარწერა", { i18n: true }),
       text: f("textarea", "ტექსტი", { i18n: true }),
     } },
+    team: { label: "გუნდი (სლაიდერი)", desc: "გუნდის წევრები „გუნდი“ განყოფილებიდან — სლაიდერი ღილაკით", fields: {
+      ...fHead(), ...fCta("", "ღილაკი (მაგ. კონსულტაციის დაჯავშნა)"),
+    } },
     logos: { label: "კლიენტების ლოგოები", desc: "მოძრავი ზოლი ლოგოებით — „კლიენტები“ განყოფილებიდან", fields: {
       title: f("text", "სათაური (მაგ. ჩვენ გვენდობიან)", { i18n: true }),
     } },
@@ -180,6 +183,14 @@ function recordDefs() {
       role: f("text", "პოზიცია, კომპანია", { i18n: true }),
       quote: f("textarea", "შეფასება", { i18n: true }),
       photo: f("image", "ფოტო / ლოგო"),
+      hidden: f("check", "დამალვა"),
+    },
+    member: {
+      name: f("text", "სახელი და გვარი", { i18n: true }),
+      role: f("text", "პოზიცია (არასავალდებულო)", { i18n: true }),
+      photo: f("image", "ფოტო (კვადრატული, მინ. 800×800)"),
+      email: f("text", "ელფოსტა (არასავალდებულო)"),
+      linkedin: f("text", "LinkedIn ბმული (არასავალდებულო)"),
       hidden: f("check", "დამალვა"),
     },
     client: {
