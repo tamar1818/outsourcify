@@ -148,6 +148,27 @@
           "cta_link": ""
         },
         {
+          "type": "team",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "გუნდი",
+            "en": "Our team"
+          },
+          "title": {
+            "ka": "გაიცანით <em>ჩვენი გუნდი</em>",
+            "en": "Meet <em>our team</em>"
+          },
+          "text": {
+            "ka": "პროფესიონალები, რომლებიც თქვენს ფინანსებზე ზრუნავენ.",
+            "en": "The professionals who look after your finances."
+          },
+          "cta_label": {
+            "ka": "დაჯავშნეთ კონსულტაცია",
+            "en": "Book a consultation"
+          },
+          "cta_link": "page:book"
+        },
+        {
           "type": "split",
           "hidden": false,
           "eyebrow": {
@@ -1067,27 +1088,6 @@
             "en": ""
           },
           "cta_link": ""
-        },
-        {
-          "type": "team",
-          "hidden": false,
-          "eyebrow": {
-            "ka": "გუნდი",
-            "en": "Our team"
-          },
-          "title": {
-            "ka": "გაიცანით <em>ჩვენი გუნდი</em>",
-            "en": "Meet <em>our team</em>"
-          },
-          "text": {
-            "ka": "პროფესიონალები, რომლებიც თქვენს ფინანსებზე ზრუნავენ.",
-            "en": "The professionals who look after your finances."
-          },
-          "cta_label": {
-            "ka": "დაჯავშნეთ კონსულტაცია",
-            "en": "Book a consultation"
-          },
-          "cta_link": "page:book"
         },
         {
           "type": "cards",
