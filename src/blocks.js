@@ -539,7 +539,7 @@ R.contact = (b) => {
   let h = '<section class="section contact-sec" id="contact-form"><div class="container contact"><div class="contact__info">' + secHead(b) + '<ul class="ccards" role="list">';
   cards.forEach(([ic, label, val, href], i) => {
     const inner = '<span class="ccard__ico">' + icon(ic) + "</span><span><small>" + e(label) + "</small><b>" + e(val).replace(/\r?\n/g, "<br>") + "</b></span>";
-    h += '<li class="ccard" data-reveal style="--d:' + i + '">' + (href ? '<a href="' + e(href) + '">' + inner + "</a>" : "<div>" + inner + "</div>") + "</li>";
+    h += '<li class="ccard ccard--' + ic + '" data-reveal style="--d:' + i + '">' + (href ? '<a href="' + e(href) + '">' + inner + "</a>" : "<div>" + inner + "</div>") + "</li>";
   });
   h += "</ul>" + socialLinks() + '</div><div class="contact__form" data-reveal>' + contactForm(Ls(b.form_title)) + "</div></div>";
   const map = String(s.map_embed || "").trim();

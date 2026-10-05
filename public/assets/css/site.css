@@ -1186,3 +1186,25 @@ html[lang="ka"] .mega__feature .btn { font-size: .76rem; }
 html[lang="ka"] .statement-sec .sec-title { font-size: clamp(1.5rem, 1.05rem + 1.7vw, 2.6rem); }
 /* ჩანართები ნომრების გარეშე */
 .sc__tab, .pr__tab { padding: 11px 20px; }
+
+/* საკონტაქტო ბარათები — კომპაქტური: ხატულა მარცხნივ, ტექსტი გვერდით */
+.contact__info .sec-head { margin-bottom: 22px; }
+.ccards { gap: 10px; }
+.ccard > a, .ccard > div { flex-direction: row; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 16px; }
+.ccard__ico { width: 38px; height: 38px; flex: none; }
+.ccard__ico .ico { width: 18px; height: 18px; }
+.ccard small { font-size: .78rem; }
+.ccard b { font-size: .92rem; line-height: 1.45; overflow-wrap: anywhere; }
+.ccard > span, .ccard a > span:last-child, .ccard div > span:last-child { min-width: 0; }
+.contact__info .socials { margin-top: 16px; }
+@media (min-width: 901px) { .ccard:has(a[href^="mailto"]) b { font-size: .86rem; overflow-wrap: normal; word-break: break-all; } }
+.ccard--mail, .ccard--pin, .ccard--clock { grid-column: 1 / -1; }
+.ccard--mail b, .ccard:has(a[href^="mailto"]) b { font-size: .92rem !important; word-break: normal !important; overflow-wrap: anywhere; }
+.ccard > a, .ccard > div { align-items: center; }
+.ccard--clock > div { align-items: flex-start; }
+@media (max-width: 760px) {
+  .ccards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ccard > a, .ccard > div { padding: 12px; gap: 10px; }
+  .ccard--phone .ccard__ico { display: none; }
+  .ccard--mail b { font-size: .8rem !important; }
+}
