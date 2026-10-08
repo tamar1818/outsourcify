@@ -72,6 +72,14 @@ module.exports = {
         "ka": "მომსახურების ფასები",
         "en": "Service pricing"
     },
+    "smap_pages": {
+        "ka": "გვერდები",
+        "en": "Pages"
+    },
+    "smap_info": {
+        "ka": "ინფორმაცია",
+        "en": "Information"
+    },
     "clients": {
         "ka": "ჩვენი კლიენტები",
         "en": "Our clients"

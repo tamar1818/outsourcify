@@ -1212,3 +1212,16 @@ html[lang="ka"] .statement-sec .sec-title { font-size: clamp(1.5rem, 1.05rem + 1
 /* სათაურის აღწერა ყოველთვის სათაურის ქვემოთ (არა მარჯვენა სვეტში) */
 .sec-head--split { display: block; max-width: 960px; }
 .sec-head--split .sec-text { margin-top: 14px; max-width: 70ch; }
+
+/* საიტის რუკა (HTML) */
+.smap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.smap__col { padding: 22px; border-radius: var(--r-lg); background: var(--surface); }
+.smap__h { margin-bottom: 12px; font-size: 1.05rem; }
+.smap ul { list-style: none; display: grid; gap: 4px; }
+.smap a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #fff; color: var(--ink); font-weight: 500; font-size: .94rem; transition: background-color .2s, color .2s; }
+.smap a .ico { width: 18px; height: 18px; color: var(--navy); flex: none; }
+.smap a span { flex: 1; min-width: 0; }
+.smap__go { opacity: 0; transform: translateX(-4px); transition: opacity .2s, transform .25s var(--ease); }
+.smap a:hover { background: var(--sky); }
+.smap a:hover .smap__go { opacity: 1; transform: none; }
+@media (max-width: 900px) { .smap { grid-template-columns: minmax(0, 1fr); } }

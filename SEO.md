@@ -122,7 +122,17 @@
 | **Main keyword** | — | — |
 | **Supporting keywords** | — | — |
 
-## 13. ბუღალტრული მომსახურება / Accounting & Bookkeeping
+## 13. საიტის რუკა / Sitemap
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | საიტის რუკა — ყველა გვერდი და სერვისი | Outsourcify (51) | Sitemap — All Pages and Services | Outsourcify (46) |
+| **Meta Description** | Outsourcify-ის საიტის რუკა: ყველა გვერდი და სერვისი ერთ სიაში — ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, ფასები და კონტაქტი. (133) | Outsourcify sitemap: every page and service in one list — accounting, tax consulting, pricing, booking a consultation and contact details. (138) |
+| **URL** | `https://outsourcify.ge/saitis-ruka` | `https://outsourcify.ge/en/sitemap` |
+| **Main keyword** | — | — |
+| **Supporting keywords** | — | — |
+
+## 14. ბუღალტრული მომსახურება / Accounting & Bookkeeping
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -132,7 +142,7 @@
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
 | **Supporting keywords** | ბუღალტერიის აუთსორსინგი, ბუღალტრული აღრიცხვა, აუთსორს ბუღალტერი | outsourced bookkeeping, bookkeeping Tbilisi, outsourced accountant |
 
-## 14. საგადასახადო კონსულტაცია / Tax Consulting
+## 15. საგადასახადო კონსულტაცია / Tax Consulting
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -142,7 +152,7 @@
 | **Main keyword** | საგადასახადო კონსულტაცია | tax consulting Georgia |
 | **Supporting keywords** | საგადასახადო კონსულტანტი, გადასახადები ბიზნესისთვის, საგადასახადო რჩევა | tax advisor Tbilisi, business tax advice, Georgian tax |
 
-## 15. დეკლარაციების მომზადება და წარდგენა / Tax Return Preparation & Filing
+## 16. დეკლარაციების მომზადება და წარდგენა / Tax Return Preparation & Filing
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -152,7 +162,7 @@
 | **Main keyword** | დეკლარაციის მომზადება | tax return preparation Georgia |
 | **Supporting keywords** | საგადასახადო დეკლარაცია, დეკლარაციის წარდგენა, ინდმეწარმის დეკლარაცია | tax filing, tax declaration Georgia, individual entrepreneur tax return |
 
-## 16. ისტორიული აღრიცხვის აღდგენა და გასწორება / Accounting Records Correction
+## 17. ისტორიული აღრიცხვის აღდგენა და გასწორება / Accounting Records Correction
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -162,7 +172,7 @@
 | **Main keyword** | ბუღალტრული აღრიცხვის აღდგენა | accounting records correction |
 | **Supporting keywords** | აღრიცხვის გასწორება, ისტორიული აღრიცხვა, ბუღალტერიის მოწესრიგება | bookkeeping clean-up, catch-up bookkeeping, historical accounting |
 
-## 17. ბიზნეს-პროცესების აუთსორსინგი (BPO) / Business Process Outsourcing (BPO)
+## 18. ბიზნეს-პროცესების აუთსორსინგი (BPO) / Business Process Outsourcing (BPO)
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
@@ -172,7 +182,7 @@
 | **Main keyword** | ბიზნეს-პროცესების აუთსორსინგი | business process outsourcing Georgia |
 | **Supporting keywords** | BPO საქართველოში, აუთსორსინგი, აუთსტაფინგი | BPO Tbilisi, outsourcing company Georgia, staff outsourcing |
 
-## 18. ფინანსური კონსულტაცია / Financial Consulting
+## 19. ფინანსური კონსულტაცია / Financial Consulting
 
 | | ქართული (მთავარი) | English |
 |---|---|---|

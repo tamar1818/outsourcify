@@ -37,7 +37,7 @@ router.get("/sitemap.xml", (req, res) => {
     + imgs.map((src) => "<image:image><image:loc>" + e(base + src) + "</image:loc></image:image>").join("")
     + Object.entries(alts).map(([l2, u2]) => '<xhtml:link rel="alternate" hreflang="' + l2 + '" href="' + e(base + u2) + '"/>').join("")
     + '<xhtml:link rel="alternate" hreflang="x-default" href="' + e(base + alts[DEFAULT_LANG]) + '"/></url>\n').join("");
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
   for (const p of C.pages()) {
     if (p.hidden || p.noindex) continue;
     const alts = Object.fromEntries(LANGS.map((l) => [l, C.urlPage(p.id, l)]));

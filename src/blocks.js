@@ -380,6 +380,20 @@ R.pricing = (b) => {
     + (c ? '<div class="sec-actions" data-reveal>' + c + "</div>" : "") + "</div></section>";
 };
 
+/** საიტის რუკა — ყველა ხილული გვერდი და სერვისი */
+R.sitemap = (b) => {
+  const pages = C.pages().filter((p) => !p.hidden && !p.noindex && p.id !== "sitemap");
+  const legal = ["privacy", "terms"];
+  const li = (url, title, icn) => '<li><a href="' + e(url) + '">' + icon(icn) + "<span>" + e(title) + "</span>" + icon("arrow-right", "smap__go") + "</a></li>";
+  const col = (title, items) => items.length ? '<div class="smap__col"><h2 class="smap__h">' + e(title) + '</h2><ul role="list">' + items.join("") + "</ul></div>" : "";
+  return '<section class="section smap-sec"><div class="container">' + secHead(b) + '<div class="smap">'
+    + col(t("smap_pages"), pages.filter((p) => !legal.includes(p.id)).map((p) => li(C.urlPage(p.id), Ls(p.title), "layers")))
+    + col(t("services"), C.services().map((s) => li(C.urlService(s), Ls(s.title), String(s.icon || "briefcase"))))
+    + col(t("smap_info"), pages.filter((p) => legal.includes(p.id)).map((p) => li(C.urlPage(p.id), Ls(p.title), "file-check"))
+      .concat([li("/sitemap.xml", "sitemap.xml", "globe")]))
+    + "</div></div></section>";
+};
+
 /** მისია / განცხადება — მუქი სექცია ბადით; ცენტრში ტექსტი, ქვემოთ bento-ბარათები (სია + ციფრები) */
 R.statement = (b) => {
   const text = Ls(b.text).trim();

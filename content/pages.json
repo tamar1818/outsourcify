@@ -3808,6 +3808,80 @@
       "og_image": "",
       "hidden": false,
       "noindex": false
+    },
+    {
+      "id": "sitemap",
+      "template": "page",
+      "system": false,
+      "slug": {
+        "ka": "saitis-ruka",
+        "en": "sitemap"
+      },
+      "title": {
+        "ka": "საიტის რუკა",
+        "en": "Sitemap"
+      },
+      "seo": {
+        "title": {
+          "ka": "საიტის რუკა — ყველა გვერდი და სერვისი | Outsourcify",
+          "en": "Sitemap — All Pages and Services | Outsourcify"
+        },
+        "description": {
+          "ka": "Outsourcify-ის საიტის რუკა: ყველა გვერდი და სერვისი ერთ სიაში — ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, ფასები და კონტაქტი.",
+          "en": "Outsourcify sitemap: every page and service in one list — accounting, tax consulting, pricing, booking a consultation and contact details."
+        },
+        "keywords": {
+          "ka": "",
+          "en": ""
+        }
+      },
+      "og_image": "",
+      "hidden": false,
+      "noindex": false,
+      "blocks": [
+        {
+          "type": "page_hero",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "",
+            "en": ""
+          },
+          "title": {
+            "ka": "საიტის <em>რუკა</em>",
+            "en": "<em>Sitemap</em>"
+          },
+          "text": {
+            "ka": "Outsourcify-ის ყველა გვერდი და სერვისი ერთ ადგილას.",
+            "en": "Every Outsourcify page and service in one place."
+          },
+          "cta_label": {
+            "ka": "",
+            "en": ""
+          },
+          "cta_link": "",
+          "image": "",
+          "image_alt": {
+            "ka": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "sitemap",
+          "hidden": false,
+          "eyebrow": {
+            "ka": "",
+            "en": ""
+          },
+          "title": {
+            "ka": "",
+            "en": ""
+          },
+          "text": {
+            "ka": "",
+            "en": ""
+          }
+        }
+      ]
     }
   ]
 }

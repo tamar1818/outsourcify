@@ -195,6 +195,13 @@
           "en": "Terms & Conditions"
         },
         "link": "page:terms"
+      },
+      {
+        "label": {
+          "ka": "საიტის რუკა",
+          "en": "Sitemap"
+        },
+        "link": "page:sitemap"
       }
     ]
   },
