@@ -1208,3 +1208,7 @@ html[lang="ka"] .statement-sec .sec-title { font-size: clamp(1.5rem, 1.05rem + 1
   .ccard--phone .ccard__ico { display: none; }
   .ccard--mail b { font-size: .8rem !important; }
 }
+
+/* სათაურის აღწერა ყოველთვის სათაურის ქვემოთ (არა მარჯვენა სვეტში) */
+.sec-head--split { display: block; max-width: 960px; }
+.sec-head--split .sec-text { margin-top: 14px; max-width: 70ch; }
