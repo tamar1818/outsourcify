@@ -9,12 +9,13 @@ export default function Dashboard() {
   const [d, setD] = useState(null);
   useEffect(() => { api.get("/dashboard").then(setD); }, []);
   if (!d) return <Loading />;
+  const has = (p) => meta.me.perms.includes(p);
   const tiles = [
-    ["/inbox", d.newCount, "ახალი განაცხადი / ჯავშანი", "mail"],
-    ["/inbox", d.upcomingCount, "მომავალი კონსულტაცია", "calendar"],
-    ["/pages", d.pages, "გვერდი", "layers"],
-    ["/services", d.services, "სერვისი", "briefcase"],
-  ];
+    has("inbox") && ["/inbox", d.newCount, "ახალი განაცხადი / ჯავშანი", "mail"],
+    has("inbox") && ["/inbox", d.upcomingCount, "მომავალი კონსულტაცია", "calendar"],
+    has("content") && ["/pages", d.pages, "გვერდი", "layers"],
+    has("content") && ["/services", d.services, "სერვისი", "briefcase"],
+  ].filter(Boolean);
   return (
     <>
       <PageHead title={"გამარჯობა, " + meta.user + " 👋"} sub="საიტის მოკლე მიმოხილვა" />
@@ -27,7 +28,7 @@ export default function Dashboard() {
         ))}
       </div>
       <div className="grid2">
-        <Card title="მომავალი კონსულტაციები" actions={<Link className="link" to="/inbox">ყველა →</Link>}>
+        {has("inbox") && <Card title="მომავალი კონსულტაციები" actions={<Link className="link" to="/inbox">ყველა →</Link>}>
           {!d.upcoming.length ? <Empty icon="calendar" title="ჯერ ჯავშანი არ არის" /> : (
             <ul className="list">
               {d.upcoming.map((b) => (
@@ -35,8 +36,8 @@ export default function Dashboard() {
               ))}
             </ul>
           )}
-        </Card>
-        <Card title="SEO შემოწმება" desc="სათაური 30–60, აღწერა 120–160 სიმბოლო — ორივე ენაზე">
+        </Card>}
+        {has("content") && <Card title="SEO შემოწმება" desc="სათაური 30–60, აღწერა 120–160 სიმბოლო — ორივე ენაზე">
           {!d.seo.length ? <p className="ok-line">✓ ყველა გვერდის SEO სათაური და აღწერა რეკომენდებულ ფარგლებშია.</p> : (
             <ul className="seo-list">
               {d.seo.map((x, i) => (
@@ -48,9 +49,9 @@ export default function Dashboard() {
               ))}
             </ul>
           )}
-        </Card>
+        </Card>}
       </div>
-      <Card title="სწრაფი მოქმედებები">
+      {has("content") && <Card title="სწრაფი მოქმედებები">
         <div className="quick">
           <Link className="btn btn--ghost" to="/pages/home"><Icon name="layers" /><span>მთავარი გვერდის რედაქტირება</span></Link>
           <Link className="btn btn--ghost" to="/services/new"><Icon name="plus" /><span>ახალი სერვისი</span></Link>
@@ -58,7 +59,7 @@ export default function Dashboard() {
           <Link className="btn btn--ghost" to="/settings"><Icon name="phone" /><span>კონტაქტები</span></Link>
           <a className="btn btn--ghost" href="/sitemap.xml" target="_blank" rel="noreferrer"><Icon name="globe" /><span>sitemap.xml</span></a>
         </div>
-      </Card>
+      </Card>}
     </>
   );
 }

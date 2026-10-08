@@ -32,9 +32,9 @@ export default function Login({ installed, onDone }) {
       <form className="auth__card" onSubmit={submit}>
         <img className="auth__logo" src="/assets/img/brand/outsourcify-logo.svg" alt="Outsourcify" />
         <h1>{installed ? "შესვლა" : "CMS-ის პირველი გაშვება"}</h1>
-        <p className="muted">{installed ? "შედით მართვის პანელში" : "შექმენით ადმინისტრატორის ანგარიში"}</p>
+        <p className="muted">{installed ? "შედით მართვის პანელში. ახალ ადმინისტრატორებს ანგარიშს მოწვევის ბმულით უქმნის ადმინისტრატორი." : "შექმენით მთავარი ადმინისტრატორის (მფლობელის) ანგარიში"}</p>
         {err && <div className="alert alert--err" role="alert">{err}</div>}
-        <label className="fld"><span className="fld__label">მომხმარებელი</span><input name="user" value={f.user} onChange={set("user")} required autoComplete="username" autoFocus /></label>
+        <label className="fld"><span className="fld__label">{installed ? "მომხმარებელი ან ელფოსტა" : "მომხმარებლის სახელი (ლათინურად)"}</span><input name="user" value={f.user} onChange={set("user")} required autoComplete="username" autoFocus /></label>
         <label className="fld"><span className="fld__label">პაროლი{installed ? "" : " (მინ. 10 სიმბოლო)"}</span><input name="password" type="password" value={f.password} onChange={set("password")} required minLength={installed ? undefined : 10} autoComplete={installed ? "current-password" : "new-password"} /></label>
         {!installed && <label className="fld"><span className="fld__label">გაიმეორეთ პაროლი</span><input name="password2" type="password" value={f.password2} onChange={set("password2")} required autoComplete="new-password" /></label>}
         <button className="btn btn--primary btn--block" disabled={busy}><span>{busy ? "…" : installed ? "შესვლა" : "ანგარიშის შექმნა"}</span></button>

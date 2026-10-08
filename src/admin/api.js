@@ -14,6 +14,7 @@ const S = require("../schema");
 const BK = require("../booking");
 const media = require("../media");
 const auth = require("../auth");
+const mail = require("../mail");
 const STRINGS = require("../strings");
 const { ICONS } = require("../icons");
 
@@ -37,7 +38,9 @@ const bad = (res, error, code = 400) => res.status(code).json({ ok: false, error
 
 /* ------------------------------------------------------------ სესია */
 router.get("/session", (req, res) => {
-  res.json({ installed: auth.isInstalled(), user: req.session.uid || null, csrf: auth.csrf(req) });
+  const me = auth.currentUser(req);
+  if (!me && req.session.uid) req.session = {};
+  res.json({ installed: auth.isInstalled(), user: me ? me.name : null, me, csrf: auth.csrf(req) });
 });
 
 /** CSRF ყველა ცვლილებისთვის */
@@ -47,21 +50,18 @@ router.use((req, res, next) => {
   next();
 });
 
+/** პირველი ადმინისტრატორი — მხოლოდ ცარიელ სისტემაში. შემდეგ რეგისტრაცია მხოლოდ მოწვევით */
 router.post("/setup", (req, res) => {
   if (auth.isInstalled()) return bad(res, "ანგარიში უკვე არსებობს", 409);
-  const u = String(req.body.user || "").trim();
-  const pw = String(req.body.password || "");
-  if (u.length < 3) return bad(res, "მომხმარებლის სახელი — მინიმუმ 3 სიმბოლო");
-  if (pw.length < 10) return bad(res, "პაროლი — მინიმუმ 10 სიმბოლო");
-  if (!auth.install(u, pw)) return bad(res, "ჩაწერა ვერ მოხერხდა — შეამოწმეთ DATA_DIR-ის უფლებები", 500);
-  res.json({ ok: true });
+  const err = auth.install(String(req.body.user || "").trim(), String(req.body.password || ""));
+  err ? bad(res, err) : res.json({ ok: true });
 });
 
 router.post("/login", async (req, res) => {
   const left = auth.lockedFor(req.ip);
   if (left > 0) return bad(res, "ბევრი მცდელობა. სცადეთ " + Math.ceil(left / 60000) + " წუთში", 429);
   if (await auth.login(req, String(req.body.user || "").trim(), String(req.body.password || ""))) {
-    return res.json({ ok: true, user: req.session.uid, csrf: req.session.csrf });
+    return res.json({ ok: true, csrf: req.session.csrf });
   }
   bad(res, "მომხმარებელი ან პაროლი არასწორია", 401);
 });
@@ -71,8 +71,48 @@ router.post("/logout", (req, res) => {
   res.json({ ok: true });
 });
 
-/** ყველაფერი ქვემოთ — მხოლოდ შესულ მომხმარებელს */
-router.use((req, res, next) => (req.session.uid ? next() : bad(res, "საჭიროა შესვლა", 401)));
+/** მოწვევის / პაროლის აღდგენის ბმული (საჯარო, ტოკენით) */
+router.get("/invite/:token", (req, res) => {
+  const left = auth.lockedFor(req.ip);
+  if (left > 0) return bad(res, "ბევრი მცდელობა. სცადეთ მოგვიანებით", 429);
+  const f = auth.findToken(req.params.token);
+  if (!f) return bad(res, "ბმული არასწორია ან ვადა გაუვიდა", 404);
+  res.json({ kind: f.inv.kind, name: f.inv.name, email: f.inv.email, user: f.user ? f.user.user : "", expires: f.inv.expires });
+});
+router.post("/invite/:token", (req, res) => {
+  const r = auth.redeem(req.params.token, { user: String(req.body.user || "").trim(), name: String(req.body.name || ""), password: String(req.body.password || "") });
+  if (r.error) return bad(res, r.error);
+  auth.startSession(req, r.uid, r.ver);
+  res.json({ ok: true, csrf: req.session.csrf });
+});
+
+/** ყველაფერი ქვემოთ — მხოლოდ შესულ, აქტიურ მომხმარებელს */
+router.use((req, res, next) => {
+  const me = auth.currentUser(req);
+  if (!me) { if (req.session.uid) req.session = {}; return bad(res, "საჭიროა შესვლა", 401); }
+  req.me = me;
+  next();
+});
+
+/** უფლებები განყოფილებების მიხედვით */
+const can = (req, p) => req.me.perms.includes(p);
+const need = (p) => (req, res, next) => (can(req, p) ? next() : bad(res, "ამ მოქმედების უფლება არ გაქვთ", 403));
+const ROUTE_PERMS = [
+  [/^\/(pages|services|services-order|collections|menus)(\/|$)/, "content"],
+  [/^\/media(\/|$)/, "media"],
+  [/^\/settings(\/|$)/, "settings"],
+  [/^\/inbox(\/|$)/, "inbox"],
+  [/^\/backup(\/|$)/, "backup"],
+  [/^\/(users|invites)(\/|$)/, "users"],
+];
+router.use((req, res, next) => {
+  // ფოტოს არჩევა რედაქტორებისთვისაც (კონტენტის უფლებით) — სიის ნახვა და ატვირთვა
+  if (/^\/media(\/import)?$/.test(req.path) && req.method !== "DELETE" && (can(req, "content") || can(req, "media"))) return next();
+  // გვერდებისა და სერვისების სია ბმულების ასარჩევად — პარამეტრებისთვისაც
+  if (req.method === "GET" && /^\/(pages|services)$/.test(req.path) && can(req, "settings")) return next();
+  for (const [re, p] of ROUTE_PERMS) if (re.test(req.path)) return need(p)(req, res, next);
+  next();
+});
 
 /* ------------------------------------------------------------ მეტა */
 function settingsDefs() {
@@ -127,7 +167,7 @@ router.get("/meta", (req, res) => {
   res.json({
     langs: LANGS, blockDefs: S.blockDefs(), recordDefs: { ...S.recordDefs(), menuPlain: plainMenu }, settingsDefs: settingsDefs(),
     pageMetaDefs: pageMetaDefs(), icons: ICONS, strings: STRINGS, linkOptions: linkOptions(),
-    weekdays: BK.weekdays("ka", true), user: req.session.uid, hasSharp: media.hasSharp,
+    weekdays: BK.weekdays("ka", true), user: req.me.name, me: req.me, perms: auth.PERMS, hasSharp: media.hasSharp,
   });
 });
 
@@ -156,6 +196,9 @@ router.get("/dashboard", (req, res) => {
   const upcoming = bookings.filter((b) => b.status !== "cancelled" && (b.flexible || (b.date || "") >= today))
     .sort((a, b) => ((a.date || "9") + (a.time || "")).localeCompare((b.date || "9") + (b.time || "")))
     .map((b) => ({ ...b, label: b.flexible ? "დრო შესათანხმებელია" : BK.label(b.date, b.time) }));
+  if (!can(req, "inbox")) {
+    return res.json({ newCount: 0, upcoming: [], upcomingCount: 0, pages: C.pages().length, services: C.services(true).length, leads: null, bookings: null, seo: can(req, "content") ? seoIssues() : [] });
+  }
   res.json({
     newCount: leads.filter((x) => (x.status || "new") === "new").length + bookings.filter((x) => (x.status || "new") === "new").length,
     upcoming: upcoming.slice(0, 8), upcomingCount: upcoming.length,
@@ -418,13 +461,62 @@ router.post("/backup", upload.single("file"), (req, res) => {
   res.json({ ok: true, restored: n });
 });
 
-/* ------------------------------------------------------------ პაროლი */
+/* ------------------------------------------------------------ საკუთარი ანგარიში */
 router.post("/password", (req, res) => {
-  const c = auth.authConfig();
-  const nw = String(req.body.new || "");
-  if (!auth.verifyPassword(String(req.body.current || ""), c.hash)) return bad(res, "მიმდინარე პაროლი არასწორია");
-  if (nw.length < 10) return bad(res, "ახალი პაროლი მინიმუმ 10 სიმბოლო უნდა იყოს");
-  auth.install(c.user, nw) ? res.json({ ok: true }) : bad(res, "შენახვა ვერ მოხერხდა", 500);
+  const r = auth.changePassword(req.me.id, String(req.body.current || ""), String(req.body.new || ""));
+  if (r.error) return bad(res, r.error);
+  req.session.ver = r.ver; // მიმდინარე სესია რჩება, სხვა მოწყობილობებზე — გამოდის
+  res.json({ ok: true });
+});
+router.put("/me", (req, res) => {
+  const err = auth.updateUser(req.me.id, { name: req.body.name, email: req.body.email }, req.me.id);
+  err ? bad(res, err) : res.json({ ok: true });
+});
+
+/* ------------------------------------------------------------ მომხმარებლები და მოწვევები */
+const origin = (req) => (req.secure || req.get("x-forwarded-proto") === "https" ? "https" : "http") + "://" + req.get("host");
+const linkFor = (req, token) => origin(req) + "/admin/invite/" + token;
+
+router.get("/users", (req, res) => {
+  const c = auth.store();
+  const names = Object.fromEntries(c.users.map((u) => [u.id, u.name || u.user]));
+  res.json({
+    users: c.users.map(auth.publicUser),
+    invites: c.invites.map((x) => ({ id: x.id, kind: x.kind, email: x.email, name: x.name, perms: x.perms, expires: x.expires, created: x.created, by: names[x.by] || "", uid: x.uid || "" })),
+  });
+});
+router.post("/invites", async (req, res) => {
+  const email = String(req.body.email || "").trim();
+  if (email && !mail.isEmail(email)) return bad(res, "ელფოსტა არასწორია");
+  const perms = Array.isArray(req.body.perms) ? req.body.perms : [];
+  if (!perms.length) return bad(res, "მონიშნეთ ერთი უფლება მაინც");
+  const r = auth.createInvite({ email, name: req.body.name, perms, by: req.me.id });
+  if (!r) return bad(res, "შენახვა ვერ მოხერხდა", 500);
+  const link = linkFor(req, r.token);
+  let sent = false;
+  if (email && req.body.send) {
+    sent = await mail.send(email, "მოწვევა Outsourcify-ის მართვის პანელში",
+      `გამარჯობა${r.invite.name ? ", " + r.invite.name : ""}!\n\n${req.me.name} გიწვევთ Outsourcify-ის მართვის პანელში.\nანგარიშის შესაქმნელად გახსენით ბმული (მოქმედებს 7 დღე, ერთჯერადია):\n\n${link}\n`);
+  }
+  res.json({ ok: true, link, sent });
+});
+router.delete("/invites/:id", (req, res) => (auth.removeInvite(req.params.id) ? res.json({ ok: true }) : bad(res, "ვერ მოიძებნა", 404)));
+router.put("/users/:id", (req, res) => {
+  const patch = {};
+  for (const k of ["name", "email", "perms", "disabled"]) if (k in req.body) patch[k] = req.body[k];
+  const err = auth.updateUser(req.params.id, patch, req.me.id);
+  err ? bad(res, err) : res.json({ ok: true });
+});
+router.delete("/users/:id", (req, res) => {
+  const err = auth.removeUser(req.params.id, req.me.id);
+  err ? bad(res, err) : res.json({ ok: true });
+});
+router.post("/users/:id/reset", (req, res) => {
+  const u = auth.store().users.find((x) => x.id === req.params.id);
+  if (!u) return bad(res, "მომხმარებელი ვერ მოიძებნა", 404);
+  if (u.owner && u.id !== req.me.id) return bad(res, "მფლობელის პაროლს მხოლოდ თავად მფლობელი ცვლის", 403);
+  const r = auth.createReset(u.id, req.me.id);
+  r ? res.json({ ok: true, link: linkFor(req, r.token) }) : bad(res, "შენახვა ვერ მოხერხდა", 500);
 });
 
 router.use((req, res) => bad(res, "ვერ მოიძებნა", 404));

@@ -16,15 +16,21 @@ import Media from "./pages/Media.jsx";
 import Inbox from "./pages/Inbox.jsx";
 import Backup from "./pages/Backup.jsx";
 import Account from "./pages/Account.jsx";
+import Users from "./pages/Users.jsx";
+import Invite from "./pages/Invite.jsx";
 
+// [მისამართი, სახელი, ხატულა, საჭირო უფლება]
 const NAV = [
   ["კონტენტი", [
-    ["/", "მთავარი", "bars"], ["/pages", "გვერდები", "layers"], ["/services", "სერვისები", "briefcase"],
-    ["/faqs", "FAQ", "message"], ["/testimonials", "შეფასებები", "quote"], ["/team", "გუნდი", "users"], ["/clients", "კლიენტები", "handshake"], ["/industries", "ვისთან ვმუშაობთ", "building"],
+    ["/", "მთავარი", "bars", ""], ["/pages", "გვერდები", "layers", "content"], ["/services", "სერვისები", "briefcase", "content"],
+    ["/faqs", "FAQ", "message", "content"], ["/testimonials", "შეფასებები", "quote", "content"], ["/team", "გუნდი", "users", "content"],
+    ["/clients", "კლიენტები", "handshake", "content"], ["/industries", "ვისთან ვმუშაობთ", "building", "content"],
   ]],
-  ["საიტი", [["/menus", "მენიუ და ფუტერი", "menu"], ["/media", "ფოტოები", "folder"], ["/settings", "პარამეტრები", "settings"]]],
-  ["კლიენტები", [["/inbox", "განაცხადები", "mail"]]],
+  ["საიტი", [["/menus", "მენიუ და ფუტერი", "menu", "content"], ["/media", "ფოტოები", "folder", "media"], ["/settings", "პარამეტრები", "settings", "settings"]]],
+  ["კლიენტები", [["/inbox", "განაცხადები", "mail", "inbox"]]],
+  ["სისტემა", [["/users", "ადმინისტრატორები", "shield", "users"], ["/backup", "სარეზერვო ასლი", "folder", "backup"]]],
 ];
+const inviteToken = () => (window.location.pathname.match(/^\/admin\/invite\/([\w-]+)/) || [])[1];
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -38,21 +44,25 @@ export default function App() {
   }, []);
   useEffect(() => { refresh().catch(() => setSession({ installed: true, user: null })); }, [refresh]);
 
+  const token = inviteToken();
+  if (token) return <Invite token={token} onDone={refresh} />;
   if (!session) return <Loading />;
   if (!session.user) return <Login installed={session.installed} onDone={refresh} />;
   if (!meta) return <Loading />;
   return (
     <MetaContext.Provider value={{ ...meta, reloadMeta: async () => setMeta(await api.get("/meta")) }}>
-      <Shell user={session.user} onLogout={async () => { await api.post("/logout"); setMeta(null); refresh(); }} />
+      <Shell user={session.user} perms={meta.me.perms} onLogout={async () => { await api.post("/logout"); setMeta(null); refresh(); }} />
     </MetaContext.Provider>
   );
 }
 
-function Shell({ user, onLogout }) {
+function Shell({ user, perms, onLogout }) {
+  const has = (p) => !p || perms.includes(p);
+  const guard = (p, el) => (has(p) ? el : <Navigate to="/" replace />);
   const [badge, setBadge] = useState(0);
   const [menu, setMenu] = useState(false);
   const loc = useLocation();
-  useEffect(() => { api.get("/dashboard").then((d) => setBadge(d.newCount)).catch(() => {}); }, [loc.pathname]);
+  useEffect(() => { if (has("inbox")) api.get("/dashboard").then((d) => setBadge(d.newCount)).catch(() => {}); }, [loc.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setMenu(false); window.scrollTo(0, 0); }, [loc.pathname]);
 
   return (
@@ -63,7 +73,7 @@ function Shell({ user, onLogout }) {
           <button type="button" className="iconbtn side__burger" onClick={() => setMenu(!menu)} aria-label="მენიუ"><Icon name={menu ? "x" : "menu"} /></button>
         </div>
         <nav className="side__nav">
-          {NAV.map(([group, items]) => (
+          {NAV.map(([group, all]) => [group, all.filter((x) => has(x[3]))]).filter(([, items]) => items.length).map(([group, items]) => (
             <div key={group} className="side__group">
               <p className="side__label">{group}</p>
               {items.map(([to, label, icon]) => (
@@ -76,7 +86,6 @@ function Shell({ user, onLogout }) {
         </nav>
         <div className="side__foot">
           <a href="/" target="_blank" rel="noreferrer"><Icon name="arrow-up-right" /><span>საიტის ნახვა</span></a>
-          <NavLink to="/backup"><Icon name="shield" /><span>სარეზერვო ასლი</span></NavLink>
           <NavLink to="/account"><Icon name="lock" /><span>{user}</span></NavLink>
           <button type="button" onClick={onLogout}><Icon name="x" /><span>გასვლა</span></button>
         </div>
@@ -84,23 +93,24 @@ function Shell({ user, onLogout }) {
       <main className="main">
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/pages" element={<Pages />} />
-          <Route path="/pages/new" element={<PageEditor isNew />} />
-          <Route path="/pages/:id" element={<PageEditor />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/new" element={<ServiceEditor isNew />} />
-          <Route path="/services/:id" element={<ServiceEditor />} />
-          <Route path="/faqs" element={<Collection name="faqs" />} />
-          <Route path="/testimonials" element={<Collection name="testimonials" />} />
-          <Route path="/team" element={<Collection name="team" />} />
-          <Route path="/clients" element={<Collection name="clients" />} />
-          <Route path="/industries" element={<Collection name="industries" />} />
-          <Route path="/menus" element={<Menus />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/inbox" element={<Inbox onChange={setBadge} />} />
-          <Route path="/backup" element={<Backup />} />
+          <Route path="/pages" element={guard("content", <Pages />)} />
+          <Route path="/pages/new" element={guard("content", <PageEditor isNew />)} />
+          <Route path="/pages/:id" element={guard("content", <PageEditor />)} />
+          <Route path="/services" element={guard("content", <Services />)} />
+          <Route path="/services/new" element={guard("content", <ServiceEditor isNew />)} />
+          <Route path="/services/:id" element={guard("content", <ServiceEditor />)} />
+          <Route path="/faqs" element={guard("content", <Collection name="faqs" />)} />
+          <Route path="/testimonials" element={guard("content", <Collection name="testimonials" />)} />
+          <Route path="/team" element={guard("content", <Collection name="team" />)} />
+          <Route path="/clients" element={guard("content", <Collection name="clients" />)} />
+          <Route path="/industries" element={guard("content", <Collection name="industries" />)} />
+          <Route path="/menus" element={guard("content", <Menus />)} />
+          <Route path="/settings" element={guard("settings", <Settings />)} />
+          <Route path="/media" element={guard("media", <Media />)} />
+          <Route path="/inbox" element={guard("inbox", <Inbox onChange={setBadge} />)} />
+          <Route path="/backup" element={guard("backup", <Backup />)} />
           <Route path="/account" element={<Account />} />
+          <Route path="/users" element={guard("users", <Users />)} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

@@ -130,6 +130,17 @@ reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, a
 | **Backup** | Download all content, bookings and messages as one JSON file, and restore it. |
 | **Dashboard** | New submissions, upcoming consultations and an **SEO health check** of title/description lengths. |
 
+### Administrators and permissions
+
+- The first account (created on the first visit to `/admin`) is the **owner**: it always has every permission and can't be deleted.
+- **There is no public sign-up.** After the owner exists, new administrators can only join through an **invite link** created in
+  **Admin → Administrators** (single use, valid 7 days; it can also be emailed if SMTP is set up). Pending links can be revoked.
+- Permissions per section: content, photos, settings, submissions (personal data), backup, administrators. Presets:
+  full administrator, editor (content + photos), manager (submissions). The server enforces them on every request.
+- Administrators can disable or delete other accounts and create a one-time **password reset link** (valid 24 h).
+  Disabling, deleting or changing a password ends that account's sessions immediately.
+- Sign in with username or email. Existing installations are migrated automatically: the old admin login becomes the owner.
+
 Security: scrypt password hashing, signed HttpOnly session cookie, a CSRF token on every change, 15-minute lockout after
 6 failed logins, uploads checked by content (not extension) with SVG scripts blocked, all output escaped,
 and rate limits plus a honeypot on public forms.
