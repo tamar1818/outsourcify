@@ -16,6 +16,15 @@
     set: function (k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
     del: function (k) { try { sessionStorage.removeItem(k); } catch (e) {} }
   };
+  /* Google Analytics 4 — კონვერსიები (თუ GA ჩართულია) */
+  var track = function (name, params) { try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) {} };
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("a[href]");
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) track("click_to_call", { link_url: href, link_text: (a.textContent || "").trim().slice(0, 60) });
+    else if (href.indexOf("mailto:") === 0) track("click_to_email", { link_url: href });
+  });
   var esc = function (s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -219,6 +228,7 @@
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
         .then(function (res) {
           if (!res.ok) throw new Error("fail");
+          track("generate_lead", { form: "contact", service: data.service || "" });
           var done = document.createElement("div");
           done.className = "form-done";
           done.setAttribute("tabindex", "-1");
@@ -679,6 +689,8 @@
           return;
         }
         if (!res.j.ok) throw new Error("fail");
+        track("generate_lead", { form: "booking", service: (self.a && self.a.service) || "" });
+        track("book_consultation", { service: (self.a && self.a.service) || "" });
         self.done(res.j);
       })
       .catch(function () {

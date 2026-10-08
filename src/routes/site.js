@@ -33,6 +33,13 @@ router.get("/sitemap.xml", (req, res) => {
   res.type("application/xml").send(xml + "</urlset>");
 });
 
+/** Search Console — HTML ფაილით ვერიფიკაცია (google<code>.html) */
+router.get(/^\/(google[0-9a-f]{10,40}\.html)$/, (req, res, next) => {
+  const want = String((C.site().settings || {}).gsc_file || "").trim().replace(/^.*\//, "");
+  if (!want || want !== req.params[0]) return next();
+  res.type("text/html").send("google-site-verification: " + want);
+});
+
 router.get("/robots.txt", (req, res) => {
   res.type("text/plain");
   if ((C.site().settings || {}).noindex_all) return res.send("User-agent: *\nDisallow: /\n");

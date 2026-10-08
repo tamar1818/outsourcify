@@ -6,7 +6,7 @@ import { Button, Card, Loading, PageHead, Tabs } from "../components/ui.jsx";
 
 const TABS = [["contacts", "კონტაქტები"], ["seo", "SEO და ანალიტიკა"], ["booking", "დაჯავშნის განრიგი"], ["process", "პროცესი და CTA"], ["ui", "ინტერფეისის ტექსტები"]];
 const CONTACT_KEYS = ["company", "phone", "email", "notify_email", "address", "city", "hours", "map_embed", "facebook", "linkedin", "instagram", "footer_text"];
-const SEO_KEYS = ["domain", "ga_id", "gsc_verification", "noindex_all"];
+const SEO_KEYS = ["domain", "ga_id", "gsc_verification", "gsc_file", "noindex_all"];
 
 export default function Settings() {
   const meta = useMeta();

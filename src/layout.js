@@ -21,6 +21,16 @@ const FLAGS = {
 };
 let currentPath = "/";
 
+/** GA4 ID — ნებისმიერ ჩაწერილ ტექსტში ვპოულობთ G-XXXXXXX-ს */
+const gaId = (v) => (String(v || "").toUpperCase().match(/\bG-[A-Z0-9]{4,16}\b/) || [])[0] || "";
+/** Search Console — მიიღებს როგორც კოდს, ისე მთლიან <meta ...> ტეგს */
+function gscCode(v) {
+  const s = String(v || "").trim();
+  const m = s.match(/content=["']([^"']+)["']/i);
+  const code = m ? m[1] : s;
+  return /^[\w-]{10,100}$/.test(code) ? code : "";
+}
+
 function langSwitch(alts, cls = "lang") {
   return '<div class="' + e(cls) + '" role="group" aria-label="' + e(t("lang_switch")) + '">'
     + LANGS.map((l) => '<a href="' + e(alts[l] || "/") + '" hreflang="' + l + '" lang="' + l + '"'
@@ -243,13 +253,13 @@ function renderDocument(meta, body, r) {
     + '<link rel="preload" href="/assets/fonts/tbcx-regular.woff2" as="font" type="font/woff2" crossorigin>'
     + '<link rel="stylesheet" href="' + e(asset("assets/css/site.css")) + '">'
     + '<script>document.documentElement.classList.replace("no-js","js")</script>';
-  const gsc = String(set.gsc_verification || "").trim();
+  const gsc = gscCode(set.gsc_verification);
   if (gsc) h += '<meta name="google-site-verification" content="' + e(gsc) + '">';
   h += '<script type="application/ld+json">' + JSON.stringify(schemaGraph(meta)).replace(/</g, "\\u003c") + "</script>";
-  const ga = String(set.ga_id || "").trim();
-  if (/^G-[A-Z0-9]+$/.test(ga)) {
+  const ga = gaId(set.ga_id);
+  if (ga && !set.noindex_all) {
     h += '<script async src="https://www.googletagmanager.com/gtag/js?id=' + ga + '"></script>'
-      + '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","' + ga + '")</script>';
+      + '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","' + ga + '",{anonymize_ip:true})</script>';
   }
   h += '</head><body class="' + e(meta.bodyClass || "") + '">' + logoSprite() + siteHeader(alts)
     + '<main id="main" tabindex="-1">' + body + "</main>" + siteFooter(alts)

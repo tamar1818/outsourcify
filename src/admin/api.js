@@ -134,8 +134,9 @@ function settingsDefs() {
     youtube: f("text", "YouTube"),
     tiktok: f("text", "TikTok"),
     footer_text: f("textarea", "ფუტერის ტექსტი", { i18n: true }),
-    ga_id: f("text", "Google Analytics 4 ID", { hint: "მაგ. G-XXXXXXX — ცარიელზე ანალიტიკა გამორთულია" }),
-    gsc_verification: f("text", "Google Search Console ვერიფიკაციის კოდი"),
+    ga_id: f("text", "Google Analytics 4 — Measurement ID", { hint: "analytics.google.com → Admin → Data streams → თქვენი საიტი → Measurement ID (G-XXXXXXXXXX). ცარიელზე ანალიტიკა გამორთულია" }),
+    gsc_verification: f("text", "Google Search Console — HTML tag", { hint: "search.google.com/search-console → Add property → URL prefix → HTML tag. ჩასვით მთლიანი <meta …> ტეგი ან მხოლოდ content-ის კოდი" }),
+    gsc_file: f("text", "Google Search Console — HTML ფაილის სახელი (არასავალდებულო)", { hint: "თუ „HTML file“ მეთოდს ირჩევთ: მაგ. google1a2b3c4d5e6f7g8h.html — საიტი ამ ფაილს ავტომატურად აჩვენებს" }),
     noindex_all: f("check", "საიტის დამალვა საძიებოებისგან (მხოლოდ ტესტირებისას!)"),
   };
 }

@@ -130,6 +130,15 @@ reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, a
 | **Backup** | Download all content, bookings and messages as one JSON file, and restore it. |
 | **Dashboard** | New submissions, upcoming consultations and an **SEO health check** of title/description lengths. |
 
+### Google Analytics and Search Console
+
+- **Analytics:** Admin → Settings → SEO → paste the GA4 Measurement ID (`G-XXXXXXXXXX`). Events sent automatically:
+  `generate_lead` (contact form and booking), `book_consultation`, `click_to_call`, `click_to_email`. IP anonymisation is on;
+  nothing loads while "hide from search engines" is enabled.
+- **Search Console:** either paste the HTML tag (whole `<meta …>` or just the code) in the same settings, or use the HTML file method.
+  The verification file `public/google43196912803e7da9.html` is already in the repo; other files can be served by entering the file name in settings.
+  Then submit `https://outsourcify.ge/sitemap.xml` in Search Console.
+
 ### Administrators and permissions
 
 - The first account (created on the first visit to `/admin`) is the **owner**: it always has every permission and can't be deleted.
