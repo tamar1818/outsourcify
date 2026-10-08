@@ -16,19 +16,37 @@ const mtime = (f) => {
   try { return core.ymd(new Date(fs.statSync(path.join(DATA_DIR, f + ".json")).mtimeMs)); } catch { return core.ymd(new Date()); }
 };
 
+/** ბლოკებში ნაპოვნი სურათები (image, photo) — სურათების საიტმეპისთვის */
+function blockImages(blocks) {
+  const out = new Set();
+  const walk = (v) => {
+    if (Array.isArray(v)) return v.forEach(walk);
+    if (!v || typeof v !== "object") return;
+    for (const [k, x] of Object.entries(v)) {
+      if ((k === "image" || k === "photo") && typeof x === "string" && /^\/(assets|uploads)\/[\w./-]+\.(webp|jpe?g|png)$/i.test(x)) out.add(x);
+      else if (typeof x === "object") walk(x);
+    }
+  };
+  walk(blocks);
+  return [...out].slice(0, 20);
+}
+
 router.get("/sitemap.xml", (req, res) => {
   const base = core.baseUrl();
-  const entry = (alts, lastmod, prio) => Object.values(alts).map((u) => "  <url><loc>" + e(base + u) + "</loc><lastmod>" + lastmod + "</lastmod><priority>" + prio + "</priority>"
+  const entry = (alts, lastmod, prio, imgs = []) => Object.values(alts).map((u) => "  <url><loc>" + e(base + u) + "</loc><lastmod>" + lastmod + "</lastmod><priority>" + prio + "</priority>"
+    + imgs.map((src) => "<image:image><image:loc>" + e(base + src) + "</image:loc></image:image>").join("")
     + Object.entries(alts).map(([l2, u2]) => '<xhtml:link rel="alternate" hreflang="' + l2 + '" href="' + e(base + u2) + '"/>').join("")
     + '<xhtml:link rel="alternate" hreflang="x-default" href="' + e(base + alts[DEFAULT_LANG]) + '"/></url>\n').join("");
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
   for (const p of C.pages()) {
     if (p.hidden || p.noindex) continue;
     const alts = Object.fromEntries(LANGS.map((l) => [l, C.urlPage(p.id, l)]));
-    xml += entry(alts, mtime("pages"), p.template === "home" ? "1.0" : ["privacy", "terms"].includes(p.id) ? "0.3" : "0.8");
+    let imgs = blockImages(p.blocks || []);
+    if ((p.blocks || []).some((b) => b.type === "team" && !b.hidden)) imgs = imgs.concat(C.team().map((m) => String(m.photo || "")).filter((x) => x.startsWith("/")));
+    xml += entry(alts, mtime("pages"), p.template === "home" ? "1.0" : ["privacy", "terms"].includes(p.id) ? "0.3" : "0.8", imgs.slice(0, 20));
   }
   for (const s of C.services()) {
-    xml += entry(Object.fromEntries(LANGS.map((l) => [l, C.urlService(s, l)])), mtime("services"), "0.9");
+    xml += entry(Object.fromEntries(LANGS.map((l) => [l, C.urlService(s, l)])), mtime("services"), "0.9", s.image ? [String(s.image)] : []);
   }
   res.type("application/xml").send(xml + "</urlset>");
 });

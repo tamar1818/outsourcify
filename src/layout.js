@@ -181,13 +181,27 @@ function schemaGraph(meta) {
     knowsLanguage: ["ka", "en"],
   };
   if (s.email) org.email = s.email;
-  if (s.phone) {
-    org.telephone = phoneHref(s.phone);
-    org.contactPoint = [{ "@type": "ContactPoint", telephone: org.telephone, contactType: "customer service", availableLanguage: ["Georgian", "English"], areaServed: "GE" }];
+  const phones = [s.phone2, s.phone].filter(Boolean).map(phoneHref);
+  if (phones.length) {
+    org.telephone = phones[0];
+    org.contactPoint = phones.map((tel) => ({ "@type": "ContactPoint", telephone: tel, contactType: "customer service", availableLanguage: ["Georgian", "English"], areaServed: "GE" }));
   }
   const addr = Ls(s.address, "en");
-  if (addr) org.address = { "@type": "PostalAddress", streetAddress: addr, addressLocality: String(s.city || "Tbilisi"), addressCountry: "GE" };
-  const same = [s.facebook, s.linkedin, s.instagram].filter((u) => String(u || "").startsWith("https://"));
+  if (addr) {
+    const postal = (addr.match(/\b(\d{4})\b/) || [])[1] || "";
+    const city = String(s.city || "Tbilisi");
+    const street = addr.replace(new RegExp(",?\\s*" + city + "\\b", "i"), "").replace(/,?\s*\b\d{4}\b/, "").replace(/[,\s]+$/, "").trim();
+    org.address = { "@type": "PostalAddress", streetAddress: street || addr, addressLocality: city, addressCountry: "GE" };
+    if (postal) org.address.postalCode = postal;
+  }
+  // სამუშაო საათები — დაჯავშნის განრიგიდან (პარამეტრები → დაჯავშნა)
+  const bk = C.site().booking || {};
+  const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  if (Array.isArray(bk.days) && bk.days.length && /^\d\d:\d\d$/.test(bk.start || "") && /^\d\d:\d\d$/.test(bk.end || "")) {
+    org.openingHoursSpecification = [{ "@type": "OpeningHoursSpecification", dayOfWeek: bk.days.map((d) => DAYS[d % 7]).filter(Boolean), opens: bk.start, closes: bk.end }];
+  }
+  org.priceRange = "₾₾";
+  const same = [s.facebook, s.linkedin, s.instagram, s.youtube, s.tiktok].filter((u) => String(u || "").startsWith("https://"));
   if (same.length) org.sameAs = same;
   const graph = [org, { "@type": "WebSite", "@id": base + "/#website", url: base + "/", name: "Outsourcify", inLanguage: ["ka-GE", "en"], publisher: { "@id": orgId } }];
 
@@ -212,6 +226,19 @@ function schemaGraph(meta) {
     graph.push({ "@type": "ItemList", name: meta.title,
       itemListElement: C.services().map((sv, i) => ({ "@type": "ListItem", position: i + 1, url: base + C.urlService(sv), name: Ls(sv.title) })) });
   }
+  const reg = B.seoRegistry();
+  if (reg.offers.length) {
+    graph.push({ "@type": "OfferCatalog", "@id": pageUrl + "#prices", name: meta.title, url: pageUrl,
+      itemListElement: reg.offers.slice(0, 60).map((o) => ({ "@type": "Offer", name: o.name, price: o.price, priceCurrency: "GEL", seller: { "@id": orgId } })) });
+  }
+  reg.people.forEach((p, i) => {
+    const person = { "@type": "Person", "@id": base + "/#person-" + (i + 1), name: p.name, worksFor: { "@id": orgId } };
+    if (p.role) person.jobTitle = p.role;
+    if (p.photo) person.image = /^https?:/.test(p.photo) ? p.photo : base + p.photo;
+    if (p.email) person.email = p.email;
+    if (p.linkedin) person.sameAs = [p.linkedin];
+    graph.push(person);
+  });
   const faq = B.faqRegistry();
   if (faq.length) {
     graph.push({ "@type": "FAQPage", "@id": pageUrl + "#faq", inLanguage,

@@ -12,12 +12,15 @@ const { icon } = require("./icons");
 const { logoMark } = require("./logo");
 
 /* ---------------------------------------------------- მოთხოვნის მდგომარეობა */
-const state = { faq: [], ids: {} };
+const state = { faq: [], ids: {}, offers: [], people: [] };
 function resetRender() {
   state.faq = [];
   state.ids = {};
+  state.offers = [];
+  state.people = [];
 }
 const faqRegistry = () => state.faq;
+const seoRegistry = () => ({ offers: state.offers, people: state.people });
 
 /** სექციის უნიკალური id (ღუზებისთვის) */
 function secId(base) {
@@ -334,7 +337,7 @@ R.showcase = (b) => {
       + (s.image ? '<div class="sc__media">' + picture(String(s.image), s.alt, "(max-width: 900px) 92vw, 50vw") + '<span class="sc__badge">' + icon(String(s.icon || "briefcase")) + "</span></div>" : "")
       + '<div class="sc__body"><h3 class="sc__title">' + e(s.title) + "</h3>" + (s.text ? '<p class="sc__text">' + inlineHtml(s.text) + "</p>" : "")
       + (s.points.length ? '<ul class="sc__list">' + s.points.map((x) => "<li>" + icon("check", "sc__check") + "<span>" + e(x) + "</span></li>").join("") + "</ul>" : "")
-      + (s.link ? btn(t("learn_more"), s.link, "primary") : "") + "</div></div>";
+      + (s.link ? '<a class="btn btn--primary" href="' + e(C.linkUrl(s.link)) + '"><span>' + e(t("learn_more")) + '<span class="sr-only"> — ' + e(s.title) + "</span></span>" + icon("arrow-right", "btn__ico") + "</a>" : "") + "</div></div>";
   });
   const c = ctaBtn(b, "", "ghost");
   return '<section class="section showcase-sec" id="' + e(id) + '"><div class="container">' + secHead(b, "sec-head--split")
@@ -348,6 +351,7 @@ R.pricing = (b) => {
   if (!groups.length) return "";
   const id = secId("pricing");
   const price = (v) => '<span class="pr__price">' + e(String(v)) + " <small>" + e(t("currency")) + "</small></span>";
+  const ht = Ls(b.title).trim() ? "h3" : "h2"; // სათაურის გარეშე სექციაში იერარქია არ წყდება
   let tabs = "";
   let panels = "";
   groups.forEach((g, i) => {
@@ -358,10 +362,12 @@ R.pricing = (b) => {
     panels += '<div class="pr__panel pr-c' + (i % 4) + " pr__panel--n" + Math.min(secs.length, 3) + '" role="tabpanel" id="' + id + "-p" + i + '" aria-labelledby="' + id + "-t" + i + '"' + (on ? "" : " hidden") + ">"
       + secs.map((x) => {
         const st = Ls(x.title);
-        return '<div class="pr__card">' + (st ? '<h3 class="pr__title">' + e(st) + "</h3>" : "") + '<ul class="pr__rows" role="list">'
+        return '<div class="pr__card">' + (st ? "<" + ht + ' class="pr__title">' + e(st) + "</" + ht + ">" : "") + '<ul class="pr__rows" role="list">'
           + x.rows.map((r) => {
             const lb = Ls(r.label);
             const pv = String(r.price || "").trim();
+            const num = parseFloat(pv.replace(/[^\d.]/g, ""));
+            if (pv && num > 0) state.offers.push({ name: [Ls(g.title), st, lb].filter(Boolean).join(" — "), price: num });
             return pv ? '<li class="pr__row"><span>' + e(lb) + "</span>" + price(pv) + "</li>" : '<li class="pr__sub">' + e(lb) + "</li>";
           }).join("") + "</ul></div>";
       }).join("") + "</div>";
@@ -426,9 +432,10 @@ R.team = (b) => {
     const src = imgUrl(String(m.photo || ""));
     const small = /^\/assets\/img\/team\/[\w-]+\.webp$/.test(src) ? src.replace(/\.webp$/, "-500.webp") : "";
     const img = src ? '<img src="' + e(src) + '"' + (small ? ' srcset="' + e(small) + " 500w, " + e(src) + ' 900w" sizes="(max-width: 760px) 80vw, 34vw"' : "")
-      + ' alt="' + e(name) + '" width="900" height="900" loading="lazy" decoding="async">' : '<span class="tm__initial" aria-hidden="true">' + e(name.charAt(0)) + "</span>";
+      + ' alt="' + e(name + (role ? ", " + role : "") + " — Outsourcify") + '" width="900" height="900" loading="lazy" decoding="async">' : '<span class="tm__initial" aria-hidden="true">' + e(name.charAt(0)) + "</span>";
     const email = String(m.email || "").trim();
     const li = String(m.linkedin || "").trim();
+    state.people.push({ name, role, photo: src, email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : "", linkedin: /^https:\/\/(www\.)?linkedin\.com\//i.test(li) ? li : "" });
     const links = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '<a class="tm__link" href="mailto:' + e(email) + '" aria-label="' + e(t("write_us")) + " — " + e(name) + '">' + icon("mail") + "</a>" : "")
       + (/^https:\/\/(www\.)?linkedin\.com\//i.test(li) ? '<a class="tm__link" href="' + e(li) + '" target="_blank" rel="noopener" aria-label="LinkedIn — ' + e(name) + '">' + icon("linkedin") + "</a>" : "");
     return '<li class="tm" data-reveal style="--d:' + (i % 3) + '"><div class="tm__photo">' + img + "</div>"
@@ -597,4 +604,4 @@ function renderService(s, ctx) {
   return h;
 }
 
-module.exports = { resetRender, faqRegistry, btn, secHead, picture, checkList, renderBlocks, renderService, contactMini, socialLinks, breadcrumbsHtml };
+module.exports = { resetRender, faqRegistry, seoRegistry, btn, secHead, picture, checkList, renderBlocks, renderService, contactMini, socialLinks, breadcrumbsHtml };

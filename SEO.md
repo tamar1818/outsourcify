@@ -1,12 +1,12 @@
 # Outsourcify — SEO სათაურები, აღწერები და URL-ები
 
-გენერირებულია `npm run seo`-ით 2026-09-30-ს — წყარო: CMS-ის კონტენტი. ქართული ვერსია მთავარია (`/`), ინგლისური — `/en/`. რიცხვი ფრჩხილებში — სიმბოლოების რაოდენობა (რეკომენდაცია: სათაური ≈50–60, აღწერა ≈140–160). საკვანძო სიტყვები შიდა შენიშვნაა — საიტზე meta keywords არ გამოიტანება.
+გენერირებულია `npm run seo`-ით 2026-10-08-ს — წყარო: CMS-ის კონტენტი. ქართული ვერსია მთავარია (`/`), ინგლისური — `/en/`. რიცხვი ფრჩხილებში — სიმბოლოების რაოდენობა (რეკომენდაცია: სათაური ≈50–60, აღწერა ≈140–160). საკვანძო სიტყვები შიდა შენიშვნაა — საიტზე meta keywords არ გამოიტანება.
 
 ## 1. მთავარი / Home
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | Outsourcify — თქვენი სანდო ბუღალტრული პარტნიორი | ბუღალტრული მომსახურება (72) | Outsourcify — Your Trusted Accounting Partner in Georgia (56) |
+| **SEO Title** | ბუღალტრული მომსახურება — სანდო პარტნიორი | Outsourcify (54) | Outsourcify — Your Trusted Accounting Partner in Georgia (56) |
 | **Meta Description** | პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის: ბუღალტრული მომსახურება, საგადასახადო დაგეგმვა, ხელფასის მართვა, გამჭვირვალე ფასები. (161) | Personalised financial solutions for individuals and businesses in Georgia: bookkeeping, tax planning, payroll and transparent pricing. (135) |
 | **URL** | `https://outsourcify.ge/` | `https://outsourcify.ge/en/` |
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
@@ -36,7 +36,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify (65) | Accounting Service Pricing — Small Business & LLC | Outsourcify (63) |
+| **SEO Title** | ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify (65) | Accounting Prices — Small Business & LLC | Outsourcify (54) |
 | **Meta Description** | გამჭვირვალე ფასები: ერთჯერადი მომსახურებები, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურება ბრუნვისა და საქმიანობის მიხედვით, Reportal-ზე ატვირთვა. (149) | Transparent pricing for one-off services and accounting for small businesses and LLCs, by turnover and activity type, plus Reportal filing. (139) |
 | **URL** | `https://outsourcify.ge/fasebi` | `https://outsourcify.ge/en/pricing` |
 | **Main keyword** | ბუღალტრული მომსახურების ფასი | accounting services price Georgia |
@@ -136,7 +136,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის — Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
+| **SEO Title** | საგადასახადო კონსულტაცია ბიზნესისთვის | Outsourcify (51) | Tax Consulting for Businesses in Georgia | Outsourcify (54) |
 | **Meta Description** | ექსპერტული საგადასახადო კონსულტაცია: ვალდებულებები, საგადასახადო რეჟიმი და გარიგებების შეფასება. მიიღეთ გასაგები რჩევა Outsourcify-ისგან. (137) | Expert tax consulting in Georgia: obligations, tax regimes and transaction reviews. Get clear, practical advice from the Outsourcify team. (138) |
 | **URL** | `https://outsourcify.ge/servisebi/sagadasakhado-konsultatsia` | `https://outsourcify.ge/en/services/tax-consulting` |
 | **Main keyword** | საგადასახადო კონსულტაცია | tax consulting Georgia |
