@@ -95,21 +95,26 @@ function siteHeader(alts) {
     + '<button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="' + e(t("menu")) + '"><span></span><span></span><span></span></button>'
     + "</div></div></header>";
 
-  // მობილური მენიუ
+  // მობილური მენიუ — მთელ ეკრანზე, ჰედერის ქვეშ
+  const st = C.site().settings || {};
   h += '<div class="drawer" id="drawer" hidden><div class="drawer__in"><nav aria-label="Mobile"><ul class="drawer__list" role="list">';
+  let n = 0;
   for (const m of menuItems("header")) {
     const url = C.linkUrl(String(m.link || ""));
     const label = Ls(m.label);
+    n++;
     if (m.mega) {
-      h += '<li><details class="drawer__acc"><summary>' + e(label) + icon("chevron-down") + '</summary><ul role="list">'
-        + C.services().map((s) => '<li><a href="' + e(C.urlService(s)) + '">' + icon(String(s.icon || "briefcase")) + e(Ls(s.title)) + "</a></li>").join("")
-        + '<li><a class="drawer__all" href="' + e(url) + '">' + e(t("all_services")) + icon("arrow-right") + "</a></li></ul></details></li>";
+      h += '<li style="--i:' + n + '"><details class="drawer__acc"><summary><span>' + e(label) + "</span>" + icon("chevron-down", "drawer__chev") + '</summary><ul class="drawer__sub" role="list">'
+        + C.services().map((sv) => '<li><a href="' + e(C.urlService(sv)) + '"><span class="drawer__ico">' + icon(String(sv.icon || "briefcase")) + "</span><span>" + e(Ls(sv.title)) + "</span></a></li>").join("")
+        + '<li><a class="drawer__all" href="' + e(url) + '"><span>' + e(t("all_services")) + "</span>" + icon("arrow-right") + "</a></li></ul></details></li>";
     } else {
-      h += '<li><a href="' + e(url) + '"' + (isCurrent(url) ? ' aria-current="page"' : "") + ">" + e(label) + "</a></li>";
+      h += '<li style="--i:' + n + '"><a class="drawer__link" href="' + e(url) + '"' + (isCurrent(url) ? ' aria-current="page"' : "") + "><span>" + e(label) + "</span>" + icon("arrow-up-right", "drawer__go") + "</a></li>";
     }
   }
-  h += '</ul></nav><div class="drawer__foot">' + B.btn(t("book_cta"), "page:book", "primary") + B.contactMini()
-    + langSwitch(alts, "lang lang--lg") + "</div></div></div>";
+  h += '</ul></nav><div class="drawer__foot">' + B.btn(t("book_cta"), "page:book", "primary", "calendar") + '<div class="drawer__quick">';
+  if (st.phone) h += '<a href="tel:' + e(phoneHref(st.phone)) + '">' + icon("phone") + "<span>" + e(t("call_us")) + "</span></a>";
+  if (st.email) h += '<a href="mailto:' + e(String(st.email)) + '">' + icon("mail") + "<span>" + e(t("write_us")) + "</span></a>";
+  h += "</div>" + langSwitch(alts, "lang lang--lg") + "</div></div></div>";
   return h;
 }
 
