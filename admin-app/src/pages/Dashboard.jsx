@@ -18,7 +18,7 @@ export default function Dashboard() {
   ].filter(Boolean);
   return (
     <>
-      <PageHead title={"გამარჯობა, " + meta.user + " 👋"} sub="საიტის მოკლე მიმოხილვა" />
+      <PageHead title={"გამარჯობა, " + String(meta.user || "").split("@")[0].split(" ")[0] + " 👋"} sub="საიტის მოკლე მიმოხილვა" />
       <div className="tiles">
         {tiles.map(([to, n, label, icon], i) => (
           <Link key={i} to={to} className="tile">

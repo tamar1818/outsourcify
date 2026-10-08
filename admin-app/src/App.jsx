@@ -32,6 +32,18 @@ const NAV = [
 ];
 const inviteToken = () => (window.location.pathname.match(/^\/admin\/invite\/([\w-]+)/) || [])[1];
 
+/** ღამის რეჟიმი — ინახება ბრაუზერში; პირველად სისტემის პარამეტრით */
+function initialTheme() {
+  try { const t = localStorage.getItem("cms-theme"); if (t === "dark" || t === "light") return t; } catch { /* არაფერი */ }
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+document.documentElement.dataset.theme = initialTheme();
+function useTheme() {
+  const [theme, set] = useState(() => document.documentElement.dataset.theme || "light");
+  const setTheme = (t) => { document.documentElement.dataset.theme = t; try { localStorage.setItem("cms-theme", t); } catch { /* არაფერი */ } set(t); };
+  return [theme, setTheme];
+}
+
 export default function App() {
   const [session, setSession] = useState(null);
   const [meta, setMeta] = useState(null);
@@ -57,6 +69,8 @@ export default function App() {
 }
 
 function Shell({ user, perms, onLogout }) {
+  const [theme, setTheme] = useTheme();
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
   const has = (p) => !p || perms.includes(p);
   const guard = (p, el) => (has(p) ? el : <Navigate to="/" replace />);
   const [badge, setBadge] = useState(0);
@@ -86,7 +100,8 @@ function Shell({ user, perms, onLogout }) {
         </nav>
         <div className="side__foot">
           <a href="/" target="_blank" rel="noreferrer"><Icon name="arrow-up-right" /><span>საიტის ნახვა</span></a>
-          <NavLink to="/account"><Icon name="lock" /><span>{user}</span></NavLink>
+          <NavLink to="/account" title={user}><Icon name="lock" /><span>{user}</span></NavLink>
+          <button type="button" className="theme-btn" onClick={toggleTheme} aria-pressed={theme === "dark"}><Icon name={theme === "dark" ? "sun" : "moon"} /><span>{theme === "dark" ? "დღის რეჟიმი" : "ღამის რეჟიმი"}</span></button>
           <button type="button" onClick={onLogout}><Icon name="x" /><span>გასვლა</span></button>
         </div>
       </aside>
