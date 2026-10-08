@@ -41,6 +41,34 @@
       "email": "",
       "linkedin": "",
       "hidden": false
+    },
+    {
+      "name": {
+        "ka": "ანი ბედოშვილი",
+        "en": "Ani Bedoshvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/ani-bedoshvili.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
+    },
+    {
+      "name": {
+        "ka": "თეკლა მუგასაშვილი",
+        "en": "Tekla Mugasashvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/tekla-mugasashvili.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
     }
   ]
 }
