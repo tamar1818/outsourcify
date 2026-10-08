@@ -33,7 +33,8 @@ app.use((req, res, next) => {
   });
   const host = String(req.headers.host || "");
   if (/^www\./i.test(host) && (req.method === "GET" || req.method === "HEAD")) {
-    return res.redirect(301, (req.secure ? "https" : "http") + "://" + host.slice(4) + req.originalUrl);
+    const local = /^www\.(localhost|127\.)/i.test(host);
+    return res.redirect(301, (req.secure || !local ? "https" : "http") + "://" + host.slice(4) + req.originalUrl);
   }
   core.setRequest(req);
   next();
