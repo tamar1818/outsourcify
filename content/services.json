@@ -179,12 +179,12 @@
                 }
             ],
             "seo_title": {
-                "ka": "ბუღალტრული მომსახურება ბიზნესისთვის | Outsourcify",
-                "en": "Accounting & Bookkeeping Services in Georgia | Outsourcify"
+                "ka": "ბუღალტრული მომსახურება შპს-სა და ინდმეწარმისთვის | Outsourcify",
+                "en": "Accounting & Bookkeeping Services in Tbilisi | Outsourcify"
             },
             "seo_desc": {
-                "ka": "ბუღალტრული აღრიცხვის სრული წარმოება სერტიფიცირებული ბუღალტრებით: მოწესრიგებული დოკუმენტაცია, ანგარიშგება და კონსულტაცია. დაჯავშნეთ შეხვედრა.",
-                "en": "Outsourced bookkeeping by certified accountants in Georgia: organised records, financial reporting and day-to-day advice tailored to your business."
+                "ka": "საბუღალტრო მომსახურება შპს-ისა და ინდმეწარმისთვის: აღრიცხვა, დეკლარაციები, ფინანსური ანგარიშგება და საპენსიო. სერტიფიცირებული ბუღალტრები თბილისში.",
+                "en": "Outsourced accounting for LLCs and individual entrepreneurs in Tbilisi: bookkeeping, tax returns, financial statements and pension reporting."
             },
             "keywords": {
                 "ka": "ბუღალტრული მომსახურება; ბუღალტერიის აუთსორსინგი, ბუღალტრული აღრიცხვა, აუთსორს ბუღალტერი",
@@ -497,7 +497,7 @@
                 }
             ],
             "seo_title": {
-                "ka": "დეკლარაციების მომზადება და წარდგენა | Outsourcify",
+                "ka": "დეკლარაციის შევსება და წარდგენა — rs.ge | Outsourcify",
                 "en": "Tax Return Preparation & Filing in Georgia | Outsourcify"
             },
             "seo_desc": {
@@ -667,7 +667,7 @@
                 }
             ],
             "seo_title": {
-                "ka": "ბუღალტრული აღრიცხვის აღდგენა და გასწორება | Outsourcify",
+                "ka": "ბუღალტერიის აღდგენა და გასწორება | Outsourcify",
                 "en": "Accounting Records Correction & Clean-up | Outsourcify"
             },
             "seo_desc": {
@@ -997,6 +997,793 @@
                 "ka": "ფინანსური კონსულტაცია; ფინანსური ანალიზი, ბიუჯეტირება, მმართველობითი ანგარიშგება",
                 "en": "financial consulting Georgia; financial analysis, budgeting, management reporting"
             }
+        },
+        {
+            "id": "small-business",
+            "icon": "store",
+            "image": "/assets/img/photos/bookkeeper-calculating-invoices.webp",
+            "title": {
+                "ka": "მცირე მეწარმის ბუღალტრული მომსახურება",
+                "en": "Accounting for Individual Entrepreneurs"
+            },
+            "slug": {
+                "ka": "mtsire-mewarmis-bughalteria",
+                "en": "individual-entrepreneur-accounting"
+            },
+            "image_alt": {
+                "ka": "მცირე მეწარმის ბუღალტერია და დეკლარაციები",
+                "en": "Bookkeeping for an individual entrepreneur in Georgia"
+            },
+            "short": {
+                "ka": "ინდმეწარმისა და მცირე მეწარმის სტატუსის მქონე პირების აღრიცხვა და დეკლარაციები — გამჭვირვალე ფასით.",
+                "en": "Bookkeeping and tax returns for individual entrepreneurs, including those with small business status — at a transparent price."
+            },
+            "intro": {
+                "ka": "მცირე მეწარმის სტატუსი ბიზნესს გამარტივებულ დაბეგვრას სთავაზობს, მაგრამ ვალდებულებები მაინც რჩება: დეკლარაციები, ბრუნვის კონტროლი და ვადები. ამ ყველაფერს ჩვენ ვმართავთ, თქვენ კი საქმეზე ფიქრობთ.",
+                "en": "Small business status offers simplified taxation, but obligations remain: returns, turnover monitoring and deadlines. We take care of all of it so you can focus on your work."
+            },
+            "body": {
+                "ka": "<p>ვემსახურებით ინდივიდუალურ მეწარმეებს — როგორც მცირე მეწარმის სტატუსით, ისე მის გარეშე. ვაწარმოებთ შემოსავლების აღრიცხვას, ვამზადებთ და დადგენილ ვადებში წარვადგენთ დეკლარაციებს შემოსავლების სამსახურში და თვალს ვადევნებთ, რომ წლიური ბრუნვა სტატუსის ზღვარს არ გასცდეს.</p><p>საჭიროების შემთხვევაში გეხმარებით მცირე მეწარმის სტატუსის მინიჭებაშიც და გირჩევთ, რომელი რეჟიმია თქვენი საქმიანობისთვის უფრო ხელსაყრელი. ფასები დამოკიდებულია საქმიანობის ტიპსა (ვაჭრობა ან მომსახურება) და წლიურ ბრუნვაზე — იხილეთ <a href=\"/fasebi\">მომსახურების ფასები</a>.</p>",
+                "en": "<p>We work with individual entrepreneurs — with or without small business status. We keep your income records, prepare and file returns with the Revenue Service on time, and keep an eye on annual turnover so you stay within the limits of your status.</p><p>If needed, we also help you obtain small business status and advise which tax regime suits your activity best. Prices depend on the type of activity (trade or services) and annual turnover — see <a href=\"/en/pricing\">our pricing</a>.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "ყოველთვიური დეკლარაციები",
+                        "en": "Monthly returns"
+                    },
+                    "text": {
+                        "ka": "დეკლარაციების მომზადება და დროული წარდგენა შემოსავლების სამსახურში.",
+                        "en": "Preparing and filing returns with the Revenue Service on time."
+                    }
+                },
+                {
+                    "icon": "chart",
+                    "title": {
+                        "ka": "ბრუნვის კონტროლი",
+                        "en": "Turnover monitoring"
+                    },
+                    "text": {
+                        "ka": "ვაკონტროლებთ წლიურ ბრუნვას სტატუსის ზღვართან მიმართებით.",
+                        "en": "We track annual turnover against your status limit."
+                    }
+                },
+                {
+                    "icon": "building",
+                    "title": {
+                        "ka": "მცირე მეწარმის რეგისტრაცია",
+                        "en": "Small business status registration"
+                    },
+                    "text": {
+                        "ka": "სტატუსის მინიჭების პროცესში დახმარება.",
+                        "en": "Help with obtaining small business status."
+                    }
+                },
+                {
+                    "icon": "history",
+                    "title": {
+                        "ka": "წარსული პერიოდების გასწორება",
+                        "en": "Correcting past periods"
+                    },
+                    "text": {
+                        "ka": "წინა წლების დეკლარაციების გადამოწმება და გასწორება.",
+                        "en": "Reviewing and correcting returns from previous years."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "ინდივიდუალური მეწარმეები",
+                    "მცირე მეწარმის სტატუსის მქონე პირები",
+                    "ფრილანსერები და დამოუკიდებელი სპეციალისტები",
+                    "ვაჭრობისა და მომსახურების სფეროს მცირე ბიზნესი"
+                ],
+                "en": [
+                    "Individual entrepreneurs",
+                    "Holders of small business status",
+                    "Freelancers and independent professionals",
+                    "Small trade and service businesses"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "receipt",
+                    "title": {
+                        "ka": "გამჭვირვალე ფასი",
+                        "en": "Transparent pricing"
+                    },
+                    "text": {
+                        "ka": "ფასი წინასწარ იცით — საქმიანობის ტიპისა და ბრუნვის მიხედვით.",
+                        "en": "You know the price up front — based on activity type and turnover."
+                    }
+                },
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "ვადები კონტროლის ქვეშ",
+                        "en": "Deadlines under control"
+                    },
+                    "text": {
+                        "ka": "დეკლარაციის ვადას აღარ გამოტოვებთ.",
+                        "en": "No more missed filing deadlines."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "ნაკლები რისკი",
+                        "en": "Lower risk"
+                    },
+                    "text": {
+                        "ka": "სწორი აღრიცხვა გიცავთ ჯარიმებისგან.",
+                        "en": "Correct records protect you from penalties."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რა ღირს მცირე მეწარმის ბუღალტრული მომსახურება?",
+                        "en": "How much does accounting for an individual entrepreneur cost?"
+                    },
+                    "a": {
+                        "ka": "ფასი დამოკიდებულია საქმიანობის ტიპსა და წლიურ ბრუნვაზე. მაგალითად, ვაჭრობის სფეროში 100 000 ლარამდე წლიური ბრუნვისას მომსახურება 250 ლარია. სრული ჩამონათვალი იხილეთ ფასების გვერდზე.",
+                        "en": "The price depends on the type of activity and annual turnover. For example, for trade with annual turnover up to GEL 100,000 the fee is GEL 250. See the pricing page for the full list."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "შეგიძლიათ დამეხმაროთ მცირე მეწარმის სტატუსის მიღებაში?",
+                        "en": "Can you help me get small business status?"
+                    },
+                    "a": {
+                        "ka": "დიახ. მცირე მეწარმის რეგისტრაციის მომსახურება 40 ლარია.",
+                        "en": "Yes. Small business status registration costs GEL 40."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "წინა წლების დეკლარაციებიც თუ გასასწორებელია?",
+                        "en": "What if returns from previous years need fixing?"
+                    },
+                    "a": {
+                        "ka": "წარსული პერიოდების გასწორებასაც ვაკეთებთ — ფასი ბრუნვისა და საქმიანობის მიხედვით განისაზღვრება.",
+                        "en": "We also correct past periods — the price depends on turnover and activity type."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "მცირე მეწარმის ბუღალტრული მომსახურება და ფასი | Outsourcify",
+                "en": "Accounting for Individual Entrepreneurs in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "მცირე მეწარმისა და ინდმეწარმის ბუღალტერია თბილისში: დეკლარაციები, ბრუნვის კონტროლი, სტატუსის რეგისტრაცია და წარსული პერიოდების გასწორება. ფასი 250 ლარიდან.",
+                "en": "Accounting for individual entrepreneurs in Georgia: monthly returns, turnover monitoring, small business status registration and past-period corrections."
+            },
+            "keywords": {
+                "ka": "მცირე მეწარმის ბუღალტერია; მცირე მეწარმის დეკლარაცია, ინდმეწარმე ბუღალტერი, მცირე მეწარმის სტატუსი",
+                "en": "individual entrepreneur accounting Georgia; small business status Georgia accountant"
+            },
+            "hidden": false
+        },
+        {
+            "id": "payroll",
+            "icon": "users",
+            "image": "/assets/img/photos/accountant-working-calculator-laptop.webp",
+            "title": {
+                "ka": "ხელფასის მართვა და საპენსიო ანგარიშგება",
+                "en": "Payroll & Pension Reporting"
+            },
+            "slug": {
+                "ka": "khelfasis-martva",
+                "en": "payroll-services"
+            },
+            "image_alt": {
+                "ka": "ხელფასის დარიცხვა და საპენსიო ანგარიშგება",
+                "en": "Payroll processing and pension reporting"
+            },
+            "short": {
+                "ka": "ხელფასის დარიცხვა, საშემოსავლო და საპენსიო შენატანები, ანგარიშგება — ზუსტად და დროულად.",
+                "en": "Salary calculation, income tax and pension contributions, and reporting — accurate and on time."
+            },
+            "intro": {
+                "ka": "თანამშრომლებს ხელფასი ზუსტად და დროულად უნდა მიუვიდეთ, ხოლო გადასახადები და საპენსიო შენატანები სწორად უნდა აისახოს. ხელფასის მთელ ციკლს ჩვენ ვმართავთ.",
+                "en": "Employees should be paid accurately and on time, and taxes and pension contributions must be reported correctly. We manage the full payroll cycle for you."
+            },
+            "body": {
+                "ka": "<p>ვითვლით ხელფასებს, საშემოსავლო გადასახადსა და საპენსიო შენატანებს, ვამზადებთ შესაბამის დეკლარაციებს და ვაწარმოებთ საპენსიო ანგარიშგებას. მონაცემებს ვასახავთ შესაბამის სისტემებში, ხოლო წლის ბოლოს ვამზადებთ შემაჯამებელ ანგარიშგებას.</p><p>მომსახურება შესაფერისია როგორც რამდენიმე თანამშრომლის მქონე მცირე ბიზნესისთვის, ისე უფრო დიდი გუნდებისთვის.</p>",
+                "en": "<p>We calculate salaries, income tax and pension contributions, prepare the related returns and keep pension reporting in order. Data is recorded in the relevant systems, and at year end we prepare the summary reports.</p><p>The service suits both small businesses with a few employees and larger teams.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "calculator",
+                    "title": {
+                        "ka": "ხელფასის დამუშავება",
+                        "en": "Payroll processing"
+                    },
+                    "text": {
+                        "ka": "ხელფასისა და დაქვითვების ყოველთვიური დარიცხვა.",
+                        "en": "Monthly calculation of salaries and deductions."
+                    }
+                },
+                {
+                    "icon": "percent",
+                    "title": {
+                        "ka": "საგადასახადო შევსება და გადახდები",
+                        "en": "Tax filings and payments"
+                    },
+                    "text": {
+                        "ka": "საშემოსავლო გადასახადის დეკლარირება და გადახდის კონტროლი.",
+                        "en": "Income tax returns and payment tracking."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "საპენსიო ანგარიშგება",
+                        "en": "Pension reporting"
+                    },
+                    "text": {
+                        "ka": "საპენსიო შენატანების დამუშავება და სისტემაში ასახვა.",
+                        "en": "Processing pension contributions and recording them in the system."
+                    }
+                },
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "წლის ბოლოს ანგარიშგება",
+                        "en": "Year-end reporting"
+                    },
+                    "text": {
+                        "ka": "წლიური შემაჯამებელი ანგარიშგების მომზადება.",
+                        "en": "Preparing annual summary reports."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები თანამშრომლებით",
+                    "ბიზნესი, რომელსაც შიდა ბუღალტერი არ ჰყავს",
+                    "კომპანიები, რომლებიც ხელფასის ფუნქციის აუთსორსინგს გეგმავენ"
+                ],
+                "en": [
+                    "Companies with employees",
+                    "Businesses without an in-house accountant",
+                    "Companies planning to outsource payroll"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "target",
+                    "title": {
+                        "ka": "სიზუსტე",
+                        "en": "Accuracy"
+                    },
+                    "text": {
+                        "ka": "ხელფასი და გადასახადები სწორად არის დათვლილი.",
+                        "en": "Salaries and taxes are calculated correctly."
+                    }
+                },
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "დროულობა",
+                        "en": "On time"
+                    },
+                    "text": {
+                        "ka": "ყველა ვადა დაცულია.",
+                        "en": "Every deadline is met."
+                    }
+                },
+                {
+                    "icon": "lock",
+                    "title": {
+                        "ka": "კონფიდენციალურობა",
+                        "en": "Confidentiality"
+                    },
+                    "text": {
+                        "ka": "ხელფასის მონაცემები დაცულია.",
+                        "en": "Salary data is kept confidential."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რას მოიცავს ხელფასის მართვა?",
+                        "en": "What does payroll management include?"
+                    },
+                    "a": {
+                        "ka": "ხელფასის, საშემოსავლო გადასახადისა და საპენსიო შენატანების დარიცხვას, დეკლარაციების მომზადებას, საპენსიო ანგარიშგებასა და წლის ბოლოს ანგარიშგებას.",
+                        "en": "Calculating salaries, income tax and pension contributions, preparing returns, pension reporting and year-end reports."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "შეიძლება მხოლოდ ხელფასის მომსახურების აღება?",
+                        "en": "Can I use payroll services on their own?"
+                    },
+                    "a": {
+                        "ka": "დიახ, სერვისები შეგიძლიათ ცალ-ცალკე ან სრული ბუღალტრული მომსახურების ნაწილად აიღოთ.",
+                        "en": "Yes, services can be used separately or as part of full accounting."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ხელფასის დარიცხვა და საპენსიო ანგარიშგება | Outsourcify",
+                "en": "Payroll & Pension Services in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ხელფასის მართვა თბილისში: ხელფასის დარიცხვა, საშემოსავლო და საპენსიო შენატანები, დეკლარაციები და წლის ბოლოს ანგარიშგება — ზუსტად და დროულად.",
+                "en": "Payroll services in Georgia: salary calculation, income tax and pension contributions, returns and year-end reporting — accurate and on time."
+            },
+            "keywords": {
+                "ka": "ხელფასის დარიცხვა; საპენსიო ანგარიშგება, ხელფასის მართვა, საშემოსავლო გადასახადი",
+                "en": "payroll services Georgia; pension contributions Georgia"
+            },
+            "hidden": false
+        },
+        {
+            "id": "financial-statements",
+            "icon": "chart",
+            "image": "/assets/img/photos/financial-report-chart-analysis.webp",
+            "title": {
+                "ka": "ფინანსური ანგარიშგება და Reportal",
+                "en": "Financial Statements & Reportal Filing"
+            },
+            "slug": {
+                "ka": "finansuri-angarishgeba",
+                "en": "financial-statements"
+            },
+            "image_alt": {
+                "ka": "ფინანსური ანგარიშგების მომზადება",
+                "en": "Preparing financial statements"
+            },
+            "short": {
+                "ka": "ბალანსი, მოგება-ზარალი, ფულადი ნაკადები და ანგარიშგების ატვირთვა Reportal-ის სისტემაში.",
+                "en": "Balance sheet, profit and loss, cash flow, and filing financial statements on Reportal."
+            },
+            "intro": {
+                "ka": "მკაფიო ფინანსური ანგარიშგება გიჩვენებთ კომპანიის რეალურ მდგომარეობას და აუცილებელია კანონმდებლობით გათვალისწინებული ვალდებულებებისთვის.",
+                "en": "Clear financial statements show your company’s real position and are required to meet legal reporting obligations."
+            },
+            "body": {
+                "ka": "<p>ვამზადებთ ფინანსური მდგომარეობის ანგარიშგებას (ბალანსს), მოგება-ზარალისა და ფულადი სახსრების მოძრაობის ანგარიშგებას, ასევე ყოველთვიურ ბრუნვით და ნაშთების უწყისებს. საჭიროების შემთხვევაში ვამზადებთ მორგებულ ანგარიშებს.</p><p>კანონმდებლობით გათვალისწინებულ შემთხვევებში ანგარიშგებას ვტვირთავთ Reportal-ის სისტემაში — III და IV კატეგორიის საწარმოებისთვის მომსახურება 500 ლარია.</p>",
+                "en": "<p>We prepare the statement of financial position (balance sheet), profit and loss and cash flow statements, as well as monthly trial balances, and custom reports where needed.</p><p>Where the law requires it, we file the statements on Reportal — GEL 500 for category III and IV entities.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "layers",
+                    "title": {
+                        "ka": "ბალანსი",
+                        "en": "Balance sheet"
+                    },
+                    "text": {
+                        "ka": "ფინანსური მდგომარეობის ანგარიშგება.",
+                        "en": "Statement of financial position."
+                    }
+                },
+                {
+                    "icon": "chart",
+                    "title": {
+                        "ka": "მოგება-ზარალი",
+                        "en": "Profit and loss"
+                    },
+                    "text": {
+                        "ka": "შემოსავლებისა და ხარჯების ანგარიშგება.",
+                        "en": "Income statement."
+                    }
+                },
+                {
+                    "icon": "pie",
+                    "title": {
+                        "ka": "ფულადი ნაკადები",
+                        "en": "Cash flow"
+                    },
+                    "text": {
+                        "ka": "ფულადი სახსრების მოძრაობის ანგარიშგება.",
+                        "en": "Cash flow statement."
+                    }
+                },
+                {
+                    "icon": "globe",
+                    "title": {
+                        "ka": "Reportal-ზე ატვირთვა",
+                        "en": "Reportal filing"
+                    },
+                    "text": {
+                        "ka": "ანგარიშგების წარდგენა კანონით დადგენილ შემთხვევებში.",
+                        "en": "Submitting statements where the law requires it."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "შპს-ები და სხვა იურიდიული პირები",
+                    "III და IV კატეგორიის საწარმოები",
+                    "კომპანიები, რომლებსაც ბანკისა თუ ინვესტორისთვის ანგარიშგება სჭირდებათ"
+                ],
+                "en": [
+                    "LLCs and other legal entities",
+                    "Category III and IV entities",
+                    "Companies that need statements for banks or investors"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "target",
+                    "title": {
+                        "ka": "სიცხადე",
+                        "en": "Clarity"
+                    },
+                    "text": {
+                        "ka": "ხედავთ კომპანიის რეალურ ფინანსურ მდგომარეობას.",
+                        "en": "See your company’s real financial position."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "შესაბამისობა",
+                        "en": "Compliance"
+                    },
+                    "text": {
+                        "ka": "ანგარიშგება კანონმდებლობის მოთხოვნებს შეესაბამება.",
+                        "en": "Statements meet legal requirements."
+                    }
+                },
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "დროულობა",
+                        "en": "On time"
+                    },
+                    "text": {
+                        "ka": "Reportal-ის ვადები დაცულია.",
+                        "en": "Reportal deadlines are met."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რა ღირს Reportal-ზე ფინანსური ანგარიშგების ატვირთვა?",
+                        "en": "How much does Reportal filing cost?"
+                    },
+                    "a": {
+                        "ka": "III და IV კატეგორიის საწარმოებისთვის — 500 ლარი.",
+                        "en": "GEL 500 for category III and IV entities."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "შედის თუ არა ფინანსური ანგარიშგება ყოველთვიურ მომსახურებაში?",
+                        "en": "Are financial statements included in the monthly service?"
+                    },
+                    "a": {
+                        "ka": "დიახ, ბუღალტრული მომსახურების საფასური მოიცავს ბალანსის, მოგება-ზარალისა და ფულადი ნაკადების ანგარიშგების მომზადებას.",
+                        "en": "Yes, the accounting fee includes preparing the balance sheet, profit and loss and cash flow statements."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "ფინანსური ანგარიშგება და Reportal-ზე ატვირთვა | Outsourcify",
+                "en": "Financial Statements & Reportal Filing | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ფინანსური ანგარიშგების მომზადება: ბალანსი, მოგება-ზარალი, ფულადი ნაკადები და ანგარიშგების ატვირთვა Reportal-ზე III და IV კატეგორიის საწარმოებისთვის.",
+                "en": "Financial statements in Georgia: balance sheet, profit and loss, cash flow, and Reportal filing for category III and IV entities."
+            },
+            "keywords": {
+                "ka": "ფინანსური ანგარიშგება; Reportal ანგარიშგება, ბალანსი, მოგება-ზარალის ანგარიშგება",
+                "en": "financial statements Georgia; Reportal filing"
+            },
+            "hidden": false
+        },
+        {
+            "id": "company-formation",
+            "icon": "building",
+            "image": "/assets/img/photos/team-collaborating-laptops-office.webp",
+            "title": {
+                "ka": "ორგანიზაციის ფორმირება და რეგისტრაცია",
+                "en": "Company Formation & Registration"
+            },
+            "slug": {
+                "ka": "organizatsiis-formireba",
+                "en": "company-formation"
+            },
+            "image_alt": {
+                "ka": "კომპანიის რეგისტრაცია და ბიზნეს სტრუქტურის შერჩევა",
+                "en": "Company registration and choosing a business structure"
+            },
+            "short": {
+                "ka": "სწორი ბიზნეს სტრუქტურის შერჩევა, შპს-ის ან მცირე მეწარმის რეგისტრაცია და შესაბამისობის მხარდაჭერა.",
+                "en": "Choosing the right structure, registering an LLC or small business status, and compliance support."
+            },
+            "intro": {
+                "ka": "ბიზნესის სწორად დაწყება მომავალ საგადასახადო და ბუღალტრულ ვალდებულებებს განსაზღვრავს. დაგეხმარებით შესაფერისი სტრუქტურის არჩევასა და დაფუძნებაში.",
+                "en": "Starting a business correctly shapes your future tax and accounting obligations. We help you choose and set up the right structure."
+            },
+            "body": {
+                "ka": "<p>გირჩევთ, რომელი სამართლებრივი ფორმა — ინდმეწარმე, მცირე მეწარმე თუ შპს — შეესაბამება თქვენს საქმიანობას, დაგეხმარებით რეგისტრაციაში და პირველივე დღიდან სწორად ავაწყობთ აღრიცხვას.</p><p>ასევე გეხმარებით პარტნიორობის შეთანხმებებსა და შესაბამისობის საკითხებში.</p>",
+                "en": "<p>We advise which legal form — individual entrepreneur, small business status or LLC — fits your activity, help with registration and set up your accounting correctly from day one.</p><p>We also help with partnership agreements and compliance matters.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "building",
+                    "title": {
+                        "ka": "შპს ფორმირება",
+                        "en": "LLC formation"
+                    },
+                    "text": {
+                        "ka": "შპს-ის დაფუძნების პროცესში დახმარება.",
+                        "en": "Help with setting up an LLC."
+                    }
+                },
+                {
+                    "icon": "store",
+                    "title": {
+                        "ka": "მცირე მეწარმის რეგისტრაცია",
+                        "en": "Small business status registration"
+                    },
+                    "text": {
+                        "ka": "სტატუსის მინიჭება — 40 ლარი.",
+                        "en": "Status registration — GEL 40."
+                    }
+                },
+                {
+                    "icon": "handshake",
+                    "title": {
+                        "ka": "პარტნიორობის შეთანხმებები",
+                        "en": "Partnership agreements"
+                    },
+                    "text": {
+                        "ka": "პარტნიორებს შორის შეთანხმებების მომზადებაში დახმარება.",
+                        "en": "Help preparing agreements between partners."
+                    }
+                },
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "შესაბამისობის მხარდაჭერა",
+                        "en": "Compliance support"
+                    },
+                    "text": {
+                        "ka": "რეგისტრაციის შემდგომი ვალდებულებების მართვა.",
+                        "en": "Managing obligations after registration."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "ახალი ბიზნესები და სტარტაპები",
+                    "უცხოელი მეწარმეები, რომლებიც საქართველოში იწყებენ საქმიანობას",
+                    "ინდმეწარმეები, რომლებიც შპს-ზე გადასვლას გეგმავენ"
+                ],
+                "en": [
+                    "New businesses and startups",
+                    "Foreign entrepreneurs starting a business in Georgia",
+                    "Individual entrepreneurs planning to move to an LLC"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "lightbulb",
+                    "title": {
+                        "ka": "სწორი არჩევანი",
+                        "en": "The right choice"
+                    },
+                    "text": {
+                        "ka": "სტრუქტურა, რომელიც თქვენს საქმიანობას შეესაბამება.",
+                        "en": "A structure that fits your activity."
+                    }
+                },
+                {
+                    "icon": "rocket",
+                    "title": {
+                        "ka": "სწრაფი დაწყება",
+                        "en": "Quick start"
+                    },
+                    "text": {
+                        "ka": "აღრიცხვა პირველივე დღიდან წესრიგშია.",
+                        "en": "Accounting in order from day one."
+                    }
+                },
+                {
+                    "icon": "users",
+                    "title": {
+                        "ka": "ერთი პარტნიორი",
+                        "en": "One partner"
+                    },
+                    "text": {
+                        "ka": "რეგისტრაციიდან ყოველდღიურ ბუღალტერიამდე.",
+                        "en": "From registration to day-to-day accounting."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რომელი ჯობია — ინდმეწარმე თუ შპს?",
+                        "en": "Which is better — individual entrepreneur or LLC?"
+                    },
+                    "a": {
+                        "ka": "ეს დამოკიდებულია საქმიანობის ტიპზე, მოსალოდნელ ბრუნვასა და პარტნიორების რაოდენობაზე. კონსულტაციაზე შევაფასებთ თქვენს შემთხვევას და გირჩევთ შესაფერის ფორმას.",
+                        "en": "It depends on your activity, expected turnover and number of partners. In a consultation we assess your case and recommend the right form."
+                    }
+                },
+                {
+                    "q": {
+                        "ka": "რეგისტრაციის შემდეგ ბუღალტერიასაც აწარმოებთ?",
+                        "en": "Do you also keep the books after registration?"
+                    },
+                    "a": {
+                        "ka": "დიახ, რეგისტრაციის შემდეგ შეგვიძლია ბუღალტრული და საგადასახადო მომსახურება სრულად ვიკისროთ.",
+                        "en": "Yes, after registration we can take over your accounting and tax compliance."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "კომპანიის რეგისტრაცია და შპს-ის დაფუძნება | Outsourcify",
+                "en": "Company Formation & LLC Registration in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "ორგანიზაციის ფორმირება თბილისში: სწორი ბიზნეს სტრუქტურის შერჩევა, შპს-ის დაფუძნება, მცირე მეწარმის რეგისტრაცია და ბუღალტერია პირველივე დღიდან.",
+                "en": "Company formation in Georgia: choosing a structure, LLC registration, small business status and accounting set up from day one."
+            },
+            "keywords": {
+                "ka": "კომპანიის რეგისტრაცია; შპს-ის დაფუძნება, მცირე მეწარმის რეგისტრაცია",
+                "en": "company formation Georgia; LLC registration Georgia; register a company in Georgia"
+            },
+            "hidden": false
+        },
+        {
+            "id": "audit-support",
+            "icon": "shield",
+            "image": "/assets/img/photos/calculator-balance-sheet-figures.webp",
+            "title": {
+                "ka": "აუდიტორული მხარდაჭერა",
+                "en": "Audit Support"
+            },
+            "slug": {
+                "ka": "auditoruli-mkhardachera",
+                "en": "audit-support"
+            },
+            "image_alt": {
+                "ka": "აუდიტისთვის დოკუმენტაციის მომზადება",
+                "en": "Preparing documents for an audit"
+            },
+            "short": {
+                "ka": "აუდიტისა და საგადასახადო შემოწმებისთვის მომზადება, დოკუმენტაციის გადახედვა და კომუნიკაცია.",
+                "en": "Preparing for audits and tax inspections, reviewing documents and handling communication."
+            },
+            "intro": {
+                "ka": "აუდიტი ან საგადასახადო შემოწმება ნაკლებად სტრესულია, როცა დოკუმენტაცია წესრიგშია და პროცესს გამოცდილი გუნდი უძღვება.",
+                "en": "An audit or tax inspection is far less stressful when your documents are in order and an experienced team guides the process."
+            },
+            "body": {
+                "ka": "<p>გამზადებთ აუდიტისთვის: ვამოწმებთ და ვაწესრიგებთ დოკუმენტაციას, ვამზადებთ საჭირო განმარტებებს და გეხმარებით მიმოწერასა და კომუნიკაციაში — მათ შორის შემოსავლების სამსახურთან.</p>",
+                "en": "<p>We prepare you for audits: reviewing and organising documents, preparing explanations and helping with correspondence and communication — including with the Revenue Service.</p>"
+            },
+            "includes": [
+                {
+                    "icon": "file-check",
+                    "title": {
+                        "ka": "აუდიტის მომზადება",
+                        "en": "Audit preparation"
+                    },
+                    "text": {
+                        "ka": "პროცესისთვის საჭირო დოკუმენტაციის მომზადება.",
+                        "en": "Preparing the documents the process requires."
+                    }
+                },
+                {
+                    "icon": "search",
+                    "title": {
+                        "ka": "დოკუმენტაციის გადახედვა",
+                        "en": "Documentation review"
+                    },
+                    "text": {
+                        "ka": "ჩანაწერების შემოწმება და ხარვეზების გამოსწორება.",
+                        "en": "Checking records and fixing gaps."
+                    }
+                },
+                {
+                    "icon": "mail",
+                    "title": {
+                        "ka": "მიმოწერა შემოსავლების სამსახურთან",
+                        "en": "Revenue Service correspondence"
+                    },
+                    "text": {
+                        "ka": "ოფიციალური მიმოწერის მომზადება.",
+                        "en": "Preparing official correspondence."
+                    }
+                },
+                {
+                    "icon": "message",
+                    "title": {
+                        "ka": "კომუნიკაციაში დახმარება",
+                        "en": "Communication support"
+                    },
+                    "text": {
+                        "ka": "აუდიტორებთან კომუნიკაციის მხარდაჭერა.",
+                        "en": "Support when communicating with auditors."
+                    }
+                }
+            ],
+            "audience": {
+                "ka": [
+                    "კომპანიები, რომლებსაც აუდიტი ელით",
+                    "ბიზნესი, რომელსაც საგადასახადო შემოწმება აქვს",
+                    "კომპანიები, რომლებსაც დოკუმენტაციის მოწესრიგება სჭირდებათ"
+                ],
+                "en": [
+                    "Companies facing an audit",
+                    "Businesses under tax inspection",
+                    "Companies that need their records put in order"
+                ]
+            },
+            "benefits": [
+                {
+                    "icon": "shield",
+                    "title": {
+                        "ka": "ნაკლები რისკი",
+                        "en": "Lower risk"
+                    },
+                    "text": {
+                        "ka": "მომზადებული დოკუმენტაცია ამცირებს შენიშვნებს.",
+                        "en": "Prepared documents mean fewer findings."
+                    }
+                },
+                {
+                    "icon": "clock",
+                    "title": {
+                        "ka": "დაზოგილი დრო",
+                        "en": "Time saved"
+                    },
+                    "text": {
+                        "ka": "პროცესს გამოცდილი გუნდი მართავს.",
+                        "en": "An experienced team runs the process."
+                    }
+                },
+                {
+                    "icon": "handshake",
+                    "title": {
+                        "ka": "მხარდაჭერა",
+                        "en": "Support"
+                    },
+                    "text": {
+                        "ka": "არ ხართ მარტო აუდიტის დროს.",
+                        "en": "You’re not alone during the audit."
+                    }
+                }
+            ],
+            "faq": [
+                {
+                    "q": {
+                        "ka": "რას მოიცავს აუდიტორული მხარდაჭერა?",
+                        "en": "What does audit support include?"
+                    },
+                    "a": {
+                        "ka": "აუდიტის მომზადებას, დოკუმენტაციის გადახედვას, მიმოწერას შემოსავლების სამსახურთან და კომუნიკაციაში დახმარებას.",
+                        "en": "Audit preparation, documentation review, correspondence with the Revenue Service and communication support."
+                    }
+                }
+            ],
+            "seo_title": {
+                "ka": "აუდიტორული მხარდაჭერა და საგადასახადო შემოწმება | Outsourcify",
+                "en": "Audit Support & Tax Inspection Help in Georgia | Outsourcify"
+            },
+            "seo_desc": {
+                "ka": "აუდიტორული მხარდაჭერა თბილისში: აუდიტისა და საგადასახადო შემოწმებისთვის მომზადება, დოკუმენტაციის გადახედვა და მიმოწერა შემოსავლების სამსახურთან.",
+                "en": "Audit support in Georgia: preparing for audits and tax inspections, document review and correspondence with the Revenue Service."
+            },
+            "keywords": {
+                "ka": "აუდიტორული მხარდაჭერა; საგადასახადო შემოწმება, აუდიტის მომზადება",
+                "en": "audit support Georgia; tax inspection Georgia"
+            },
+            "hidden": false
         }
     ]
 }

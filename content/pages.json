@@ -14,12 +14,12 @@
       },
       "seo": {
         "title": {
-          "ka": "ბუღალტრული მომსახურება — სანდო პარტნიორი | Outsourcify",
-          "en": "Outsourcify — Your Trusted Accounting Partner in Georgia"
+          "ka": "ბუღალტრული მომსახურება თბილისში | Outsourcify",
+          "en": "Accounting Services in Tbilisi, Georgia | Outsourcify"
         },
         "description": {
-          "ka": "პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის: ბუღალტრული მომსახურება, საგადასახადო დაგეგმვა, ხელფასის მართვა, გამჭვირვალე ფასები.",
-          "en": "Personalised financial solutions for individuals and businesses in Georgia: bookkeeping, tax planning, payroll and transparent pricing."
+          "ka": "ბუღალტრული მომსახურება შპს-ისა და მცირე მეწარმისთვის: აღრიცხვა, დეკლარაციები, ხელფასი, ფინანსური ანგარიშგება. გამჭვირვალე ფასები, უფასო კონსულტაცია.",
+          "en": "Accounting and bookkeeping for LLCs and individual entrepreneurs in Georgia: tax returns, payroll, financial statements. Transparent prices."
         },
         "keywords": {
           "ka": "ბუღალტრული მომსახურება; ბუღალტრული აუთსორსინგი, საგადასახადო კონსულტაცია, BPO",
@@ -333,7 +333,7 @@
                 "ka": "ხელფასის მართვა",
                 "en": "Payroll management"
               },
-              "link": ""
+              "link": "service:payroll"
             },
             {
               "icon": "chart",
@@ -395,7 +395,7 @@
                 "ka": "ფინანსური ანგარიშების მომზადება",
                 "en": "Financial statements"
               },
-              "link": ""
+              "link": "service:financial-statements"
             },
             {
               "icon": "building",
@@ -426,7 +426,7 @@
                 "ka": "ორგანიზაციის ფორმირება",
                 "en": "Company formation"
               },
-              "link": ""
+              "link": "service:company-formation"
             },
             {
               "icon": "settings",
@@ -488,7 +488,7 @@
                 "ka": "აუდიტორული მხარდაჭერა",
                 "en": "Audit support"
               },
-              "link": ""
+              "link": "service:audit-support"
             }
           ]
         },
@@ -1667,8 +1667,8 @@
       },
       "seo": {
         "title": {
-          "ka": "ბუღალტრული, საგადასახადო და BPO სერვისები | Outsourcify",
-          "en": "Accounting, Tax & BPO Services in Georgia | Outsourcify"
+          "ka": "ბუღალტრული და საგადასახადო სერვისები თბილისში | Outsourcify",
+          "en": "Accounting, Tax & Payroll Services in Georgia | Outsourcify"
         },
         "description": {
           "ka": "ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, დეკლარაციები, აღრიცხვის აღდგენა, ფინანსური კონსულტაცია და BPO — ერთ პარტნიორთან, ყველა ზომის ბიზნესისთვის.",
@@ -1960,12 +1960,12 @@
       },
       "seo": {
         "title": {
-          "ka": "ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify",
-          "en": "Accounting Prices — Small Business & LLC | Outsourcify"
+          "ka": "ბუღალტრული მომსახურების ფასები 2026 | Outsourcify",
+          "en": "Accounting Prices in Georgia 2026 | Outsourcify"
         },
         "description": {
-          "ka": "გამჭვირვალე ფასები: ერთჯერადი მომსახურებები, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურება ბრუნვისა და საქმიანობის მიხედვით, Reportal-ზე ატვირთვა.",
-          "en": "Transparent pricing for one-off services and accounting for small businesses and LLCs, by turnover and activity type, plus Reportal filing."
+          "ka": "ბუღალტრული მომსახურების ფასები ლარში: მცირე მეწარმე 250 ლარიდან, შპს 250-300 ლარიდან, დეკლარაციის შევსება 40-50 ლარი, Reportal 500 ლარი.",
+          "en": "Accounting prices in GEL: small business from GEL 250, LLC from GEL 250–300, one-off declarations from GEL 40, Reportal filing GEL 500."
         },
         "keywords": {
           "ka": "ბუღალტრული მომსახურების ფასი; ბუღალტრის მომსახურების ფასი; შპს ბუღალტერია ფასი",

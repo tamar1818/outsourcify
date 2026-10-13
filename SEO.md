@@ -1,13 +1,13 @@
 # Outsourcify — SEO სათაურები, აღწერები და URL-ები
 
-გენერირებულია `npm run seo`-ით 2026-10-08-ს — წყარო: CMS-ის კონტენტი. ქართული ვერსია მთავარია (`/`), ინგლისური — `/en/`. რიცხვი ფრჩხილებში — სიმბოლოების რაოდენობა (რეკომენდაცია: სათაური ≈50–60, აღწერა ≈140–160). საკვანძო სიტყვები შიდა შენიშვნაა — საიტზე meta keywords არ გამოიტანება.
+გენერირებულია `npm run seo`-ით 2026-10-13-ს — წყარო: CMS-ის კონტენტი. ქართული ვერსია მთავარია (`/`), ინგლისური — `/en/`. რიცხვი ფრჩხილებში — სიმბოლოების რაოდენობა (რეკომენდაცია: სათაური ≈50–60, აღწერა ≈140–160). საკვანძო სიტყვები შიდა შენიშვნაა — საიტზე meta keywords არ გამოიტანება.
 
 ## 1. მთავარი / Home
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული მომსახურება — სანდო პარტნიორი | Outsourcify (54) | Outsourcify — Your Trusted Accounting Partner in Georgia (56) |
-| **Meta Description** | პერსონალიზებული ფინანსური გადაწყვეტილებები ფიზიკური და იურიდიული პირებისთვის: ბუღალტრული მომსახურება, საგადასახადო დაგეგმვა, ხელფასის მართვა, გამჭვირვალე ფასები. (161) | Personalised financial solutions for individuals and businesses in Georgia: bookkeeping, tax planning, payroll and transparent pricing. (135) |
+| **SEO Title** | ბუღალტრული მომსახურება თბილისში | Outsourcify (45) | Accounting Services in Tbilisi, Georgia | Outsourcify (53) |
+| **Meta Description** | ბუღალტრული მომსახურება შპს-ისა და მცირე მეწარმისთვის: აღრიცხვა, დეკლარაციები, ხელფასი, ფინანსური ანგარიშგება. გამჭვირვალე ფასები, უფასო კონსულტაცია. (148) | Accounting and bookkeeping for LLCs and individual entrepreneurs in Georgia: tax returns, payroll, financial statements. Transparent prices. (140) |
 | **URL** | `https://outsourcify.ge/` | `https://outsourcify.ge/en/` |
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
 | **Supporting keywords** | ბუღალტრული აუთსორსინგი, საგადასახადო კონსულტაცია, BPO | accounting outsourcing, tax consulting Georgia, BPO Georgia |
@@ -26,7 +26,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული, საგადასახადო და BPO სერვისები | Outsourcify (55) | Accounting, Tax & BPO Services in Georgia | Outsourcify (55) |
+| **SEO Title** | ბუღალტრული და საგადასახადო სერვისები თბილისში | Outsourcify (59) | Accounting, Tax & Payroll Services in Georgia | Outsourcify (59) |
 | **Meta Description** | ბუღალტრული მომსახურება, საგადასახადო კონსულტაცია, დეკლარაციები, აღრიცხვის აღდგენა, ფინანსური კონსულტაცია და BPO — ერთ პარტნიორთან, ყველა ზომის ბიზნესისთვის. (156) | Accounting and bookkeeping, tax consulting, tax returns, records correction, financial consulting and BPO — all with one partner in Georgia. (140) |
 | **URL** | `https://outsourcify.ge/servisebi` | `https://outsourcify.ge/en/services` |
 | **Main keyword** | ბუღალტრული სერვისები | accounting services |
@@ -36,8 +36,8 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული მომსახურების ფასები — მცირე მეწარმე, შპს | Outsourcify (65) | Accounting Prices — Small Business & LLC | Outsourcify (54) |
-| **Meta Description** | გამჭვირვალე ფასები: ერთჯერადი მომსახურებები, მცირე მეწარმისა და შპს-ის ბუღალტრული მომსახურება ბრუნვისა და საქმიანობის მიხედვით, Reportal-ზე ატვირთვა. (149) | Transparent pricing for one-off services and accounting for small businesses and LLCs, by turnover and activity type, plus Reportal filing. (139) |
+| **SEO Title** | ბუღალტრული მომსახურების ფასები 2026 | Outsourcify (49) | Accounting Prices in Georgia 2026 | Outsourcify (47) |
+| **Meta Description** | ბუღალტრული მომსახურების ფასები ლარში: მცირე მეწარმე 250 ლარიდან, შპს 250-300 ლარიდან, დეკლარაციის შევსება 40-50 ლარი, Reportal 500 ლარი. (136) | Accounting prices in GEL: small business from GEL 250, LLC from GEL 250–300, one-off declarations from GEL 40, Reportal filing GEL 500. (135) |
 | **URL** | `https://outsourcify.ge/fasebi` | `https://outsourcify.ge/en/pricing` |
 | **Main keyword** | ბუღალტრული მომსახურების ფასი | accounting services price Georgia |
 | **Supporting keywords** | ბუღალტრის მომსახურების ფასი | LLC accounting cost Tbilisi |
@@ -136,8 +136,8 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული მომსახურება ბიზნესისთვის | Outsourcify (49) | Accounting & Bookkeeping Services in Georgia | Outsourcify (58) |
-| **Meta Description** | ბუღალტრული აღრიცხვის სრული წარმოება სერტიფიცირებული ბუღალტრებით: მოწესრიგებული დოკუმენტაცია, ანგარიშგება და კონსულტაცია. დაჯავშნეთ შეხვედრა. (140) | Outsourced bookkeeping by certified accountants in Georgia: organised records, financial reporting and day-to-day advice tailored to your business. (147) |
+| **SEO Title** | ბუღალტრული მომსახურება შპს-სა და ინდმეწარმისთვის | Outsourcify (62) | Accounting & Bookkeeping Services in Tbilisi | Outsourcify (58) |
+| **Meta Description** | საბუღალტრო მომსახურება შპს-ისა და ინდმეწარმისთვის: აღრიცხვა, დეკლარაციები, ფინანსური ანგარიშგება და საპენსიო. სერტიფიცირებული ბუღალტრები თბილისში. (146) | Outsourced accounting for LLCs and individual entrepreneurs in Tbilisi: bookkeeping, tax returns, financial statements and pension reporting. (141) |
 | **URL** | `https://outsourcify.ge/servisebi/bughaltruli-momsakhureba` | `https://outsourcify.ge/en/services/accounting-services` |
 | **Main keyword** | ბუღალტრული მომსახურება | accounting services Georgia |
 | **Supporting keywords** | ბუღალტერიის აუთსორსინგი, ბუღალტრული აღრიცხვა, აუთსორს ბუღალტერი | outsourced bookkeeping, bookkeeping Tbilisi, outsourced accountant |
@@ -156,7 +156,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | დეკლარაციების მომზადება და წარდგენა | Outsourcify (49) | Tax Return Preparation & Filing in Georgia | Outsourcify (56) |
+| **SEO Title** | დეკლარაციის შევსება და წარდგენა — rs.ge | Outsourcify (53) | Tax Return Preparation & Filing in Georgia | Outsourcify (56) |
 | **Meta Description** | საგადასახადო დეკლარაციების ზუსტი მომზადება და დროული წარდგენა კომპანიებისა და ინდმეწარმეებისთვის. ვადების კონტროლი და მონაცემების შემოწმება. (140) | Accurate preparation and timely filing of tax returns for companies and individual entrepreneurs in Georgia, with deadline tracking and data checks. (148) |
 | **URL** | `https://outsourcify.ge/servisebi/deklaratsiebis-momzadeba` | `https://outsourcify.ge/en/services/tax-return-preparation` |
 | **Main keyword** | დეკლარაციის მომზადება | tax return preparation Georgia |
@@ -166,7 +166,7 @@
 
 | | ქართული (მთავარი) | English |
 |---|---|---|
-| **SEO Title** | ბუღალტრული აღრიცხვის აღდგენა და გასწორება | Outsourcify (55) | Accounting Records Correction & Clean-up | Outsourcify (54) |
+| **SEO Title** | ბუღალტერიის აღდგენა და გასწორება | Outsourcify (46) | Accounting Records Correction & Clean-up | Outsourcify (54) |
 | **Meta Description** | წარსული პერიოდების ბუღალტრული აღრიცხვის შემოწმება, აღდგენა და გასწორება. ვპოულობთ შეცდომებს, ვავსებთ დანაკლისს და აღრიცხვას წესრიგში მოგვყავს. (142) | Review, restoration and correction of historical accounting records in Georgia. We find the errors, fill the gaps and bring your books back in order. (149) |
 | **URL** | `https://outsourcify.ge/servisebi/aghritskhvis-aghdgena` | `https://outsourcify.ge/en/services/accounting-records-correction` |
 | **Main keyword** | ბუღალტრული აღრიცხვის აღდგენა | accounting records correction |
@@ -191,4 +191,54 @@
 | **URL** | `https://outsourcify.ge/servisebi/finansuri-konsultatsia` | `https://outsourcify.ge/en/services/financial-consulting` |
 | **Main keyword** | ფინანსური კონსულტაცია | financial consulting Georgia |
 | **Supporting keywords** | ფინანსური ანალიზი, ბიუჯეტირება, მმართველობითი ანგარიშგება | financial analysis, budgeting, management reporting |
+
+## 20. მცირე მეწარმის ბუღალტრული მომსახურება / Accounting for Individual Entrepreneurs
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | მცირე მეწარმის ბუღალტრული მომსახურება და ფასი | Outsourcify (59) | Accounting for Individual Entrepreneurs in Georgia | Outsourcify (64) |
+| **Meta Description** | მცირე მეწარმისა და ინდმეწარმის ბუღალტერია თბილისში: დეკლარაციები, ბრუნვის კონტროლი, სტატუსის რეგისტრაცია და წარსული პერიოდების გასწორება. ფასი 250 ლარიდან. (155) | Accounting for individual entrepreneurs in Georgia: monthly returns, turnover monitoring, small business status registration and past-period corrections. (153) |
+| **URL** | `https://outsourcify.ge/servisebi/mtsire-mewarmis-bughalteria` | `https://outsourcify.ge/en/services/individual-entrepreneur-accounting` |
+| **Main keyword** | მცირე მეწარმის ბუღალტერია | individual entrepreneur accounting Georgia |
+| **Supporting keywords** | მცირე მეწარმის დეკლარაცია, ინდმეწარმე ბუღალტერი, მცირე მეწარმის სტატუსი | small business status Georgia accountant |
+
+## 21. ხელფასის მართვა და საპენსიო ანგარიშგება / Payroll & Pension Reporting
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | ხელფასის დარიცხვა და საპენსიო ანგარიშგება | Outsourcify (55) | Payroll & Pension Services in Georgia | Outsourcify (51) |
+| **Meta Description** | ხელფასის მართვა თბილისში: ხელფასის დარიცხვა, საშემოსავლო და საპენსიო შენატანები, დეკლარაციები და წლის ბოლოს ანგარიშგება — ზუსტად და დროულად. (140) | Payroll services in Georgia: salary calculation, income tax and pension contributions, returns and year-end reporting — accurate and on time. (141) |
+| **URL** | `https://outsourcify.ge/servisebi/khelfasis-martva` | `https://outsourcify.ge/en/services/payroll-services` |
+| **Main keyword** | ხელფასის დარიცხვა | payroll services Georgia |
+| **Supporting keywords** | საპენსიო ანგარიშგება, ხელფასის მართვა, საშემოსავლო გადასახადი | pension contributions Georgia |
+
+## 22. ფინანსური ანგარიშგება და Reportal / Financial Statements & Reportal Filing
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | ფინანსური ანგარიშგება და Reportal-ზე ატვირთვა | Outsourcify (59) | Financial Statements & Reportal Filing | Outsourcify (52) |
+| **Meta Description** | ფინანსური ანგარიშგების მომზადება: ბალანსი, მოგება-ზარალი, ფულადი ნაკადები და ანგარიშგების ატვირთვა Reportal-ზე III და IV კატეგორიის საწარმოებისთვის. (148) | Financial statements in Georgia: balance sheet, profit and loss, cash flow, and Reportal filing for category III and IV entities. (129) |
+| **URL** | `https://outsourcify.ge/servisebi/finansuri-angarishgeba` | `https://outsourcify.ge/en/services/financial-statements` |
+| **Main keyword** | ფინანსური ანგარიშგება | financial statements Georgia |
+| **Supporting keywords** | Reportal ანგარიშგება, ბალანსი, მოგება-ზარალის ანგარიშგება | Reportal filing |
+
+## 23. ორგანიზაციის ფორმირება და რეგისტრაცია / Company Formation & Registration
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | კომპანიის რეგისტრაცია და შპს-ის დაფუძნება | Outsourcify (55) | Company Formation & LLC Registration in Georgia | Outsourcify (61) |
+| **Meta Description** | ორგანიზაციის ფორმირება თბილისში: სწორი ბიზნეს სტრუქტურის შერჩევა, შპს-ის დაფუძნება, მცირე მეწარმის რეგისტრაცია და ბუღალტერია პირველივე დღიდან. (142) | Company formation in Georgia: choosing a structure, LLC registration, small business status and accounting set up from day one. (127) |
+| **URL** | `https://outsourcify.ge/servisebi/organizatsiis-formireba` | `https://outsourcify.ge/en/services/company-formation` |
+| **Main keyword** | კომპანიის რეგისტრაცია | company formation Georgia |
+| **Supporting keywords** | შპს-ის დაფუძნება, მცირე მეწარმის რეგისტრაცია | LLC registration Georgia |
+
+## 24. აუდიტორული მხარდაჭერა / Audit Support
+
+| | ქართული (მთავარი) | English |
+|---|---|---|
+| **SEO Title** | აუდიტორული მხარდაჭერა და საგადასახადო შემოწმება | Outsourcify (61) | Audit Support & Tax Inspection Help in Georgia | Outsourcify (60) |
+| **Meta Description** | აუდიტორული მხარდაჭერა თბილისში: აუდიტისა და საგადასახადო შემოწმებისთვის მომზადება, დოკუმენტაციის გადახედვა და მიმოწერა შემოსავლების სამსახურთან. (144) | Audit support in Georgia: preparing for audits and tax inspections, document review and correspondence with the Revenue Service. (128) |
+| **URL** | `https://outsourcify.ge/servisebi/auditoruli-mkhardachera` | `https://outsourcify.ge/en/services/audit-support` |
+| **Main keyword** | აუდიტორული მხარდაჭერა | audit support Georgia |
+| **Supporting keywords** | საგადასახადო შემოწმება, აუდიტის მომზადება | tax inspection Georgia |
 
