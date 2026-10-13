@@ -16,14 +16,14 @@
     },
     {
       "name": {
-        "ka": "ნატალია ჯაფარიძე",
-        "en": "Natalia Japaridze"
+        "ka": "გვანცა ჯაფარიძე",
+        "en": "Gvantsa Japaridze"
       },
       "role": {
         "ka": "",
         "en": ""
       },
-      "photo": "/assets/img/team/natalia-japaridze.webp",
+      "photo": "/assets/img/team/gvantsa-japaridze.webp",
       "email": "",
       "linkedin": "",
       "hidden": false
@@ -44,14 +44,14 @@
     },
     {
       "name": {
-        "ka": "ანი ბედოშვილი",
-        "en": "Ani Bedoshvili"
+        "ka": "ნატალია ჯაფარიძე",
+        "en": "Natalia Japaridze"
       },
       "role": {
         "ka": "",
         "en": ""
       },
-      "photo": "/assets/img/team/ani-bedoshvili.webp",
+      "photo": "/assets/img/team/natalia-japaridze.webp",
       "email": "",
       "linkedin": "",
       "hidden": false
@@ -72,6 +72,20 @@
     },
     {
       "name": {
+        "ka": "ანი ბედოშვილი",
+        "en": "Ani Bedoshvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/ani-bedoshvili.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
+    },
+    {
+      "name": {
         "ka": "ნათია კაპანაძე",
         "en": "Natia Kapanadze"
       },
@@ -80,20 +94,6 @@
         "en": ""
       },
       "photo": "/assets/img/team/natia-kapanadze.webp",
-      "email": "",
-      "linkedin": "",
-      "hidden": false
-    },
-    {
-      "name": {
-        "ka": "გვანცა ჯაფარიძე",
-        "en": "Gvantsa Japaridze"
-      },
-      "role": {
-        "ka": "",
-        "en": ""
-      },
-      "photo": "/assets/img/team/gvantsa-japaridze.webp",
       "email": "",
       "linkedin": "",
       "hidden": false
