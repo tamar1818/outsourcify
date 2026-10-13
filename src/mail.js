@@ -23,23 +23,27 @@ function transporter() {
   return transport;
 }
 
-/** მიმღები: „პარამეტრები → შეტყობინებების ელფოსტა“, შემდეგ საკონტაქტო ელფოსტა */
-function teamEmail() {
+/** შეტყობინებების მიმღებები: „პარამეტრები → შეტყობინებების ელფოსტა“ (რამდენიმე — მძიმით), ცარიელზე საკონტაქტო ელფოსტა */
+function teamEmails() {
   const s = read("site").settings || {};
-  for (const x of [s.notify_email, s.email]) if (isEmail(x)) return String(x).trim();
-  return TEAM_EMAIL;
+  const list = String(s.notify_email || "").split(/[,;\s]+/).map((x) => x.trim()).filter(isEmail);
+  if (list.length) return [...new Set(list)];
+  return [isEmail(s.email) ? String(s.email).trim() : TEAM_EMAIL];
 }
+/** ერთი მისამართი (Reply-To, კალენდრის აღწერა) — პირველი მიმღები */
+const teamEmail = () => teamEmails()[0];
 
 async function send(to, subject, text, replyTo = "") {
   const tr = transporter();
-  if (!tr || !isEmail(to)) {
+  const rcpt = (Array.isArray(to) ? to : [to]).map((x) => String(x || "").trim()).filter(isEmail);
+  if (!tr || !rcpt.length) {
     if (!tr) console.info("[mail] SMTP არ არის კონფიგურირებული — წერილი არ გაიგზავნა:", subject);
     return false;
   }
   try {
     await tr.sendMail({
       from: process.env.MAIL_FROM || `Outsourcify <${process.env.SMTP_USER || "no-reply@outsourcify.ge"}>`,
-      to, subject, text, replyTo: isEmail(replyTo) ? replyTo : undefined,
+      to: rcpt.join(", "), subject, text, replyTo: isEmail(replyTo) ? replyTo : undefined,
     });
     return true;
   } catch (err) {
@@ -55,4 +59,4 @@ function lines(fields) {
     .filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n") + "\n";
 }
 
-module.exports = { send, lines, teamEmail, isEmail };
+module.exports = { send, lines, teamEmail, teamEmails, isEmail };

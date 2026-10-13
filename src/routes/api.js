@@ -80,7 +80,7 @@ router.post("/book", (req, res) => {
   res.json({ ok: true, label, gcal, flexible });
 
   // წერილები პასუხის შემდეგ — კლიენტი არ ელოდება SMTP-ს
-  mail.send(mail.teamEmail(), "ახალი კონსულტაცია: " + labelKa + " — " + name,
+  mail.send(mail.teamEmails(), "ახალი კონსულტაცია: " + labelKa + " — " + name,
     "ახალი ჯავშანი საიტიდან\n\n" + mail.lines({
       "დრო": flexible ? labelKa : `${labelKa} (${slot} წთ, თბილისის დროით)`,
       "სახელი": name, "ელფოსტა": email, "ტელეფონი": phone, "სერვისი": item.service, "მხარდაჭერა": support, "ენა": l,
@@ -129,7 +129,7 @@ router.post("/lead", (req, res) => {
   if (!write("leads", { ...store, leads: leads.slice(-3000) })) return res.status(500).json({ ok: false, error: "storage" });
   res.json({ ok: true });
 
-  mail.send(mail.teamEmail(), "ახალი შეტყობინება საიტიდან — " + name,
+  mail.send(mail.teamEmails(), "ახალი შეტყობინება საიტიდან — " + name,
     "ახალი შეტყობინება საკონტაქტო ფორმიდან\n\n" + mail.lines({
       "სახელი": name, "კომპანია": lead.company, "ელფოსტა": email, "ტელეფონი": phone, "სერვისი": lead.service, "ენა": lead.lang, "გვერდი": lead.page,
     }) + (lead.message ? "\n" + lead.message + "\n" : "") + "\nყველა შეტყობინება: " + baseUrl() + "/admin?p=inbox\n", email);

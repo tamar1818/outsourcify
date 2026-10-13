@@ -69,6 +69,34 @@
       "email": "",
       "linkedin": "",
       "hidden": false
+    },
+    {
+      "name": {
+        "ka": "ნათია კაპანაძე",
+        "en": "Natia Kapanadze"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/natia-kapanadze.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
+    },
+    {
+      "name": {
+        "ka": "გვანცა ჯაფარიძე",
+        "en": "Gvantsa Japaridze"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/gvantsa-japaridze.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
     }
   ]
 }

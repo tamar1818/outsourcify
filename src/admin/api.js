@@ -123,7 +123,7 @@ function settingsDefs() {
     phone2: f("text", "მთავარი (ქალაქის) ტელეფონი"),
     email: f("text", "საკონტაქტო ელფოსტა"),
     email2: f("text", "დამატებითი ელფოსტა"),
-    notify_email: f("text", "შეტყობინებების ელფოსტა", { hint: "სად მოვიდეს ახალი ჯავშნები და განაცხადები. ცარიელზე — საკონტაქტო ელფოსტაზე" }),
+    notify_email: f("text", "შეტყობინებების ელფოსტა (რამდენიმე — მძიმით)", { hint: "სად მოვიდეს ახალი ჯავშნები და განაცხადები, მაგ.: info@outsourcify.ge, gvantsa.mugasashvili@outsourcify.ge. ცარიელზე — საკონტაქტო ელფოსტაზე" }),
     address: f("text", "მისამართი", { i18n: true }),
     city: f("text", "ქალაქი (Schema.org)"),
     hours: f("textarea", "სამუშაო საათები (თითო ხაზზე ერთი)", { i18n: true }),
