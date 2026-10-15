@@ -44,6 +44,7 @@ npm run build:admin   # rebuild public/admin/ — commit the result
 | `DATA_DIR` | Where CMS content, uploads, bookings and the admin password are stored. Defaults to `./data`. **Set this to a folder outside the app directory if your plan allows it**, so a redeploy can't wipe CMS edits (e.g. `/home/<user>/outsourcify-data`). |
 | `ADMIN_SETUP_KEY` | **Required to create the first (owner) admin account.** A secret of at least 12 characters that only you know. While no admin exists, `/admin` asks for this key; without it the panel stays locked and nobody can register. After that, admins join only by invite. (Alternative with SSH: `node tools/create-admin.js <user> <password>`.) |
 | `SESSION_SECRET` | A long random string for admin sessions. If empty, one is generated in `DATA_DIR/secret.key`. |
+| `TRUST_PROXY` | How many reverse proxies sit in front of Node (default `1`, right for Hostinger). Only change it if you add another proxy layer, such as Cloudflare in front of Hostinger (`2`). Never set it to `true`: that lets anyone fake their IP and bypass the login lockout. |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Sending booking and contact notifications. For Hostinger email: `smtp.hostinger.com`, `465`, e.g. `no-reply@outsourcify.ge` and its password. Without these, submissions are still saved and shown in the admin panel, but no emails are sent. |
 | `MAIL_FROM` | Optional sender, e.g. `Outsourcify <no-reply@outsourcify.ge>` |
 
@@ -51,6 +52,14 @@ After the first deploy:
 1. Open `/admin` and create the administrator account (password: at least 10 characters).
 2. In *Settings → SEO*, check the domain (`https://outsourcify.ge`).
 3. Connect the domain in Hostinger and submit `https://outsourcify.ge/sitemap.xml` in Google Search Console.
+
+### Admin login security
+
+- Passwords are hashed with scrypt; sessions are signed, HttpOnly, SameSite cookies (Secure on HTTPS) that expire after 12 hours.
+- Lockout: 6 wrong attempts from one IP, or 10 against one account from any IP, block logins for 15 minutes.
+- **Two-step login (2FA):** each admin turns it on under **My account → Two-step login**. They scan the QR code with Google Authenticator, Microsoft Authenticator or Authy, then save 8 single-use recovery codes. If someone loses their phone and their codes, an admin with the *users* permission can switch off that person's 2FA from **Admins** (only the owner can do this for the owner account).
+- Changing a password or 2FA settings signs that account out everywhere else.
+- `/admin` is served with a strict Content-Security-Policy, `X-Frame-Options: DENY` and `noindex`; HSTS is sent on HTTPS.
 
 > ⚠️ **Redeploys and content.** CMS edits live in `DATA_DIR`, not in git. On first start the default content from
 > `content/` is copied there, and after that it's never overwritten. If `DATA_DIR` sits inside the app folder

@@ -396,3 +396,9 @@ input:focus, textarea:focus, select:focus { outline: none; border-color: var(--b
 .side__foot, .side__nav { min-width: 0; }
 .side__foot > *, .side__nav a { min-width: 0; max-width: 100%; }
 .side__foot a span, .side__foot button span { flex: 1; }
+
+/* ორსაფეხურიანი შესვლა */
+.qr { display: block; width: 220px; height: 220px; border-radius: 12px; background: #fff; padding: 6px; border: 1px solid var(--line, #e5e7eb); }
+.secret { font-family: ui-monospace, Menlo, monospace; letter-spacing: .04em; word-break: break-all; }
+.codes { font-family: ui-monospace, Menlo, monospace; font-size: 15px; line-height: 1.8; padding: 14px 18px; border-radius: 12px; background: var(--bg, #f5f7fb); border: 1px dashed var(--line, #d7dce5); columns: 2; margin: 0; }
+.steps { margin: 0; padding-left: 20px; display: grid; gap: 6px; }

@@ -21,7 +21,10 @@ core.ensureData();
 
 const app = express();
 app.disable("x-powered-by");
-app.set("trust proxy", true);
+/* მხოლოდ ჰოსტინგის საკუთარ პროქსის ვენდობით (1 საფეხური). `true` ნებისმიერს მისცემდა
+ * X-Forwarded-For-ით IP-ის გაყალბების საშუალებას და შესვლის ბლოკირება აზრს დაკარგავდა. */
+const tp = process.env.TRUST_PROXY;
+app.set("trust proxy", tp === undefined || tp === "" ? 1 : /^\d+$/.test(tp) ? parseInt(tp, 10) : tp === "false" ? false : tp);
 
 /* უსაფრთხოების ჰედერები + ერთი კანონიკური ჰოსტი (www → არა-www) */
 app.use((req, res, next) => {
@@ -31,6 +34,7 @@ app.use((req, res, next) => {
     "X-Frame-Options": "SAMEORIGIN",
     "Permissions-Policy": "geolocation=(), microphone=(), camera=()",
   });
+  if (req.secure) res.set("Strict-Transport-Security", "max-age=31536000");
   const host = String(req.headers.host || "");
   if (/^www\./i.test(host) && (req.method === "GET" || req.method === "HEAD")) {
     const local = /^www\.(localhost|127\.)/i.test(host);
@@ -63,7 +67,10 @@ app.use("/api", require("./src/routes/api"));
 app.use("/admin/api", require("./src/admin/api"));
 /* React ადმინ-პანელი (SPA): /admin და ყველა ქვე-მისამართი → public/admin/index.html */
 app.get(["/admin", "/admin/*"], (req, res) => {
-  res.set({ "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow", "X-Frame-Options": "DENY" });
+  res.set({
+    "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow", "X-Frame-Options": "DENY",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self'; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'",
+  });
   res.sendFile(path.join(core.PUBLIC, "admin", "index.html"));
 });
 app.use("/", require("./src/routes/site"));

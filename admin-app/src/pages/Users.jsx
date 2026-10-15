@@ -69,6 +69,10 @@ export default function Users() {
     try { const r = await api.post("/users/" + u.id + "/reset"); setEdit(null); setMade({ link: r.link, note: `პაროლის აღდგენის ბმული (${u.name}) — ერთჯერადია, მოქმედებს 24 საათი:` }); load(); }
     catch (x) { toast(x.message, "err"); }
   };
+  const off2fa = async (u) => {
+    if (!window.confirm(`გამოვრთოთ ორსაფეხურიანი შესვლა ${u.name}-ისთვის? (მაგ. თუ ტელეფონი დაკარგა). შესვლის შემდეგ თავიდან უნდა ჩართოს.`)) return;
+    try { await api.del("/users/" + u.id + "/2fa"); toast("2FA გამოირთო"); setEdit(null); load(); } catch (x) { toast(x.message, "err"); }
+  };
   const revoke = async (i) => { try { await api.del("/invites/" + i.id); toast("ბმული გაუქმდა"); load(); } catch (x) { toast(x.message, "err"); } };
 
   if (!data) return <Loading />;
@@ -85,7 +89,7 @@ export default function Users() {
             <div key={u.id} className={"urow" + (u.disabled ? " is-off" : "")}>
               <span className="urow__av" aria-hidden="true">{(u.name || u.user).charAt(0).toUpperCase()}</span>
               <div className="urow__main">
-                <b>{u.name} {u.id === meta.me.id && <span className="pill">თქვენ</span>} {u.owner && <span className="pill pill--ok">მფლობელი</span>} {u.disabled && <span className="pill pill--off">გათიშული</span>}</b>
+                <b>{u.name} {u.id === meta.me.id && <span className="pill">თქვენ</span>} {u.owner && <span className="pill pill--ok">მფლობელი</span>} {u.disabled && <span className="pill pill--off">გათიშული</span>} {u.twofa ? <span className="pill pill--ok" title="ორსაფეხურიანი შესვლა ჩართულია">2FA</span> : <span className="pill pill--off" title="ორსაფეხურიანი შესვლა გამორთულია">2FA გამორთულია</span>}</b>
                 <small className="muted">@{u.user}{u.email ? " · " + u.email : ""} · ბოლო შესვლა: {date(u.last)}</small>
               </div>
               <span className="urow__role">{u.owner ? "ყველა უფლება" : roleName(u.perms)}</span>
@@ -142,6 +146,7 @@ export default function Users() {
             <div className="modal__actions modal__actions--split">
               <div className="row-btns">
                 {(!edit.owner || edit.id === meta.me.id) && <Button variant="ghost" size="sm" icon="lock" onClick={() => reset(edit)}>პაროლის აღდგენის ბმული</Button>}
+                {edit.twofa && !edit.owner && edit.id !== meta.me.id && <Button variant="ghost" size="sm" icon="x" onClick={() => off2fa(edit)}>2FA-ს გამორთვა</Button>}
                 {!edit.owner && edit.id !== meta.me.id && <Button variant="danger" size="sm" icon="x" onClick={() => del(edit)}>წაშლა</Button>}
               </div>
               {(!edit.owner || edit.id === meta.me.id) && <Button icon="check" onClick={saveUser}>შენახვა</Button>}

@@ -3,7 +3,8 @@
  * ავტორიზაცია და სესია.
  * - პაროლი: scrypt ჰეში DATA_DIR/auth.json-ში (git-ში არ შედის)
  * - სესია: ხელმოწერილი (HMAC) ქუქი — სერვერის გადატვირთვა არ აგდებს სისტემიდან
- * - შესვლის ბლოკირება: 6 მცდელობა → 15 წუთი (IP-ზე, ფაილში)
+ * - შესვლის ბლოკირება: 6 მცდელობა → 15 წუთი (IP-ზე) + 10 მცდელობა ანგარიშზე, ნებისმიერი IP-დან
+ * - ორსაფეხურიანი შესვლა (TOTP, Google Authenticator / Authy) + ერთჯერადი სარეზერვო კოდები
  */
 const fs = require("fs");
 const path = require("path");
@@ -12,6 +13,8 @@ const { DATA_DIR, read, write } = require("./core");
 
 const MAX_TRIES = 6;
 const LOCK_MS = 15 * 60e3;
+const MAX_ACCOUNT_TRIES = 10;
+const PENDING_MS = 5 * 60e3; // პაროლის შემდეგ კოდის შესაყვანად
 const COOKIE = "os_cms";
 const AUTH_FILE = path.join(DATA_DIR, "auth.json");
 
@@ -121,7 +124,7 @@ function save(c) {
 }
 const authConfig = store;
 const isInstalled = () => store().users.length > 0;
-const publicUser = (u) => ({ id: u.id, user: u.user, name: u.name || u.user, email: u.email || "", perms: u.owner ? [...PERMS] : cleanPerms(u.perms), owner: !!u.owner, disabled: !!u.disabled, created: u.created, last: u.last || 0 });
+const publicUser = (u) => ({ id: u.id, user: u.user, name: u.name || u.user, email: u.email || "", perms: u.owner ? [...PERMS] : cleanPerms(u.perms), owner: !!u.owner, disabled: !!u.disabled, created: u.created, last: u.last || 0, twofa: !!(u.totp && u.totp.on) });
 
 function hashPassword(pw) {
   const salt = crypto.randomBytes(16).toString("hex");
@@ -267,11 +270,6 @@ function attempts() {
   for (const [k, v] of Object.entries(all)) if (Date.now() - (v.last || 0) > LOCK_MS) delete all[k];
   return all;
 }
-function lockedFor(ip) {
-  const st = attempts()[ip];
-  if (st && st.tries >= MAX_TRIES) return Math.max(0, LOCK_MS - (Date.now() - st.last));
-  return 0;
-}
 
 function failAttempt(ip) {
   const all = attempts();
@@ -279,29 +277,165 @@ function failAttempt(ip) {
   write("login-attempts", { ips: all });
 }
 
-/** შესვლა მომხმარებლის სახელით ან ელფოსტით */
+/* ------------------------------------------------------------ TOTP (RFC 6238) */
+const B32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+function b32encode(buf) {
+  let bits = 0, val = 0, out = "";
+  for (const b of buf) { val = (val << 8) | b; bits += 8; while (bits >= 5) { out += B32[(val >>> (bits - 5)) & 31]; bits -= 5; } }
+  if (bits > 0) out += B32[(val << (5 - bits)) & 31];
+  return out;
+}
+function b32decode(str) {
+  let bits = 0, val = 0; const out = [];
+  for (const ch of String(str).replace(/[\s=]/g, "").toUpperCase()) {
+    const i = B32.indexOf(ch); if (i < 0) continue;
+    val = (val << 5) | i; bits += 5;
+    if (bits >= 8) { out.push((val >>> (bits - 8)) & 255); bits -= 8; }
+  }
+  return Buffer.from(out);
+}
+function hotp(secret, counter) {
+  const msg = Buffer.alloc(8);
+  msg.writeBigUInt64BE(BigInt(counter));
+  const h = crypto.createHmac("sha1", b32decode(secret)).update(msg).digest();
+  const o = h[h.length - 1] & 15;
+  return String((h.readUInt32BE(o) & 0x7fffffff) % 1e6).padStart(6, "0");
+}
+/** აბრუნებს დამთხვეულ დროის საფეხურს (±30 წმ) ან -1 */
+function totpStep(secret, code, after = -1) {
+  const c = String(code || "").replace(/\D/g, "");
+  if (c.length !== 6) return -1;
+  const now = Math.floor(Date.now() / 30000);
+  for (const s of [now, now - 1, now + 1]) {
+    if (s <= after) continue; // ერთი და იგივე კოდი ორჯერ არ მიიღება
+    const exp = hotp(secret, s);
+    if (crypto.timingSafeEqual(Buffer.from(exp), Buffer.from(c))) return s;
+  }
+  return -1;
+}
+const recoveryHash = (code) => tokenHash(String(code).replace(/[^a-z0-9]/gi, "").toLowerCase());
+function newRecoveryCodes() {
+  return Array.from({ length: 8 }, () => { const h = crypto.randomBytes(5).toString("hex"); return h.slice(0, 5) + "-" + h.slice(5); });
+}
+
+/** 2FA-ს ჩართვის დაწყება: ახალი საიდუმლო (ჯერ არ მოქმედებს, სანამ კოდით არ დადასტურდება) */
+function totpBegin(id) {
+  const c = store();
+  const u = c.users.find((x) => x.id === id);
+  if (!u) return null;
+  const secret = b32encode(crypto.randomBytes(20));
+  u.totpPending = { secret, at: Date.now() };
+  if (!save(c)) return null;
+  const label = encodeURIComponent("Outsourcify CMS:" + (u.email || u.user));
+  return { secret, uri: `otpauth://totp/${label}?secret=${secret}&issuer=Outsourcify%20CMS&algorithm=SHA1&digits=6&period=30` };
+}
+function totpEnable(id, code) {
+  const c = store();
+  const u = c.users.find((x) => x.id === id);
+  const p = u && u.totpPending;
+  if (!p || Date.now() - p.at > 15 * 60e3) return { error: "დაიწყეთ თავიდან — საიდუმლო კოდს ვადა გაუვიდა" };
+  const step = totpStep(p.secret, code);
+  if (step < 0) return { error: "კოდი არასწორია. შეამოწმეთ ტელეფონის დრო და სცადეთ ახალი კოდი" };
+  const codes = newRecoveryCodes();
+  u.totp = { on: true, secret: p.secret, last: step, since: Date.now() };
+  u.recovery = codes.map(recoveryHash);
+  delete u.totpPending;
+  u.ver = (u.ver || 1) + 1; // სხვა მოწყობილობებზე სესია მთავრდება
+  return save(c) ? { ok: true, codes, ver: u.ver } : { error: "შენახვა ვერ მოხერხდა" };
+}
+/** გამორთვა: საკუთარ ანგარიშზე — პაროლით; სხვისზე (ადმინი) — password = null */
+function totpDisable(id, password) {
+  const c = store();
+  const u = c.users.find((x) => x.id === id);
+  if (!u) return { error: "მომხმარებელი ვერ მოიძებნა" };
+  if (password !== null && !verifyPassword(password, u.hash)) return { error: "პაროლი არასწორია" };
+  delete u.totp; delete u.recovery; delete u.totpPending;
+  u.ver = (u.ver || 1) + 1;
+  return save(c) ? { ok: true, ver: u.ver } : { error: "შენახვა ვერ მოხერხდა" };
+}
+function totpNewCodes(id, password) {
+  const c = store();
+  const u = c.users.find((x) => x.id === id);
+  if (!u || !(u.totp && u.totp.on)) return { error: "ორსაფეხურიანი შესვლა ჩართული არ არის" };
+  if (!verifyPassword(password, u.hash)) return { error: "პაროლი არასწორია" };
+  const codes = newRecoveryCodes();
+  u.recovery = codes.map(recoveryHash);
+  return save(c) ? { ok: true, codes } : { error: "შენახვა ვერ მოხერხდა" };
+}
+
+/* ------------------------------------------------------------ ბლოკირება */
+function lockedFor(ip, uid) {
+  const all = attempts();
+  const lock = (st, max) => (st && st.tries >= max ? Math.max(0, LOCK_MS - (Date.now() - st.last)) : 0);
+  return Math.max(lock(all[ip], MAX_TRIES), uid ? lock(all["u:" + uid], MAX_ACCOUNT_TRIES) : 0);
+}
+function bump(all, key) { all[key] = { tries: ((all[key] || {}).tries || 0) + 1, last: Date.now() }; }
+
+const findLogin = (c, login) => {
+  const key = String(login || "").trim().toLowerCase();
+  return key ? c.users.find((x) => x.user.toLowerCase() === key || (x.email && x.email.toLowerCase() === key)) : null;
+};
+const userLocked = (login) => { const u = findLogin(store(), login); return u ? lockedFor("", u.id) : 0; };
+
+/** შესვლა მომხმარებლის სახელით ან ელფოსტით.
+ *  აბრუნებს: false (არასწორი) | "ok" (სესია დაიწყო) | "2fa" (საჭიროა ავთენტიფიკატორის კოდი) */
 async function login(req, login, pw) {
   const c = store();
-  const key = String(login || "").trim().toLowerCase();
-  const u = c.users.find((x) => x.user.toLowerCase() === key || (x.email && x.email.toLowerCase() === key));
+  const u = findLogin(c, login);
   const ok = !!u && !u.disabled && verifyPassword(pw, u.hash);
   if (!u) verifyPassword(pw, "scrypt$00$00"); // დროის თანაბრობა
   const all = attempts();
   if (!ok) {
-    all[req.ip] = { tries: ((all[req.ip] || {}).tries || 0) + 1, last: Date.now() };
+    bump(all, req.ip);
+    if (u) bump(all, "u:" + u.id);
     write("login-attempts", { ips: all });
     await new Promise((r) => setTimeout(r, 300));
     return false;
   }
   delete all[req.ip];
   write("login-attempts", { ips: all });
+  if (u.totp && u.totp.on) {
+    req.session = { pending: u.id, pver: u.ver || 1, pexp: Date.now() + PENDING_MS, csrf: crypto.randomBytes(24).toString("hex") };
+    return "2fa";
+  }
+  delete all["u:" + u.id];
+  write("login-attempts", { ips: all });
   u.last = Date.now();
   save(c);
   startSession(req, u.id, u.ver || 1);
-  return true;
+  return "ok";
+}
+/** მეორე საფეხური: 6-ციფრა კოდი ან სარეზერვო კოდი */
+async function loginSecondStep(req, code) {
+  const s = req.session || {};
+  if (!s.pending || !s.pexp || s.pexp < Date.now()) return { error: "დრო ამოიწურა — შედით თავიდან", restart: true };
+  const c = store();
+  const u = c.users.find((x) => x.id === s.pending);
+  if (!u || u.disabled || (u.ver || 1) !== s.pver || !(u.totp && u.totp.on)) return { error: "შედით თავიდან", restart: true };
+  const all = attempts();
+  let ok = false;
+  const step = totpStep(u.totp.secret, code, u.totp.last || -1);
+  if (step >= 0) { u.totp.last = step; ok = true; }
+  else {
+    const h = recoveryHash(code);
+    const i = (u.recovery || []).findIndex((x) => x.length === h.length && crypto.timingSafeEqual(Buffer.from(x), Buffer.from(h)));
+    if (String(code).replace(/[^a-z0-9]/gi, "").length === 10 && i >= 0) { u.recovery.splice(i, 1); ok = true; }
+  }
+  if (!ok) {
+    bump(all, req.ip); bump(all, "u:" + u.id);
+    write("login-attempts", { ips: all });
+    await new Promise((r) => setTimeout(r, 300));
+    return { error: "კოდი არასწორია" };
+  }
+  delete all[req.ip]; delete all["u:" + u.id];
+  write("login-attempts", { ips: all });
+  u.last = Date.now();
+  save(c);
+  startSession(req, u.id, u.ver || 1);
+  return { ok: true, left: (u.recovery || []).length };
 }
 
 module.exports = {
-  PERMS, failAttempt, sessionMiddleware, csrf, csrfOk, authConfig, isInstalled, install, verifyPassword, lockedFor, login,
+  PERMS, failAttempt, sessionMiddleware, csrf, csrfOk, authConfig, isInstalled, install, verifyPassword, lockedFor, userLocked, login, loginSecondStep, totpBegin, totpEnable, totpDisable, totpNewCodes,
   currentUser, publicUser, store, createInvite, createReset, findToken, redeem, updateUser, removeUser, removeInvite, changePassword, startSession,
 };

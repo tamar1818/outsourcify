@@ -76,12 +76,20 @@ router.post("/setup", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const left = auth.lockedFor(req.ip);
+  const left = Math.max(auth.lockedFor(req.ip), auth.userLocked(req.body.user));
   if (left > 0) return bad(res, "ბევრი მცდელობა. სცადეთ " + Math.ceil(left / 60000) + " წუთში", 429);
-  if (await auth.login(req, String(req.body.user || "").trim(), String(req.body.password || ""))) {
-    return res.json({ ok: true, csrf: req.session.csrf });
-  }
+  const r = await auth.login(req, String(req.body.user || "").trim(), String(req.body.password || ""));
+  if (r === "2fa") return res.json({ ok: true, twofa: true, csrf: req.session.csrf });
+  if (r) return res.json({ ok: true, csrf: req.session.csrf });
   bad(res, "მომხმარებელი ან პაროლი არასწორია", 401);
+});
+/** ორსაფეხურიანი შესვლის მეორე ნაბიჯი */
+router.post("/login/2fa", async (req, res) => {
+  const left = Math.max(auth.lockedFor(req.ip), auth.lockedFor("", req.session.pending));
+  if (left > 0) { req.session = {}; return bad(res, "ბევრი მცდელობა. სცადეთ " + Math.ceil(left / 60000) + " წუთში", 429); }
+  const r = await auth.loginSecondStep(req, String(req.body.code || ""));
+  if (r.error) { if (r.restart) req.session = {}; return bad(res, r.error, r.restart ? 440 : 401); }
+  res.json({ ok: true, csrf: req.session.csrf, left: r.left });
 });
 
 router.post("/logout", (req, res) => {
@@ -492,6 +500,28 @@ router.put("/me", (req, res) => {
   err ? bad(res, err) : res.json({ ok: true });
 });
 
+/* ორსაფეხურიანი შესვლა (საკუთარი ანგარიში) */
+router.post("/2fa/setup", (req, res) => {
+  const r = auth.totpBegin(req.me.id);
+  r ? res.json(r) : bad(res, "შენახვა ვერ მოხერხდა", 500);
+});
+router.post("/2fa/enable", (req, res) => {
+  const r = auth.totpEnable(req.me.id, String(req.body.code || ""));
+  if (r.error) return bad(res, r.error);
+  req.session.ver = r.ver;
+  res.json({ ok: true, codes: r.codes });
+});
+router.post("/2fa/disable", (req, res) => {
+  const r = auth.totpDisable(req.me.id, String(req.body.password || ""));
+  if (r.error) return bad(res, r.error);
+  req.session.ver = r.ver;
+  res.json({ ok: true });
+});
+router.post("/2fa/codes", (req, res) => {
+  const r = auth.totpNewCodes(req.me.id, String(req.body.password || ""));
+  r.error ? bad(res, r.error) : res.json({ ok: true, codes: r.codes });
+});
+
 /* ------------------------------------------------------------ მომხმარებლები და მოწვევები */
 const origin = (req) => (req.secure || req.get("x-forwarded-proto") === "https" ? "https" : "http") + "://" + req.get("host");
 const linkFor = (req, token) => origin(req) + "/admin/invite/" + token;
@@ -536,6 +566,16 @@ router.post("/users/:id/reset", (req, res) => {
   if (u.owner && u.id !== req.me.id) return bad(res, "მფლობელის პაროლს მხოლოდ თავად მფლობელი ცვლის", 403);
   const r = auth.createReset(u.id, req.me.id);
   r ? res.json({ ok: true, link: linkFor(req, r.token) }) : bad(res, "შენახვა ვერ მოხერხდა", 500);
+});
+
+/** ტელეფონი დაკარგა? — ადმინი 2FA-ს გამორთავს (მფლობელს — მხოლოდ თავად) */
+router.delete("/users/:id/2fa", (req, res) => {
+  const u = auth.store().users.find((x) => x.id === req.params.id);
+  if (!u) return bad(res, "მომხმარებელი ვერ მოიძებნა", 404);
+  if (u.owner && u.id !== req.me.id) return bad(res, "მფლობელის ანგარიშს მხოლოდ თავად მფლობელი ცვლის", 403);
+  if (u.id === req.me.id) return bad(res, "საკუთარ ანგარიშზე გამორთეთ „ჩემი ანგარიშის“ გვერდიდან", 400);
+  const r = auth.totpDisable(u.id, null);
+  r.error ? bad(res, r.error) : res.json({ ok: true });
 });
 
 router.use((req, res) => bad(res, "ვერ მოიძებნა", 404));

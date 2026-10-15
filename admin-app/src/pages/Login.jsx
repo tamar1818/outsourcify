@@ -2,7 +2,8 @@ import { useState } from "react";
 import { api, setCsrf } from "../api.js";
 
 export default function Login({ installed, setupEnabled, onDone }) {
-  const [f, setF] = useState({ key: "", user: "", password: "", password2: "" });
+  const [f, setF] = useState({ key: "", user: "", password: "", password2: "", code: "" });
+  const [step2, setStep2] = useState(false);
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
@@ -14,10 +15,17 @@ export default function Login({ installed, setupEnabled, onDone }) {
     setBusy(true);
     try {
       if (!installed) await api.post("/setup", { key: f.key, user: f.user, password: f.password });
+      if (step2) {
+        const r = await api.post("/login/2fa", { code: f.code });
+        setCsrf(r.csrf);
+        return await onDone();
+      }
       const r = await api.post("/login", { user: f.user, password: f.password });
       setCsrf(r.csrf);
+      if (r.twofa) { setStep2(true); setF({ ...f, password: "", code: "" }); setBusy(false); return; }
       await onDone();
     } catch (x) {
+      if (x.status === 440) { setStep2(false); setF({ ...f, code: "" }); }
       setErr(x.message);
       setBusy(false);
     }
@@ -37,6 +45,17 @@ export default function Login({ installed, setupEnabled, onDone }) {
           <div className="alert" role="note">ჰოსტინგის პარამეტრებში (Environment variables) დაამატეთ <b>ADMIN_SETUP_KEY</b> — თქვენთვის ცნობილი საიდუმლო ტექსტი (მინ. 12 სიმბოლო), გადატვირთეთ საიტი და გახსენით ეს გვერდი თავიდან.</div>
         </div>
       ) : (
+      step2 ? (
+      <form className="auth__card" onSubmit={submit}>
+        <img className="auth__logo" src="/assets/img/brand/outsourcify-logo.svg" alt="Outsourcify" />
+        <h1>დადასტურების კოდი</h1>
+        <p className="muted">შეიყვანეთ 6-ციფრა კოდი ავთენტიფიკატორის აპლიკაციიდან (Google Authenticator, Microsoft Authenticator, Authy). ტელეფონი არ გაქვთ? — შეიყვანეთ ერთ-ერთი სარეზერვო კოდი.</p>
+        {err && <div className="alert alert--err" role="alert">{err}</div>}
+        <label className="fld"><span className="fld__label">კოდი</span><input name="code" value={f.code} onChange={set("code")} required autoFocus autoComplete="one-time-code" inputMode="text" maxLength={14} placeholder="123456" /></label>
+        <button className="btn btn--primary btn--block" disabled={busy}><span>{busy ? "…" : "დადასტურება"}</span></button>
+        <button type="button" className="btn btn--ghost btn--block" style={{ marginTop: 8 }} onClick={() => { setStep2(false); setErr(""); }}><span>უკან</span></button>
+      </form>
+      ) : (
       <form className="auth__card" onSubmit={submit}>
         <img className="auth__logo" src="/assets/img/brand/outsourcify-logo.svg" alt="Outsourcify" />
         <h1>{installed ? "შესვლა" : "CMS-ის პირველი გაშვება"}</h1>
@@ -48,6 +67,7 @@ export default function Login({ installed, setupEnabled, onDone }) {
         {!installed && <label className="fld"><span className="fld__label">გაიმეორეთ პაროლი</span><input name="password2" type="password" value={f.password2} onChange={set("password2")} required autoComplete="new-password" /></label>}
         <button className="btn btn--primary btn--block" disabled={busy}><span>{busy ? "…" : installed ? "შესვლა" : "ანგარიშის შექმნა"}</span></button>
       </form>
+      )
       )}
     </div>
   );
