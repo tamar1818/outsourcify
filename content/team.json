@@ -97,6 +97,20 @@
       "email": "",
       "linkedin": "",
       "hidden": false
+    },
+    {
+      "name": {
+        "ka": "გიორგი ყაზახაშვილი",
+        "en": "Giorgi Kazakhashvili"
+      },
+      "role": {
+        "ka": "",
+        "en": ""
+      },
+      "photo": "/assets/img/team/giorgi-kazakhashvili.webp",
+      "email": "",
+      "linkedin": "",
+      "hidden": false
     }
   ]
 }
