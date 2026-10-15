@@ -42,6 +42,7 @@ npm run build:admin   # rebuild public/admin/ — commit the result
 | Variable | What it's for |
 |---|---|
 | `DATA_DIR` | Where CMS content, uploads, bookings and the admin password are stored. Defaults to `./data`. **Set this to a folder outside the app directory if your plan allows it**, so a redeploy can't wipe CMS edits (e.g. `/home/<user>/outsourcify-data`). |
+| `ADMIN_SETUP_KEY` | **Required to create the first (owner) admin account.** A secret of at least 12 characters that only you know. While no admin exists, `/admin` asks for this key; without it the panel stays locked and nobody can register. After that, admins join only by invite. (Alternative with SSH: `node tools/create-admin.js <user> <password>`.) |
 | `SESSION_SECRET` | A long random string for admin sessions. If empty, one is generated in `DATA_DIR/secret.key`. |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Sending booking and contact notifications. For Hostinger email: `smtp.hostinger.com`, `465`, e.g. `no-reply@outsourcify.ge` and its password. Without these, submissions are still saved and shown in the admin panel, but no emails are sent. |
 | `MAIL_FROM` | Optional sender, e.g. `Outsourcify <no-reply@outsourcify.ge>` |
@@ -141,7 +142,7 @@ reordering of blocks, services and list items, a KA/EN toggle, Ctrl+S to save, a
 
 ### Administrators and permissions
 
-- The first account (created on the first visit to `/admin`) is the **owner**: it always has every permission and can't be deleted.
+- The first account (created on the first visit to `/admin` with the `ADMIN_SETUP_KEY`) is the **owner**: it always has every permission and can't be deleted.
 - **There is no public sign-up.** After the owner exists, new administrators can only join through an **invite link** created in
   **Admin → Administrators** (single use, valid 7 days; it can also be emailed if SMTP is set up). Pending links can be revoked.
 - Permissions per section: content, photos, settings, submissions (personal data), backup, administrators. Presets:

@@ -273,6 +273,12 @@ function lockedFor(ip) {
   return 0;
 }
 
+function failAttempt(ip) {
+  const all = attempts();
+  all[ip] = { tries: ((all[ip] || {}).tries || 0) + 1, last: Date.now() };
+  write("login-attempts", { ips: all });
+}
+
 /** შესვლა მომხმარებლის სახელით ან ელფოსტით */
 async function login(req, login, pw) {
   const c = store();
@@ -296,6 +302,6 @@ async function login(req, login, pw) {
 }
 
 module.exports = {
-  PERMS, sessionMiddleware, csrf, csrfOk, authConfig, isInstalled, install, verifyPassword, lockedFor, login,
+  PERMS, failAttempt, sessionMiddleware, csrf, csrfOk, authConfig, isInstalled, install, verifyPassword, lockedFor, login,
   currentUser, publicUser, store, createInvite, createReset, findToken, redeem, updateUser, removeUser, removeInvite, changePassword, startSession,
 };

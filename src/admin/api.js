@@ -5,6 +5,7 @@
  * ავტორიზაცია: ხელმოწერილი სესიის ქუქი. ყველა ცვლილება (POST/PUT/PATCH/DELETE)
  * მოითხოვს X-CSRF ჰედერს, რომელიც ემთხვევა სესიის ტოკენს.
  */
+const crypto = require("crypto");
 const express = require("express");
 const multer = require("multer");
 const core = require("../core");
@@ -40,7 +41,7 @@ const bad = (res, error, code = 400) => res.status(code).json({ ok: false, error
 router.get("/session", (req, res) => {
   const me = auth.currentUser(req);
   if (!me && req.session.uid) req.session = {};
-  res.json({ installed: auth.isInstalled(), user: me ? me.name : null, me, csrf: auth.csrf(req) });
+  res.json({ installed: auth.isInstalled(), setupEnabled: !!setupKey(), user: me ? me.name : null, me, csrf: auth.csrf(req) });
 });
 
 /** CSRF ყველა ცვლილებისთვის */
@@ -50,9 +51,26 @@ router.use((req, res, next) => {
   next();
 });
 
-/** პირველი ადმინისტრატორი — მხოლოდ ცარიელ სისტემაში. შემდეგ რეგისტრაცია მხოლოდ მოწვევით */
-router.post("/setup", (req, res) => {
+/** პირველი ადმინისტრატორი — მხოლოდ ცარიელ სისტემაში და მხოლოდ საიდუმლო გასაღებით (ADMIN_SETUP_KEY გარემოს ცვლადი).
+ *  გასაღების გარეშე ვერავინ შექმნის ანგარიშს; შემდეგ რეგისტრაცია მხოლოდ მოწვევით */
+function setupKey() {
+  const k = String(process.env.ADMIN_SETUP_KEY || "").trim();
+  return k.length >= 12 ? k : "";
+}
+router.post("/setup", async (req, res) => {
   if (auth.isInstalled()) return bad(res, "ანგარიში უკვე არსებობს", 409);
+  const key = setupKey();
+  if (!key) return bad(res, "პირველი ანგარიშის შექმნა გამორთულია. ჰოსტინგის პარამეტრებში დაამატეთ ADMIN_SETUP_KEY (მინ. 12 სიმბოლო)", 403);
+  const left = auth.lockedFor(req.ip);
+  if (left > 0) return bad(res, "ბევრი მცდელობა. სცადეთ " + Math.ceil(left / 60000) + " წუთში", 429);
+  const given = String(req.body.key || "");
+  const a = crypto.createHash("sha256").update(given).digest();
+  const b = crypto.createHash("sha256").update(key).digest();
+  if (!crypto.timingSafeEqual(a, b)) {
+    auth.failAttempt(req.ip);
+    await new Promise((r) => setTimeout(r, 400));
+    return bad(res, "საიდუმლო გასაღები არასწორია", 403);
+  }
   const err = auth.install(String(req.body.user || "").trim(), String(req.body.password || ""));
   err ? bad(res, err) : res.json({ ok: true });
 });

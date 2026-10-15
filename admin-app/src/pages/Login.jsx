@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { api, setCsrf } from "../api.js";
 
-export default function Login({ installed, onDone }) {
-  const [f, setF] = useState({ user: "", password: "", password2: "" });
+export default function Login({ installed, setupEnabled, onDone }) {
+  const [f, setF] = useState({ key: "", user: "", password: "", password2: "" });
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
@@ -13,7 +13,7 @@ export default function Login({ installed, onDone }) {
     if (!installed && f.password !== f.password2) return setErr("პაროლები არ ემთხვევა");
     setBusy(true);
     try {
-      if (!installed) await api.post("/setup", { user: f.user, password: f.password });
+      if (!installed) await api.post("/setup", { key: f.key, user: f.user, password: f.password });
       const r = await api.post("/login", { user: f.user, password: f.password });
       setCsrf(r.csrf);
       await onDone();
@@ -29,16 +29,26 @@ export default function Login({ installed, onDone }) {
         <img src="/assets/img/brand/outsourcify-logo-white.svg" alt="" />
         <p>კონტენტის მართვის სისტემა</p>
       </div>
+      {!installed && !setupEnabled ? (
+        <div className="auth__card">
+          <img className="auth__logo" src="/assets/img/brand/outsourcify-logo.svg" alt="Outsourcify" />
+          <h1>მართვის პანელი დაკეტილია</h1>
+          <p className="muted">ადმინისტრატორის ანგარიში ჯერ არ არის შექმნილი. უსაფრთხოების მიზნით, პირველი ანგარიშის შექმნა მხოლოდ საიტის მფლობელს შეუძლია.</p>
+          <div className="alert" role="note">ჰოსტინგის პარამეტრებში (Environment variables) დაამატეთ <b>ADMIN_SETUP_KEY</b> — თქვენთვის ცნობილი საიდუმლო ტექსტი (მინ. 12 სიმბოლო), გადატვირთეთ საიტი და გახსენით ეს გვერდი თავიდან.</div>
+        </div>
+      ) : (
       <form className="auth__card" onSubmit={submit}>
         <img className="auth__logo" src="/assets/img/brand/outsourcify-logo.svg" alt="Outsourcify" />
         <h1>{installed ? "შესვლა" : "CMS-ის პირველი გაშვება"}</h1>
         <p className="muted">{installed ? "შედით მართვის პანელში. ახალ ადმინისტრატორებს ანგარიშს მოწვევის ბმულით უქმნის ადმინისტრატორი." : "შექმენით მთავარი ადმინისტრატორის (მფლობელის) ანგარიში"}</p>
         {err && <div className="alert alert--err" role="alert">{err}</div>}
+        {!installed && <label className="fld"><span className="fld__label">საიდუმლო გასაღები (ADMIN_SETUP_KEY)</span><input name="key" type="password" value={f.key} onChange={set("key")} required autoComplete="off" /></label>}
         <label className="fld"><span className="fld__label">{installed ? "მომხმარებელი ან ელფოსტა" : "მომხმარებლის სახელი (ლათინურად)"}</span><input name="user" value={f.user} onChange={set("user")} required autoComplete="username" autoFocus /></label>
         <label className="fld"><span className="fld__label">პაროლი{installed ? "" : " (მინ. 10 სიმბოლო)"}</span><input name="password" type="password" value={f.password} onChange={set("password")} required minLength={installed ? undefined : 10} autoComplete={installed ? "current-password" : "new-password"} /></label>
         {!installed && <label className="fld"><span className="fld__label">გაიმეორეთ პაროლი</span><input name="password2" type="password" value={f.password2} onChange={set("password2")} required autoComplete="new-password" /></label>}
         <button className="btn btn--primary btn--block" disabled={busy}><span>{busy ? "…" : installed ? "შესვლა" : "ანგარიშის შექმნა"}</span></button>
       </form>
+      )}
     </div>
   );
 }

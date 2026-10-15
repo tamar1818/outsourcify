@@ -59,7 +59,7 @@ export default function App() {
   const token = inviteToken();
   if (token) return <Invite token={token} onDone={refresh} />;
   if (!session) return <Loading />;
-  if (!session.user) return <Login installed={session.installed} onDone={refresh} />;
+  if (!session.user) return <Login installed={session.installed} setupEnabled={session.setupEnabled} onDone={refresh} />;
   if (!meta) return <Loading />;
   return (
     <MetaContext.Provider value={{ ...meta, reloadMeta: async () => setMeta(await api.get("/meta")) }}>
